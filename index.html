@@ -86,6 +86,77 @@
       </div>
     </div>
   </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2>География и маршрутная логистика</h2>
+      <p class="intro">Схема показывает основные городские узлы и согласуемые длинные маршруты по Бразилии, северным направлениям и международным участкам.</p>
+      <div class="route-map">
+        <div class="route-map-visual panel">
+          <svg viewBox="0 0 640 420" role="img" aria-label="Схема ключевых маршрутов Morrison Premium Transfer">
+            <path class="route-map-line" data-route-line="south-hub" d="M122 306 L200 286 L258 254 L304 230"></path>
+            <path class="route-map-line" data-route-line="capital-axis" d="M304 230 L350 184 L438 166"></path>
+            <path class="route-map-line" data-route-line="north-extension" d="M438 166 L448 92 L372 84"></path>
+            <path class="route-map-line" data-route-line="north-coast" d="M438 166 L494 138 L542 168"></path>
+            <path class="route-map-line" data-route-line="mercosur" d="M200 286 L128 322 L84 310"></path>
+            <circle class="route-map-point" cx="122" cy="306" r="4"></circle><text class="route-map-label" x="98" y="325">Porto Alegre</text>
+            <circle class="route-map-point" cx="200" cy="286" r="4"></circle><text class="route-map-label" x="172" y="304">Curitiba</text>
+            <circle class="route-map-point" cx="258" cy="254" r="4"></circle><text class="route-map-label" x="238" y="244">São Paulo</text>
+            <circle class="route-map-point" cx="304" cy="230" r="4"></circle><text class="route-map-label" x="286" y="219">Rio de Janeiro</text>
+            <circle class="route-map-point" cx="350" cy="184" r="4"></circle><text class="route-map-label" x="334" y="175">Brasília</text>
+            <circle class="route-map-point" cx="438" cy="166" r="4"></circle><text class="route-map-label" x="446" y="170">Belém</text>
+            <circle class="route-map-point" cx="448" cy="92" r="4"></circle><text class="route-map-label" x="455" y="95">Manaus</text>
+            <circle class="route-map-point" cx="494" cy="138" r="4"></circle><text class="route-map-label" x="500" y="142">São Luís</text>
+            <circle class="route-map-point" cx="542" cy="168" r="4"></circle><text class="route-map-label" x="548" y="172">Fortaleza</text>
+            <circle class="route-map-point" cx="84" cy="310" r="4"></circle><text class="route-map-label" x="20" y="333">Uruguay / Argentina</text>
+          </svg>
+        </div>
+        <aside class="panel">
+          <h3>Пример маршрута</h3>
+          <div class="route-details">
+            <p><strong>Направление:</strong> <span data-route-field="route"></span></p>
+            <p><strong>Тип:</strong> <span data-route-field="type"></span></p>
+            <p><strong>Сценарий:</strong> <span data-route-field="scenario"></span></p>
+            <p><strong>Формат:</strong> <span data-route-field="format"></span></p>
+          </div>
+          <div class="route-route-picker">
+            <button class="route-option" data-route-target="south-hub" data-route-name="Balneário Camboriú → Curitiba" data-route-type="Юг Бразилии" data-route-scenario="Деловой график с точным окном прибытия" data-route-format="Индивидуальный междугородний трансфер">Южный бизнес-маршрут</button>
+            <button class="route-option" data-route-target="capital-axis" data-route-name="Curitiba / São Paulo → Brasília" data-route-type="Национальная ось" data-route-scenario="Поездка между региональными и федеральными центрами" data-route-format="Согласованный длинный участок">Ось Curitiba — Brasília</button>
+            <button class="route-option" data-route-target="north-extension" data-route-name="Brasília → Manaus / Belém" data-route-type="Север Бразилии" data-route-scenario="Длинные направления под индивидуальное согласование" data-route-format="Персональный long-distance формат">Расширение на север</button>
+            <button class="route-option" data-route-target="north-coast" data-route-name="Belém → São Luís / Fortaleza / Recife" data-route-type="Северо-восточный коридор" data-route-scenario="Маршрут для команды, багажа и фиксированного тайминга" data-route-format="По запросу, после согласования этапов">Северо-восточные направления</button>
+            <button class="route-option" data-route-target="mercosur" data-route-name="Brazil → Asunción / Uruguay / Argentina / Bolivia" data-route-type="Международные маршруты" data-route-scenario="Трансграничная поездка с подготовкой условий заранее" data-route-format="Индивидуально согласуемый международный сервис">Международные направления</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2>Как проходит поездка</h2>
+      <div class="process-timeline">
+        <article class="process-step active"><button class="process-trigger" data-step-trigger><span>01</span>Запрос маршрута</button><div class="process-content">Вы отправляете точки, сроки, состав пассажиров и ориентиры по багажу. Мы проверяем реализуемость и предлагаем формат.</div></article>
+        <article class="process-step"><button class="process-trigger" data-step-trigger><span>02</span>Подтверждение деталей</button><div class="process-content">Фиксируем ключевые этапы: окна подачи, остановки, условия ожидания и порядок связи на маршруте.</div></article>
+        <article class="process-step"><button class="process-trigger" data-step-trigger><span>03</span>Выбор автомобиля</button><div class="process-content">Подбираем класс автомобиля под задачу: бизнес-поездка, семейный выезд, объёмный багаж или длинная дистанция.</div></article>
+        <article class="process-step"><button class="process-trigger" data-step-trigger><span>04</span>Предоплата</button><div class="process-content">После согласования условий подтверждается бронь и фиксируется маршрутный план на конкретные даты.</div></article>
+        <article class="process-step"><button class="process-trigger" data-step-trigger><span>05</span>Поездка</button><div class="process-content">Поездка проходит по заранее согласованному сценарию, с контролем тайминга и единым контактом по всей дистанции.</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2>Сценарии, где сервис особенно уместен</h2>
+      <div class="scenario-grid">
+        <article class="scenario-card active"><button data-step-trigger>Деловая поездка</button><p>Маршрут между Curitiba, São Paulo и Brasília с фиксированными слотами встреч и приоритетом по времени.</p></article>
+        <article class="scenario-card"><button data-step-trigger>Трансфер после перелёта</button><p>Встреча в аэропорту и продолжение в другой город без случайных пересадок и потери контроля по багажу.</p></article>
+        <article class="scenario-card"><button data-step-trigger>Междугородний маршрут</button><p>Porto Alegre → Curitiba или Foz do Iguaçu → Brasília как предсказуемый длинный участок под одну задачу.</p></article>
+        <article class="scenario-card"><button data-step-trigger>Международный маршрут</button><p>Brazil → Asunción / Uruguay / Argentina / Bolivia с предварительным согласованием логики поездки.</p></article>
+        <article class="scenario-card"><button data-step-trigger>Переезд с багажом</button><p>Семейный или релокационный формат с вместительным автомобилем и остановками под реальные потребности.</p></article>
+        <article class="scenario-card"><button data-step-trigger>Север Бразилии</button><p>Brasília → Manaus / Belém, São Paulo → Fortaleza и похожие маршруты как индивидуально согласуемый long-distance сервис.</p></article>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">

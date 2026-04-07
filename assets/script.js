@@ -1,4 +1,50 @@
 (() => {
+  const LANGUAGE_KEY = 'preferredLanguage';
+  const SUPPORTED_LANGUAGES = ['ru', 'pt', 'en'];
+  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: replace with production GA4 Measurement ID.
+  const TELEGRAM_URL = 'https://t.me/premium_transfer_latam';
+
+  const safeStorageGet = (key) => {
+    try {
+      return window.localStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  };
+
+  const safeStorageSet = (key, value) => {
+    try {
+      window.localStorage.setItem(key, value);
+    } catch (error) {
+      // Ignore quota/privacy mode restrictions.
+    }
+  };
+
+  const initGa4 = () => {
+    // GA4 placeholder block. Set GA_MEASUREMENT_ID to real value and keep this shared bootstrap for all language pages.
+    if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+    const gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`;
+    document.head.appendChild(gaScript);
+
+    window.gtag('js', new Date());
+    window.gtag('config', GA_MEASUREMENT_ID, { send_page_view: true });
+  };
+
+  const trackEvent = (eventName, eventParams = {}) => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', eventName, eventParams);
+  };
+
+  initGa4();
+
   const nav = document.querySelector('.site-nav');
   const toggle = document.querySelector('.nav-toggle');
   const year = document.querySelector('[data-year]');
@@ -97,12 +143,55 @@
   });
 
   document.querySelectorAll('.lang-switch a').forEach((link) => {
+    const path = new URL(link.getAttribute('href'), window.location.origin).pathname;
+    const langCode = path.split('/').filter(Boolean)[0];
+    if (SUPPORTED_LANGUAGES.includes(langCode)) {
+      link.dataset.track = 'language_switch';
+      link.dataset.language = langCode;
+    }
+
     link.addEventListener('click', () => {
-      const path = new URL(link.getAttribute('href'), window.location.origin).pathname;
-      const langCode = path.split('/').filter(Boolean)[0];
-      if (['ru', 'pt', 'en'].includes(langCode)) {
-        localStorage.setItem('preferredLanguage', langCode);
+      if (SUPPORTED_LANGUAGES.includes(langCode)) {
+        safeStorageSet(LANGUAGE_KEY, langCode);
+        trackEvent('language_switch', {
+          selected_language: langCode,
+          page_language: docLang,
+          location_path: window.location.pathname,
+        });
       }
+    });
+  });
+
+  document.querySelectorAll('a[href]').forEach((link) => {
+    const href = (link.getAttribute('href') || '').trim();
+    if (!href) return;
+
+    if (href.includes('wa.me/')) {
+      link.dataset.track = link.dataset.track || 'whatsapp_click';
+      link.dataset.contactChannel = 'whatsapp';
+    } else if (href.includes('t.me/')) {
+      link.setAttribute('href', TELEGRAM_URL);
+      link.dataset.track = link.dataset.track || 'telegram_click';
+      link.dataset.contactChannel = 'telegram';
+    }
+
+    const isPrimaryCta = link.classList.contains('btn-primary') || /contact\.html$/i.test(href);
+    if (isPrimaryCta && !link.dataset.track) {
+      link.dataset.track = 'booking_cta_click';
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    const trackedLink = event.target.closest('a[data-track]');
+    if (!trackedLink) return;
+
+    trackEvent(trackedLink.dataset.track, {
+      link_url: trackedLink.href,
+      link_text: (trackedLink.textContent || '').trim().slice(0, 120),
+      language: docLang,
+      target_language: trackedLink.dataset.language || '',
+      channel: trackedLink.dataset.contactChannel || '',
+      page_path: window.location.pathname,
     });
   });
 
@@ -117,8 +206,8 @@
     stickyCta.className = 'mobile-sticky-cta';
     stickyCta.setAttribute('aria-label', labels.area);
     stickyCta.innerHTML = `
-      <a class="btn btn-primary" href="https://wa.me/5513996532915" target="_blank" rel="noopener" aria-label="${labels.wa}">WhatsApp</a>
-      <a class="btn btn-secondary" href="https://t.me/premium_transfer_latam" target="_blank" rel="noopener" aria-label="${labels.tg}">Telegram</a>
+      <a class="btn btn-primary" href="https://wa.me/5513996532915" target="_blank" rel="noopener" aria-label="${labels.wa}" data-track="whatsapp_click" data-contact-channel="whatsapp">WhatsApp</a>
+      <a class="btn btn-secondary" href="${TELEGRAM_URL}" target="_blank" rel="noopener" aria-label="${labels.tg}" data-track="telegram_click" data-contact-channel="telegram">Telegram</a>
     `;
 
     document.body.appendChild(stickyCta);
@@ -176,5 +265,10 @@
     revealNodes.forEach((node) => observer.observe(node));
   } else {
     revealNodes.forEach((node) => node.classList.add('is-visible'));
+  }
+
+  const existingPreference = safeStorageGet(LANGUAGE_KEY);
+  if (existingPreference && SUPPORTED_LANGUAGES.includes(existingPreference)) {
+    document.documentElement.setAttribute('data-preferred-language', existingPreference);
   }
 })();

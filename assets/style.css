@@ -336,8 +336,8 @@ td { color: var(--muted); font-size: .95rem; }
 
 .site-footer {
   margin-top: 3.2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(180deg, rgba(8, 13, 20, .94), rgba(6, 10, 16, .98));
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0b0b0b;
   padding: 2.6rem 0 2.9rem;
 }
 
@@ -696,13 +696,14 @@ button:focus-visible,
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: .55rem;
     padding: .7rem max(.7rem, env(safe-area-inset-right)) calc(.7rem + env(safe-area-inset-bottom)) max(.7rem, env(safe-area-inset-left));
-    background: linear-gradient(180deg, rgba(7, 11, 17, 0.55), rgba(7, 11, 17, 0.95));
-    border-top: 1px solid rgba(255, 255, 255, 0.11);
-    backdrop-filter: blur(8px);
+    background: #111;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
     z-index: 90;
   }
   body.has-mobile-cta { padding-bottom: calc(86px + env(safe-area-inset-bottom)); }

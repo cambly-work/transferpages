@@ -1,202 +1,50 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morrison Premium Transfer — частные трансферы по Бразилии и соседним странам</title>
-  <meta name="description" content="Спокойно организованные частные трансферы по Бразилии: аэропорты, междугородние и международные маршруты с подтверждёнными условиями и конфиденциальным сервисом.">
+  <title>Morrison Premium Transfer</title>
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://morrison-transfer.com/ru/index.html">
-  <link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/index.html">
-  <link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/index.html">
-  <link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/index.html">
-  <link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/index.html">
+  <link rel="canonical" href="https://morrison-transfer.com/en/">
+  <link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/">
+  <link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/">
+  <link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    (function () {
+      var supported = ['ru', 'pt', 'en'];
+      var preferred = localStorage.getItem('preferredLanguage');
+      var selected = 'en';
+
+      if (supported.indexOf(preferred) !== -1) {
+        selected = preferred;
+      } else {
+        var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+        for (var i = 0; i < languages.length; i += 1) {
+          var lang = (languages[i] || '').toLowerCase();
+          if (lang.indexOf('ru') === 0) {
+            selected = 'ru';
+            break;
+          }
+          if (lang.indexOf('pt') === 0) {
+            selected = 'pt';
+            break;
+          }
+          if (lang.indexOf('en') === 0) {
+            selected = 'en';
+            break;
+          }
+        }
+      }
+
+      window.location.replace('/' + selected + '/');
+    })();
+  </script>
 </head>
 <body>
-<a class="skip-link" href="#main">Перейти к содержанию</a>
-<header class="site-header">
-  <div class="container nav-wrap">
-    <a class="logo" href="index.html">Morrison Premium Transfer<small>Brazil • Uruguay • Paraguay</small></a>
-    <nav class="site-nav" aria-label="Основная навигация">
-      <button class="nav-toggle" aria-expanded="false" aria-label="Открыть меню">Меню</button>
-      <ul class="nav-list">
-        <li><a class="active" href="index.html">Главная</a></li>
-        <li><a href="brazil-transfers.html">По Бразилии</a></li>
-        <li><a href="airport-transfer.html">Аэропорты</a></li>
-        <li><a href="international.html">Международные</a></li>
-        <li><a href="partners.html">Партнёрам</a></li>
-        <li><a href="contact.html">Контакты</a></li>
-      </ul>
-    </nav>
-    <div class="lang-switch" aria-label="Языки"><a class="active" href="ru/index.html">RU</a><a href="pt/index.html">PT</a><a href="en/index.html">EN</a></div>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <p class="kicker">Частная логистика премиального уровня</p>
-        <h1>Трансферы, где маршрут, условия и время согласованы до выезда</h1>
-        <p class="lead">Мы организуем частные поездки для клиентов, которым важны предсказуемость, спокойный сервис и конфиденциальность: от аэропортовых встреч до длинных маршрутов по Бразилии и международных направлений.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="contact.html">Согласовать маршрут</a>
-          <a class="btn btn-secondary" href="https://wa.me/5513996532915" target="_blank" rel="noopener">Написать в WhatsApp</a>
-        </div>
-      </div>
-      <aside class="panel">
-        <h2>Что вы получаете до старта</h2>
-        <div class="grid-2">
-          <div class="metric"><strong>Подтверждённый маршрут</strong><span>с точками, временем и приоритетами</span></div>
-          <div class="metric"><strong>Понятные условия</strong><span>стоимость и формат без размытых формулировок</span></div>
-          <div class="metric"><strong>Автомобиль по задаче</strong><span>класс и вместимость под багаж и состав группы</span></div>
-          <div class="metric"><strong>Конфиденциальный формат</strong><span>деликатная коммуникация и аккуратная передача данных</span></div>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid-2">
-      <article class="trust-strip">
-        <h3>Когда этот формат особенно уместен</h3>
-        <ul>
-          <li>сложная поездка с несколькими участками: аэропорт, город, междугородний переезд;</li>
-          <li>деловой график, где важнее надёжность и время, чем случайная экономия;</li>
-          <li>семейный или релокационный маршрут с большим багажом и дополнительными остановками.</li>
-        </ul>
-      </article>
-      <article class="trust-strip">
-        <h3>Из чего складывается высокая стоимость</h3>
-        <p>Цена отражает не «статус ради статуса», а управляемую поездку: подтверждённые условия, безопасность на длинной дистанции, точный тайминг, конфиденциальность и отсутствие непредвиденных решений в пути.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2>Ключевые направления сервиса</h2>
-      <div class="grid-3">
-        <article class="card"><h3>По Бразилии</h3><p>Междугородние маршруты и длительные переезды с заранее согласованной логикой поездки.</p><a class="btn btn-secondary" href="brazil-transfers.html">Открыть раздел</a></article>
-        <article class="card"><h3>Аэропорты</h3><p>Встречи, ранние и поздние выезды, а также маршруты из аэропорта сразу в другой город.</p><a class="btn btn-secondary" href="airport-transfer.html">Смотреть сценарии</a></article>
-        <article class="card"><h3>Международные маршруты</h3><p>Аккуратная организация поездки с предварительным согласованием этапов в рамках действующих правил.</p><a class="btn btn-secondary" href="international.html">Подробнее</a></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal">
-    <div class="container">
-      <h2>География сервиса и покрытие маршрутов</h2>
-      <p class="intro">Покрытие организовано как система региональных и международных коридоров: с опорой на крупные узлы, деловые направления и длинные согласуемые участки.</p>
-      <div class="geo-layout">
-        <div class="route-map-visual panel">
-          <svg viewBox="0 0 640 420" role="img" aria-label="Схема ключевых маршрутов Morrison Premium Transfer">
-            <path class="route-map-line" data-route-line="south-hub" d="M122 306 L200 286 L258 254 L304 230"></path>
-            <path class="route-map-line" data-route-line="capital-axis" d="M304 230 L350 184 L438 166"></path>
-            <path class="route-map-line" data-route-line="north-extension" d="M438 166 L448 92 L372 84"></path>
-            <path class="route-map-line" data-route-line="north-coast" d="M438 166 L494 138 L542 168"></path>
-            <path class="route-map-line" data-route-line="mercosur" d="M200 286 L128 322 L84 310"></path>
-            <circle class="route-map-point" cx="122" cy="306" r="4"></circle><text class="route-map-label" x="98" y="325">Porto Alegre</text>
-            <circle class="route-map-point" cx="200" cy="286" r="4"></circle><text class="route-map-label" x="172" y="304">Curitiba</text>
-            <circle class="route-map-point" cx="258" cy="254" r="4"></circle><text class="route-map-label" x="238" y="244">São Paulo</text>
-            <circle class="route-map-point" cx="304" cy="230" r="4"></circle><text class="route-map-label" x="286" y="219">Rio de Janeiro</text>
-            <circle class="route-map-point" cx="350" cy="184" r="4"></circle><text class="route-map-label" x="334" y="175">Brasília</text>
-            <circle class="route-map-point" cx="438" cy="166" r="4"></circle><text class="route-map-label" x="446" y="170">Belém</text>
-            <circle class="route-map-point" cx="448" cy="92" r="4"></circle><text class="route-map-label" x="455" y="95">Manaus</text>
-            <circle class="route-map-point" cx="494" cy="138" r="4"></circle><text class="route-map-label" x="500" y="142">São Luís</text>
-            <circle class="route-map-point" cx="542" cy="168" r="4"></circle><text class="route-map-label" x="548" y="172">Fortaleza</text>
-            <circle class="route-map-point" cx="84" cy="310" r="4"></circle><text class="route-map-label" x="20" y="333">Uruguay / Argentina</text>
-          </svg>
-        </div>
-        <aside class="geo-categories">
-          <article class="geo-card">
-            <h3>Юг и юго-восток Бразилии</h3>
-            <p>Базовая зона для регулярных междугородних и аэропортовых поездок с точным таймингом.</p>
-            <div class="geo-tags"><span>Balneário Camboriú</span><span>Curitiba</span><span>São Paulo</span><span>Rio de Janeiro</span><span>Porto Alegre</span></div>
-          </article>
-          <article class="geo-card">
-            <h3>Центральные / деловые направления</h3>
-            <p>Логистика между региональными центрами и столицей для бизнес-графиков и плотных программ.</p>
-            <div class="geo-tags"><span>Brasília</span><span>Curitiba</span><span>São Paulo</span><span>деловые поездки</span></div>
-          </article>
-          <article class="geo-card">
-            <h3>Север Бразилии</h3>
-            <p>Длинные участки на север и северо-восток с предварительным согласованием этапов.</p>
-            <div class="geo-tags"><span>Belém</span><span>Manaus</span><span>São Luís</span><span>Fortaleza</span><span>Recife</span></div>
-          </article>
-          <article class="geo-card">
-            <h3>Международные маршруты</h3>
-            <p>Трансграничные поездки как отдельный сервисный контур с подготовкой условий заранее.</p>
-            <div class="geo-tags"><span>Argentina</span><span>Bolivia</span><span>Uruguay</span><span>Paraguay</span></div>
-          </article>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal">
-    <div class="container">
-      <h2>Как проходит поездка</h2>
-      <div class="process-timeline">
-        <article class="process-step active"><button class="process-trigger" data-step-trigger><span>01</span>Запрос маршрута</button><div class="process-content">Вы отправляете точки, сроки, состав пассажиров и ориентиры по багажу. Мы проверяем реализуемость и предлагаем формат.</div></article>
-        <article class="process-step"><button class="process-trigger" data-step-trigger><span>02</span>Подтверждение деталей</button><div class="process-content">Фиксируем ключевые этапы: окна подачи, остановки, условия ожидания и порядок связи на маршруте.</div></article>
-        <article class="process-step"><button class="process-trigger" data-step-trigger><span>03</span>Выбор автомобиля</button><div class="process-content">Подбираем класс автомобиля под задачу: бизнес-поездка, семейный выезд, объёмный багаж или длинная дистанция.</div></article>
-        <article class="process-step"><button class="process-trigger" data-step-trigger><span>04</span>Предоплата</button><div class="process-content">После согласования условий подтверждается бронь и фиксируется маршрутный план на конкретные даты.</div></article>
-        <article class="process-step"><button class="process-trigger" data-step-trigger><span>05</span>Поездка</button><div class="process-content">Поездка проходит по заранее согласованному сценарию, с контролем тайминга и единым контактом по всей дистанции.</div></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal">
-    <div class="container">
-      <h2>Сценарии, где сервис особенно уместен</h2>
-      <div class="scenario-grid">
-        <article class="scenario-card"><p class="scenario-tag">деловая поездка</p><h3>Balneário Camboriú → Curitiba</h3><p>Собранный южный маршрут для делового графика с заранее зафиксированным окном прибытия.</p></article>
-        <article class="scenario-card"><p class="scenario-tag">длинный маршрут</p><h3>Porto Alegre → Brasília</h3><p>Длинная дистанция под одну задачу: без потери темпа и с понятной логикой по этапам.</p></article>
-        <article class="scenario-card"><p class="scenario-tag">центральная ось</p><h3>São Paulo → Brasília</h3><p>Классический бизнес-коридор для клиентов с плотным расписанием и фиксированными слотами встреч.</p></article>
-        <article class="scenario-card"><p class="scenario-tag">север Бразилии</p><h3>Brasília → Recife / Manaus</h3><p>Северные направления в формате индивидуального long-distance сервиса с предварительным согласованием.</p></article>
-        <article class="scenario-card"><p class="scenario-tag">международное направление</p><h3>Brazil → Argentina / Bolivia</h3><p>Трансграничный участок с деликатной подготовкой условий и маршрута до старта поездки.</p></article>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <h3>Morrison Premium Transfer</h3>
-      <p>Частный трансферный сервис для тех, кому нужен спокойный, организованный и предсказуемый результат.</p>
-    </div>
-    <div>
-      <h3>Разделы</h3>
-      <ul>
-        <li><a href="brazil-transfers.html">По Бразилии</a></li>
-        <li><a href="airport-transfer.html">Аэропорты</a></li>
-        <li><a href="international.html">Международные</a></li>
-        <li><a href="partners.html">Партнёрам</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Контакты</h3>
-      <ul>
-        <li><a href="https://wa.me/5513996532915" target="_blank" rel="noopener">WhatsApp</a></li>
-        <li><a href="https://t.me/morrison_tim" target="_blank" rel="noopener">Telegram</a></li>
-        <li><a href="contact.html">Страница запроса</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Языки</h3>
-      <ul>
-        <li><a href="ru/index.html">Русский</a></li>
-        <li><a href="pt/index.html">Português</a></li>
-        <li><a href="en/index.html">English</a></li>
-      </ul>
-      <p>© <span data-year></span> Morrison Premium Transfer</p>
-    </div>
-  </div>
-</footer>
-<script src="assets/script.js"></script>
+  <noscript>
+    <p><a href="/en/">Continue to English version</a></p>
+  </noscript>
 </body>
 </html>

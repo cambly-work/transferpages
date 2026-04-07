@@ -1,7 +1,6 @@
 (() => {
   const LANGUAGE_KEY = 'preferredLanguage';
   const SUPPORTED_LANGUAGES = ['ru', 'pt', 'en'];
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: replace with production GA4 Measurement ID.
   const TELEGRAM_URL = 'https://t.me/premium_transfer_latam';
 
   const safeStorageGet = (key) => {
@@ -20,30 +19,11 @@
     }
   };
 
-  const initGa4 = () => {
-    // GA4 placeholder block. Set GA_MEASUREMENT_ID to real value and keep this shared bootstrap for all language pages.
-    if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function gtag() {
-      window.dataLayer.push(arguments);
-    };
-
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_MEASUREMENT_ID)}`;
-    document.head.appendChild(gaScript);
-
-    window.gtag('js', new Date());
-    window.gtag('config', GA_MEASUREMENT_ID, { send_page_view: true });
-  };
-
   const trackEvent = (eventName, eventParams = {}) => {
     if (typeof window.gtag !== 'function') return;
     window.gtag('event', eventName, eventParams);
   };
 
-  initGa4();
 
   const nav = document.querySelector('.site-nav');
   const toggle = document.querySelector('.nav-toggle');
@@ -167,11 +147,11 @@
     if (!href) return;
 
     if (href.includes('wa.me/')) {
-      link.dataset.track = link.dataset.track || 'whatsapp_click';
+      link.dataset.track = link.dataset.track || 'click_whatsapp';
       link.dataset.contactChannel = 'whatsapp';
     } else if (href.includes('t.me/')) {
       link.setAttribute('href', TELEGRAM_URL);
-      link.dataset.track = link.dataset.track || 'telegram_click';
+      link.dataset.track = link.dataset.track || 'click_telegram';
       link.dataset.contactChannel = 'telegram';
     }
 
@@ -206,8 +186,8 @@
     stickyCta.className = 'mobile-sticky-cta';
     stickyCta.setAttribute('aria-label', labels.area);
     stickyCta.innerHTML = `
-      <a class="btn btn-primary" href="https://wa.me/5513996532915" target="_blank" rel="noopener" aria-label="${labels.wa}" data-track="whatsapp_click" data-contact-channel="whatsapp">WhatsApp</a>
-      <a class="btn btn-secondary" href="${TELEGRAM_URL}" target="_blank" rel="noopener" aria-label="${labels.tg}" data-track="telegram_click" data-contact-channel="telegram">Telegram</a>
+      <a class="btn btn-primary" href="https://wa.me/5513996532915" target="_blank" rel="noopener" aria-label="${labels.wa}" data-track="click_whatsapp" data-contact-channel="whatsapp">WhatsApp</a>
+      <a class="btn btn-secondary" href="${TELEGRAM_URL}" target="_blank" rel="noopener" aria-label="${labels.tg}" data-track="click_telegram" data-contact-channel="telegram">Telegram</a>
     `;
 
     document.body.appendChild(stickyCta);

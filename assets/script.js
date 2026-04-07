@@ -80,15 +80,30 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
-  const currentPath = window.location.pathname.replace(/\/$/, '') || '/index.html';
+  const normalizePath = (path) => {
+    if (!path) return '/';
+    return path.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
+  };
+
+  const currentPath = normalizePath(window.location.pathname);
   document.querySelectorAll('.nav-list a').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href || href.startsWith('http')) return;
-    const normalizedHref = new URL(href, window.location.origin).pathname.replace(/\/$/, '');
+    const normalizedHref = normalizePath(new URL(href, window.location.origin).pathname);
     if (normalizedHref === currentPath) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
     }
+  });
+
+  document.querySelectorAll('.lang-switch a').forEach((link) => {
+    link.addEventListener('click', () => {
+      const path = new URL(link.getAttribute('href'), window.location.origin).pathname;
+      const langCode = path.split('/').filter(Boolean)[0];
+      if (['ru', 'pt', 'en'].includes(langCode)) {
+        localStorage.setItem('preferredLanguage', langCode);
+      }
+    });
   });
 
   if (window.matchMedia('(max-width: 768px)').matches) {
@@ -103,7 +118,7 @@
     stickyCta.setAttribute('aria-label', labels.area);
     stickyCta.innerHTML = `
       <a class="btn btn-primary" href="https://wa.me/5513996532915" target="_blank" rel="noopener" aria-label="${labels.wa}">WhatsApp</a>
-      <a class="btn btn-secondary" href="https://t.me/morrison_tim" target="_blank" rel="noopener" aria-label="${labels.tg}">Telegram</a>
+      <a class="btn btn-secondary" href="https://t.me/premium_transfer_latam" target="_blank" rel="noopener" aria-label="${labels.tg}">Telegram</a>
     `;
 
     document.body.appendChild(stickyCta);

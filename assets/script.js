@@ -15,11 +15,34 @@
 
     const openLabel = toggle.getAttribute('aria-label') || 'Open menu';
     const closeLabel = docLang.startsWith('pt') ? 'Fechar menu' : docLang.startsWith('ru') ? 'Закрыть меню' : 'Close menu';
+    let scrollPosition = 0;
+
+    const lockScroll = () => {
+      if (!window.matchMedia('(max-width: 768px)').matches || document.body.classList.contains('menu-open')) return;
+      scrollPosition = window.scrollY || window.pageYOffset;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+      document.body.classList.add('menu-open');
+    };
+
+    const unlockScroll = () => {
+      if (!document.body.classList.contains('menu-open')) return;
+      document.body.classList.remove('menu-open');
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollPosition);
+    };
 
     const closeNav = () => {
       nav.classList.remove('open');
       overlay.classList.remove('active');
-      document.body.classList.remove('menu-open');
+      unlockScroll();
       toggle.setAttribute('aria-expanded', 'false');
       toggle.setAttribute('aria-label', openLabel);
     };
@@ -27,7 +50,7 @@
     const openNav = () => {
       nav.classList.add('open');
       overlay.classList.add('active');
-      if (window.matchMedia('(max-width: 768px)').matches) document.body.classList.add('menu-open');
+      lockScroll();
       toggle.setAttribute('aria-expanded', 'true');
       toggle.setAttribute('aria-label', closeLabel);
     };

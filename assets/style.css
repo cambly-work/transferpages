@@ -62,19 +62,20 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-wrap {
-  min-height: 74px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: .8rem;
 }
 
 .logo {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 650;
   letter-spacing: .02em;
   line-height: 1.2;
   flex-shrink: 0;
+  max-width: clamp(220px, 28vw, 320px);
 }
 .logo small {
   display: block;
@@ -98,9 +99,11 @@ a { color: inherit; text-decoration: none; }
   color: var(--text);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: .45rem .72rem;
-  min-height: 42px;
+  padding: .38rem .62rem;
+  min-height: 40px;
   font-weight: 600;
+  font-size: .84rem;
+  letter-spacing: .03em;
 }
 
 .nav-list {
@@ -131,16 +134,16 @@ a { color: inherit; text-decoration: none; }
 
 .lang-switch {
   display: flex;
-  gap: .45rem;
-  font-size: .8rem;
+  gap: .3rem;
+  font-size: .76rem;
   letter-spacing: .03em;
-  padding: .2rem;
+  padding: .15rem;
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 999px;
   background: rgba(255,255,255,.02);
 }
 .lang-switch a{
-  padding:.28rem .5rem;
+  padding:.27rem .44rem;
   border-radius:999px;
 }
 .lang-switch a.active{
@@ -332,31 +335,35 @@ td { color: var(--muted); font-size: .95rem; }
 }
 
 .site-footer {
-  margin-top: 2.4rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(6, 10, 16, .82);
-  padding: 2rem 0 2.2rem;
+  margin-top: 3.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(8, 13, 20, .94), rgba(6, 10, 16, .98));
+  padding: 2.6rem 0 2.9rem;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, .9fr) minmax(0, .9fr) minmax(0, .9fr);
-  gap: 1.1rem;
+  gap: 1.5rem;
 }
 .footer-grid h3 {
-  margin: 0 0 .5rem;
-  font-size: 1rem;
+  margin: 0 0 .62rem;
+  font-size: .98rem;
+  letter-spacing: .02em;
 }
 .footer-grid p,
 .footer-grid li,
 .footer-grid a {
   color: var(--muted);
-  font-size: .94rem;
+  font-size: .92rem;
+  line-height: 1.65;
 }
 .footer-grid ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: grid;
+  gap: .34rem;
 }
 
 .mobile-sticky-cta { display: none; }
@@ -389,7 +396,7 @@ body.menu-open .mobile-sticky-cta {
 .geo-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr);
-  gap: 1rem;
+  gap: 1.05rem;
 }
 
 .geo-categories {
@@ -398,10 +405,10 @@ body.menu-open .mobile-sticky-cta {
 }
 
 .geo-card {
-  padding: 1rem;
+  padding: 1rem 1.05rem;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255,255,255,.09);
-  background: linear-gradient(150deg, rgba(201,163,107,.06), rgba(12,20,32,.76));
+  background: linear-gradient(155deg, rgba(201,163,107,.07), rgba(12,20,32,.84));
 }
 
 .geo-card h3 {
@@ -424,8 +431,8 @@ body.menu-open .mobile-sticky-cta {
 .geo-tags span {
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: .22rem .58rem;
-  font-size: .78rem;
+  padding: .24rem .6rem;
+  font-size: .76rem;
   color: #cad4e0;
   background: rgba(255,255,255,.02);
 }
@@ -541,34 +548,40 @@ body.menu-open .mobile-sticky-cta {
 
 .scenario-grid {
   display: grid;
-  gap: .85rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .95rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .scenario-card {
   border: 1px solid rgba(255,255,255,.09);
   border-radius: var(--radius-sm);
-  background: rgba(18, 28, 41, 0.72);
-  overflow: hidden;
+  background: linear-gradient(165deg, rgba(201,163,107,.06), rgba(18, 28, 41, 0.76));
+  padding: 1rem;
+  display: grid;
+  gap: .38rem;
 }
-
-.scenario-card button {
-  width: 100%;
-  text-align: left;
-  padding: .9rem;
-  border: 0;
-  background: transparent;
-  color: var(--text);
-  font-weight: 600;
+.scenario-card h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
 }
 
 .scenario-card p {
   margin: 0;
-  padding: 0 .9rem .9rem;
   color: var(--muted);
 }
 
-.scenario-card:not(.active) p { display: none; }
+.scenario-tag {
+  display: inline-flex;
+  width: fit-content;
+  border: 1px solid rgba(201, 163, 107, 0.45);
+  border-radius: 999px;
+  padding: .2rem .5rem;
+  color: var(--brand);
+  font-size: .73rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
 
 .reveal {
   opacity: 0;
@@ -602,13 +615,12 @@ button:focus-visible,
 
 @media (max-width: 768px) {
   .nav-wrap {
-    min-height: 66px;
-    gap: .6rem;
+    min-height: 62px;
+    gap: .45rem;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     grid-template-areas:
-      "logo nav"
-      "lang lang";
+      "logo lang nav";
     align-items: center;
   }
   .logo { grid-area: logo; }
@@ -619,19 +631,21 @@ button:focus-visible,
   }
   .lang-switch {
     grid-area: lang;
-    width: fit-content;
-    margin-left: 0;
+    justify-self: end;
+    margin-right: .1rem;
+    border-color: rgba(255,255,255,.12);
   }
   .nav-toggle { display: inline-flex; }
-  .logo { font-size: .95rem; max-width: 56vw; }
-  .logo small { font-size: .7rem; }
+  .logo { font-size: .86rem; max-width: 52vw; letter-spacing: .01em; }
+  .logo small { display: none; }
+  .nav-toggle { min-width: 42px; min-height: 38px; padding: .35rem .52rem; }
 
   .nav-list {
     display: flex;
     position: fixed;
     left: .75rem;
     right: .75rem;
-    top: 74px;
+    top: 68px;
     width: auto;
     max-height: calc(100dvh - 90px);
     overflow-y: auto;
@@ -698,15 +712,16 @@ button:focus-visible,
   h1 { font-size: clamp(1.62rem, 8vw, 2rem); max-width: 16ch; }
   .lead { font-size: .98rem; }
   .nav-wrap{
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     grid-template-areas:
-      "logo nav"
-      "lang lang";
-    gap: .45rem;
+      "logo lang nav";
+    gap: .38rem;
   }
-  .nav-list { top: 70px; left: .55rem; right: .55rem; max-height: calc(100dvh - 84px); }
-  .lang-switch {font-size:.74rem; gap:.25rem; padding:.16rem;}
-  .lang-switch a{padding:.24rem .4rem;}
+  .logo { font-size: .8rem; max-width: 48vw; }
+  .nav-list { top: 64px; left: .55rem; right: .55rem; max-height: calc(100dvh - 80px); }
+  .lang-switch {font-size:.68rem; gap:.16rem; padding:.12rem;}
+  .lang-switch a{padding:.2rem .34rem;}
+  .scenario-grid { grid-template-columns: 1fr; }
   .panel,
   .card,
   .highlight,

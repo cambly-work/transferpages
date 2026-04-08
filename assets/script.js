@@ -175,14 +175,37 @@
     });
   });
 
-  if (window.matchMedia('(max-width: 768px)').matches) {
+  const mobileCtaMedia = window.matchMedia('(max-width: 768px)');
+  let stickyCta = null;
+  let ctaResizeObserver = null;
+
+  const syncMobileCtaOffset = () => {
+    if (!stickyCta) return;
+    const height = Math.ceil(stickyCta.getBoundingClientRect().height || 0);
+    document.documentElement.style.setProperty('--mobile-cta-height', `${height}px`);
+  };
+
+  const teardownMobileCta = () => {
+    if (!stickyCta) return;
+    ctaResizeObserver?.disconnect();
+    window.removeEventListener('orientationchange', syncMobileCtaOffset);
+    window.visualViewport?.removeEventListener('resize', syncMobileCtaOffset);
+    stickyCta.remove();
+    stickyCta = null;
+    ctaResizeObserver = null;
+    document.body.classList.remove('has-mobile-cta');
+    document.documentElement.style.removeProperty('--mobile-cta-height');
+  };
+
+  const setupMobileCta = () => {
+    if (!mobileCtaMedia.matches || stickyCta) return;
     const labels = docLang.startsWith('pt')
       ? { area: 'Contatos rápidos', wa: 'Falar no WhatsApp', tg: 'Falar no Telegram' }
       : docLang.startsWith('ru')
       ? { area: 'Быстрые контакты', wa: 'Написать в WhatsApp', tg: 'Написать в Telegram' }
       : { area: 'Quick contacts', wa: 'Message on WhatsApp', tg: 'Message on Telegram' };
 
-    const stickyCta = document.createElement('div');
+    stickyCta = document.createElement('div');
     stickyCta.className = 'mobile-sticky-cta';
     stickyCta.setAttribute('aria-label', labels.area);
     stickyCta.innerHTML = `
@@ -192,6 +215,30 @@
 
     document.body.appendChild(stickyCta);
     document.body.classList.add('has-mobile-cta');
+    syncMobileCtaOffset();
+
+    if ('ResizeObserver' in window) {
+      ctaResizeObserver = new ResizeObserver(syncMobileCtaOffset);
+      ctaResizeObserver.observe(stickyCta);
+    }
+    window.addEventListener('orientationchange', syncMobileCtaOffset, { passive: true });
+    window.visualViewport?.addEventListener('resize', syncMobileCtaOffset, { passive: true });
+  };
+
+  const handleMobileCtaMedia = () => {
+    if (mobileCtaMedia.matches) {
+      setupMobileCta();
+      syncMobileCtaOffset();
+      return;
+    }
+    teardownMobileCta();
+  };
+
+  handleMobileCtaMedia();
+  if (typeof mobileCtaMedia.addEventListener === 'function') {
+    mobileCtaMedia.addEventListener('change', handleMobileCtaMedia);
+  } else if (typeof mobileCtaMedia.addListener === 'function') {
+    mobileCtaMedia.addListener(handleMobileCtaMedia);
   }
 
   const routeButtons = document.querySelectorAll('[data-route-target]');

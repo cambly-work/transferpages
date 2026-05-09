@@ -1,0 +1,15 @@
+name: Morrison Premium Transfer
+domain: https://morrison-transfer.com
+defaultLocale: en
+locales: [ru, pt, en]
+
+contacts:
+  whatsapp: "5513996532915"
+  whatsappUrl: https://wa.me/5513996532915
+  telegramUrl: https://t.me/premium_transfer_latam
+
+analytics:
+  ga4: G-ZMBK0S18RL
+
+og:
+  image: https://morrison-transfer.com/assets/images/og-cover.svg

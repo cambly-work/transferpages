@@ -1,0 +1,89 @@
+ru:
+  htmlLang: ru
+  hreflang: ru
+  label: Русский
+  short: RU
+  meta:
+    skip: К содержанию
+    primaryNav: Главная навигация
+    languages: Языки
+    openMenu: Открыть меню
+  brand:
+    tagline: Бразилия • Уругвай • Парагвай
+  nav:
+    home: Главная
+    brazil: Бразилия
+    airports: Аэропорты
+    international: Международные
+    partners: Партнёры
+    contact: Контакты
+  footer:
+    sections: Разделы
+    contacts: Контакты
+    languages: Языки
+    request: Страница заявки
+    description: Сервис частных трансферов для клиентов, которым нужен спокойный, организованный и предсказуемый результат.
+  cta:
+    whatsapp: WhatsApp
+    telegram: Telegram
+  copyright: Morrison Premium Transfer
+
+pt:
+  htmlLang: pt-BR
+  hreflang: pt-BR
+  label: Português
+  short: PT
+  meta:
+    skip: Ir para o conteúdo
+    primaryNav: Navegação principal
+    languages: Idiomas
+    openMenu: Abrir menu
+  brand:
+    tagline: Brasil • Uruguai • Paraguai
+  nav:
+    home: Início
+    brazil: Brasil
+    airports: Aeroportos
+    international: Internacional
+    partners: Parceiros
+    contact: Contato
+  footer:
+    sections: Seções
+    contacts: Contatos
+    languages: Idiomas
+    request: Página de solicitação
+    description: Serviço de transfer privado para clientes que precisam de um resultado calmo, organizado e previsível.
+  cta:
+    whatsapp: WhatsApp
+    telegram: Telegram
+  copyright: Morrison Premium Transfer
+
+en:
+  htmlLang: en
+  hreflang: en
+  label: English
+  short: EN
+  meta:
+    skip: Skip to content
+    primaryNav: Primary navigation
+    languages: Languages
+    openMenu: Open menu
+  brand:
+    tagline: Brazil • Uruguay • Paraguay
+  nav:
+    home: Home
+    brazil: Brazil
+    airports: Airports
+    international: International
+    partners: Partners
+    contact: Contact
+  footer:
+    sections: Sections
+    contacts: Contacts
+    languages: Languages
+    request: Request page
+    description: Private transfer service for clients who need a calm, organized and predictable result.
+  cta:
+    whatsapp: WhatsApp
+    telegram: Telegram
+  copyright: Morrison Premium Transfer

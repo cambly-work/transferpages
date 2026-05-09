@@ -1,0 +1,56 @@
+---
+permalink: /index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.name }}</title>
+  <meta name="description" content="Premium private transfers in Brazil and Mercosur.">
+  <link rel="canonical" href="{{ site.domain }}/">
+  {%- for code in site.locales %}
+  <link rel="alternate" hreflang="{{ i18n[code].hreflang }}" href="{{ site.domain }}/{{ code }}/">
+  {%- endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ site.domain }}/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var SUPPORTED = {{ site.locales | dump | safe }};
+      var DEFAULT = "{{ site.defaultLocale }}";
+      var KEY = "preferredLanguage";
+
+      function fromStorage() {
+        try { return localStorage.getItem(KEY); } catch (e) { return null; }
+      }
+
+      function fromBrowser() {
+        var langs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || DEFAULT];
+        for (var i = 0; i < langs.length; i++) {
+          var code = String(langs[i] || "").toLowerCase().split("-")[0];
+          if (SUPPORTED.indexOf(code) !== -1) return code;
+        }
+        return DEFAULT;
+      }
+
+      var preferred = fromStorage();
+      var pick = SUPPORTED.indexOf(preferred) !== -1 ? preferred : fromBrowser();
+      var basePath = window.location.pathname.replace(/index\.html$/, "").replace(/\/$/, "");
+      window.location.replace(basePath + "/" + pick + "/");
+    })();
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4 }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.ga4 }}');
+  </script>
+</head>
+<body>
+  <noscript><p><a href="/{{ site.defaultLocale }}/">Continue to {{ i18n[site.defaultLocale].label }} version</a></p></noscript>
+</body>
+</html>

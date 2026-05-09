@@ -1,0 +1,15 @@
+{%- set t = i18n[lang] -%}
+<!DOCTYPE html>
+<html lang="{{ t.htmlLang }}">
+<head>
+{% include "partials/head.njk" %}
+</head>
+<body>
+{% include "partials/header.njk" %}
+<main id="main">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<script src="/assets/script.js"></script>
+</body>
+</html>

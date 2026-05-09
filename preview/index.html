@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morrison Premium Transfer</title>
+  <meta name="description" content="Premium private transfers in Brazil and Mercosur.">
+  <link rel="canonical" href="https://morrison-transfer.com/preview/">
+  <link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/preview/ru/">
+  <link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/preview/pt/">
+  <link rel="alternate" hreflang="en" href="https://morrison-transfer.com/preview/en/">
+  <link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/preview/">
+  <link rel="icon" href="/preview/favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      var SUPPORTED = ["ru","pt","en"];
+      var DEFAULT = "en";
+      var KEY = "preferredLanguage";
+
+      function fromStorage() {
+        try { return localStorage.getItem(KEY); } catch (e) { return null; }
+      }
+
+      function fromBrowser() {
+        var langs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || DEFAULT];
+        for (var i = 0; i < langs.length; i++) {
+          var code = String(langs[i] || "").toLowerCase().split("-")[0];
+          if (SUPPORTED.indexOf(code) !== -1) return code;
+        }
+        return DEFAULT;
+      }
+
+      var preferred = fromStorage();
+      var pick = SUPPORTED.indexOf(preferred) !== -1 ? preferred : fromBrowser();
+      var basePath = window.location.pathname.replace(/index\.html$/, "").replace(/\/$/, "");
+      window.location.replace(basePath + "/" + pick + "/");
+    })();
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMBK0S18RL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZMBK0S18RL');
+  </script>
+</head>
+<body>
+  <noscript><p><a href="/preview/en/">Continue to English version</a></p></noscript>
+</body>
+</html>

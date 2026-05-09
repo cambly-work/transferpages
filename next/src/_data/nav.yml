@@ -1,0 +1,23 @@
+primary:
+  - key: home
+    href: ""
+  - key: brazil
+    href: "brazil-transfers/"
+  - key: airports
+    href: "airport-transfer/"
+  - key: international
+    href: "international/"
+  - key: partners
+    href: "partners/"
+  - key: contact
+    href: "contact/"
+
+footer:
+  - key: brazil
+    href: "brazil-transfers/"
+  - key: airports
+    href: "airport-transfer/"
+  - key: international
+    href: "international/"
+  - key: partners
+    href: "partners/"

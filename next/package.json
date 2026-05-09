@@ -1,0 +1,19 @@
+{
+  "name": "morrison-transfer-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Morrison Premium Transfer — multilingual static site (11ty).",
+  "scripts": {
+    "dev": "eleventy --serve --quiet",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "js-yaml": "^4.1.0",
+    "puppeteer": "^24.43.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

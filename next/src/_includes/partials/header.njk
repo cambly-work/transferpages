@@ -1,0 +1,24 @@
+{%- set t = i18n[lang] -%}
+<a class="skip-link" href="#main">{{ t.meta.skip }}</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="logo" href="/{{ lang }}/">
+      {{ site.name }}
+      <small>{{ t.brand.tagline }}</small>
+    </a>
+    <nav class="site-nav" aria-label="{{ t.meta.primaryNav }}">
+      <button class="nav-toggle" aria-expanded="false" aria-label="{{ t.meta.openMenu }}">Menu</button>
+      <ul class="nav-list">
+        {%- for item in nav.primary %}
+        {%- set href = "/" + lang + "/" + item.href -%}
+        <li><a href="{{ href }}">{{ t.nav[item.key] }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="lang-switch" aria-label="{{ t.meta.languages }}">
+      {%- for code in site.locales %}
+      <a href="/{{ code }}/{{ slug + '/' if slug else '' }}"{% if code == lang %} class="active"{% endif %}>{{ i18n[code].short }}</a>
+      {%- endfor %}
+    </div>
+  </div>
+</header>

@@ -16,7 +16,10 @@ breadcrumbs:
 </section>
 
 <section class="section">
-  <div class="container container--narrow prose">
+  <div class="container">
+    <div class="legal-layout">
+      <nav class="legal-toc" data-toc aria-label="Sections"></nav>
+      <div class="prose legal-content">
     <h2>1. Partes</h2>
     <p><strong>Prestadora:</strong> {{ site.legal.entityName }}, CNPJ {{ t.footer.cnpjValue }}. <strong>Cliente:</strong> pessoa física ou jurídica que faz a solicitação. A solicitação é considerada aceita após nossa confirmação por escrito (WhatsApp, Telegram ou e-mail).</p>
 
@@ -81,5 +84,7 @@ breadcrumbs:
 
     <hr>
     <p class="muted small">Este documento é um modelo geral. Antes do uso comercial recomendamos a revisão jurídica com um advogado local.</p>
+      </div>
+    </div>
   </div>
 </section>

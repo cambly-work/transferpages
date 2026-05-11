@@ -278,7 +278,7 @@
     });
   });
 
-  const revealNodes = document.querySelectorAll('.reveal');
+  const revealNodes = document.querySelectorAll('.reveal, .reveal-up, .reveal-stagger, .h1-mask');
   if (revealNodes.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -289,11 +289,96 @@
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
     );
     revealNodes.forEach((node) => observer.observe(node));
   } else {
     revealNodes.forEach((node) => node.classList.add('is-visible'));
+  }
+
+  // Stagger initial hero reveals (no IO needed for above-the-fold)
+  document.querySelectorAll('.hero .reveal-up').forEach((node, idx) => {
+    node.style.transitionDelay = `${idx * 0.08}s`;
+    requestAnimationFrame(() => node.classList.add('is-visible'));
+  });
+
+  // ---------- Legal TOC + scroll-spy ----------
+  const toc = document.querySelector('[data-toc]');
+  const legalContent = document.querySelector('.legal-content');
+  if (toc && legalContent) {
+    const tocLabels = {
+      ru: 'Разделы',
+      pt: 'Seções',
+      en: 'Sections',
+    };
+    const label = tocLabels[docLangShort] || tocLabels.en;
+    const slugify = (text) => text.toString().toLowerCase().trim()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-+|-+$/g, '');
+
+    const headings = Array.from(legalContent.querySelectorAll('h2'));
+    if (headings.length) {
+      const ol = document.createElement('ol');
+      const labelEl = document.createElement('h4');
+      labelEl.textContent = label;
+      toc.appendChild(labelEl);
+      toc.appendChild(ol);
+
+      headings.forEach((h2, idx) => {
+        if (!h2.id) h2.id = `section-${slugify(h2.textContent) || idx + 1}`;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${h2.id}`;
+        // Strip leading "N. " from text to keep TOC clean (counter handles numbering)
+        a.textContent = h2.textContent.replace(/^\s*\d+\.\s*/, '');
+        li.appendChild(a);
+        ol.appendChild(li);
+      });
+
+      const tocLinks = Array.from(toc.querySelectorAll('a'));
+      const spyObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.id;
+            const link = tocLinks.find((a) => a.getAttribute('href') === `#${id}`);
+            if (!link) return;
+            if (entry.isIntersecting) {
+              tocLinks.forEach((l) => l.classList.remove('active'));
+              link.classList.add('active');
+            }
+          });
+        },
+        { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+      );
+      headings.forEach((h) => spyObserver.observe(h));
+    }
+  }
+
+  // Count-up animation
+  const countUpNodes = document.querySelectorAll('[data-count-to]');
+  if (countUpNodes.length && 'IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          countObserver.unobserve(el);
+          const target = parseFloat(el.dataset.countTo);
+          const duration = parseInt(el.dataset.countDuration || '1200', 10);
+          const start = performance.now();
+          const step = (now) => {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const value = Math.round(target * eased);
+            el.textContent = value.toLocaleString();
+            if (t < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    countUpNodes.forEach((n) => countObserver.observe(n));
   }
 
   const existingPreference = safeStorageGet(LANGUAGE_KEY);
@@ -405,6 +490,41 @@
         });
       };
 
+      // Map highlight on city change
+      const mapEl = document.querySelector('[data-calc-map]');
+      const updateMap = () => {
+        if (!mapEl) return;
+        const from = fromSel.value;
+        const to = toSel.value;
+        mapEl.querySelectorAll('[data-map-city]').forEach((g) => {
+          const id = g.dataset.mapCity;
+          g.querySelector('.map-city').classList.toggle('active', id === from || id === to);
+        });
+        mapEl.querySelectorAll('.map-line').forEach((line) => {
+          const [a, b] = line.dataset.mapLine.split('-');
+          const match = (a === from && b === to) || (a === to && b === from);
+          line.classList.toggle('active', !!(from && to && match));
+        });
+      };
+      [fromSel, toSel].forEach((el) => el.addEventListener('change', updateMap));
+
+      // Click city on map to fill nearest empty field
+      mapEl?.querySelectorAll('[data-map-city]').forEach((g) => {
+        g.style.cursor = 'pointer';
+        g.addEventListener('click', () => {
+          const id = g.dataset.mapCity;
+          if (!fromSel.value) {
+            fromSel.value = id;
+          } else if (!toSel.value && fromSel.value !== id) {
+            toSel.value = id;
+          } else {
+            // both filled — replace 'to'
+            toSel.value = id;
+          }
+          updateMap();
+        });
+      });
+
       calculator.addEventListener('submit', (event) => {
         event.preventDefault();
         if (!fromSel.value || !toSel.value) {
@@ -421,6 +541,7 @@
           return;
         }
         showResult(pair);
+        updateMap();
       });
     }
   }

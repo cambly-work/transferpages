@@ -16,7 +16,10 @@ breadcrumbs:
 </section>
 
 <section class="section">
-  <div class="container container--narrow prose">
+  <div class="container">
+    <div class="legal-layout">
+      <nav class="legal-toc" data-toc aria-label="Sections"></nav>
+      <div class="prose legal-content">
     <h2>1. Who processes your data</h2>
     <p>The data controller is <strong>{{ site.legal.entityName }}</strong>, CNPJ {{ t.footer.cnpjValue }}, registered in {{ site.legal.city }}/{{ site.legal.state }}, Brazil. Contact: <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>.</p>
 
@@ -75,5 +78,7 @@ breadcrumbs:
 
     <hr>
     <p class="muted small">This document is a generic template reflecting standard LGPD practice. We recommend a legal review with a local attorney before commercial use.</p>
+      </div>
+    </div>
   </div>
 </section>

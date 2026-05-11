@@ -1,0 +1,39 @@
+{%- set t = i18n[lang] -%}
+{%- set bubbles = {
+  "ru": [
+    { side: "in", text: "Здравствуйте! GRU → Кампинас, завтра 14:00, 3 человека, 4 чемодана.", time: "13:42" },
+    { side: "out", text: "Принято. Sedan Executivo, R$ 380, подача в 13:45 у Терминала 2. Подтверждаем?", time: "13:43" },
+    { side: "in", text: "Да, подтверждаю. Pix или карта?", time: "13:44" },
+    { side: "out", text: "Pix. Чек пришлю после поездки. Водитель — Карлос, +55 11 9 ••••, английский B2.", time: "13:44" }
+  ],
+  "pt": [
+    { side: "in", text: "Olá! GRU → Campinas, amanhã 14h, 3 pessoas, 4 malas.", time: "13:42" },
+    { side: "out", text: "Recebido. Sedan Executivo, R$ 380, apresentação 13:45 no Terminal 2. Confirma?", time: "13:43" },
+    { side: "in", text: "Sim, confirmo. Pix ou cartão?", time: "13:44" },
+    { side: "out", text: "Pix. Comprovante envio após a viagem. Motorista — Carlos, +55 11 9 ••••, inglês B2.", time: "13:44" }
+  ],
+  "en": [
+    { side: "in", text: "Hi! GRU → Campinas, tomorrow 2pm, 3 pax, 4 bags.", time: "13:42" },
+    { side: "out", text: "Got it. Executive sedan, R$ 380, pickup 1:45pm at Terminal 2. Confirm?", time: "13:43" },
+    { side: "in", text: "Yes, confirmed. Pix or card?", time: "13:44" },
+    { side: "out", text: "Pix. Receipt after the trip. Driver — Carlos, +55 11 9 ••••, English B2.", time: "13:44" }
+  ]
+} -%}
+{%- set onlineLabel = { "ru": "онлайн", "pt": "online", "en": "online" } -%}
+<div class="whatsapp-mock" aria-hidden="true">
+  <div class="whatsapp-mock-header">
+    <div class="whatsapp-mock-avatar">M</div>
+    <div>
+      <div class="whatsapp-mock-name">Morrison Premium Transfer</div>
+      <div class="whatsapp-mock-status">{{ onlineLabel[lang] }}</div>
+    </div>
+  </div>
+  <div class="whatsapp-mock-chat">
+    {%- for b in bubbles[lang] %}
+    <div class="whatsapp-bubble whatsapp-bubble--{{ b.side }}">
+      {{ b.text }}
+      <span class="whatsapp-bubble-time">{{ b.time }}</span>
+    </div>
+    {%- endfor %}
+  </div>
+</div>

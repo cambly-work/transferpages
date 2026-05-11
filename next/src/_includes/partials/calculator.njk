@@ -1,8 +1,48 @@
 {%- set t = i18n[lang] -%}
+{%- set cityCoords = {
+  "gru": { x: 725, y: 100, anchor: "start" },
+  "gig": { x: 920, y: 60,  anchor: "end" },
+  "cwb": { x: 550, y: 220, anchor: "end" },
+  "fln": { x: 600, y: 345, anchor: "start" },
+  "nvt": { x: 590, y: 300, anchor: "end" },
+  "bnu": { x: 605, y: 320, anchor: "start" },
+  "poa": { x: 430, y: 490, anchor: "end" },
+  "igr": { x: 220, y: 230, anchor: "start" },
+  "asu": { x: 50,  y: 210, anchor: "start" },
+  "mvd": { x: 120, y: 760, anchor: "start" },
+  "pde": { x: 200, y: 760, anchor: "start" }
+} -%}
 <section class="section section--bg-soft" id="calculator">
   <div class="container container--narrow">
     <p class="kicker" style="text-align: center;">{{ t.calc.title }}</p>
     <h2 style="text-align: center;">{{ t.calc.subtitle }}</h2>
+
+    <div class="calc-map" data-calc-map>
+      <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
+        <defs>
+          <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#map-grid)"/>
+        {%- for pair in routes.pairs %}
+        <line class="map-line"
+              data-map-line="{{ pair.from }}-{{ pair.to }}"
+              x1="{{ cityCoords[pair.from].x }}" y1="{{ cityCoords[pair.from].y }}"
+              x2="{{ cityCoords[pair.to].x }}" y2="{{ cityCoords[pair.to].y }}"/>
+        {%- endfor %}
+        {%- for city in routes.cities %}
+        {%- set c = cityCoords[city.id] %}
+        <g data-map-city="{{ city.id }}">
+          <circle class="map-city" cx="{{ c.x }}" cy="{{ c.y }}" r="5"/>
+          <text class="map-label"
+                x="{{ c.x + (8 if c.anchor == 'start' else -8) }}"
+                y="{{ c.y + 4 }}"
+                text-anchor="{{ c.anchor }}">{{ city.name[lang] }}</text>
+        </g>
+        {%- endfor %}
+      </svg>
+    </div>
 
     <form class="calc" data-calculator data-lang="{{ lang }}" novalidate>
       <div class="calc-row">
@@ -55,9 +95,9 @@
         <div class="calc-result-state" data-calc-state-ok hidden>
           <p class="eyebrow" data-calc-route-name></p>
           <div class="calc-result-grid">
-            <div><dt>{{ t.calc.distance }}</dt><dd data-calc-distance></dd></div>
-            <div><dt>{{ t.calc.duration }}</dt><dd data-calc-duration></dd></div>
-            <div><dt>{{ t.calc.result }}</dt><dd data-calc-price></dd></div>
+            <div><dt>{{ t.calc.distance }}</dt><dd data-calc-distance class="num"></dd></div>
+            <div><dt>{{ t.calc.duration }}</dt><dd data-calc-duration class="num"></dd></div>
+            <div><dt>{{ t.calc.result }}</dt><dd data-calc-price class="num"></dd></div>
           </div>
           <p class="muted small">{{ t.calc.perKm }}</p>
           <a class="btn btn-dark btn-arrow" data-calc-confirm href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.calc.confirm }}</a>

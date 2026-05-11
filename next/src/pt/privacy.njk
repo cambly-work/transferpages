@@ -16,7 +16,10 @@ breadcrumbs:
 </section>
 
 <section class="section">
-  <div class="container container--narrow prose">
+  <div class="container">
+    <div class="legal-layout">
+      <nav class="legal-toc" data-toc aria-label="Sections"></nav>
+      <div class="prose legal-content">
     <h2>1. Quem trata os seus dados</h2>
     <p>O controlador dos dados pessoais é <strong>{{ site.legal.entityName }}</strong>, CNPJ {{ t.footer.cnpjValue }}, com sede em {{ site.legal.city }}/{{ site.legal.state }}, Brasil. Contato: <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>.</p>
 
@@ -75,5 +78,7 @@ breadcrumbs:
 
     <hr>
     <p class="muted small">Este documento é um modelo geral que reflete a prática padrão da LGPD. Antes do uso comercial recomendamos a revisão jurídica com um advogado local.</p>
+      </div>
+    </div>
   </div>
 </section>

@@ -16,7 +16,10 @@ breadcrumbs:
 </section>
 
 <section class="section">
-  <div class="container container--narrow prose">
+  <div class="container">
+    <div class="legal-layout">
+      <nav class="legal-toc" data-toc aria-label="Sections"></nav>
+      <div class="prose legal-content">
     <h2>1. Кто обрабатывает ваши данные</h2>
     <p>Контролёром (controlador / controller) персональных данных является <strong>{{ site.legal.entityName }}</strong>, CNPJ {{ t.footer.cnpjValue }}, зарегистрированное в {{ site.legal.city }}/{{ site.legal.state }}, Бразилия. Контакт: <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>.</p>
 
@@ -75,5 +78,7 @@ breadcrumbs:
 
     <hr>
     <p class="muted small">Этот документ — общий шаблон, отражающий стандартную практику LGPD. Перед использованием в коммерческом обороте мы рекомендуем юридический аудит с локальным адвокатом.</p>
+      </div>
+    </div>
   </div>
 </section>

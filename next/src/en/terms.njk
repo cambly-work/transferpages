@@ -16,7 +16,10 @@ breadcrumbs:
 </section>
 
 <section class="section">
-  <div class="container container--narrow prose">
+  <div class="container">
+    <div class="legal-layout">
+      <nav class="legal-toc" data-toc aria-label="Sections"></nav>
+      <div class="prose legal-content">
     <h2>1. Parties</h2>
     <p><strong>Provider:</strong> {{ site.legal.entityName }}, CNPJ {{ t.footer.cnpjValue }}. <strong>Client:</strong> the individual or legal entity that submits the request. A request is considered accepted upon our written confirmation (WhatsApp, Telegram or email).</p>
 
@@ -81,5 +84,7 @@ breadcrumbs:
 
     <hr>
     <p class="muted small">This document is a generic template. We recommend a legal review with a local attorney before commercial use.</p>
+      </div>
+    </div>
   </div>
 </section>

@@ -125,6 +125,16 @@
 }
 </script>
 {%- endif %}
+<script>
+  // Apply theme synchronously before paint to avoid FOUC
+  (function(){
+    try {
+      var t = localStorage.getItem('preferredTheme');
+      if (!t && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch(e){}
+  })();
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4 }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

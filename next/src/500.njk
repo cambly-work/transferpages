@@ -1,0 +1,36 @@
+---
+permalink: "/500.html"
+eleventyExcludeFromCollections: true
+lang: "en"
+title: "500 · Morrison Premium Transfer"
+description: "Something went wrong on our side. Reach us directly — we're 24/7."
+---
+{%- set t = i18n[lang] -%}
+<!DOCTYPE html>
+<html lang="{{ t.htmlLang }}">
+<head>
+{% include "partials/head.njk" %}
+</head>
+<body>
+{% include "partials/header.njk" %}
+<main id="main">
+<section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">500</p>
+    <h1 class="num-lg" style="font-family: var(--mono); font-size: clamp(5rem, 14vw, 9rem); margin: 1rem 0; letter-spacing: -0.04em;">500</h1>
+    <h2 style="margin-bottom: 1rem;">Что-то пошло не так — на нашей стороне.</h2>
+    <p class="lead muted" style="max-width: 540px; margin: 0 auto 2rem;">Если эта страница появилась во время бронирования — напишите в WhatsApp, мы примем заявку напрямую. Это всегда работает.</p>
+    <div class="cta-strip-actions" style="justify-content: center;">
+      <a class="btn btn-dark btn-arrow" href="https://wa.me/5513996532915" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="https://t.me/premium_transfer_latam" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <p class="muted small" style="margin-top: 2.4rem;">
+      <a href="/">На главную</a> · <a href="/ru/">RU</a> · <a href="/pt/">PT</a> · <a href="/en/">EN</a>
+    </p>
+  </div>
+</section>
+</main>
+{% include "partials/footer.njk" %}
+<script src="/assets/script.js"></script>
+</body>
+</html>

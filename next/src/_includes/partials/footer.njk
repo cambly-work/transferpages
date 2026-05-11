@@ -19,7 +19,7 @@
         </a>
         <p>{{ t.footer.description }}</p>
         <p class="footer-legal-line">
-          <span>{{ t.footer.cnpjLabel }}: {{ t.footer.cnpjValue }}</span>
+          <span>{{ t.footer.cnpjLabel }}: <button type="button" class="copy-btn" data-copy="{{ t.footer.cnpjValue }}" data-copy-label="{{ t.ui.copy }}" data-copied-label="{{ t.ui.copied }}" aria-label="{{ t.ui.copy }} CNPJ"><span class="num">{{ t.footer.cnpjValue }}</span><span class="copy-icon" aria-hidden="true">⎘</span></button></span>
           <span>{{ t.footer.legalNote }}</span>
         </p>
       </div>
@@ -50,7 +50,7 @@
         <ul>
           <li><a href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Telegram</a></li>
-          <li><a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a></li>
+          <li><a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a> <button type="button" class="copy-btn copy-btn--inline" data-copy="{{ site.contacts.email }}" data-copy-label="{{ t.ui.copy }}" data-copied-label="{{ t.ui.copied }}" aria-label="{{ t.ui.copy }} email"><span class="copy-icon" aria-hidden="true">⎘</span></button></li>
           <li><a href="/{{ lang }}/contact/">{{ t.footer.request }}</a></li>
         </ul>
         <h4 style="margin-top: 1.4rem;">{{ t.footer.languages }}</h4>

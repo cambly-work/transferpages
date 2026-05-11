@@ -69,6 +69,11 @@ ru:
     step3Body: "За час — имя и контакт водителя. Отслеживание рейса автоматически."
     step4Title: "Поездка и отчёт"
     step4Body: "Pix-чек после поездки. Для юр. лиц — NF-e в течение 5 дней."
+  ui:
+    copy: Скопировать
+    copied: Скопировано
+    themeLight: Светлая тема
+    themeDark: Тёмная тема
   newsletter:
     eyebrow: "Раз в квартал"
     title: "Маршруты и сезонные подсказки."
@@ -262,6 +267,11 @@ pt:
     step3Body: "Uma hora antes — nome e contato do motorista. Voo monitorado automaticamente."
     step4Title: "Viagem e relatório"
     step4Body: "Comprovante Pix após a viagem. Para empresas — NF-e em 5 dias."
+  ui:
+    copy: Copiar
+    copied: Copiado
+    themeLight: Tema claro
+    themeDark: Tema escuro
   newsletter:
     eyebrow: "Uma vez por trimestre"
     title: "Rotas e dicas sazonais."
@@ -455,6 +465,11 @@ en:
     step3Body: "An hour before — driver name and contact. Flight tracked automatically."
     step4Title: "Trip and receipt"
     step4Body: "Pix receipt after the trip. For companies — NF-e within 5 business days."
+  ui:
+    copy: Copy
+    copied: Copied
+    themeLight: Light theme
+    themeDark: Dark theme
   newsletter:
     eyebrow: "Once a quarter"
     title: "Routes and seasonal tips."

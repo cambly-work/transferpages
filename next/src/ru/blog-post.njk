@@ -9,10 +9,16 @@ eleventyComputed:
   description: "{{ post.excerpt.ru }}"
   slug: "blog/{{ post.slug }}"
 ---
-<article>
-  <section class="legal-hero">
+<div class="reading-progress" data-reading-progress aria-hidden="true"><span></span></div>
+
+<article class="blog-post">
+  <section class="post-hero" data-post-category="{{ post.category.ru }}">
     <div class="container container--narrow">
-      <p class="kicker">{{ post.category.ru }} · <span class="num">{{ post.date }}</span> · <span class="num">{{ post.readMinutes }} мин</span></p>
+      <p class="post-hero-meta">
+        <span class="post-category">{{ post.category.ru }}</span>
+        <span class="num">{{ post.date }}</span>
+        <span class="num">{{ post.readMinutes }} мин</span>
+      </p>
       <h1>{{ post.title.ru }}</h1>
       <p class="lead">{{ post.excerpt.ru }}</p>
     </div>

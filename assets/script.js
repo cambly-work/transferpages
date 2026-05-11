@@ -386,6 +386,106 @@
     document.documentElement.setAttribute('data-preferred-language', existingPreference);
   }
 
+  // ---------- Theme toggle (dark mode) ----------
+  const THEME_KEY = 'preferredTheme';
+  const themeToggle = document.querySelector('[data-theme-toggle]');
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggle) {
+      const isDark = theme === 'dark';
+      themeToggle.setAttribute('aria-label',
+        docLangShort === 'ru' ? (isDark ? 'Светлая тема' : 'Тёмная тема')
+        : docLangShort === 'pt' ? (isDark ? 'Tema claro' : 'Tema escuro')
+        : (isDark ? 'Light theme' : 'Dark theme'));
+    }
+  };
+  const storedTheme = safeStorageGet(THEME_KEY);
+  if (storedTheme === 'dark' || storedTheme === 'light') {
+    applyTheme(storedTheme);
+  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  }
+  themeToggle?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    safeStorageSet(THEME_KEY, next);
+    trackEvent('theme_toggle', { theme: next });
+  });
+
+  // ---------- Click-to-copy ----------
+  document.querySelectorAll('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const value = btn.dataset.copy;
+      const copyLabel = btn.dataset.copyLabel || 'Copy';
+      const copiedLabel = btn.dataset.copiedLabel || 'Copied';
+      try {
+        await navigator.clipboard.writeText(value);
+        btn.classList.add('is-copied');
+        btn.setAttribute('aria-label', copiedLabel);
+        const flash = btn.querySelector('.copy-flash');
+        if (flash) flash.textContent = copiedLabel;
+        setTimeout(() => {
+          btn.classList.remove('is-copied');
+          btn.setAttribute('aria-label', copyLabel);
+        }, 1800);
+      } catch (e) { /* ignore */ }
+    });
+  });
+
+  // ---------- Article reading progress bar ----------
+  const progressEl = document.querySelector('[data-reading-progress] > span');
+  const article = document.querySelector('.blog-post');
+  if (progressEl && article) {
+    const update = () => {
+      const rect = article.getBoundingClientRect();
+      const total = article.offsetHeight - window.innerHeight;
+      const scrolled = Math.min(Math.max(-rect.top, 0), Math.max(total, 1));
+      const pct = total > 0 ? (scrolled / total) * 100 : 0;
+      progressEl.style.width = pct + '%';
+    };
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(() => { update(); ticking = false; }); ticking = true; }
+    }, { passive: true });
+    update();
+  }
+
+  // ---------- Animated count-up on metric-strip (auto-detect numbers) ----------
+  document.querySelectorAll('.metric-strip dd .num').forEach((el) => {
+    const text = (el.textContent || '').trim();
+    // Match plain integer like "4", "11", "24" — skip ranges, slashes, special chars
+    const match = text.match(/^(\d+)$/);
+    if (match) {
+      el.dataset.countTo = match[1];
+      el.dataset.countDuration = '900';
+      el.textContent = '0';
+    }
+  });
+
+  // ---------- Route-row hover preview ----------
+  document.querySelectorAll('.route-row').forEach((row) => {
+    let tip = null;
+    row.addEventListener('mouseenter', () => {
+      if (window.matchMedia('(hover: none)').matches) return;
+      const name = row.querySelector('.route-name')?.textContent || '';
+      const meta = row.querySelector('.route-meta')?.textContent || '';
+      const dur = row.querySelector('.route-duration')?.textContent || '';
+      tip = document.createElement('div');
+      tip.className = 'route-tip';
+      tip.innerHTML = `<strong>${name}</strong><br><span class="num">${meta}</span><br><span class="num">${dur}</span>`;
+      document.body.appendChild(tip);
+      const r = row.getBoundingClientRect();
+      tip.style.top = (r.top + window.scrollY - tip.offsetHeight - 12) + 'px';
+      tip.style.left = (r.left + r.width / 2 - tip.offsetWidth / 2) + 'px';
+      requestAnimationFrame(() => tip.classList.add('is-visible'));
+    });
+    row.addEventListener('mouseleave', () => {
+      if (tip) { tip.remove(); tip = null; }
+    });
+  });
+
   // ---------- Seasonal hero ----------
   const seasonalHero = document.querySelector('[data-hero-seasonal]');
   if (seasonalHero) {
@@ -732,6 +832,8 @@
 
       calcPdfBtn?.addEventListener('click', async () => {
         if (!lastPair) return;
+        calcPdfBtn.classList.add('is-loading');
+        calcPdfBtn.disabled = true;
         try {
           const { jsPDF } = await ensureJsPDFLocal();
           const doc = new jsPDF({ unit: 'pt', format: 'a4' });
@@ -793,6 +895,9 @@
           trackEvent('calculator_pdf_download', { route: lastPair.slug });
         } catch (err) {
           console.error('Calc PDF failed', err);
+        } finally {
+          calcPdfBtn.classList.remove('is-loading');
+          calcPdfBtn.disabled = false;
         }
       });
 
@@ -1044,7 +1149,15 @@
       successTitleEl.textContent = briefForm.dataset.successTitle || '';
       successBodyEl.textContent = briefForm.dataset.successBody || '';
       pdfBtn.textContent = briefForm.dataset.downloadPdf || 'Download PDF';
-      pdfBtn.onclick = () => generatePdf(fd);
+      pdfBtn.onclick = async () => {
+        pdfBtn.classList.add('is-loading');
+        pdfBtn.disabled = true;
+        try { await generatePdf(fd); }
+        finally {
+          pdfBtn.classList.remove('is-loading');
+          pdfBtn.disabled = false;
+        }
+      };
 
       // Preload jsPDF in background
       ensureJsPDF().catch(() => { /* silent */ });

@@ -1,9 +1,4 @@
 {%- set t = i18n[lang] -%}
-<button type="button" class="cmdk-trigger" data-cmdk-trigger aria-label="{{ t.ui.cmdkOpen }}">
-  {% set iconName = "search" %}{% include "partials/icon.njk" %}
-  <span class="cmdk-trigger-kbd">⌘K</span>
-</button>
-
 <div class="cmdk" data-cmdk hidden aria-hidden="true">
   <div class="cmdk-backdrop" data-cmdk-close></div>
   <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="{{ t.ui.cmdkOpen }}">

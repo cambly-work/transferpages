@@ -2412,7 +2412,7 @@ a.fleet-card { color: var(--text); text-decoration: none; display: flex; flex-di
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
   flex-shrink: 0;
-  margin: 0 0.4rem 0 auto;
+  margin: 0 0.4rem 0 0;
   padding: 0;
 }
 .theme-toggle:hover { background: var(--bg-soft); border-color: var(--line-strong); }
@@ -2837,34 +2837,56 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
   mix-blend-mode: screen;
 }
 
-/* --- Command-K palette --- */
+/* --- Command-K palette trigger (header) — Vercel/Linear style --- */
 .cmdk-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: transparent;
+  gap: 0.55rem;
+  background: var(--bg-soft);
   border: 1px solid var(--line);
   color: var(--muted);
-  padding: 0.35rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.42rem 0.55rem 0.42rem 0.7rem;
+  border-radius: 10px;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   cursor: pointer;
-  margin-right: 0.6rem;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  margin: 0 0.5rem 0 auto;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.18s var(--ease-out);
   flex-shrink: 0;
+  min-width: 200px;
 }
-.cmdk-trigger:hover { color: var(--text); border-color: var(--line-strong); }
+.cmdk-trigger:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+  background: var(--bg);
+  transform: translateY(-1px);
+}
+.cmdk-trigger-text {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
 .cmdk-trigger-kbd {
   font-family: var(--mono);
   font-size: 0.7rem;
-  padding: 0.05rem 0.35rem;
-  border-radius: 4px;
-  background: var(--bg-soft);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  background: var(--bg);
   color: var(--muted);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
 }
-@media (max-width: 900px) { .cmdk-trigger-kbd { display: none; } }
-@media (max-width: 600px) { .cmdk-trigger { padding: 0.3rem; } .cmdk-trigger span { display: none; } }
+[data-theme="dark"] .cmdk-trigger { background: var(--bg-soft); }
+[data-theme="dark"] .cmdk-trigger:hover { background: var(--surface); }
+[data-theme="dark"] .cmdk-trigger-kbd { background: var(--bg); color: var(--muted); }
+@media (max-width: 900px) {
+  .cmdk-trigger {
+    min-width: auto;
+    padding: 0.45rem;
+    margin-right: 0.35rem;
+  }
+  .cmdk-trigger-text, .cmdk-trigger-kbd { display: none; }
+}
 
 .cmdk {
   position: fixed;

@@ -1,0 +1,56 @@
+---
+slug: "contact"
+permalink: "/es/contact/index.html"
+title: "Request a transfer | Morrison Premium Transfer"
+description: "Brief to confirm a transfer: route, date, passengers, contact. One minute to fill."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Contact", path: "/es/contact/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.brief.title }}</p>
+    <h1>Every trip starts with a brief.</h1>
+    <p class="lead">{{ t.brief.subtitle }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    {% include "partials/brief-form.njk" %}
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container">
+    <p class="kicker">Contact channels</p>
+    <h2>Reach us where it's easiest for you.</h2>
+    <div class="contact-channels">
+      <a class="contact-channel" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">
+        <span class="eyebrow">Fastest</span>
+        <span class="contact-channel-name">WhatsApp</span>
+        <span class="contact-channel-detail">Reply usually within an hour in business hours. Voice notes welcome too.</span>
+      </a>
+      <a class="contact-channel" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">
+        <span class="eyebrow">More relaxed</span>
+        <span class="contact-channel-name">Telegram</span>
+        <span class="contact-channel-detail">Great for long routes and exchanging documents before the trip.</span>
+      </a>
+      <a class="contact-channel" href="mailto:{{ site.contacts.email }}">
+        <span class="eyebrow">Written</span>
+        <span class="contact-channel-name">Email</span>
+        <span class="contact-channel-detail">For corporate correspondence, NF-e and cases with attachments.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Urgent?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp now</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</section>

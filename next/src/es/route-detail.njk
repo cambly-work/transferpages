@@ -1,0 +1,61 @@
+---
+pagination:
+  data: routes.pairs
+  size: 1
+  alias: pair
+permalink: "/es/routes/{{ pair.slug }}/index.html"
+eleventyComputed:
+  title: "Transfer {{ pair.from | cityName('en', routes.cities) }} → {{ pair.to | cityName('en', routes.cities) }} | Morrison"
+  description: "Private transfer {{ pair.from | cityName('en', routes.cities) }} → {{ pair.to | cityName('en', routes.cities) }}. {{ pair.km }} km, ~{{ pair.durationMin | formatDuration('en') }}. Price locked before departure."
+  slug: "routes/{{ pair.slug }}"
+schema: "Service"
+serviceType: "Private passenger transfer"
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">Route</p>
+    <h1>{{ pair.from | cityName("en", routes.cities) }} → {{ pair.to | cityName("en", routes.cities) }}</h1>
+    <p class="lead">Private transfer with a locked price and conditions agreed before departure.</p>
+    <dl class="hero-meta">
+      <div><dt>Distance</dt><dd>{{ pair.km }} km</dd></div>
+      <div><dt>Duration</dt><dd>{{ pair.durationMin | formatDuration("en") }}</dd></div>
+      <div><dt>Reference price</dt><dd>R$ {{ pair.priceMin }}–{{ pair.priceMax }}</dd></div>
+    </dl>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/contact/?route={{ pair.slug }}">Get an exact quote</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>What's included</h2>
+    <ul class="checklist">
+      <li>Driver, fuel, tolls, parking on the route</li>
+      <li>Air conditioning, bottled water, USB charger</li>
+      <li>Wi-Fi (optional), child seat (on request)</li>
+      <li>Flight tracking and pickup-time adjustment at no extra cost</li>
+      <li>NF-e for companies</li>
+    </ul>
+
+    <h2>What gets confirmed before departure</h2>
+    <ul class="checklist">
+      <li>Pickup point (address or airport terminal) and drop-off point</li>
+      <li>Vehicle class matched to passengers and luggage</li>
+      <li>Trip time adjusted for season and time of day</li>
+      <li>Intermediate stops and waiting time</li>
+      <li>Price and payment terms</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Take this route?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/contact/?route={{ pair.slug }}">Open a request</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

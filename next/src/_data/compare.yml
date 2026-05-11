@@ -7,166 +7,246 @@ rows:
       ru: Цена
       pt: Preço
       en: Price
+
+      es: Price
     morrison:
       ru: Фиксирована до выезда, NF-e
       pt: Fechada antes da partida, NF-e
       en: Locked before departure, NF-e
+
+      es: Locked before departure, NF-e
     uber:
       ru: Динамическая, без NF-e
       pt: Dinâmica, sem NF-e
       en: Dynamic, no NF-e
+
+      es: Dynamic, no NF-e
     blacklane:
       ru: Фиксированная, чек выдаётся
       pt: Fixa, recibo
       en: Fixed, receipt
+
+      es: Fixed, receipt
     taxi:
       ru: Счётчик, импровизация
       pt: Taxímetro, varia
       en: Meter, improvised
+
+      es: Meter, improvised
   - key: insurance
     label:
       ru: Страховка
       pt: Seguro
       en: Insurance
+
+      es: Insurance
     morrison:
       ru: DPVAT + добровольная пассажирская
       pt: DPVAT + seguro de passageiros
       en: DPVAT + voluntary passenger
+
+      es: DPVAT + voluntary passenger
     uber:
       ru: Ограниченная платформенная
       pt: Cobertura da plataforma
       en: Platform-limited
+
+      es: Platform-limited
     blacklane:
       ru: Корпоративная страховка
       pt: Seguro corporativo
       en: Corporate insurance
+
+      es: Corporate insurance
     taxi:
       ru: Только DPVAT
       pt: Apenas DPVAT
       en: DPVAT only
+
+      es: DPVAT only
   - key: language
     label:
       ru: Языки водителя
       pt: Idiomas do motorista
       en: Driver language
+
+      es: Driver language
     morrison:
       ru: PT · RU · EN, по запросу
       pt: PT · RU · EN, sob solicitação
       en: PT · RU · EN, on request
+
+      es: PT · RU · EN, on request
     uber:
       ru: Только португальский
       pt: Apenas português
       en: Portuguese only
+
+      es: Portuguese only
     blacklane:
       ru: EN гарантирован
       pt: Inglês garantido
       en: English guaranteed
+
+      es: English guaranteed
     taxi:
       ru: Лотерея
       pt: Loteria
       en: Pot luck
+
+      es: Pot luck
   - key: invoice
     label:
       ru: Для юр. лиц
       pt: Para empresas
       en: For companies
+
+      es: For companies
     morrison:
       ru: NF-e, постоплата, CSV-отчёт
       pt: NF-e, pagamento posterior, CSV
       en: NF-e, deferred billing, CSV
+
+      es: NF-e, deferred billing, CSV
     uber:
       ru: Uber for Business
       pt: Uber for Business
       en: Uber for Business
+
+      es: Uber for Business
     blacklane:
       ru: Corporate account
       pt: Corporate account
       en: Corporate account
+
+      es: Corporate account
     taxi:
       ru: Часто нет
       pt: Geralmente não
       en: Usually not
+
+      es: Usually not
   - key: cancellation
     label:
       ru: Отмена
       pt: Cancelamento
       en: Cancellation
+
+      es: Cancellation
     morrison:
       ru: Бесплатно за 24 ч
       pt: Grátis até 24h antes
       en: Free 24h before
+
+      es: Free 24h before
     uber:
       ru: 5 минут после подачи
       pt: 5 min após apresentação
       en: 5 min after pickup
+
+      es: 5 min after pickup
     blacklane:
       ru: Бесплатно за 1 ч
       pt: Grátis até 1h antes
       en: Free 1h before
+
+      es: Free 1h before
     taxi:
       ru: Не предусмотрено
       pt: Não previsto
       en: Not formal
+
+      es: Not formal
   - key: sla
     label:
       ru: Гарантия подачи
       pt: Garantia de apresentação
       en: Pickup guarantee
+
+      es: Pickup guarantee
     morrison:
       ru: Имя водителя за час, компенсация при сбое
       pt: Nome do motorista 1h antes, compensação em falha
       en: Driver name 1h before, compensation on failure
+
+      es: Driver name 1h before, compensation on failure
     uber:
       ru: Поиск водителя в момент
       pt: Busca no momento
       en: On-demand match
+
+      es: On-demand match
     blacklane:
       ru: SLA по контракту
       pt: SLA contratual
       en: Contractual SLA
+
+      es: Contractual SLA
     taxi:
       ru: Договорённость на словах
       pt: Acordo verbal
       en: Verbal agreement
+
+      es: Verbal agreement
   - key: route
     label:
       ru: Планирование маршрута
       pt: Planejamento da rota
       en: Route planning
+
+      es: Route planning
     morrison:
       ru: Точки, остановки, документы до выезда
       pt: Pontos, paradas, documentos antes
       en: Points, stops, docs upfront
+
+      es: Points, stops, docs upfront
     uber:
       ru: GPS, без подготовки
       pt: GPS, sem preparação
       en: GPS, no prep
+
+      es: GPS, no prep
     blacklane:
       ru: Маршрут заранее
       pt: Rota agendada
       en: Routed upfront
+
+      es: Routed upfront
     taxi:
       ru: По ситуации
       pt: Conforme situação
       en: As it goes
+
+      es: As it goes
   - key: international
     label:
       ru: Международные плечи
       pt: Trechos internacionais
       en: International legs
+
+      es: International legs
     morrison:
       ru: Mercosur — отдельный сценарий
       pt: Mercosul — cenário próprio
       en: Mercosur — full plan
+
+      es: Mercosur — full plan
     uber:
       ru: Не пересекает границу
       pt: Não cruza fronteira
       en: No border crossings
+
+      es: No border crossings
     blacklane:
       ru: Только в крупных столицах
       pt: Apenas grandes capitais
       en: Major capitals only
+
+      es: Major capitals only
     taxi:
       ru: Не предусмотрено
       pt: Não previsto
       en: Not available
+
+      es: Not available

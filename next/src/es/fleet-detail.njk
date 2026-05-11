@@ -1,0 +1,76 @@
+---
+pagination:
+  data: fleet.classes
+  size: 1
+  alias: veh
+permalink: "/es/fleet/{{ veh.id }}/index.html"
+eleventyComputed:
+  title: "{{ veh.nameEn }} · fleet | Morrison Premium Transfer"
+  description: "{{ veh.nameEn }} at Morrison: {{ veh.pax }} seats, {{ veh.bags }} bags. {{ veh.forEn }}"
+  slug: "fleet/{{ veh.id }}"
+schema: "Service"
+serviceType: "Private transfer · {veh.nameEn}"
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Fleet · {{ veh.nameEn }}</p>
+    <h1 class="reveal-up">{{ veh.nameEn }}.</h1>
+    <p class="lead reveal-up">{{ veh.forEn }}</p>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Passengers</dt><dd><span class="num">{{ veh.pax }}</span></dd></div>
+      <div><dt>Luggage</dt><dd><span class="num">{{ veh.bags }}</span><span class="unit">bags</span></dd></div>
+      <div><dt>Class</dt><dd>{{ veh.id | upper }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="fleet-illustration">
+  <div class="container container--narrow">
+    <img src="/assets/images/fleet-{{ veh.id }}.svg" alt="{{ veh.nameEn }}" loading="lazy" class="fleet-illustration-img">
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>Typical models</h2>
+    <p class="lead">{{ veh.examplesEn }}</p>
+    <p class="muted small">The exact model is confirmed at booking depending on region and availability.</p>
+
+    <h2 style="margin-top: 3rem;">What's inside</h2>
+    <p>{{ veh.featuresEn }}</p>
+
+    <h2 style="margin-top: 3rem;">Used for</h2>
+    <ul class="checklist">
+      <li>{{ veh.forEn }}</li>
+      <li>Airport pickups and onward intercity</li>
+      <li>Business routes on agreed timing</li>
+      <li>International legs across Mercosur (with paperwork)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Compare with other classes</h2>
+    <div class="fleet-compact-grid">
+      {%- for other in fleet.classes %}
+      {%- if other.id != veh.id %}
+      <a class="fleet-compact-card" href="/es/fleet/{{ other.id }}/">
+        <h3>{{ other.nameEn }}</h3>
+        <p class="muted small num">{{ other.pax }} seats · {{ other.bags }} bags</p>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Going with this class?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/contact/?vehicle={{ veh.id }}">Request a quote</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

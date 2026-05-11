@@ -8,56 +8,78 @@ cities:
       ru: Сан-Паулу (GRU)
       pt: São Paulo (GRU)
       en: São Paulo (GRU)
+
+      es: São Paulo (GRU)
   - id: gig
     name:
       ru: Рио-де-Жанейро (GIG)
       pt: Rio de Janeiro (GIG)
       en: Rio de Janeiro (GIG)
+
+      es: Rio de Janeiro (GIG)
   - id: cwb
     name:
       ru: Куритиба (CWB)
       pt: Curitiba (CWB)
       en: Curitiba (CWB)
+
+      es: Curitiba (CWB)
   - id: fln
     name:
       ru: Флорианополис (FLN)
       pt: Florianópolis (FLN)
       en: Florianópolis (FLN)
+
+      es: Florianópolis (FLN)
   - id: nvt
     name:
       ru: Навегантес (NVT)
       pt: Navegantes (NVT)
       en: Navegantes (NVT)
+
+      es: Navegantes (NVT)
   - id: poa
     name:
       ru: Порту-Алегри (POA)
       pt: Porto Alegre (POA)
       en: Porto Alegre (POA)
+
+      es: Porto Alegre (POA)
   - id: bnu
     name:
       ru: Балнеариу-Камбориу
       pt: Balneário Camboriú
       en: Balneário Camboriú
+
+      es: Balneário Camboriú
   - id: igr
     name:
       ru: Фос-ду-Игуасу (IGU)
       pt: Foz do Iguaçu (IGU)
       en: Foz do Iguaçu (IGU)
+
+      es: Foz do Iguaçu (IGU)
   - id: mvd
     name:
       ru: Монтевидео
       pt: Montevidéu
       en: Montevideo
+
+      es: Montevideo
   - id: pde
     name:
       ru: Пунта-дель-Эсте
       pt: Punta del Este
       en: Punta del Este
+
+      es: Punta del Este
   - id: asu
     name:
       ru: Асунсьон
       pt: Assunção
       en: Asunción
+
+      es: Asunción
 
 pairs:
   - from: fln

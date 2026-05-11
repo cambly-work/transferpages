@@ -7,14 +7,17 @@ scenarios:
       ru: Бизнес-визит
       pt: Visita de negócios
       en: Business visit
+      es: Business visit
     headline:
       ru: SP → Рио за один день
       pt: SP → Rio em um dia
       en: SP → Rio in a day
+      es: SP → Rio in a day
     summary:
       ru: "Выезд 6:00, встречи 10–17, возврат в 20:30. Один водитель — без переутомления. Тихий салон для созвонов."
       pt: "Saída às 6h, reuniões 10–17h, retorno às 20h30. Um motorista — sem fadiga. Cabine silenciosa para chamadas."
       en: "Depart 6 AM, meetings 10–5, return 8:30 PM. One driver — no overwork. Quiet cabin for calls."
+      es: "Depart 6 AM, meetings 10–5, return 8:30 PM. One driver — no overwork. Quiet cabin for calls."
     spec:
       vehicle: Sedan executivo
       pax: "1–2"
@@ -26,14 +29,17 @@ scenarios:
       ru: Семья
       pt: Família
       en: Family
+      es: Family
     headline:
       ru: Семья из 4 человек FLN → Балнеариу
       pt: Família de 4 FLN → Balneário
       en: Family of 4 FLN → Balneário
+      es: Family of 4 FLN → Balneário
     summary:
       ru: "Прилёт в FLN с 4 чемоданами, детским креслом, остановка в BNU отеле. Возврат через 2 дня."
       pt: "Pouso em FLN com 4 malas, cadeirinha, parada no hotel em BNU. Retorno em 2 dias."
       en: "Land at FLN with 4 bags, child seat, drop at BNU hotel. Return 2 days later."
+      es: "Land at FLN with 4 bags, child seat, drop at BNU hotel. Return 2 days later."
     spec:
       vehicle: Premium SUV
       pax: "4"
@@ -45,14 +51,17 @@ scenarios:
       ru: Релокация
       pt: Relocação
       en: Relocation
+      es: Relocation
     headline:
       ru: Релокация SP → Куритиба
       pt: Relocação SP → Curitiba
       en: Relocation SP → Curitiba
+      es: Relocation SP → Curitiba
     summary:
       ru: "Семья + 8 мест багажа + домашнее животное. SUV для пассажиров и vans для вещей. Прибытие в новый адрес одновременно."
       pt: "Família + 8 volumes + pet. SUV para pessoas + vans para coisas. Chegada simultânea no novo endereço."
       en: "Family + 8 bags + pet. SUV for people + vans for stuff. Arrive at the new address together."
+      es: "Family + 8 bags + pet. SUV for people + vans for stuff. Arrive at the new address together."
     spec:
       vehicle: SUV + Vans
       pax: "3–4 + багаж"
@@ -64,14 +73,17 @@ scenarios:
       ru: Корпоративная группа
       pt: Grupo corporativo
       en: Corporate group
+      es: Corporate group
     headline:
       ru: Команда из 12 человек → Игуасу
       pt: Equipe de 12 → Foz do Iguaçu
       en: Team of 12 → Iguaçu
+      es: Team of 12 → Iguaçu
     summary:
       ru: "Минивэн из Куритибы, остановка с обедом, прибытие к началу встречи. Возвращение по плану на следующий день."
       pt: "Minivan saindo de Curitiba, parada para almoço, chegada para reunião. Retorno no dia seguinte."
       en: "Minivan from Curitiba, lunch stop, arrival in time for the meeting. Next-day return on plan."
+      es: "Minivan from Curitiba, lunch stop, arrival in time for the meeting. Next-day return on plan."
     spec:
       vehicle: Mercedes Sprinter
       pax: "12"
@@ -83,14 +95,17 @@ scenarios:
       ru: Романтическая поездка
       pt: Viagem romântica
       en: Romantic trip
+      es: Romantic trip
     headline:
       ru: Пара POA → Punta del Este
       pt: Casal POA → Punta del Este
       en: Couple POA → Punta del Este
+      es: Couple POA → Punta del Este
     summary:
       ru: "Прямой переход Chuí, ночёвка в Punta, документы и таможня готовы заранее. Возврат через 3 дня."
       pt: "Travessia direta pelo Chuí, pernoite em Punta, documentação pronta antes. Retorno em 3 dias."
       en: "Direct Chuí crossing, overnight in Punta, paperwork done upfront. Return in 3 days."
+      es: "Direct Chuí crossing, overnight in Punta, paperwork done upfront. Return in 3 days."
     spec:
       vehicle: Sedan executivo
       pax: "2"

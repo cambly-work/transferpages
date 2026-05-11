@@ -1,0 +1,84 @@
+---
+slug: "privacy"
+permalink: "/es/privacy/index.html"
+title: "Privacy Policy | Morrison Premium Transfer"
+description: "How Morrison Premium Transfer processes passenger personal data under the LGPD (Law 13.709/2018) and GDPR."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Privacy Policy", path: "/es/privacy/" }
+---
+<section class="legal-hero">
+  <div class="container container--narrow">
+    <p class="kicker">Legal documents</p>
+    <h1>Privacy Policy.</h1>
+    <p class="lead">Effective {{ "" | year }}. Governed by Brazilian Law 13.709/2018 (LGPD) and applicable international law.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="legal-layout">
+      <nav class="legal-toc" data-toc aria-label="Sections"></nav>
+      <div class="prose legal-content">
+    <h2>1. Who processes your data</h2>
+    <p>The data controller is <strong>{{ site.legal.entityName }}</strong>, CNPJ {{ t.footer.cnpjValue }}, registered in {{ site.legal.city }}/{{ site.legal.state }}, Brazil. Contact: <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>.</p>
+
+    <h2>2. What we collect</h2>
+    <ul>
+      <li><strong>Request data:</strong> name, contact channel (WhatsApp, Telegram, email, phone), route, dates, passengers, special requests.</li>
+      <li><strong>Documents for the transfer</strong> (only on international routes): passport data required for the border crossing. Transmitted only to border authorities.</li>
+      <li><strong>Technical data:</strong> IP address, browser type, pages visited, time on site — via Google Analytics 4 (IP anonymized).</li>
+      <li><strong>Cookies:</strong> stored language preference (localStorage) and analytics consent (cookie).</li>
+    </ul>
+
+    <h2>3. Why we process it</h2>
+    <ul>
+      <li>To handle and execute the transfer request (contract performance, LGPD Art. 7, V).</li>
+      <li>To communicate about the request and the trip (contract performance).</li>
+      <li>Accounting, tax compliance, NF-e (legal obligation, LGPD Art. 7, II).</li>
+      <li>Site improvement and analytics (legitimate interest or consent, LGPD Art. 7, IX / I).</li>
+    </ul>
+
+    <h2>4. Legal basis</h2>
+    <p>We process data on the basis of contract performance, legal obligation, legitimate interest and your consent. Consent can be withdrawn at any time by writing to <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>.</p>
+
+    <h2>5. Who we share data with</h2>
+    <ul>
+      <li>The assigned driver (name, contact, route — to execute the trip).</li>
+      <li>Payment providers (Pix, bank, acquirer) — when needed.</li>
+      <li>Accountants and Brazilian tax authorities (as required by law).</li>
+      <li>Google (Google Analytics, subject to consent) — processes technical data.</li>
+      <li>Border authorities on international routes — only data necessary for the crossing.</li>
+    </ul>
+    <p>We do not sell your data to third parties for advertising purposes.</p>
+
+    <h2>6. How long we keep data</h2>
+    <ul>
+      <li>Request data — 5 years (Brazilian limitation period for services).</li>
+      <li>Tax documents (NF-e etc.) — 5 years (Receita Federal requirement).</li>
+      <li>Analytics cookies — up to 14 months (Google Analytics default).</li>
+      <li>Marketing communications (if you opted in) — until consent is withdrawn.</li>
+    </ul>
+
+    <h2>7. Your rights (LGPD Art. 18)</h2>
+    <p>You have the right to: confirm processing, access your data, correct inaccuracies, delete data (where not prohibited by law), receive a portable copy, withdraw consent, learn who we share data with and lodge a complaint with the ANPD (Brazilian Data Protection Authority).</p>
+    <p>Requests — to <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a>. Response within 15 days.</p>
+
+    <h2>8. Cookies</h2>
+    <p>Details on the <a href="/es/cookies/">Cookies</a> page.</p>
+
+    <h2>9. Security</h2>
+    <p>Data is transmitted via HTTPS. WhatsApp/Telegram messages are end-to-end encrypted on the platform side. Internal request records are stored encrypted with restricted access.</p>
+
+    <h2>10. Changes</h2>
+    <p>We may update this policy. The last update date is shown above. Material changes are communicated by email or on the site.</p>
+
+    <h2>11. Contact</h2>
+    <p><strong>{{ site.legal.entityName }}</strong> · {{ site.legal.city }}/{{ site.legal.state }}, Brazil · <a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a> · WhatsApp {{ site.contacts.whatsappUrl | replace("https://wa.me/", "+") }}</p>
+
+    <hr>
+    <p class="muted small">This document is a generic template reflecting standard LGPD practice. We recommend a legal review with a local attorney before commercial use.</p>
+      </div>
+    </div>
+  </div>
+</section>

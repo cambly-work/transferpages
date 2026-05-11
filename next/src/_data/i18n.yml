@@ -648,3 +648,220 @@ en:
     contactDriver: Call the driver
     contactSupport: Reach support
     demoNote: Demo mode — every value on this page is fictional.
+
+es:
+  htmlLang: es
+  hreflang: es
+  label: Español
+  short: ES
+  meta:
+    skip: Ir al contenido
+    primaryNav: Navegación principal
+    languages: Idiomas
+    openMenu: Abrir menú
+  brand:
+    tagline: Brasil • Uruguay • Paraguay
+  nav:
+    home: Inicio
+    brazil: Brasil
+    airports: Aeropuertos
+    international: Internacional
+    partners: Socios
+    contact: Contacto
+    fleet: Flota
+    team: Equipo
+    about: Acerca
+    testimonials: Reseñas
+    routes: Rutas
+    privacy: Política de privacidad
+    terms: Términos del servicio
+    cookies: Cookies
+    blog: Blog
+    compare: Comparación
+    glossary: Glosario
+    cases: Escenarios
+  footer:
+    sections: Secciones
+    contacts: Contactos
+    languages: Idiomas
+    company: Empresa
+    resources: Recursos
+    legal: Documentos
+    request: Página de solicitud
+    description: Servicio de transfer privado para clientes que necesitan un resultado tranquilo, organizado y previsible.
+    cnpjLabel: "CNPJ"
+    cnpjValue: "53.294.776/0001-28"
+    legalNote: Transporte privado de pasajeros licenciado. Entidad jurídica registrada en Brasil.
+  cta:
+    whatsapp: WhatsApp
+    telegram: Telegram
+  copyright: Morrison Premium Transfer
+  seasons:
+    summer:
+      kicker: "Temporada alta · litoral"
+      h1: "La costa llama.<br>Recogida antes del atasco estacional."
+      lead: "Dic–mar: pico de llegadas en FLN/NVT, BR-101 y SC-401 cargadas. Tiempos ajustados a la temporada."
+    winter:
+      kicker: "Periodo business · intermunicipal"
+      h1: "Trayectos largos<br>en ritmo tranquilo."
+      lead: "Abr–nov: menos tráfico, más rutas business. Curitiba, São Paulo, Uruguay — sin carga estacional."
+    default:
+      kicker: "Brasil · Mercosur · desde 2026"
+      h1: "Transfers privados<br>con precio fijo<br>antes de salir."
+      lead: "Ruta, horario y condiciones confirmados antes de que el auto salga. Sin taxímetro, sin sorpresas en el camino."
+  howItWorks:
+    title: "Cómo funciona."
+    subtitle: "De la solicitud al viaje — cuatro pasos."
+    step1Title: "Brief"
+    step1Body: "Un minuto en el formulario o un solo mensaje por WhatsApp. Ruta, fecha, pasajeros, observaciones."
+    step2Title: "Cotización y confirmación"
+    step2Body: "En menos de una hora — precio exacto, clase de vehículo, tiempo. Confirmación por escrito."
+    step3Title: "Recogida y contacto"
+    step3Body: "Una hora antes — nombre y contacto del conductor. Vuelo monitoreado automáticamente."
+    step4Title: "Viaje y comprobante"
+    step4Body: "Comprobante Pix después del viaje. Para empresas — NF-e en 5 días hábiles."
+  stats:
+    eyebrow: "En cifras"
+    title: "Lo que hay detrás de \"premium\"."
+    metric1Value: 4
+    metric1Suffix: ""
+    metric1Label: "países Mercosur"
+    metric2Value: 11
+    metric2Suffix: ""
+    metric2Label: "ciudades cubiertas"
+    metric3Value: 24
+    metric3Suffix: "/7"
+    metric3Label: "horas en contacto"
+    metric4Value: 60
+    metric4Suffix: "+"
+    metric4Label: "min de espera incluida"
+  newsletter:
+    eyebrow: "Una vez por trimestre"
+    title: "Rutas y consejos por temporada."
+    body: "Sin spam. 4 correos al año — sobre nuevas rutas y temporadas."
+    placeholder: "Tu email"
+    submit: "Suscribirse"
+    consent: "Acepto el tratamiento del email para el envío del boletín"
+    success: "Suscrito. Primer email al inicio de temporada."
+  cookies:
+    title: Cookies y analítica
+    body: Usamos cookies para analítica básica (Google Analytics) y recordar tu idioma. Sin cookies el sitio funciona, pero no podemos entender qué rutas importan más.
+    accept: Aceptar todo
+    reject: Solo esenciales
+    manage: Más info
+    link: Política de privacidad
+  ui:
+    copy: Copiar
+    copied: Copiado
+    themeLight: Tema claro
+    themeDark: Tema oscuro
+    search: Buscar
+    searchPlaceholder: Buscar artículo
+    noResults: Sin resultados
+    backToTop: Volver arriba
+  calc:
+    title: Estimación de precio de la ruta
+    subtitle: Elige las ciudades — recibe un precio de referencia. El valor exacto se confirma antes de la salida.
+    from: Desde
+    to: Hasta
+    passengers: Pasajeros
+    luggage: Equipaje
+    luggageStandard: Estándar (1 pieza/persona)
+    luggageExtra: Ampliado (>1 pieza/persona)
+    luggageOversized: Sobredimensionado (bicicletas, tablas)
+    cta: Obtener estimación
+    result: Referencia
+    distance: Distancia
+    duration: Duración
+    perKm: El precio incluye conductor, combustible, peajes.
+    confirm: Confirmar por WhatsApp
+    pickFirst: Selecciona primero las ciudades
+    sameCity: Selecciona ciudades distintas
+    notFound: Esta ruta se cotiza caso por caso — escríbenos.
+    share: Compartir esta cotización
+    shareCopied: Enlace copiado
+    shareFailed: No se pudo copiar — selecciona manualmente
+  brief:
+    title: Brief de solicitud
+    subtitle: 60 segundos y tenemos todo para cotizar. Nada de relleno.
+    step: Paso
+    of: de
+    next: Siguiente
+    back: Atrás
+    submit: Enviar por WhatsApp
+    step1Title: Ruta y formato
+    step1Desc: Desde, hasta, tipo de transfer.
+    fromCity: Desde (ciudad / dirección / aeropuerto)
+    toCity: Hasta (ciudad / dirección / aeropuerto)
+    service: Tipo de servicio
+    serviceAirport: Aeropuerto ↔ dirección
+    serviceIntercity: Intermunicipal
+    serviceInternational: Internacional
+    serviceHourly: Por hora
+    step2Title: Fecha y pasajeros
+    step2Desc: Cuándo, cuántos son, equipaje.
+    date: Fecha del viaje
+    time: Hora (aproximada)
+    pax: Pasajeros
+    bags: Equipaje (piezas)
+    children: Niños menores de 10
+    childSeat: Necesita silla infantil
+    step3Title: Contacto y notas
+    step3Desc: A dónde respondemos y qué importa.
+    name: Nombre
+    contact: WhatsApp o Telegram
+    notes: Solicitudes especiales (idioma del conductor, mascotas, paradas)
+    consentLabel: Acepto el tratamiento de datos para procesar la solicitud
+    consentRequired: Se requiere el consentimiento para procesar tus datos
+    fillRequired: Completa los campos obligatorios
+    successTitle: Brief listo y enviado
+    successBody: WhatsApp se abrió con el mensaje preparado. Si algo no se envió, descarga el PDF y mándalo manualmente o por correo.
+    downloadPdf: Descargar PDF del brief
+    pdfTitle: Brief de solicitud de transfer
+    pdfGenerated: Generado
+  fleetPage:
+    eyebrow: Flota
+    title: Vehículos para tareas específicas.
+    lead: 'No "tenemos premium" — concreto: modelo, asientos, equipaje, qué hay dentro. La clase se elige antes según el formato.'
+    note: Las fotos de la flota actual se actualizan. El modelo exacto se confirma en la reserva.
+    bookCta: Elegir vehículo para la ruta
+  teamPage:
+    eyebrow: Equipo
+    title: Las personas al volante.
+    lead: 'En un viaje largo pasas 8 horas con una persona. Quién es — lo contamos antes, no "envío la foto al momento".'
+    note: Todos los conductores están formalmente contratados, con CNH categoría D o B + EAR vigente, experiencia con pasajeros y dominio de inglés o español según la ruta.
+    placeholder: Sección en construcción. Las tarjetas reales aparecen tras el consentimiento por escrito — no publicamos fotos ni nombres sin autorización.
+  aboutPage:
+    eyebrow: Acerca
+    title: Resultado tranquilo, organizado, previsible.
+    lead: Morrison Premium Transfer — transfers privados por Brasil y países del Mercosur con precio fijo y condiciones acordadas antes de salir.
+    valuesTitle: Cómo nos diferenciamos de taxi y ride-sharing
+    val1Title: Precio fijado antes de salir
+    val1Body: Nada de "el taxímetro marcó más" ni cargos a mitad de camino. Precio y condiciones — en confirmación escrita.
+    val2Title: Responsabilidad jurídica
+    val2Body: Entidad en Brasil, seguro de pasajeros, NF-e (factura electrónica) para empresas.
+    val3Title: Soporte multilingüe
+    val3Body: Solicitudes y soporte en ruso, portugués, inglés y español. Sin "Google Translate por WhatsApp".
+    val4Title: Escenario preparado
+    val4Body: Ruta, paradas, documentos de cruce fronterizo — montados antes, no en la carretera.
+  testimonialsPage:
+    eyebrow: Reseñas
+    title: Lo que dicen los clientes.
+    lead: Las reseñas se publican con permiso del autor, sin "Mikhail K." inventado. Si tu caso no está aquí, es porque aún no preguntamos.
+    placeholder: La recolección de reseñas reales está en curso. Si viajaste con nosotros recientemente — escríbenos por WhatsApp y publicaremos con enlace a tu perfil, o de forma anónima a tu elección.
+    cta: Compartir reseña
+  trackPage:
+    eyebrow: Seguimiento del viaje
+    title: Dónde está tu conductor ahora.
+    lead: Demo de la página de seguimiento. Para un viaje real, recibirás el enlace único por WhatsApp tras la confirmación.
+    routeLabel: Ruta
+    driverLabel: Conductor
+    vehicleLabel: Vehículo
+    etaLabel: Llegada estimada
+    statusLabel: Estado
+    progressLabel: Progreso
+    statusOnRoute: En camino
+    statusArrived: Llegó
+    contactDriver: Llamar al conductor
+    contactSupport: Soporte
+    demoNote: Modo demo — todos los valores en esta página son ficticios.

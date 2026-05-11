@@ -1,0 +1,41 @@
+---
+pagination:
+  data: posts.posts
+  size: 1
+  alias: post
+permalink: "/es/blog/{{ post.slug }}/index.html"
+eleventyComputed:
+  title: "{{ post.title.en }} | Morrison Premium Transfer"
+  description: "{{ post.excerpt.en }}"
+  slug: "blog/{{ post.slug }}"
+---
+<div class="reading-progress" data-reading-progress aria-hidden="true"><span></span></div>
+
+<article class="blog-post">
+  <section class="post-hero" data-post-category="{{ post.category.en }}">
+    <div class="container container--narrow">
+      <p class="post-hero-meta">
+        <span class="post-category">{{ post.category.en }}</span>
+        <span class="num">{{ post.date }}</span>
+        <span class="num">{{ post.readMinutes }} min</span>
+      </p>
+      <h1>{{ post.title.en }}</h1>
+      <p class="lead">{{ post.excerpt.en }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+      <p>{{ post.intro.en }}</p>
+
+      <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+        This is a pilot version of the article. Full content is in preparation. If you have a specific question on the topic — message us on WhatsApp, we reply within an hour.
+      </p>
+
+      <div class="cta-strip-actions" style="margin-top: 1.6rem;">
+        <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">Ask on WhatsApp</a>
+        <a class="btn btn-secondary" href="/es/blog/">All articles</a>
+      </div>
+    </div>
+  </section>
+</article>

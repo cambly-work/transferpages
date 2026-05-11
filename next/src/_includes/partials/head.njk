@@ -37,7 +37,9 @@
 <link rel="alternate" hreflang="x-default" href="{{ site.domain }}/{{ site.defaultLocale }}/{{ slug + '/' if slug else '' }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -90,6 +92,28 @@
     {%- endfor %}
   ],
   "url": "{{ canonical }}"
+}
+</script>
+{%- endif %}
+{%- if slug and slug.startsWith and slug.startsWith("blog/") and post %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ post.title[lang] | dump | safe }},
+  "description": {{ post.excerpt[lang] | dump | safe }},
+  "datePublished": "{{ post.date }}",
+  "dateModified": "{{ post.date }}",
+  "author": { "@type": "Organization", "name": "{{ site.name }}" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.name }}",
+    "logo": { "@type": "ImageObject", "url": "{{ site.domain }}/favicon.svg" }
+  },
+  "image": "{{ ogImageUrl }}",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "{{ canonical }}" },
+  "articleSection": {{ post.category[lang] | dump | safe }},
+  "inLanguage": "{{ t.htmlLang }}"
 }
 </script>
 {%- endif %}

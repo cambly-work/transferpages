@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Van / minibus: tall box, multiple windows -->
+  <path d="M 25 145 L 25 50 L 320 50 L 360 100 L 375 145"/>
+  <path d="M 25 145 L 375 145"/>
+  <path d="M 25 105 L 360 105"/>
+  <path d="M 70 50 L 70 100 M 115 50 L 115 100 M 160 50 L 160 100 M 205 50 L 205 100 M 250 50 L 250 100 M 295 50 L 295 100"/>
+  <circle cx="95" cy="145" r="22" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="95" cy="145" r="16"/>
+  <circle cx="95" cy="145" r="5" fill="currentColor" stroke="none"/>
+  <circle cx="315" cy="145" r="22" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="315" cy="145" r="16"/>
+  <circle cx="315" cy="145" r="5" fill="currentColor" stroke="none"/>
+</svg>

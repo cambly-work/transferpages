@@ -9,18 +9,22 @@ posts:
       ru: Документы
       pt: Documentos
       en: Documents
+      es: Documents
     title:
       ru: "Документы для пересечения Чуй (Бразилия → Уругвай)"
       pt: "Documentos para travessia do Chuí (Brasil → Uruguai)"
       en: "Documents for the Chuí crossing (Brazil → Uruguay)"
+      es: "Documents for the Chuí crossing (Brazil → Uruguay)"
     excerpt:
       ru: "Паспорта, формат полицейского контроля, что разрешено везти, что декларируется и где обычно встают."
       pt: "Passaportes, formato do controle de fronteira, o que pode levar, o que declarar e onde a fila costuma se formar."
       en: "Passports, border-control format, what you can bring, what gets declared and where the queue usually forms."
+      es: "Passports, border-control format, what you can bring, what gets declared and where the queue usually forms."
     intro:
       ru: "Чуй — самый отлаженный наземный переход между Бразилией и Уругваем. Документы простые, но есть нюансы: одна сторона проверяется бразильской Polícia Federal, другая — уругвайской миграцией. Машина пересекает границу одной поездкой."
       pt: "O Chuí é a travessia terrestre mais consolidada entre Brasil e Uruguai. Os documentos são simples, mas existem detalhes: um lado é controlado pela Polícia Federal brasileira, o outro pela Migración uruguaia. O carro atravessa em uma só etapa."
       en: "Chuí is the most-run land crossing between Brazil and Uruguay. Documents are simple, but there are details: one side is controlled by Brazilian Polícia Federal, the other by Uruguayan Migración. The car crosses in a single pass."
+      es: "Chuí is the most-run land crossing between Brazil and Uruguay. Documents are simple, but there are details: one side is controlled by Brazilian Polícia Federal, the other by Uruguayan Migración. The car crosses in a single pass."
   - slug: uruguay-seasons
     date: "2026-04-22"
     readMinutes: 5
@@ -28,18 +32,22 @@ posts:
       ru: Сезоны
       pt: Temporadas
       en: Seasons
+      es: Seasons
     title:
       ru: "Сезонность в Уругвае: когда ехать в Пунта-дель-Эсте"
       pt: "Sazonalidade no Uruguai: quando ir para Punta del Este"
       en: "Seasonality in Uruguay: when to go to Punta del Este"
+      es: "Seasonality in Uruguay: when to go to Punta del Este"
     excerpt:
       ru: "Высокий сезон, межсезонье, цены отелей и пробки на трассе IB-9 — что учитывать при планировании."
       pt: "Alta temporada, entressafra, preços de hotéis e trânsito na IB-9 — o que considerar no planejamento."
       en: "High season, shoulder, hotel pricing and IB-9 traffic — what to factor when planning."
+      es: "High season, shoulder, hotel pricing and IB-9 traffic — what to factor when planning."
     intro:
       ru: "Decembre–февраль — пик: цены × 2-3, пробки на въезде в Punta каждые выходные. Март — лучший месяц для тех, кто хочет атмосферу без толпы. С июня по сентябрь — низкий сезон, многое закрыто, но если едете по делу, цены адекватные."
       pt: "Dezembro–fevereiro é o pico: preços × 2-3, trânsito na entrada de Punta todo fim de semana. Março é o melhor mês para quem quer a atmosfera sem multidão. Junho a setembro é baixa temporada, com muita coisa fechada — mas se for a trabalho, preços razoáveis."
       en: "December–February is peak: prices × 2-3, traffic at Punta's entrance every weekend. March is the best month for the atmosphere without crowds. June to September is low season — much closed, but if you travel on business, prices are reasonable."
+      es: "December–February is peak: prices × 2-3, traffic at Punta's entrance every weekend. March is the best month for the atmosphere without crowds. June to September is low season — much closed, but if you travel on business, prices are reasonable."
   - slug: long-trip-checklist
     date: "2026-05-02"
     readMinutes: 4
@@ -47,18 +55,22 @@ posts:
       ru: Подсказки
       pt: Dicas
       en: Tips
+      es: Tips
     title:
       ru: "Что взять в 8-часовую поездку: комфорт-чек-лист"
       pt: "O que levar numa viagem de 8 horas: checklist de conforto"
       en: "What to bring on an 8-hour trip: comfort checklist"
+      es: "What to bring on an 8-hour trip: comfort checklist"
     excerpt:
       ru: "Зарядки, вода, перекус, плед, документы — что мы обычно подкладываем сами, и что лучше иметь своё."
       pt: "Carregadores, água, lanche, manta, documentos — o que normalmente já está no carro e o que é melhor trazer."
       en: "Chargers, water, snacks, blanket, documents — what we typically stock and what you should still bring."
+      es: "Chargers, water, snacks, blanket, documents — what we typically stock and what you should still bring."
     intro:
       ru: "На длинном плече у вас четыре часа концентрации и четыре часа усталости. Машина у нас уже подготовлена: вода, зарядка USB, плед, влажные салфетки. Но есть пять вещей, которые лучше иметь свои — расскажем какие."
       pt: "Num trecho longo, você tem quatro horas de concentração e quatro de cansaço. O carro já vem preparado: água, carregador USB, manta, lenços úmidos. Mas há cinco itens que é melhor trazer próprios — vamos contar quais."
       en: "On a long leg, you have four hours of focus and four of fatigue. The car is already stocked: water, USB charger, blanket, wet wipes. But there are five items it's better to bring yourself — here's the list."
+      es: "On a long leg, you have four hours of focus and four of fatigue. The car is already stocked: water, USB charger, blanket, wet wipes. But there are five items it's better to bring yourself — here's the list."
   - slug: nfe-foreign-companies
     date: "2026-05-14"
     readMinutes: 6
@@ -66,18 +78,22 @@ posts:
       ru: Бизнес
       pt: Negócios
       en: Business
+      es: Business
     title:
       ru: "NF-e для иностранных компаний в Бразилии"
       pt: "NF-e para empresas estrangeiras no Brasil"
       en: "NF-e for foreign companies in Brazil"
+      es: "NF-e for foreign companies in Brazil"
     excerpt:
       ru: "Что такое электронная фактура, зачем она нужна вашей бухгалтерии и какие данные требуются с вашей стороны."
       pt: "O que é a nota fiscal eletrônica, por que sua contabilidade precisa dela e quais dados são exigidos do seu lado."
       en: "What the electronic invoice is, why your accounting needs it and what data is required from your side."
+      es: "What the electronic invoice is, why your accounting needs it and what data is required from your side."
     intro:
       ru: "NF-e (Nota Fiscal Eletrônica) — это обязательная электронная фактура в Бразилии. Для иностранной компании она нужна, если расходы на трансфер проходят через бразильское представительство или возмещаются по контракту. Мы выставляем NF-e на CNPJ заказчика за 5 рабочих дней после поездки."
       pt: "A NF-e (Nota Fiscal Eletrônica) é uma obrigação fiscal no Brasil. Para uma empresa estrangeira, é necessária quando as despesas com transfer passam por uma representação local ou são reembolsadas por contrato. Emitimos a NF-e no CNPJ do cliente em até 5 dias úteis após a viagem."
       en: "The NF-e (Nota Fiscal Eletrônica) is Brazil's mandatory electronic invoice. For a foreign company, it's required when transfer expenses go through a local rep office or are reimbursed under contract. We issue an NF-e to the client's CNPJ within 5 business days after the trip."
+      es: "The NF-e (Nota Fiscal Eletrônica) is Brazil's mandatory electronic invoice. For a foreign company, it's required when transfer expenses go through a local rep office or are reimbursed under contract. We issue an NF-e to the client's CNPJ within 5 business days after the trip."
   - slug: payment-methods-brazil
     date: "2026-05-28"
     readMinutes: 3
@@ -85,15 +101,19 @@ posts:
       ru: Оплата
       pt: Pagamento
       en: Payment
+      es: Payment
     title:
       ru: "Pix, карта, счёт: что удобнее в Бразилии"
       pt: "Pix, cartão, boleto: o que é mais prático no Brasil"
       en: "Pix, card, invoice: what works best in Brazil"
+      es: "Pix, card, invoice: what works best in Brazil"
     excerpt:
       ru: "Как принимаем оплату, что быстрее для разовых поездок, что лучше для компаний с регулярными выездами."
       pt: "Como recebemos pagamentos, o que é mais rápido para viagens pontuais, o que serve melhor para empresas recorrentes."
       en: "How we accept payment, what's fastest for one-off trips, what works best for companies with recurring runs."
+      es: "How we accept payment, what's fastest for one-off trips, what works best for companies with recurring runs."
     intro:
       ru: "Pix — мгновенная межбанковская оплата в Бразилии, работает 24/7 и без комиссии. Для разовых трансферов это самый быстрый способ. Карты тоже принимаем, но через эквайера — комиссия добавляется. Для постоянных партнёров — счёт с постоплатой, NF-e на CNPJ, оплата в течение 7-14 дней."
       pt: "Pix é a transferência instantânea brasileira — 24/7 e sem taxa. Para transfers pontuais é o mais rápido. Aceitamos cartão também, mas via adquirente — com taxa adicional. Para parceiros recorrentes, boleto com pagamento posterior, NF-e no CNPJ, prazo de 7 a 14 dias."
       en: "Pix is Brazil's instant interbank payment — 24/7 and fee-free. For one-off transfers, it's the fastest. We accept cards too, but through an acquirer — with a fee. For recurring partners, deferred-payment invoice, NF-e to the CNPJ, 7–14 days settlement."
+      es: "Pix is Brazil's instant interbank payment — 24/7 and fee-free. For one-off transfers, it's the fastest. We accept cards too, but through an acquirer — with a fee. For recurring partners, deferred-payment invoice, NF-e to the CNPJ, 7–14 days settlement."

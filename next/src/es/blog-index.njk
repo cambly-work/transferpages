@@ -1,0 +1,50 @@
+---
+slug: "blog"
+permalink: "/es/blog/index.html"
+title: "Blog · Guide to transfers in Brazil and Mercosur | Morrison"
+description: "Border-crossing documents, coastal seasonality, NF-e for foreign companies and other material for travellers and partners."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Blog", path: "/es/blog/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Blog · Guide</p>
+    <h1 class="reveal-up">What's worth knowing<br>before departure.</h1>
+    <p class="lead reveal-up">Documents, seasons, payment, NF-e — material for passengers and finance teams. No fluff.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <label class="blog-search">
+      {% set iconName = "search" %}{% include "partials/icon.njk" %}
+      <input type="search" data-blog-search placeholder="{{ t.ui.searchPlaceholder }}" aria-label="{{ t.ui.search }}">
+    </label>
+    <div class="post-list" data-blog-list>
+      {%- for post in posts.posts %}
+      <a class="post-card" href="/es/blog/{{ post.slug }}/" data-searchable="{{ post.title.en }} {{ post.excerpt.en }} {{ post.category.en }}">
+        <div class="post-card-meta">
+          <span class="post-category">{{ post.category.en }}</span>
+          <span class="post-date num">{{ post.date }}</span>
+          <span class="post-read num">{{ post.readMinutes }} min</span>
+        </div>
+        <h3>{{ post.title.en }}</h3>
+        <p>{{ post.excerpt.en }}</p>
+        <span class="bento-cta">Read</span>
+      </a>
+      {%- endfor %}
+    </div>
+    <p class="blog-no-results muted" data-blog-no-results hidden>{{ t.ui.noResults }}</p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Article didn't fully answer?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Ask us directly</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

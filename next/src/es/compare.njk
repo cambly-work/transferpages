@@ -1,0 +1,63 @@
+---
+slug: "compare"
+permalink: "/es/compare/index.html"
+title: "Compare: Morrison vs Uber Black, Blacklane, taxi | Morrison"
+description: "Honest 8-criterion comparison: price, insurance, languages, NF-e, cancellation, SLA, route, international legs."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Compare", path: "/es/compare/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Compare</p>
+    <h1 class="reveal-up">How we differ<br>from taxi and ride-sharing.</h1>
+    <p class="lead reveal-up">8 criteria clients usually decide on. No marketing inflation — each cell reflects real market practice.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="compare-us">Morrison</th>
+            <th>Uber Black</th>
+            <th>Blacklane</th>
+            <th>Taxi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in compare.rows %}
+          <tr>
+            <th scope="row">{{ row.label.en }}</th>
+            <td class="compare-us">{{ row.morrison.en }}</td>
+            <td>{{ row.uber.en }}</td>
+            <td>{{ row.blacklane.en }}</td>
+            <td>{{ row.taxi.en }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-navy">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">Where we're not better</p>
+    <h2>We're not cheaper than a taxi. Or faster than Uber for short rides.</h2>
+    <p style="max-width: 560px; margin: 1.2rem auto 1.8rem;">If you need 5 km across the city right now — grab an Uber or a taxi. Morrison makes sense when the trip is long, important, or you have more than one passenger.</p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Then shall we?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Open the form</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+---
+slug: "brazil-transfers"
+permalink: "/es/brazil-transfers/index.html"
+title: "Intercity transfer in Brazil | Morrison Premium Transfer"
+description: "Long legs across Brazil as a managed service: agreed route, timing, safety and comfort with no surprises on the road."
+schema: "Service"
+serviceType: "Intercity private transfer in Brazil"
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Intercity", path: "/es/brazil-transfers/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Intercity in Brazil</p>
+    <h1 class="reveal-up">A long leg<br>as a managed service.</h1>
+    <p class="lead reveal-up">Routes from 400 to 1500 km where timing, driver rest cycle and passenger comfort matter more than "find any car now".</p>
+    <div class="hero-actions reveal-up">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirm a route</a>
+      <a class="btn btn-secondary" href="#calculator">Get a quote</a>
+    </div>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Legs</dt><dd><span class="num">400–1500</span><span class="unit">km</span></dd></div>
+      <div><dt>Confirmation</dt><dd><span class="num">upfront</span></dd></div>
+      <div><dt>Backup</dt><dd><span class="num">2-3</span><span class="unit">scenarios</span></dd></div>
+      <div><dt>Response</dt><dd><span class="num">&lt; 1</span><span class="unit">hour</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;">
+      <div>
+        <p class="kicker">Who this is for</p>
+        <h2>Three formats we operate.</h2>
+      </div>
+      <p class="muted" style="max-width: 320px; margin: 0;">Vehicle class, pace and driver are matched to the format.</p>
+    </header>
+    <div class="bento reveal-stagger">
+      <a class="bento-cell bento-cell--span-2 bento-cell--row-2 bento-cell--dark" href="/es/contact/">
+        <p class="eyebrow">01 · Business</p>
+        <h3>Routes with a tight schedule.</h3>
+        <p>Meetings in another city, negotiations, continuing the next day. Late = deal risk, not just discomfort.</p>
+        <p class="muted small" style="margin-top: 1rem; color: var(--muted-on-dark);">Executive sedan or premium SUV, driver with English / Spanish, quiet cabin.</p>
+      </a>
+      <a class="bento-cell bento-cell--span-2" href="/es/contact/">
+        <p class="eyebrow">02 · Family & relocation</p>
+        <h3>Extra luggage, kids, equipment.</h3>
+        <p>Vehicle and format are matched in advance, not improvised. Child seats, planned stops.</p>
+      </a>
+      <a class="bento-cell bento-cell--span-2" href="/es/contact/">
+        <p class="eyebrow">03 · Between regions</p>
+        <h3>Long coasts and crossings.</h3>
+        <p>Santa Catarina → Paraná, Rio Grande → southeast, exits towards Iguaçu. With driver rest planned.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <p class="kicker" style="text-align: center;">Routes</p>
+    <h2 style="text-align: center;">Regular directions.</h2>
+    <p class="muted" style="text-align: center; margin-top: 0.6rem;">Typical legs below. Exact timing and price are calculated for your points.</p>
+    <div class="routes" style="margin-top: 2rem;">
+      {%- for pair in routes.pairs %}
+      <a class="route-row" href="/{{ lang }}/routes/{{ pair.slug }}/">
+        <div class="route-name">{{ pair.from | cityName(lang, routes.cities) }} → {{ pair.to | cityName(lang, routes.cities) }}</div>
+        <div class="route-meta num">{{ pair.km }} km · from R$ {{ pair.priceMin }}</div>
+        <div class="route-duration num">{{ pair.durationMin | formatDuration(lang) }}</div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/calculator.njk" %}
+
+<section class="section section--bg-navy">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">The south is our home turf</p>
+    <h2>We know these roads kilometre by kilometre.</h2>
+    <p style="max-width: 560px; margin: 1.2rem auto 1.8rem; font-size: 1.05rem;">Santa Catarina and Rio Grande do Sul: where to stop for food, where never to stop, where the highway closes for repair on a Saturday. That shortens a trip not in hours — in nerves.</p>
+    <div class="cta-strip-actions" style="justify-content: center;">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Request a route</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>What's your leg?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirm a trip</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

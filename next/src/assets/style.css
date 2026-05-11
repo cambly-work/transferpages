@@ -2686,3 +2686,21 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
 
 
 
+
+/* =========================================================
+   Fleet illustration block
+   ========================================================= */
+.fleet-illustration {
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+}
+.fleet-illustration-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  color: var(--text);
+}
+[data-theme="dark"] .fleet-illustration-img { color: var(--text-on-dark, #f5f6f8); }

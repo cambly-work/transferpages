@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- SUV: taller cabin, more upright greenhouse -->
+  <path d="M 35 145 L 35 125 L 70 110 L 115 60 L 265 60 L 320 105 L 365 120 L 365 145"/>
+  <path d="M 35 145 L 365 145"/>
+  <path d="M 125 60 L 125 110 L 305 110"/>
+  <path d="M 190 60 L 190 110"/>
+  <path d="M 245 60 L 245 110"/>
+  <circle cx="115" cy="145" r="20" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="115" cy="145" r="15"/>
+  <circle cx="115" cy="145" r="5" fill="currentColor" stroke="none"/>
+  <circle cx="290" cy="145" r="20" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="290" cy="145" r="15"/>
+  <circle cx="290" cy="145" r="5" fill="currentColor" stroke="none"/>
+</svg>

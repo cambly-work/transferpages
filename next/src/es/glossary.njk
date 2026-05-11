@@ -1,0 +1,39 @@
+---
+slug: "glossary"
+permalink: "/es/glossary/index.html"
+title: "Glossary: Brazilian terms in transfers | Morrison"
+description: "NF-e, CNPJ, Pix, DPVAT, CNH, LGPD, BR-101/116 — what each means for passengers and finance teams."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Glossary", path: "/es/glossary/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Glossary</p>
+    <h1 class="reveal-up">Brazilian terms<br>you'll run into.</h1>
+    <p class="lead reveal-up">NF-e, CNPJ, Pix, DPVAT, CNH, LGPD — each in a single line.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <dl class="glossary-list">
+      {%- for item in glossary.terms %}
+      <div class="glossary-item">
+        <dt><span class="glossary-term">{{ item.term }}</span></dt>
+        <dd>{{ item.def.en }}</dd>
+      </div>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Got your own term — tell us?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.contacts.email }}">Email</a>
+    </div>
+  </div>
+</section>

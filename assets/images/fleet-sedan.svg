@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Sedan profile, abstract -->
+  <path d="M 40 145 L 40 130 L 90 115 L 140 95 L 240 95 L 290 115 L 360 130 L 360 145"/>
+  <path d="M 40 145 L 360 145"/>
+  <path d="M 150 95 L 130 70 L 240 70 L 260 95"/>
+  <path d="M 195 70 L 195 95"/>
+  <circle cx="115" cy="145" r="18" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="115" cy="145" r="13"/>
+  <circle cx="115" cy="145" r="4" fill="currentColor" stroke="none"/>
+  <circle cx="285" cy="145" r="18" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="285" cy="145" r="13"/>
+  <circle cx="285" cy="145" r="4" fill="currentColor" stroke="none"/>
+</svg>

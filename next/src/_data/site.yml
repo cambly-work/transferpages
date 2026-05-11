@@ -1,7 +1,7 @@
 name: Morrison Premium Transfer
 domain: https://morrison-transfer.com
 defaultLocale: en
-locales: [ru, pt, en]
+locales: [ru, pt, en, es]
 
 contacts:
   whatsapp: "5513996532915"

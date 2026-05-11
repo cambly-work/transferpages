@@ -1,0 +1,159 @@
+---
+slug: ""
+permalink: "/es/index.html"
+title: "Premium private transfer in Brazil | Morrison Premium Transfer"
+description: "Private transfers across Brazil and Mercosur: airport meetings, intercity routes and international legs with terms confirmed before departure."
+faq:
+  - q: "How and when is payment made?"
+    a: "Once the route is agreed and the price is confirmed, before the car is dispatched. PIX, bank transfer, cash and card. For recurring partners and companies — invoiced post-payment."
+  - q: "What if the flight is delayed?"
+    a: "We track the flight status via the booking number you provide. Pickup auto-adjusts to the new ETA — no waiting surcharge."
+  - q: "Can I cancel or change the trip?"
+    a: "More than 24 hours before — change and cancellation with no fee. 24–6 hours: partial preparation fee. Less than 6 hours: pickup charged."
+  - q: "What's included in the price?"
+    a: "Driver, fuel, tolls and parking on the route. Extra stops or waiting time — only by prior agreement."
+  - q: "Do you operate at night and on weekends?"
+    a: "Yes, around the clock. Night pickups and weekends are not at a special rate but need more lead time for planning."
+---
+<section class="hero hero--motion" data-hero-seasonal>
+  {% include "partials/hero-motion.njk" %}
+  <div class="container container--narrow">
+    <p class="kicker reveal-up" data-season-kicker>{{ t.seasons.default.kicker }}</p>
+    <h1 class="reveal-up" data-season-h1>{{ t.seasons.default.h1 | safe }}</h1>
+    <p class="lead reveal-up" data-season-lead>{{ t.seasons.default.lead }}</p>
+    <script type="application/json" data-season-data>
+      {
+        "summer": { "kicker": {{ t.seasons.summer.kicker | dump | safe }}, "h1": {{ t.seasons.summer.h1 | dump | safe }}, "lead": {{ t.seasons.summer.lead | dump | safe }} },
+        "winter": { "kicker": {{ t.seasons.winter.kicker | dump | safe }}, "h1": {{ t.seasons.winter.h1 | dump | safe }}, "lead": {{ t.seasons.winter.lead | dump | safe }} }
+      }
+    </script>
+    <div class="hero-actions reveal-up">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirm a trip</a>
+      <a class="btn btn-secondary" href="#calculator">Get a quote</a>
+    </div>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Coverage</dt><dd><span class="num">4</span><span class="unit">countries</span></dd></div>
+      <div><dt>Cities</dt><dd><span class="num">11</span><span class="unit">points</span></dd></div>
+      <div><dt>Response</dt><dd><span class="num">&lt; 1</span><span class="unit">hour</span></dd></div>
+      <div><dt>Contact</dt><dd><span class="num">24/7</span></dd></div>
+    </dl>
+  </div>
+</section>
+
+{% include "partials/trust-strip.njk" %}
+
+{% include "partials/how-it-works.njk" %}
+
+{% include "partials/stats.njk" %}
+
+<section class="section">
+  <div class="container">
+    <header style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;">
+      <div>
+        <p class="kicker">Directions</p>
+        <h2>What we do.</h2>
+      </div>
+      <p class="muted" style="max-width: 320px; margin: 0;">Each tile is a scenario confirmed before departure.</p>
+    </header>
+    <div class="bento reveal-stagger">
+      <a class="bento-cell bento-cell--span-3 bento-cell--row-2 bento-cell--photo bento-photo--brazil" href="/{{ lang }}/brazil-transfers/">
+        <div class="bento-bg"></div>
+        <div class="bento-cell-content">
+          <p class="eyebrow">Intercity</p>
+          <h3>Long legs as a managed service.</h3>
+          <p>São Paulo, Rio, Curitiba, Florianópolis, Porto Alegre.</p>
+          <span class="bento-cta">Learn more</span>
+        </div>
+      </a>
+      <a class="bento-cell bento-cell--span-3 bento-cell--photo bento-photo--airport" href="/{{ lang }}/airport-transfer/">
+        <div class="bento-bg"></div>
+        <div class="bento-cell-content">
+          <p class="eyebrow">Airport</p>
+          <h3>A meet without a paper sign.</h3>
+          <p>FLN · POA · GRU · GIG — flight tracked by number.</p>
+          <span class="bento-cta">Learn more</span>
+        </div>
+      </a>
+      <a class="bento-cell bento-cell--span-2 bento-cell--dark" href="/{{ lang }}/international/">
+        <p class="eyebrow">Mercosur</p>
+        <h3>Uruguay · Paraguay · Argentina.</h3>
+        <p>Documents and crossings prepared in advance.</p>
+        <span class="bento-cta">Learn more</span>
+      </a>
+      <a class="bento-cell bento-cell--stat" href="/{{ lang }}/fleet/">
+        <span class="stat-number num">4</span>
+        <span class="stat-label">vehicle classes: sedan, SUV, minivan, vans</span>
+        <span class="bento-cta">Fleet</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/calculator.njk" %}
+
+<section class="section section--bg-navy">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+      <div class="reveal-up">
+        <p class="kicker">How it looks on WhatsApp</p>
+        <h2>Brief → confirmation<br>in a single exchange.</h2>
+        <p style="margin: 1.2rem 0 1.6rem; font-size: 1.05rem;">No 15 back-and-forths. Route, price, vehicle, driver — in one message.</p>
+        <ul class="checklist" style="color: var(--text-on-dark);">
+          <li>Price locked before departure</li>
+          <li>Driver name and contact</li>
+          <li>Pix receipt after the trip</li>
+          <li>Pickup time auto-adjusts to the flight</li>
+        </ul>
+        <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener" style="margin-top: 1.6rem;">Open WhatsApp</a>
+      </div>
+      <div class="reveal-up">
+        {% include "partials/whatsapp-mock.njk" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Regular routes.</h2>
+    <p class="muted" style="text-align: center; margin-top: 0.6rem;">Distance · duration · reference price. Exact quote in one tap.</p>
+    <div class="routes" style="margin-top: 2rem;">
+      {%- for pair in routes.pairs %}
+      {%- if loop.index <= 5 %}
+      <a class="route-row" href="/{{ lang }}/routes/{{ pair.slug }}/">
+        <div class="route-name">{{ pair.from | cityName(lang, routes.cities) }} → {{ pair.to | cityName(lang, routes.cities) }}</div>
+        <div class="route-meta num">{{ pair.km }} km · from R$ {{ pair.priceMin }}</div>
+        <div class="route-duration num">{{ pair.durationMin | formatDuration(lang) }}</div>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+    <p style="text-align: center; margin-top: 1.4rem;"><a class="btn-arrow" href="/{{ lang }}/routes/">All routes</a></p>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Frequently asked.</h2>
+    <div class="faq">
+      {%- for item in faq %}
+      <details class="faq-item">
+        <summary class="faq-summary">{{ item.q }}</summary>
+        <div class="faq-body"><p>{{ item.a }}</p></div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/newsletter.njk" %}
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Shall we plan it?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Open the form</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

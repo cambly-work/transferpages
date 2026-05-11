@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <!-- Minivan: long extended body, sliding-door silhouette -->
+  <path d="M 30 145 L 30 105 L 75 60 L 295 60 L 360 100 L 370 145"/>
+  <path d="M 30 145 L 370 145"/>
+  <path d="M 85 60 L 85 110 L 360 110"/>
+  <path d="M 155 60 L 155 110"/>
+  <path d="M 225 60 L 225 110"/>
+  <path d="M 295 60 L 295 110"/>
+  <circle cx="105" cy="145" r="20" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="105" cy="145" r="15"/>
+  <circle cx="105" cy="145" r="5" fill="currentColor" stroke="none"/>
+  <circle cx="305" cy="145" r="20" fill="currentColor" stroke="none" opacity="0.15"/>
+  <circle cx="305" cy="145" r="15"/>
+  <circle cx="305" cy="145" r="5" fill="currentColor" stroke="none"/>
+</svg>

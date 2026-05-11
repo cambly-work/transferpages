@@ -1365,6 +1365,22 @@ a.route-row:hover { background: var(--bg-soft); }
   transition: transform 0.4s var(--ease-out), background 0.3s ease;
 }
 .bento-cell:hover { transform: translateY(-3px); }
+a.bento-cell { color: var(--text); text-decoration: none; cursor: pointer; }
+a.bento-cell::after {
+  content: "→";
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.4rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-overshoot);
+  pointer-events: none;
+}
+a.bento-cell:hover::after { opacity: 0.55; transform: translateX(0); }
+a.bento-cell.bento-cell--photo::after { display: none; }
+a.bento-cell.bento-cell--dark::after { color: var(--accent); opacity: 0.8; }
+a.bento-cell.bento-cell--dark:hover::after { opacity: 1; }
 .bento-cell h3 { font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.2; margin: 0; }
 .bento-cell p { font-size: 0.92rem; color: var(--muted); margin: 0.4rem 0 0; line-height: 1.5; }
 .bento-cell .eyebrow { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: auto; padding-bottom: 1rem; }
@@ -1825,11 +1841,13 @@ ol.checklist li::before {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.35;
+  will-change: contents;
+  transform: translateZ(0);
 }
 .hero-motion-route {
   stroke-dasharray: 6 8;
-  animation: routeDash 18s linear infinite;
+  animation: routeDash 24s linear infinite;
 }
 @keyframes routeDash { to { stroke-dashoffset: -56; } }
 .hero-motion-pulse {

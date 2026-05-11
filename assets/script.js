@@ -495,28 +495,37 @@
     setInterval(tick, 1500);
   }
 
-  // ---------- Cursor follower (desktop only) ----------
-  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  // ---------- Cursor follower (desktop only, opt-in via ?cursor=1 or .cursor-on body class) ----------
+  // Disabled by default — kept rAF-per-frame work was a perceptible perf cost on mid-tier laptops.
+  // Enable via URL ?cursor=1 or set body.cursor-on in HTML.
+  const cursorEnabled = new URLSearchParams(window.location.search).has('cursor')
+    || document.body.classList.contains('cursor-on');
+  if (cursorEnabled
+      && window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const cursor = document.createElement('div');
-    cursor.className = 'cursor-follow';
+    cursor.className = 'cursor-follow visible';
     cursor.setAttribute('aria-hidden', 'true');
     document.body.appendChild(cursor);
-    let tx = 0, ty = 0, cx = 0, cy = 0;
-    document.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+    let tx = 0, ty = 0, cx = 0, cy = 0, rafId = 0, active = false;
     const animate = () => {
-      cx += (tx - cx) * 0.18;
-      cy += (ty - cy) * 0.18;
+      cx += (tx - cx) * 0.22;
+      cy += (ty - cy) * 0.22;
       cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      requestAnimationFrame(animate);
+      if (Math.abs(tx - cx) > 0.5 || Math.abs(ty - cy) > 0.5) {
+        rafId = requestAnimationFrame(animate);
+      } else {
+        active = false;
+      }
     };
-    requestAnimationFrame(animate);
-    document.addEventListener('mouseenter', () => cursor.classList.add('visible'));
-    document.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
+    document.addEventListener('mousemove', (e) => {
+      tx = e.clientX; ty = e.clientY;
+      if (!active) { active = true; rafId = requestAnimationFrame(animate); }
+    }, { passive: true });
     document.querySelectorAll('a, button, summary, [data-map-city], [role="button"]').forEach((el) => {
       el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
     });
-    cursor.classList.add('visible');
   }
 
   // ---------- Cookie consent banner ----------

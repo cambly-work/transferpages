@@ -93,6 +93,14 @@ ru:
     searchPlaceholder: Найти статью
     noResults: Ничего не найдено
     backToTop: Наверх
+    cmdkOpen: "Открыть быстрый поиск"
+    cmdkPlaceholder: "Куда хотите? Город, маршрут, страница…"
+    cmdkHint: "esc — закрыть · ↑↓ — навигация · enter — открыть"
+    cmdkEmpty: "Ничего по запросу. Напишите в WhatsApp — соберём вручную."
+    soundOn: "Звуки вкл"
+    soundOff: "Звуки выкл"
+    loadingPdf: "Печатаем брифинг…"
+    loadingCalc: "Считаем самый быстрый маршрут…"
   newsletter:
     eyebrow: "Раз в квартал"
     title: "Маршруты и сезонные подсказки."
@@ -310,6 +318,14 @@ pt:
     searchPlaceholder: Encontrar artigo
     noResults: Nada encontrado
     backToTop: Para o topo
+    cmdkOpen: "Abrir busca rápida"
+    cmdkPlaceholder: "Para onde? Cidade, rota, página…"
+    cmdkHint: "esc — fechar · ↑↓ — navegar · enter — abrir"
+    cmdkEmpty: "Nada por essa busca. Escreva no WhatsApp — montamos sob medida."
+    soundOn: "Som ligado"
+    soundOff: "Som desligado"
+    loadingPdf: "Imprimindo brief…"
+    loadingCalc: "Calculando a rota mais rápida…"
   newsletter:
     eyebrow: "Uma vez por trimestre"
     title: "Rotas e dicas sazonais."
@@ -527,6 +543,14 @@ en:
     searchPlaceholder: Find an article
     noResults: Nothing found
     backToTop: Back to top
+    cmdkOpen: "Open quick search"
+    cmdkPlaceholder: "Where to? City, route, page…"
+    cmdkHint: "esc — close · ↑↓ — navigate · enter — open"
+    cmdkEmpty: "Nothing for that. Drop a WhatsApp — we'll assemble it."
+    soundOn: "Sound on"
+    soundOff: "Sound off"
+    loadingPdf: "Printing brief…"
+    loadingCalc: "Finding the fastest route…"
   newsletter:
     eyebrow: "Once a quarter"
     title: "Routes and seasonal tips."
@@ -759,6 +783,14 @@ es:
     searchPlaceholder: Buscar artículo
     noResults: Sin resultados
     backToTop: Volver arriba
+    cmdkOpen: "Abrir búsqueda rápida"
+    cmdkPlaceholder: "¿Hacia dónde? Ciudad, ruta, página…"
+    cmdkHint: "esc — cerrar · ↑↓ — navegar · enter — abrir"
+    cmdkEmpty: "Nada para eso. Escríbenos por WhatsApp — lo montamos a medida."
+    soundOn: "Sonido on"
+    soundOff: "Sonido off"
+    loadingPdf: "Imprimiendo brief…"
+    loadingCalc: "Calculando la ruta más rápida…"
   calc:
     title: Estimación de precio de la ruta
     subtitle: Elige las ciudades — recibe un precio de referencia. El valor exacto se confirma antes de la salida.

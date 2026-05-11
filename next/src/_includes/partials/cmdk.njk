@@ -1,0 +1,81 @@
+{%- set t = i18n[lang] -%}
+<button type="button" class="cmdk-trigger" data-cmdk-trigger aria-label="{{ t.ui.cmdkOpen }}">
+  {% set iconName = "search" %}{% include "partials/icon.njk" %}
+  <span class="cmdk-trigger-kbd">⌘K</span>
+</button>
+
+<div class="cmdk" data-cmdk hidden aria-hidden="true">
+  <div class="cmdk-backdrop" data-cmdk-close></div>
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="{{ t.ui.cmdkOpen }}">
+    <div class="cmdk-input-wrap">
+      {% set iconName = "search" %}{% include "partials/icon.njk" %}
+      <input type="search" data-cmdk-input placeholder="{{ t.ui.cmdkPlaceholder }}" autocomplete="off" spellcheck="false" aria-label="{{ t.ui.search }}">
+      <kbd class="cmdk-esc">esc</kbd>
+    </div>
+    <div class="cmdk-list" data-cmdk-list>
+      {# Pages #}
+      <section class="cmdk-section">
+        <h4>{{ t.nav.home }} · {{ t.footer.sections }}</h4>
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/" data-search="{{ t.nav.home }} home inicio главная">
+          {% set iconName = "route" %}{% include "partials/icon.njk" %}<span>{{ t.nav.home }}</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/brazil-transfers/" data-search="{{ t.nav.brazil }} intercity brazil бразилия">
+          {% set iconName = "car" %}{% include "partials/icon.njk" %}<span>{{ t.nav.brazil }}</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/airport-transfer/" data-search="{{ t.nav.airports }} airport аэропорт aeroporto">
+          {% set iconName = "airplane" %}{% include "partials/icon.njk" %}<span>{{ t.nav.airports }}</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/international/" data-search="{{ t.nav.international }} mercosur uruguay paraguay argentina">
+          {% set iconName = "border" %}{% include "partials/icon.njk" %}<span>{{ t.nav.international }}</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/partners/" data-search="{{ t.nav.partners }} b2b partners">
+          {% set iconName = "doc" %}{% include "partials/icon.njk" %}<span>{{ t.nav.partners }}</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/contact/" data-search="{{ t.nav.contact }} contact brief">
+          {% set iconName = "chat" %}{% include "partials/icon.njk" %}<span>{{ t.nav.contact }}</span>
+        </a>
+      </section>
+
+      <section class="cmdk-section">
+        <h4>{{ t.nav.routes }}</h4>
+        {%- for pair in routes.pairs %}
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/routes/{{ pair.slug }}/" data-search="{{ pair.from }} {{ pair.to }} {{ pair.from | cityName(lang, routes.cities) }} {{ pair.to | cityName(lang, routes.cities) }}">
+          {% set iconName = "route" %}{% include "partials/icon.njk" %}
+          <span>{{ pair.from | cityName(lang, routes.cities) }} → {{ pair.to | cityName(lang, routes.cities) }}</span>
+          <span class="cmdk-meta num">{{ pair.km }} km</span>
+        </a>
+        {%- endfor %}
+      </section>
+
+      <section class="cmdk-section">
+        <h4>{{ t.nav.fleet }}</h4>
+        {%- for veh in fleet.classes %}
+        <a class="cmdk-item" data-cmdk-item href="/{{ lang }}/fleet/{{ veh.id }}/" data-search="{{ veh.id }} {{ veh.nameEn }} fleet">
+          {% set iconName = "car" %}{% include "partials/icon.njk" %}
+          {%- if lang == "ru" %}<span>{{ veh.nameRu }}</span>
+          {%- elif lang == "pt" %}<span>{{ veh.namePt }}</span>
+          {%- else %}<span>{{ veh.nameEn }}</span>
+          {%- endif %}
+          <span class="cmdk-meta num">{{ veh.pax }} · {{ veh.bags }}</span>
+        </a>
+        {%- endfor %}
+      </section>
+
+      <section class="cmdk-section">
+        <h4>{{ t.footer.contacts }}</h4>
+        <a class="cmdk-item" data-cmdk-item href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener" data-search="whatsapp">
+          {% set iconName = "chat" %}{% include "partials/icon.njk" %}<span>WhatsApp</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener" data-search="telegram">
+          {% set iconName = "chat" %}{% include "partials/icon.njk" %}<span>Telegram</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="mailto:{{ site.contacts.email }}" data-search="email mail">
+          {% set iconName = "email" %}{% include "partials/icon.njk" %}<span>{{ site.contacts.email }}</span>
+        </a>
+      </section>
+
+      <p class="cmdk-empty" data-cmdk-empty hidden>{{ t.ui.cmdkEmpty }}</p>
+    </div>
+    <div class="cmdk-hint">{{ t.ui.cmdkHint }}</div>
+  </div>
+</div>

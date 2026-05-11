@@ -2704,3 +2704,206 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
   color: var(--text);
 }
 [data-theme="dark"] .fleet-illustration-img { color: var(--text-on-dark, #f5f6f8); }
+
+/* =========================================================
+   Round 11: Animated wordmark, brand pattern, Command-K palette
+   ========================================================= */
+
+/* --- Animated wordmark draw on first paint --- */
+.logo-mark--animate .logo-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLogoPath 0.8s 0.1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
+}
+.logo-mark--animate .logo-dot {
+  opacity: 0;
+  transform-origin: center;
+  transform-box: fill-box;
+  transform: scale(0);
+  animation: popLogoDot 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.logo-mark--animate .logo-dot--1 { animation-delay: 0.3s; }
+.logo-mark--animate .logo-dot--2 { animation-delay: 0.7s; }
+.logo-mark--animate .logo-dot--3 { animation-delay: 0.5s; }
+.logo-mark--animate .logo-dot--4 { animation-delay: 0.55s; }
+.logo-mark--animate .logo-dot--5 { animation-delay: 0.75s; }
+@keyframes drawLogoPath { to { stroke-dashoffset: 0; } }
+@keyframes popLogoDot { to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark--animate .logo-path { stroke-dashoffset: 0; animation: none; }
+  .logo-mark--animate .logo-dot { opacity: 1; transform: scale(1); animation: none; }
+}
+
+/* --- Brand pattern as subtle backgrounds on dark sections --- */
+.section--bg-navy {
+  position: relative;
+  isolation: isolate;
+}
+.section--bg-navy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/brand-pattern.svg');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  color: var(--accent);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: screen;
+}
+.newsletter {
+  position: relative;
+  isolation: isolate;
+}
+.newsletter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/images/brand-pattern.svg');
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  color: var(--accent);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: screen;
+}
+
+/* --- Command-K palette --- */
+.cmdk-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+  margin-right: 0.6rem;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.cmdk-trigger:hover { color: var(--text); border-color: var(--line-strong); }
+.cmdk-trigger-kbd {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+  background: var(--bg-soft);
+  color: var(--muted);
+}
+@media (max-width: 900px) { .cmdk-trigger-kbd { display: none; } }
+@media (max-width: 600px) { .cmdk-trigger { padding: 0.3rem; } .cmdk-trigger span { display: none; } }
+
+.cmdk {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8vh 1rem 1rem;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  pointer-events: none;
+}
+.cmdk.is-open { opacity: 1; pointer-events: auto; }
+.cmdk-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.55);
+  backdrop-filter: blur(8px);
+}
+.cmdk-panel {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: translateY(-8px);
+  transition: transform 0.22s var(--ease-overshoot);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+.cmdk.is-open .cmdk-panel { transform: translateY(0); }
+.cmdk-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+.cmdk-input-wrap .icon { color: var(--muted); }
+.cmdk-input-wrap input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+  font-size: 1.05rem;
+  color: var(--text);
+  padding: 0.2rem 0;
+}
+.cmdk-input-wrap input::placeholder { color: var(--muted); }
+.cmdk-esc {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: var(--bg-soft);
+  color: var(--muted);
+}
+.cmdk-list { overflow-y: auto; padding: 0.4rem; flex: 1; min-height: 0; }
+.cmdk-section h4 {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.6rem 0.7rem 0.3rem;
+  margin: 0;
+  font-weight: 600;
+}
+.cmdk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.92rem;
+  transition: background 0.12s;
+}
+.cmdk-item:hover, .cmdk-item.is-active { background: var(--bg-soft); }
+.cmdk-item .icon { color: var(--muted); flex-shrink: 0; }
+.cmdk-item:hover .icon, .cmdk-item.is-active .icon { color: var(--text); }
+.cmdk-item > span:not(.cmdk-meta) { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cmdk-meta {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.cmdk-empty { text-align: center; padding: 1.4rem; color: var(--muted); font-size: 0.92rem; }
+.cmdk-hint {
+  padding: 0.7rem 1.2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.74rem;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+body.cmdk-open { overflow: hidden; }
+@media (max-width: 600px) {
+  .cmdk { padding: 4vh 0.6rem 1rem; }
+  .cmdk-panel { max-height: 88vh; }
+  .cmdk-hint { display: none; }
+}

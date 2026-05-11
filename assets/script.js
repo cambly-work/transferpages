@@ -986,6 +986,91 @@
     }
   }
 
+  // ---------- Command-K palette ----------
+  const cmdk = document.querySelector('[data-cmdk]');
+  if (cmdk) {
+    const trigger = document.querySelector('[data-cmdk-trigger]');
+    const input = cmdk.querySelector('[data-cmdk-input]');
+    const list = cmdk.querySelector('[data-cmdk-list]');
+    const items = Array.from(cmdk.querySelectorAll('[data-cmdk-item]'));
+    const empty = cmdk.querySelector('[data-cmdk-empty]');
+    const closeNodes = cmdk.querySelectorAll('[data-cmdk-close]');
+    let active = -1;
+
+    const visibleItems = () => items.filter((el) => !el.hidden);
+    const setActive = (i) => {
+      const vis = visibleItems();
+      if (!vis.length) return;
+      active = (i + vis.length) % vis.length;
+      vis.forEach((el, idx) => el.classList.toggle('is-active', idx === active));
+      vis[active]?.scrollIntoView({ block: 'nearest' });
+    };
+
+    const open = () => {
+      cmdk.hidden = false;
+      cmdk.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('cmdk-open');
+      requestAnimationFrame(() => {
+        cmdk.classList.add('is-open');
+        input?.focus();
+      });
+      trackEvent('cmdk_open', {});
+    };
+    const close = () => {
+      cmdk.classList.remove('is-open');
+      document.body.classList.remove('cmdk-open');
+      setTimeout(() => {
+        cmdk.hidden = true;
+        cmdk.setAttribute('aria-hidden', 'true');
+        if (input) input.value = '';
+        items.forEach((el) => { el.hidden = false; el.classList.remove('is-active'); });
+        active = -1;
+        if (empty) empty.hidden = true;
+        cmdk.querySelectorAll('.cmdk-section').forEach((s) => { s.hidden = false; });
+      }, 180);
+    };
+
+    const filter = () => {
+      const q = (input?.value || '').trim().toLowerCase();
+      let total = 0;
+      items.forEach((el) => {
+        const match = !q || (el.dataset.search || '').toLowerCase().includes(q) || (el.textContent || '').toLowerCase().includes(q);
+        el.hidden = !match;
+        if (match) total += 1;
+      });
+      // Hide empty sections
+      cmdk.querySelectorAll('.cmdk-section').forEach((sec) => {
+        const visible = Array.from(sec.querySelectorAll('[data-cmdk-item]')).some((i) => !i.hidden);
+        sec.hidden = !visible;
+      });
+      if (empty) empty.hidden = total !== 0;
+      active = -1;
+      items.forEach((el) => el.classList.remove('is-active'));
+    };
+
+    trigger?.addEventListener('click', open);
+    closeNodes.forEach((n) => n.addEventListener('click', close));
+    input?.addEventListener('input', filter);
+
+    document.addEventListener('keydown', (event) => {
+      const isOpen = !cmdk.hidden;
+      if ((event.key === 'k' || event.key === 'K') && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        isOpen ? close() : open();
+        return;
+      }
+      if (!isOpen) return;
+      if (event.key === 'Escape') { event.preventDefault(); close(); }
+      else if (event.key === 'ArrowDown') { event.preventDefault(); setActive(active + 1); }
+      else if (event.key === 'ArrowUp') { event.preventDefault(); setActive(active - 1); }
+      else if (event.key === 'Enter') {
+        const vis = visibleItems();
+        const target = active >= 0 ? vis[active] : vis[0];
+        if (target) { event.preventDefault(); window.location.href = target.href; }
+      }
+    });
+  }
+
   // ---------- Multi-step brief form ----------
   const briefForm = document.querySelector('[data-brief-form]');
   if (briefForm) {
@@ -1225,6 +1310,54 @@
       // Preload jsPDF in background
       ensureJsPDF().catch(() => { /* silent */ });
     });
+
+    // ----- Smart prefill from URL params -----
+    // Supports: ?from=X&to=Y&pax=N&service=Z&date=YYYY-MM-DD&case=<id>&vehicle=<id>
+    const briefParams = new URLSearchParams(window.location.search);
+    const setField = (name, value) => {
+      if (!value) return;
+      const el = briefForm.querySelector(`[name="${name}"]`);
+      if (!el) return;
+      if (el.type === 'radio') {
+        const radio = briefForm.querySelector(`[name="${name}"][value="${value}"]`);
+        if (radio) radio.checked = true;
+      } else {
+        el.value = value;
+      }
+    };
+    const ucfirst = (s) => s ? s[0].toUpperCase() + s.slice(1) : '';
+    const cityNames = window.__cityNames || null;
+    setField('fromCity', briefParams.get('from') ? ucfirst(briefParams.get('from')) : null);
+    setField('toCity', briefParams.get('to') ? ucfirst(briefParams.get('to')) : null);
+    setField('service', briefParams.get('service'));
+    setField('date', briefParams.get('date'));
+    setField('time', briefParams.get('time'));
+    setField('pax', briefParams.get('pax'));
+    setField('bags', briefParams.get('bags'));
+
+    // Case-id prefills service type and adds a note
+    const caseId = briefParams.get('case');
+    if (caseId) {
+      const caseMap = {
+        'business-sp-rio-day': { service: 'intercity', notesEn: 'Business day trip: SP↔Rio (matched from /cases/)' },
+        'family-fln-bc-weekend': { service: 'airport', notesEn: 'Family weekend FLN→BC, 4 pax + child seat (matched from /cases/)' },
+        'relocation-sp-curitiba': { service: 'intercity', notesEn: 'Relocation SP→Curitiba with luggage + pet (matched from /cases/)' },
+        'corporate-iguazu': { service: 'intercity', notesEn: 'Corporate group 12pax Curitiba→Foz (matched from /cases/)' },
+        'uruguay-couple': { service: 'international', notesEn: 'Couple trip POA→Punta del Este via Chuí (matched from /cases/)' },
+      };
+      const c = caseMap[caseId];
+      if (c) {
+        setField('service', c.service);
+        setField('notes', c.notesEn);
+      }
+    }
+
+    // Vehicle pre-selection — note in textarea
+    const vehicleId = briefParams.get('vehicle');
+    if (vehicleId) {
+      const notesEl = briefForm.querySelector('[name="notes"]');
+      if (notesEl && !notesEl.value) notesEl.value = `Requested vehicle class: ${vehicleId}`;
+    }
 
     render();
   }

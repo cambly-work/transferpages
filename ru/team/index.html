@@ -114,13 +114,13 @@
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="logo" href="/transferpages/ru/" aria-label="Morrison Premium Transfer">
-      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
-        <path d="M 5.5 24.5 L 5.5 9 L 16 19.5 L 26.5 9 L 26.5 24.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="5.5" cy="9" r="2.2" fill="currentColor"/>
-        <circle cx="26.5" cy="9" r="2.2" fill="currentColor"/>
-        <circle cx="16" cy="19.5" r="2.2" fill="currentColor"/>
-        <circle cx="5.5" cy="24.5" r="1.4" fill="currentColor"/>
-        <circle cx="26.5" cy="24.5" r="1.4" fill="currentColor"/>
+      <svg class="logo-mark logo-mark--animate" viewBox="0 0 32 32" aria-hidden="true">
+        <path class="logo-path" d="M 5.5 24.5 L 5.5 9 L 16 19.5 L 26.5 9 L 26.5 24.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+        <circle class="logo-dot logo-dot--1" cx="5.5" cy="9" r="2.2" fill="currentColor"/>
+        <circle class="logo-dot logo-dot--2" cx="26.5" cy="9" r="2.2" fill="currentColor"/>
+        <circle class="logo-dot logo-dot--3" cx="16" cy="19.5" r="2.2" fill="currentColor"/>
+        <circle class="logo-dot logo-dot--4" cx="5.5" cy="24.5" r="1.4" fill="currentColor"/>
+        <circle class="logo-dot logo-dot--5" cx="26.5" cy="24.5" r="1.4" fill="currentColor"/>
       </svg>
       <span class="logo-text">
         <strong>Morrison</strong>
@@ -326,6 +326,244 @@ hello@morrison-transfer.com</a> <button type="button" class="copy-btn copy-btn--
       <button type="button" class="btn btn-secondary" data-cookie-action="reject">Только необходимые</button>
       <button type="button" class="btn btn-dark" data-cookie-action="accept">Принять все</button>
     </div>
+  </div>
+</div>
+
+<button type="button" class="cmdk-trigger" data-cmdk-trigger aria-label="Открыть быстрый поиск">
+  
+<svg class="icon icon--search" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/>
+  <line x1="16" y1="16" x2="21" y2="21"/></svg>
+
+  <span class="cmdk-trigger-kbd">⌘K</span>
+</button>
+
+<div class="cmdk" data-cmdk hidden aria-hidden="true">
+  <div class="cmdk-backdrop" data-cmdk-close></div>
+  <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Открыть быстрый поиск">
+    <div class="cmdk-input-wrap">
+      
+<svg class="icon icon--search" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/>
+  <line x1="16" y1="16" x2="21" y2="21"/></svg>
+
+      <input type="search" data-cmdk-input placeholder="Куда хотите? Город, маршрут, страница…" autocomplete="off" spellcheck="false" aria-label="Поиск">
+      <kbd class="cmdk-esc">esc</kbd>
+    </div>
+    <div class="cmdk-list" data-cmdk-list>
+      
+      <section class="cmdk-section">
+        <h4>Главная · Разделы</h4>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/" data-search="Главная home inicio главная">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+<span>Главная</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/brazil-transfers/" data-search="Бразилия intercity brazil бразилия">
+          
+<svg class="icon icon--car" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 13 L 5.5 7.5 A 1 1 0 0 1 6.5 7 L 17.5 7 A 1 1 0 0 1 18.5 7.5 L 20 13"/>
+  <path d="M 3 13 L 21 13 L 21 17 A 1 1 0 0 1 20 18 L 18 18 L 18 16 L 6 16 L 6 18 L 4 18 A 1 1 0 0 1 3 17 Z"/>
+  <circle cx="7" cy="16" r="1.2"/>
+  <circle cx="17" cy="16" r="1.2"/></svg>
+<span>Бразилия</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/airport-transfer/" data-search="Аэропорты airport аэропорт aeroporto">
+          
+<svg class="icon icon--airplane" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 12 3 L 14 11 L 21 13 L 14 14 L 12 21 L 10 14 L 3 13 L 10 11 Z"/></svg>
+<span>Аэропорты</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/international/" data-search="Международные mercosur uruguay paraguay argentina">
+          
+<svg class="icon icon--border" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="12" x2="21" y2="12"/>
+  <line x1="6" y1="9" x2="6" y2="15"/>
+  <line x1="18" y1="9" x2="18" y2="15"/>
+  <circle cx="12" cy="12" r="2.2"/></svg>
+<span>Международные</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/partners/" data-search="Партнёры b2b partners">
+          
+<svg class="icon icon--doc" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 7 3 L 14 3 L 18 7 L 18 20 A 1 1 0 0 1 17 21 L 7 21 A 1 1 0 0 1 6 20 L 6 4 A 1 1 0 0 1 7 3 Z"/>
+  <path d="M 14 3 L 14 7 L 18 7"/>
+  <line x1="9" y1="12" x2="15" y2="12"/>
+  <line x1="9" y1="15" x2="15" y2="15"/>
+  <line x1="9" y1="18" x2="13" y2="18"/></svg>
+<span>Партнёры</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/contact/" data-search="Контакты contact brief">
+          
+<svg class="icon icon--chat" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 5 A 1 1 0 0 1 5 4 L 19 4 A 1 1 0 0 1 20 5 L 20 16 A 1 1 0 0 1 19 17 L 10 17 L 6 21 L 6 17 L 5 17 A 1 1 0 0 1 4 16 Z"/></svg>
+<span>Контакты</span>
+        </a>
+      </section>
+
+      <section class="cmdk-section">
+        <h4>Маршруты</h4>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/florianopolis-balneario-camboriu/" data-search="fln bnu Флорианополис (FLN) Балнеариу-Камбориу">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Флорианополис (FLN) → Балнеариу-Камбориу</span>
+          <span class="cmdk-meta num">95 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/curitiba-sao-paulo/" data-search="cwb gru Куритиба (CWB) Сан-Паулу (GRU)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Куритиба (CWB) → Сан-Паулу (GRU)</span>
+          <span class="cmdk-meta num">410 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/sao-paulo-rio-de-janeiro/" data-search="gru gig Сан-Паулу (GRU) Рио-де-Жанейро (GIG)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Сан-Паулу (GRU) → Рио-де-Жанейро (GIG)</span>
+          <span class="cmdk-meta num">430 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/porto-alegre-florianopolis/" data-search="poa fln Порту-Алегри (POA) Флорианополис (FLN)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Порту-Алегри (POA) → Флорианополис (FLN)</span>
+          <span class="cmdk-meta num">480 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/navegantes-balneario-camboriu/" data-search="nvt bnu Навегантес (NVT) Балнеариу-Камбориу">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Навегантес (NVT) → Балнеариу-Камбориу</span>
+          <span class="cmdk-meta num">25 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/florianopolis-navegantes/" data-search="fln nvt Флорианополис (FLN) Навегантес (NVT)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Флорианополис (FLN) → Навегантес (NVT)</span>
+          <span class="cmdk-meta num">90 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/foz-do-iguacu-curitiba/" data-search="igr cwb Фос-ду-Игуасу (IGU) Куритиба (CWB)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Фос-ду-Игуасу (IGU) → Куритиба (CWB)</span>
+          <span class="cmdk-meta num">640 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/porto-alegre-montevideo/" data-search="poa mvd Порту-Алегри (POA) Монтевидео">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Порту-Алегри (POA) → Монтевидео</span>
+          <span class="cmdk-meta num">870 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/porto-alegre-punta-del-este/" data-search="poa pde Порту-Алегри (POA) Пунта-дель-Эсте">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Порту-Алегри (POA) → Пунта-дель-Эсте</span>
+          <span class="cmdk-meta num">990 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/foz-do-iguacu-asuncion/" data-search="igr asu Фос-ду-Игуасу (IGU) Асунсьон">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Фос-ду-Игуасу (IGU) → Асунсьон</span>
+          <span class="cmdk-meta num">330 km</span>
+        </a>
+      </section>
+
+      <section class="cmdk-section">
+        <h4>Автопарк</h4>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/fleet/sedan/" data-search="sedan Executive sedan fleet">
+          
+<svg class="icon icon--car" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 13 L 5.5 7.5 A 1 1 0 0 1 6.5 7 L 17.5 7 A 1 1 0 0 1 18.5 7.5 L 20 13"/>
+  <path d="M 3 13 L 21 13 L 21 17 A 1 1 0 0 1 20 18 L 18 18 L 18 16 L 6 16 L 6 18 L 4 18 A 1 1 0 0 1 3 17 Z"/>
+  <circle cx="7" cy="16" r="1.2"/>
+  <circle cx="17" cy="16" r="1.2"/></svg>
+<span>Бизнес-седан</span>
+          <span class="cmdk-meta num">3 · 3</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/fleet/suv/" data-search="suv Premium SUV fleet">
+          
+<svg class="icon icon--car" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 13 L 5.5 7.5 A 1 1 0 0 1 6.5 7 L 17.5 7 A 1 1 0 0 1 18.5 7.5 L 20 13"/>
+  <path d="M 3 13 L 21 13 L 21 17 A 1 1 0 0 1 20 18 L 18 18 L 18 16 L 6 16 L 6 18 L 4 18 A 1 1 0 0 1 3 17 Z"/>
+  <circle cx="7" cy="16" r="1.2"/>
+  <circle cx="17" cy="16" r="1.2"/></svg>
+<span>Премиум-SUV</span>
+          <span class="cmdk-meta num">4 · 5</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/fleet/minivan/" data-search="minivan Minivan fleet">
+          
+<svg class="icon icon--car" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 13 L 5.5 7.5 A 1 1 0 0 1 6.5 7 L 17.5 7 A 1 1 0 0 1 18.5 7.5 L 20 13"/>
+  <path d="M 3 13 L 21 13 L 21 17 A 1 1 0 0 1 20 18 L 18 18 L 18 16 L 6 16 L 6 18 L 4 18 A 1 1 0 0 1 3 17 Z"/>
+  <circle cx="7" cy="16" r="1.2"/>
+  <circle cx="17" cy="16" r="1.2"/></svg>
+<span>Минивэн</span>
+          <span class="cmdk-meta num">7 · 9</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/fleet/van/" data-search="van Vans / minibus fleet">
+          
+<svg class="icon icon--car" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 13 L 5.5 7.5 A 1 1 0 0 1 6.5 7 L 17.5 7 A 1 1 0 0 1 18.5 7.5 L 20 13"/>
+  <path d="M 3 13 L 21 13 L 21 17 A 1 1 0 0 1 20 18 L 18 18 L 18 16 L 6 16 L 6 18 L 4 18 A 1 1 0 0 1 3 17 Z"/>
+  <circle cx="7" cy="16" r="1.2"/>
+  <circle cx="17" cy="16" r="1.2"/></svg>
+<span>Vans / микроавтобус</span>
+          <span class="cmdk-meta num">14 · 16</span>
+        </a>
+      </section>
+
+      <section class="cmdk-section">
+        <h4>Контакты</h4>
+        <a class="cmdk-item" data-cmdk-item href="https://wa.me/5513996532915" target="_blank" rel="noopener" data-search="whatsapp">
+          
+<svg class="icon icon--chat" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 5 A 1 1 0 0 1 5 4 L 19 4 A 1 1 0 0 1 20 5 L 20 16 A 1 1 0 0 1 19 17 L 10 17 L 6 21 L 6 17 L 5 17 A 1 1 0 0 1 4 16 Z"/></svg>
+<span>WhatsApp</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="https://t.me/premium_transfer_latam" target="_blank" rel="noopener" data-search="telegram">
+          
+<svg class="icon icon--chat" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 4 5 A 1 1 0 0 1 5 4 L 19 4 A 1 1 0 0 1 20 5 L 20 16 A 1 1 0 0 1 19 17 L 10 17 L 6 21 L 6 17 L 5 17 A 1 1 0 0 1 4 16 Z"/></svg>
+<span>Telegram</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="mailto:hello@morrison-transfer.com" data-search="email mail">
+          
+<svg class="icon icon--email" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/>
+  <path d="M 3 7 L 12 13 L 21 7"/></svg>
+<span>hello@morrison-transfer.com</span>
+        </a>
+      </section>
+
+      <p class="cmdk-empty" data-cmdk-empty hidden>Ничего по запросу. Напишите в WhatsApp — соберём вручную.</p>
+    </div>
+    <div class="cmdk-hint">esc — закрыть · ↑↓ — навигация · enter — открыть</div>
   </div>
 </div>
 

@@ -66,6 +66,9 @@ ru:
     pickFirst: Сначала выберите города
     sameCity: Выберите разные города
     notFound: На этот маршрут расчёт согласовывается отдельно — напишите нам.
+    share: Поделиться расчётом
+    shareCopied: Ссылка скопирована
+    shareFailed: Не удалось скопировать — выделите вручную
   brief:
     title: Бриф заявки
     subtitle: 60 секунд — и у нас есть всё для расчёта. Ничего лишнего.
@@ -219,6 +222,9 @@ pt:
     pickFirst: Selecione as cidades primeiro
     sameCity: Selecione cidades diferentes
     notFound: Esta rota é cotada caso a caso — escreva pra gente.
+    share: Compartilhar estimativa
+    shareCopied: Link copiado
+    shareFailed: Não foi possível copiar — selecione manualmente
   brief:
     title: Brief de solicitação
     subtitle: 60 segundos e temos tudo para calcular. Nada de excesso.
@@ -372,6 +378,9 @@ en:
     pickFirst: Pick the cities first
     sameCity: Pick different cities
     notFound: This route is priced case by case — message us.
+    share: Share this quote
+    shareCopied: Link copied
+    shareFailed: Could not copy — please select manually
   brief:
     title: Request brief
     subtitle: 60 seconds and we have everything we need to quote. No fluff.

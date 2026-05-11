@@ -2,61 +2,67 @@
 slug: "florianopolis"
 permalink: "/en/florianopolis/index.html"
 title: "Premium transfer Florianópolis | Morrison Premium Transfer"
-description: "Private transfers within and out of Florianópolis: meet-and-greet at FLN, runs to Balneário Camboriú, Curitiba, Porto Alegre, and the Santa Catarina coast."
+description: "Private transfers in and out of Florianópolis: FLN pickups, runs to Balneário Camboriú, Curitiba, Porto Alegre, Santa Catarina coast."
+breadcrumbs:
+  - { name: "Home", path: "/en/" }
+  - { name: "Florianópolis", path: "/en/florianopolis/" }
 ---
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-copy reveal">
-      <p class="kicker">Florianópolis</p>
-      <h1>Island logistics with<br><span>mainland timing.</span></h1>
-      <p class="lead">Florianópolis splits into island and mainland, into beaches with different seasonalities, and a business zone near FLN. We move through that geometry as calmly as through the continent.</p>
-      <div class="hero-actions">
-        <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirm a transfer</a>
-        <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Florianópolis</p>
+    <h1 class="reveal-up">Island logistics<br>with continental timing.</h1>
+    <p class="lead reveal-up">Floripa is split between island and mainland, beaches with different seasonality, and a business zone next to FLN. We work inside that geometry as calmly as on the mainland.</p>
+    <div class="hero-actions reveal-up">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirm a transfer</a>
+      <a class="btn btn-secondary" href="#calculator">Get a quote</a>
     </div>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Airport</dt><dd><span class="num">FLN</span></dd></div>
+      <div><dt>BNU</dt><dd><span class="num">~1h 20</span></dd></div>
+      <div><dt>CWB</dt><dd><span class="num">~3h 30</span></dd></div>
+      <div><dt>POA</dt><dd><span class="num">~6h 30</span></dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <p class="kicker">What matters in Floripa</p>
-    <p class="statement">Timing here is <em>not a city average</em>. The north of the island during high season stands still for hours, the south is a different story, the mainland is a third. We plan pickups with a correction for the day, hour and seasonal jams on the bridges and on SC-401 / SC-405.</p>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <p class="eyebrow">Where we drive</p>
-    <div class="numbered">
-      <article class="numbered-item">
-        <div class="numbered-num">01</div>
-        <div class="numbered-body">
-          <h3>Hercílio Luz airport (FLN)</h3>
-          <p>Pickups for specific flights, night arrivals and early departures. We track the flight number.</p>
-        </div>
+    <p class="kicker">Where we go</p>
+    <h2>From Floripa — no road surprises.</h2>
+    <div class="bento reveal-stagger" style="margin-top: 2rem;">
+      <article class="bento-cell bento-cell--span-3 bento-cell--dark">
+        <p class="eyebrow">01 · Hercílio Luz airport</p>
+        <h3>FLN — pickups 24/7.</h3>
+        <p>For a specific flight. Night arrivals and early departures. Tracked by flight number.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">02</div>
-        <div class="numbered-body">
-          <h3>Balneário Camboriú and Curitiba</h3>
-          <p>Balneário — frequent runs via BR-101 (~1h 20m). Curitiba — business trip (~3h 30m) with return or with continuation.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-3">
+        <p class="eyebrow">02 · Coast and cities</p>
+        <h3>Balneário Camboriú and Curitiba.</h3>
+        <p>BNU via BR-101 (~1h 20). CWB — business run (~3h 30) with return or continuation.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">03</div>
-        <div class="numbered-body">
-          <h3>Porto Alegre and southern Santa Catarina</h3>
-          <p>Porto Alegre (~6h 30m), Criciúma, Tubarão, runs to Garopaba and Imbituba.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-2">
+        <p class="eyebrow">03 · South</p>
+        <h3>Porto Alegre and Santa Catarina.</h3>
+        <p>POA (~6h 30), Criciúma, Tubarão, Garopaba, Imbituba.</p>
+      </article>
+      <article class="bento-cell bento-cell--span-2 bento-cell--stat">
+        <span class="stat-number num">SC-401</span>
+        <span class="stat-label">we know the highway by season — bridge jams go into the plan</span>
+      </article>
+      <article class="bento-cell bento-cell--span-2">
+        <p class="eyebrow">04 · Within the island</p>
+        <h3>North ↔ south of the island.</h3>
+        <p>Lagoa, Praia Mole, Pântano do Sul, Jurerê — adjusted for the season.</p>
       </article>
     </div>
   </div>
 </section>
 
+{% include "partials/calculator.njk" %}
+
 <section class="cta-strip">
-  <div class="container cta-strip-grid">
-    <h2>Where from, where to?</h2>
+  <div class="container container--narrow">
+    <h2>Where from and to?</h2>
     <div class="cta-strip-actions">
       <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirm a trip</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>

@@ -3,59 +3,65 @@ slug: "porto-alegre"
 permalink: "/pt/porto-alegre/index.html"
 title: "Transfer premium Porto Alegre | Morrison Premium Transfer"
 description: "Transfers privados a partir de Porto Alegre: recepção no POA, saídas para o litoral catarinense, Uruguai pelo Chuí, Curitiba e São Paulo."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Porto Alegre", path: "/pt/porto-alegre/" }
 ---
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-copy reveal">
-      <p class="kicker">Porto Alegre</p>
-      <h1>A capital do sul<br><span>como ponto de partida da rota.</span></h1>
-      <p class="lead">Porto Alegre é a nossa base principal no sul. Daqui dirigimos para Santa Catarina, para o centro e o sudeste do Brasil, e pela fronteira do Chuí para o Uruguai. A malha local de endereços — de Menino Deus à Zona Norte — está na ponta da língua.</p>
-      <div class="hero-actions">
-        <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar transfer</a>
-        <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Porto Alegre</p>
+    <h1 class="reveal-up">A capital do sul<br>como ponto de partida.</h1>
+    <p class="lead reveal-up">POA é a nossa base principal no sul. Daqui operamos para Santa Catarina, centro e sudeste do Brasil, e pelo Chuí para o Uruguai. A malha de endereços — de Menino Deus à Zona Norte — está na ponta da língua.</p>
+    <div class="hero-actions reveal-up">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar transfer</a>
+      <a class="btn btn-secondary" href="#calculator">Estimar preço</a>
     </div>
+    <dl class="metric-strip reveal-up">
+      <div><dt>POA</dt><dd><span class="num">base</span></dd></div>
+      <div><dt>FLN</dt><dd><span class="num">~6h 30</span></dd></div>
+      <div><dt>Chuí · UY</dt><dd><span class="num">~5h</span></dd></div>
+      <div><dt>Mvd</dt><dd><span class="num">~12h</span></dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <p class="kicker">O que importa em POA</p>
-    <p class="statement">Porto Alegre é <em>uma cidade com oscilações de clima e sobrecarga sazonal das rodovias</em>. A chuva de inverno muda a rota do aeroporto até a Zona Sul. A BR-116 para Curitiba numa sexta é uma história à parte. Consideramos isso com antecedência, não "no momento".</p>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <p class="eyebrow">Para onde levamos</p>
-    <div class="numbered">
-      <article class="numbered-item">
-        <div class="numbered-num">01</div>
-        <div class="numbered-body">
-          <h3>Aeroporto Salgado Filho (POA)</h3>
-          <p>Apresentações para voos específicos, apoio com bagagem, continuação intermunicipal ou ao litoral sem trocar de carro.</p>
-        </div>
+    <p class="kicker">De POA para onde</p>
+    <h2>O sul é o nosso trecho de casa.</h2>
+    <div class="bento reveal-stagger" style="margin-top: 2rem;">
+      <article class="bento-cell bento-cell--span-3 bento-cell--dark">
+        <p class="eyebrow">01 · Aeroporto Salgado Filho</p>
+        <h3>POA — apresentações para voos específicos.</h3>
+        <p>Apoio com bagagem, continuação intermunicipal ou para o litoral sem trocar de carro.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">02</div>
-        <div class="numbered-body">
-          <h3>Litoral catarinense</h3>
-          <p>Balneário Camboriú, Florianópolis, sul da ilha, Garopaba, Imbituba. O horário é ajustado pela estação e pelo tipo de viagem.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-3">
+        <p class="eyebrow">02 · Litoral SC</p>
+        <h3>Balneário, Florianópolis, sul da ilha.</h3>
+        <p>Garopaba, Imbituba, Laguna. O cronograma é ajustado pela temporada.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">03</div>
-        <div class="numbered-body">
-          <h3>Uruguai pelo Chuí e o sul</h3>
-          <p>Trechos diretos pela fronteira do Chuí para Montevidéu, Punta del Este, Colônia. Documentos e formato da travessia acertados antes.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-2 bento-cell--dark">
+        <p class="eyebrow">03 · Uruguai</p>
+        <h3>Pelo Chuí.</h3>
+        <p>Montevidéu, Punta del Este, Colônia. Documentos acertados antes.</p>
+      </article>
+      <article class="bento-cell bento-cell--span-2 bento-cell--stat">
+        <span class="stat-number num">BR-116</span>
+        <span class="stat-label">a rodovia para Curitiba — conhecemos por temporada e por sexta-feira</span>
+      </article>
+      <article class="bento-cell bento-cell--span-2">
+        <p class="eyebrow">04 · Dentro de POA</p>
+        <h3>Da Zona Sul à Zona Norte.</h3>
+        <p>Menino Deus, Moinhos, Centro, região do aeroporto. Apresentação no endereço.</p>
       </article>
     </div>
   </div>
 </section>
 
+{% include "partials/calculator.njk" %}
+
 <section class="cta-strip">
-  <div class="container cta-strip-grid">
+  <div class="container container--narrow">
     <h2>Para onde de Porto Alegre?</h2>
     <div class="cta-strip-actions">
       <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar viagem</a>

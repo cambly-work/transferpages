@@ -2,61 +2,67 @@
 slug: "florianopolis"
 permalink: "/pt/florianopolis/index.html"
 title: "Transfer premium Florianópolis | Morrison Premium Transfer"
-description: "Transfers privados em Florianópolis: recepção no FLN, saídas para Balneário Camboriú, Curitiba, Porto Alegre e o litoral catarinense."
+description: "Transfers privados em Floripa e a partir dela: recepção no FLN, saídas para Balneário Camboriú, Curitiba, Porto Alegre, litoral de Santa Catarina."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Florianópolis", path: "/pt/florianopolis/" }
 ---
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-copy reveal">
-      <p class="kicker">Florianópolis</p>
-      <h1>Logística insular com<br><span>timing do continente.</span></h1>
-      <p class="lead">Florianópolis se divide em ilha e continente, em praias com sazonalidades diferentes e numa zona de negócios perto do FLN. Atravessamos essa geometria com a mesma calma com que atravessamos o continente.</p>
-      <div class="hero-actions">
-        <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar transfer</a>
-        <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Florianópolis</p>
+    <h1 class="reveal-up">Logística de ilha<br>com timing continental.</h1>
+    <p class="lead reveal-up">Floripa se divide entre ilha e continente, praias com sazonalidades distintas e a zona business perto do FLN. Operamos dentro dessa geometria com a mesma tranquilidade do continente.</p>
+    <div class="hero-actions reveal-up">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar transfer</a>
+      <a class="btn btn-secondary" href="#calculator">Estimar preço</a>
     </div>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Aeroporto</dt><dd><span class="num">FLN</span></dd></div>
+      <div><dt>BNU</dt><dd><span class="num">~1h 20</span></dd></div>
+      <div><dt>CWB</dt><dd><span class="num">~3h 30</span></dd></div>
+      <div><dt>POA</dt><dd><span class="num">~6h 30</span></dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <p class="kicker">O que pesa em Floripa</p>
-    <p class="statement">O timing aqui <em>não é uma média da cidade</em>. O norte da ilha em alta temporada para por horas, o sul é outra história, o continente é a terceira. Planejamos a apresentação com correção pelo dia, pela hora e pelos engarrafamentos sazonais nas pontes e na SC-401 / SC-405.</p>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <p class="eyebrow">Para onde levamos</p>
-    <div class="numbered">
-      <article class="numbered-item">
-        <div class="numbered-num">01</div>
-        <div class="numbered-body">
-          <h3>Aeroporto Hercílio Luz (FLN)</h3>
-          <p>Apresentações para voos específicos, chegadas noturnas e partidas cedo. Acompanhamos o número do voo.</p>
-        </div>
+    <p class="kicker">Para onde levamos</p>
+    <h2>De Floripa — sem surpresas na estrada.</h2>
+    <div class="bento reveal-stagger" style="margin-top: 2rem;">
+      <article class="bento-cell bento-cell--span-3 bento-cell--dark">
+        <p class="eyebrow">01 · Aeroporto Hercílio Luz</p>
+        <h3>FLN — apresentações 24/7.</h3>
+        <p>Para um voo específico. Pousos noturnos e partidas cedo. Monitoramento pelo nº do voo.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">02</div>
-        <div class="numbered-body">
-          <h3>Balneário Camboriú e Curitiba</h3>
-          <p>Balneário — saídas frequentes pela BR-101 (~1h 20min). Curitiba — saída de negócio (~3h 30min) com retorno ou continuação.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-3">
+        <p class="eyebrow">02 · Litoral e cidades</p>
+        <h3>Balneário Camboriú e Curitiba.</h3>
+        <p>BNU pela BR-101 (~1h 20). CWB — viagem business (~3h 30) com retorno ou continuação.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">03</div>
-        <div class="numbered-body">
-          <h3>Porto Alegre e sul de Santa Catarina</h3>
-          <p>Porto Alegre (~6h 30min), Criciúma, Tubarão, saídas para Garopaba e Imbituba.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-2">
+        <p class="eyebrow">03 · Sul</p>
+        <h3>Porto Alegre e Santa Catarina.</h3>
+        <p>POA (~6h 30), Criciúma, Tubarão, Garopaba, Imbituba.</p>
+      </article>
+      <article class="bento-cell bento-cell--span-2 bento-cell--stat">
+        <span class="stat-number num">SC-401</span>
+        <span class="stat-label">conhecemos a rodovia por temporada — engarrafamentos nas pontes vão no plano</span>
+      </article>
+      <article class="bento-cell bento-cell--span-2">
+        <p class="eyebrow">04 · Dentro da ilha</p>
+        <h3>Norte ↔ sul da ilha.</h3>
+        <p>Lagoa, Praia Mole, Pântano do Sul, Jurerê — ajustando à temporada.</p>
       </article>
     </div>
   </div>
 </section>
 
+{% include "partials/calculator.njk" %}
+
 <section class="cta-strip">
-  <div class="container cta-strip-grid">
-    <h2>De onde, para onde?</h2>
+  <div class="container container--narrow">
+    <h2>De onde para onde?</h2>
     <div class="cta-strip-actions">
       <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar viagem</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>

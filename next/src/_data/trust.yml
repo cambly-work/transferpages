@@ -1,0 +1,21 @@
+# Trust strip — single source for security/compliance signals shown under hero.
+# Keys are locales. Each list item is a chip in the trust line.
+
+ru:
+  - NF-e Sefaz
+  - DPVAT + страховка
+  - LGPD-совместимо
+  - Pix · Visa · Mastercard
+  - 24/7 · WhatsApp · Telegram
+pt:
+  - NF-e Sefaz
+  - DPVAT + seguro
+  - Conformidade LGPD
+  - Pix · Visa · Mastercard
+  - 24/7 · WhatsApp · Telegram
+en:
+  - NF-e Sefaz
+  - DPVAT + passenger insurance
+  - LGPD-compliant
+  - Pix · Visa · Mastercard
+  - 24/7 · WhatsApp · Telegram

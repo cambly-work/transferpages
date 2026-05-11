@@ -1,0 +1,10 @@
+{%- set items = trust[lang] -%}
+<section class="trust-strip-section" aria-label="Trust signals">
+  <div class="container">
+    <ul class="trust-strip">
+      {%- for item in items %}
+      <li>{{ item }}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

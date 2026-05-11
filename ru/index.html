@@ -152,6 +152,19 @@
   </div>
 </section>
 
+<section class="trust-strip-section" aria-label="Trust signals">
+  <div class="container">
+    <ul class="trust-strip">
+      <li>NF-e Sefaz</li>
+      <li>DPVAT + страховка</li>
+      <li>LGPD-совместимо</li>
+      <li>Pix · Visa · Mastercard</li>
+      <li>24/7 · WhatsApp · Telegram</li>
+    </ul>
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container">
     <header style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;">
@@ -400,7 +413,10 @@
             <div><dt>Ориентир</dt><dd data-calc-price class="num"></dd></div>
           </div>
           <p class="muted small">Тариф включает водителя, топливо, платные дороги.</p>
-          <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Подтвердить через WhatsApp</a>
+          <div class="calc-result-actions">
+            <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Подтвердить через WhatsApp</a>
+            <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Поделиться расчётом</button>
+          </div>
         </div>
       </div>
     </form>
@@ -492,7 +508,10 @@
         "messages": {
           "pickFirst": "Сначала выберите города",
           "sameCity": "Выберите разные города",
-          "notFound": "На этот маршрут расчёт согласовывается отдельно — напишите нам."
+          "notFound": "На этот маршрут расчёт согласовывается отдельно — напишите нам.",
+          "share": "Поделиться расчётом",
+          "shareCopied": "Ссылка скопирована",
+          "shareFailed": "Не удалось скопировать — выделите вручную"
         },
         "whatsapp": "https://wa.me/5513996532915",
         "lang": "ru"

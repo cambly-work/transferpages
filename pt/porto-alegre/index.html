@@ -57,6 +57,24 @@
   "knowsLanguage": ["pt", "ru", "en"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://morrison-transfer.com/pt/"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Porto Alegre",
+      "item": "https://morrison-transfer.com/pt/porto-alegre/"
+    }
+  ]
+}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMBK0S18RL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -107,57 +125,371 @@
 
 <main id="main">
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-copy reveal">
-      <p class="kicker">Porto Alegre</p>
-      <h1>A capital do sul<br><span>como ponto de partida da rota.</span></h1>
-      <p class="lead">Porto Alegre é a nossa base principal no sul. Daqui dirigimos para Santa Catarina, para o centro e o sudeste do Brasil, e pela fronteira do Chuí para o Uruguai. A malha local de endereços — de Menino Deus à Zona Norte — está na ponta da língua.</p>
-      <div class="hero-actions">
-        <a class="btn btn-dark btn-arrow" href="/transferpages/pt/contact/">Confirmar transfer</a>
-        <a class="btn btn-secondary" href="https://wa.me/5513996532915" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Porto Alegre</p>
+    <h1 class="reveal-up">A capital do sul<br>como ponto de partida.</h1>
+    <p class="lead reveal-up">POA é a nossa base principal no sul. Daqui operamos para Santa Catarina, centro e sudeste do Brasil, e pelo Chuí para o Uruguai. A malha de endereços — de Menino Deus à Zona Norte — está na ponta da língua.</p>
+    <div class="hero-actions reveal-up">
+      <a class="btn btn-dark btn-arrow" href="/transferpages/pt/contact/">Confirmar transfer</a>
+      <a class="btn btn-secondary" href="#calculator">Estimar preço</a>
     </div>
+    <dl class="metric-strip reveal-up">
+      <div><dt>POA</dt><dd><span class="num">base</span></dd></div>
+      <div><dt>FLN</dt><dd><span class="num">~6h 30</span></dd></div>
+      <div><dt>Chuí · UY</dt><dd><span class="num">~5h</span></dd></div>
+      <div><dt>Mvd</dt><dd><span class="num">~12h</span></dd></div>
+    </dl>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <p class="kicker">O que importa em POA</p>
-    <p class="statement">Porto Alegre é <em>uma cidade com oscilações de clima e sobrecarga sazonal das rodovias</em>. A chuva de inverno muda a rota do aeroporto até a Zona Sul. A BR-116 para Curitiba numa sexta é uma história à parte. Consideramos isso com antecedência, não "no momento".</p>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <p class="eyebrow">Para onde levamos</p>
-    <div class="numbered">
-      <article class="numbered-item">
-        <div class="numbered-num">01</div>
-        <div class="numbered-body">
-          <h3>Aeroporto Salgado Filho (POA)</h3>
-          <p>Apresentações para voos específicos, apoio com bagagem, continuação intermunicipal ou ao litoral sem trocar de carro.</p>
-        </div>
+    <p class="kicker">De POA para onde</p>
+    <h2>O sul é o nosso trecho de casa.</h2>
+    <div class="bento reveal-stagger" style="margin-top: 2rem;">
+      <article class="bento-cell bento-cell--span-3 bento-cell--dark">
+        <p class="eyebrow">01 · Aeroporto Salgado Filho</p>
+        <h3>POA — apresentações para voos específicos.</h3>
+        <p>Apoio com bagagem, continuação intermunicipal ou para o litoral sem trocar de carro.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">02</div>
-        <div class="numbered-body">
-          <h3>Litoral catarinense</h3>
-          <p>Balneário Camboriú, Florianópolis, sul da ilha, Garopaba, Imbituba. O horário é ajustado pela estação e pelo tipo de viagem.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-3">
+        <p class="eyebrow">02 · Litoral SC</p>
+        <h3>Balneário, Florianópolis, sul da ilha.</h3>
+        <p>Garopaba, Imbituba, Laguna. O cronograma é ajustado pela temporada.</p>
       </article>
-      <article class="numbered-item">
-        <div class="numbered-num">03</div>
-        <div class="numbered-body">
-          <h3>Uruguai pelo Chuí e o sul</h3>
-          <p>Trechos diretos pela fronteira do Chuí para Montevidéu, Punta del Este, Colônia. Documentos e formato da travessia acertados antes.</p>
-        </div>
+      <article class="bento-cell bento-cell--span-2 bento-cell--dark">
+        <p class="eyebrow">03 · Uruguai</p>
+        <h3>Pelo Chuí.</h3>
+        <p>Montevidéu, Punta del Este, Colônia. Documentos acertados antes.</p>
+      </article>
+      <article class="bento-cell bento-cell--span-2 bento-cell--stat">
+        <span class="stat-number num">BR-116</span>
+        <span class="stat-label">a rodovia para Curitiba — conhecemos por temporada e por sexta-feira</span>
+      </article>
+      <article class="bento-cell bento-cell--span-2">
+        <p class="eyebrow">04 · Dentro de POA</p>
+        <h3>Da Zona Sul à Zona Norte.</h3>
+        <p>Menino Deus, Moinhos, Centro, região do aeroporto. Apresentação no endereço.</p>
       </article>
     </div>
   </div>
 </section>
 
+<section class="section section--bg-soft" id="calculator">
+  <div class="container container--narrow">
+    <p class="kicker" style="text-align: center;">Estimativa de preço da rota</p>
+    <h2 style="text-align: center;">Escolha as cidades — receba uma referência de preço. O valor exato é confirmado antes da partida.</h2>
+
+    <div class="calc-map" data-calc-map>
+      <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
+        <defs>
+          <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#map-grid)"/>
+        <line class="map-line"
+              data-map-line="fln-bnu"
+              x1="600" y1="345"
+              x2="605" y2="320"/>
+        <line class="map-line"
+              data-map-line="cwb-gru"
+              x1="550" y1="220"
+              x2="725" y2="100"/>
+        <line class="map-line"
+              data-map-line="gru-gig"
+              x1="725" y1="100"
+              x2="920" y2="60"/>
+        <line class="map-line"
+              data-map-line="poa-fln"
+              x1="430" y1="490"
+              x2="600" y2="345"/>
+        <line class="map-line"
+              data-map-line="nvt-bnu"
+              x1="590" y1="300"
+              x2="605" y2="320"/>
+        <line class="map-line"
+              data-map-line="fln-nvt"
+              x1="600" y1="345"
+              x2="590" y2="300"/>
+        <line class="map-line"
+              data-map-line="igr-cwb"
+              x1="220" y1="230"
+              x2="550" y2="220"/>
+        <line class="map-line"
+              data-map-line="poa-mvd"
+              x1="430" y1="490"
+              x2="120" y2="760"/>
+        <line class="map-line"
+              data-map-line="poa-pde"
+              x1="430" y1="490"
+              x2="200" y2="760"/>
+        <line class="map-line"
+              data-map-line="igr-asu"
+              x1="220" y1="230"
+              x2="50" y2="210"/>
+        <g data-map-city="gru">
+          <circle class="map-city" cx="725" cy="100" r="5"/>
+          <text class="map-label"
+                x="733"
+                y="104"
+                text-anchor="start">São Paulo (GRU)</text>
+        </g>
+        <g data-map-city="gig">
+          <circle class="map-city" cx="920" cy="60" r="5"/>
+          <text class="map-label"
+                x="912"
+                y="64"
+                text-anchor="end">Rio de Janeiro (GIG)</text>
+        </g>
+        <g data-map-city="cwb">
+          <circle class="map-city" cx="550" cy="220" r="5"/>
+          <text class="map-label"
+                x="542"
+                y="224"
+                text-anchor="end">Curitiba (CWB)</text>
+        </g>
+        <g data-map-city="fln">
+          <circle class="map-city" cx="600" cy="345" r="5"/>
+          <text class="map-label"
+                x="608"
+                y="349"
+                text-anchor="start">Florianópolis (FLN)</text>
+        </g>
+        <g data-map-city="nvt">
+          <circle class="map-city" cx="590" cy="300" r="5"/>
+          <text class="map-label"
+                x="582"
+                y="304"
+                text-anchor="end">Navegantes (NVT)</text>
+        </g>
+        <g data-map-city="poa">
+          <circle class="map-city" cx="430" cy="490" r="5"/>
+          <text class="map-label"
+                x="422"
+                y="494"
+                text-anchor="end">Porto Alegre (POA)</text>
+        </g>
+        <g data-map-city="bnu">
+          <circle class="map-city" cx="605" cy="320" r="5"/>
+          <text class="map-label"
+                x="613"
+                y="324"
+                text-anchor="start">Balneário Camboriú</text>
+        </g>
+        <g data-map-city="igr">
+          <circle class="map-city" cx="220" cy="230" r="5"/>
+          <text class="map-label"
+                x="228"
+                y="234"
+                text-anchor="start">Foz do Iguaçu (IGU)</text>
+        </g>
+        <g data-map-city="mvd">
+          <circle class="map-city" cx="120" cy="760" r="5"/>
+          <text class="map-label"
+                x="128"
+                y="764"
+                text-anchor="start">Montevidéu</text>
+        </g>
+        <g data-map-city="pde">
+          <circle class="map-city" cx="200" cy="760" r="5"/>
+          <text class="map-label"
+                x="208"
+                y="764"
+                text-anchor="start">Punta del Este</text>
+        </g>
+        <g data-map-city="asu">
+          <circle class="map-city" cx="50" cy="210" r="5"/>
+          <text class="map-label"
+                x="58"
+                y="214"
+                text-anchor="start">Assunção</text>
+        </g>
+      </svg>
+    </div>
+
+    <form class="calc" data-calculator data-lang="pt" novalidate>
+      <div class="calc-row">
+        <label class="field">
+          <span>De onde</span>
+          <select name="from" data-calc-from required>
+            <option value="">—</option>
+            <option value="gru">São Paulo (GRU)</option>
+            <option value="gig">Rio de Janeiro (GIG)</option>
+            <option value="cwb">Curitiba (CWB)</option>
+            <option value="fln">Florianópolis (FLN)</option>
+            <option value="nvt">Navegantes (NVT)</option>
+            <option value="poa">Porto Alegre (POA)</option>
+            <option value="bnu">Balneário Camboriú</option>
+            <option value="igr">Foz do Iguaçu (IGU)</option>
+            <option value="mvd">Montevidéu</option>
+            <option value="pde">Punta del Este</option>
+            <option value="asu">Assunção</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Para onde</span>
+          <select name="to" data-calc-to required>
+            <option value="">—</option>
+            <option value="gru">São Paulo (GRU)</option>
+            <option value="gig">Rio de Janeiro (GIG)</option>
+            <option value="cwb">Curitiba (CWB)</option>
+            <option value="fln">Florianópolis (FLN)</option>
+            <option value="nvt">Navegantes (NVT)</option>
+            <option value="poa">Porto Alegre (POA)</option>
+            <option value="bnu">Balneário Camboriú</option>
+            <option value="igr">Foz do Iguaçu (IGU)</option>
+            <option value="mvd">Montevidéu</option>
+            <option value="pde">Punta del Este</option>
+            <option value="asu">Assunção</option>
+          </select>
+        </label>
+      </div>
+      <div class="calc-row">
+        <label class="field">
+          <span>Passageiros</span>
+          <select name="pax" data-calc-pax>
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8+</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Bagagem</span>
+          <select name="luggage" data-calc-luggage>
+            <option value="standard">Padrão (1 peça/pessoa)</option>
+            <option value="extra">Ampliado (&gt;1 peça/pessoa)</option>
+            <option value="oversized">Volume grande (bicicletas, pranchas)</option>
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-dark btn-arrow calc-submit">Obter estimativa</button>
+
+      <div class="calc-result" data-calc-result hidden>
+        <div class="calc-result-state" data-calc-state-error hidden></div>
+        <div class="calc-result-state" data-calc-state-ok hidden>
+          <p class="eyebrow" data-calc-route-name></p>
+          <div class="calc-result-grid">
+            <div><dt>Distância</dt><dd data-calc-distance class="num"></dd></div>
+            <div><dt>Duração</dt><dd data-calc-duration class="num"></dd></div>
+            <div><dt>Referência</dt><dd data-calc-price class="num"></dd></div>
+          </div>
+          <p class="muted small">O preço inclui motorista, combustível, pedágios.</p>
+          <div class="calc-result-actions">
+            <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirmar pelo WhatsApp</a>
+            <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Compartilhar estimativa</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script type="application/json" data-calc-data>
+      {
+        "pairs": [{
+            "from": "fln",
+            "to": "bnu",
+            "km": 95,
+            "durationMin": 80,
+            "priceMin": 450,
+            "priceMax": 650,
+            "slug": "florianopolis-balneario-camboriu"
+          },{
+            "from": "cwb",
+            "to": "gru",
+            "km": 410,
+            "durationMin": 330,
+            "priceMin": 1900,
+            "priceMax": 2600,
+            "slug": "curitiba-sao-paulo"
+          },{
+            "from": "gru",
+            "to": "gig",
+            "km": 430,
+            "durationMin": 360,
+            "priceMin": 2100,
+            "priceMax": 2900,
+            "slug": "sao-paulo-rio-de-janeiro"
+          },{
+            "from": "poa",
+            "to": "fln",
+            "km": 480,
+            "durationMin": 390,
+            "priceMin": 2200,
+            "priceMax": 3100,
+            "slug": "porto-alegre-florianopolis"
+          },{
+            "from": "nvt",
+            "to": "bnu",
+            "km": 25,
+            "durationMin": 25,
+            "priceMin": 220,
+            "priceMax": 320,
+            "slug": "navegantes-balneario-camboriu"
+          },{
+            "from": "fln",
+            "to": "nvt",
+            "km": 90,
+            "durationMin": 75,
+            "priceMin": 420,
+            "priceMax": 600,
+            "slug": "florianopolis-navegantes"
+          },{
+            "from": "igr",
+            "to": "cwb",
+            "km": 640,
+            "durationMin": 480,
+            "priceMin": 2800,
+            "priceMax": 3900,
+            "slug": "foz-do-iguacu-curitiba"
+          },{
+            "from": "poa",
+            "to": "mvd",
+            "km": 870,
+            "durationMin": 720,
+            "priceMin": 4500,
+            "priceMax": 6200,
+            "slug": "porto-alegre-montevideo"
+          },{
+            "from": "poa",
+            "to": "pde",
+            "km": 990,
+            "durationMin": 780,
+            "priceMin": 5000,
+            "priceMax": 7000,
+            "slug": "porto-alegre-punta-del-este"
+          },{
+            "from": "igr",
+            "to": "asu",
+            "km": 330,
+            "durationMin": 300,
+            "priceMin": 1600,
+            "priceMax": 2300,
+            "slug": "foz-do-iguacu-asuncion"
+          }],
+        "cities": {"gru": "São Paulo (GRU)","gig": "Rio de Janeiro (GIG)","cwb": "Curitiba (CWB)","fln": "Florianópolis (FLN)","nvt": "Navegantes (NVT)","poa": "Porto Alegre (POA)","bnu": "Balneário Camboriú","igr": "Foz do Iguaçu (IGU)","mvd": "Montevidéu","pde": "Punta del Este","asu": "Assunção"},
+        "messages": {
+          "pickFirst": "Selecione as cidades primeiro",
+          "sameCity": "Selecione cidades diferentes",
+          "notFound": "Esta rota é cotada caso a caso — escreva pra gente.",
+          "share": "Compartilhar estimativa",
+          "shareCopied": "Link copiado",
+          "shareFailed": "Não foi possível copiar — selecione manualmente"
+        },
+        "whatsapp": "https://wa.me/5513996532915",
+        "lang": "pt"
+      }
+    </script>
+  </div>
+</section>
+
+
 <section class="cta-strip">
-  <div class="container cta-strip-grid">
+  <div class="container container--narrow">
     <h2>Para onde de Porto Alegre?</h2>
     <div class="cta-strip-actions">
       <a class="btn btn-dark btn-arrow" href="/transferpages/pt/contact/">Confirmar viagem</a>

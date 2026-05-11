@@ -1701,5 +1701,79 @@ a.route-row:hover { background: var(--bg-soft); }
 }
 @media (hover: none) { .cursor-follow { display: none; } }
 
+/* =========================================================
+   Trust strip, share-quote, result actions, checklist refinement
+   ========================================================= */
+
+.trust-strip-section {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 1.4rem 0;
+}
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem 2.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-feature-settings: "tnum";
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.trust-strip li {
+  position: relative;
+  white-space: nowrap;
+}
+.trust-strip li::before {
+  content: "✓";
+  margin-right: 0.45rem;
+  color: var(--text);
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .trust-strip { gap: 0.6rem 1.4rem; font-size: 0.72rem; }
+  .trust-strip li::before { margin-right: 0.3rem; }
+}
+
+.calc-result-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.calc-result-actions .btn { flex: 1; min-width: 180px; }
+
+/* Tighter checklist for inline ordered lists */
+ol.checklist { list-style: none; padding: 0; counter-reset: step; }
+ol.checklist li {
+  padding-left: 2.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  line-height: 1.55;
+  counter-increment: step;
+}
+ol.checklist li::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--mono);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  width: 1.8rem;
+  text-align: right;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border: none;
+  background: none;
+  border-radius: 0;
+}
+
+
 
 

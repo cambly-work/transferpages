@@ -100,7 +100,10 @@
             <div><dt>{{ t.calc.result }}</dt><dd data-calc-price class="num"></dd></div>
           </div>
           <p class="muted small">{{ t.calc.perKm }}</p>
-          <a class="btn btn-dark btn-arrow" data-calc-confirm href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.calc.confirm }}</a>
+          <div class="calc-result-actions">
+            <a class="btn btn-dark btn-arrow" data-calc-confirm href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.calc.confirm }}</a>
+            <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">{{ t.calc.share }}</button>
+          </div>
         </div>
       </div>
     </form>
@@ -128,7 +131,10 @@
         "messages": {
           "pickFirst": "{{ t.calc.pickFirst }}",
           "sameCity": "{{ t.calc.sameCity }}",
-          "notFound": "{{ t.calc.notFound }}"
+          "notFound": "{{ t.calc.notFound }}",
+          "share": "{{ t.calc.share }}",
+          "shareCopied": "{{ t.calc.shareCopied }}",
+          "shareFailed": "{{ t.calc.shareFailed }}"
         },
         "whatsapp": "{{ site.contacts.whatsappUrl }}",
         "lang": "{{ lang }}"

@@ -546,6 +546,49 @@
         });
       };
 
+      // Share-quote button + URL-params auto-fill
+      const shareBtn = calculator.querySelector('[data-calc-share]');
+      const shareDefault = shareBtn?.textContent || '';
+      const buildShareUrl = () => {
+        const u = new URL(window.location.href);
+        u.searchParams.set('from', fromSel.value);
+        u.searchParams.set('to', toSel.value);
+        u.searchParams.set('pax', paxSel.value);
+        u.searchParams.set('luggage', luggageSel.value);
+        u.hash = 'calculator';
+        return u.toString();
+      };
+      shareBtn?.addEventListener('click', async () => {
+        const url = buildShareUrl();
+        try {
+          if (navigator.share && window.matchMedia('(pointer: coarse)').matches) {
+            await navigator.share({ title: document.title, url });
+          } else {
+            await navigator.clipboard.writeText(url);
+          }
+          shareBtn.textContent = data.messages.shareCopied;
+          trackEvent('calculator_share', { from: fromSel.value, to: toSel.value });
+        } catch (e) {
+          shareBtn.textContent = data.messages.shareFailed;
+        }
+        setTimeout(() => { shareBtn.textContent = shareDefault; }, 2500);
+      });
+
+      // URL-params auto-fill
+      const urlParams = new URLSearchParams(window.location.search);
+      const pFrom = urlParams.get('from');
+      const pTo = urlParams.get('to');
+      const pPax = urlParams.get('pax');
+      const pLug = urlParams.get('luggage');
+      if (pFrom && data.cities[pFrom]) fromSel.value = pFrom;
+      if (pTo && data.cities[pTo]) toSel.value = pTo;
+      if (pPax && /^\d+$/.test(pPax)) paxSel.value = pPax;
+      if (pLug && ['standard', 'extra', 'oversized'].includes(pLug)) luggageSel.value = pLug;
+      if (pFrom && pTo && pFrom !== pTo) {
+        // auto-calc on landing with a route
+        setTimeout(() => calculator.dispatchEvent(new Event('submit', { cancelable: true })), 150);
+      }
+
       // Map highlight on city change
       const mapEl = document.querySelector('[data-calc-map]');
       const updateMap = () => {

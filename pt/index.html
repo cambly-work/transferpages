@@ -152,6 +152,19 @@
   </div>
 </section>
 
+<section class="trust-strip-section" aria-label="Trust signals">
+  <div class="container">
+    <ul class="trust-strip">
+      <li>NF-e Sefaz</li>
+      <li>DPVAT + seguro</li>
+      <li>Conformidade LGPD</li>
+      <li>Pix · Visa · Mastercard</li>
+      <li>24/7 · WhatsApp · Telegram</li>
+    </ul>
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container">
     <header style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;">
@@ -400,7 +413,10 @@
             <div><dt>Referência</dt><dd data-calc-price class="num"></dd></div>
           </div>
           <p class="muted small">O preço inclui motorista, combustível, pedágios.</p>
-          <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirmar pelo WhatsApp</a>
+          <div class="calc-result-actions">
+            <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirmar pelo WhatsApp</a>
+            <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Compartilhar estimativa</button>
+          </div>
         </div>
       </div>
     </form>
@@ -492,7 +508,10 @@
         "messages": {
           "pickFirst": "Selecione as cidades primeiro",
           "sameCity": "Selecione cidades diferentes",
-          "notFound": "Esta rota é cotada caso a caso — escreva pra gente."
+          "notFound": "Esta rota é cotada caso a caso — escreva pra gente.",
+          "share": "Compartilhar estimativa",
+          "shareCopied": "Link copiado",
+          "shareFailed": "Não foi possível copiar — selecione manualmente"
         },
         "whatsapp": "https://wa.me/5513996532915",
         "lang": "pt"

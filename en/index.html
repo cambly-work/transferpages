@@ -152,6 +152,19 @@
   </div>
 </section>
 
+<section class="trust-strip-section" aria-label="Trust signals">
+  <div class="container">
+    <ul class="trust-strip">
+      <li>NF-e Sefaz</li>
+      <li>DPVAT + passenger insurance</li>
+      <li>LGPD-compliant</li>
+      <li>Pix · Visa · Mastercard</li>
+      <li>24/7 · WhatsApp · Telegram</li>
+    </ul>
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container">
     <header style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;">
@@ -400,7 +413,10 @@
             <div><dt>Reference</dt><dd data-calc-price class="num"></dd></div>
           </div>
           <p class="muted small">Price includes driver, fuel, tolls.</p>
-          <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirm via WhatsApp</a>
+          <div class="calc-result-actions">
+            <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirm via WhatsApp</a>
+            <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Share this quote</button>
+          </div>
         </div>
       </div>
     </form>
@@ -492,7 +508,10 @@
         "messages": {
           "pickFirst": "Pick the cities first",
           "sameCity": "Pick different cities",
-          "notFound": "This route is priced case by case — message us."
+          "notFound": "This route is priced case by case — message us.",
+          "share": "Share this quote",
+          "shareCopied": "Link copied",
+          "shareFailed": "Could not copy — please select manually"
         },
         "whatsapp": "https://wa.me/5513996532915",
         "lang": "en"

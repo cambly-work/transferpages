@@ -1,0 +1,37 @@
+---
+permalink: "/offline.html"
+eleventyExcludeFromCollections: true
+lang: "en"
+title: "Offline · Morrison Premium Transfer"
+description: "No connection. WhatsApp and Telegram still work."
+---
+{%- set t = i18n[lang] -%}
+<!DOCTYPE html>
+<html lang="{{ t.htmlLang }}">
+<head>
+{% include "partials/head.njk" %}
+</head>
+<body>
+{% include "partials/header.njk" %}
+<main id="main">
+<section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">Offline</p>
+    <h1>Нет связи — но мы есть.</h1>
+    <p class="lead muted" style="max-width: 540px; margin: 1.4rem auto 2rem;">
+      Если интернет шатается, а вам нужно срочно — WhatsApp работает даже на 2G.
+    </p>
+    <div class="cta-strip-actions" style="justify-content: center;">
+      <a class="btn btn-dark btn-arrow" href="https://wa.me/5513996532915" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="https://t.me/premium_transfer_latam" target="_blank" rel="noopener">Telegram</a>
+    </div>
+    <p class="muted small" style="margin-top: 2.4rem;">
+      Когда сеть появится — <a href="javascript:location.reload()">обновите страницу</a>.
+    </p>
+  </div>
+</section>
+</main>
+{% include "partials/footer.njk" %}
+<script src="/assets/script.js"></script>
+</body>
+</html>

@@ -58,6 +58,21 @@ ru:
       kicker: "Бразилия · Меркосур · с 2024"
       h1: "Частные трансферы<br>с фиксированной ценой<br>до выезда."
       lead: "Маршрут, тайминг и условия согласованы до того, как машина выехала. Без счётчика, без сюрпризов на полпути."
+  stats:
+    eyebrow: "В цифрах"
+    title: "Что стоит за словом «премиум»."
+    metric1Value: 4
+    metric1Suffix: ""
+    metric1Label: "страны Меркосур"
+    metric2Value: 11
+    metric2Suffix: ""
+    metric2Label: "городов покрытия"
+    metric3Value: 24
+    metric3Suffix: "/7"
+    metric3Label: "часов на связи"
+    metric4Value: 60
+    metric4Suffix: "+"
+    metric4Label: "минут с подачей вовремя"
   howItWorks:
     title: "Как это работает."
     subtitle: "От заявки до поездки — четыре шага."
@@ -74,6 +89,10 @@ ru:
     copied: Скопировано
     themeLight: Светлая тема
     themeDark: Тёмная тема
+    search: Поиск
+    searchPlaceholder: Найти статью
+    noResults: Ничего не найдено
+    backToTop: Наверх
   newsletter:
     eyebrow: "Раз в квартал"
     title: "Маршруты и сезонные подсказки."
@@ -256,6 +275,21 @@ pt:
       kicker: "Brasil · Mercosul · desde 2024"
       h1: "Transfers privados<br>com preço fechado<br>antes da partida."
       lead: "Rota, horário e condições confirmados antes do carro sair. Sem taxímetro, sem surpresas no meio do caminho."
+  stats:
+    eyebrow: "Em números"
+    title: "O que está por trás de \"premium\"."
+    metric1Value: 4
+    metric1Suffix: ""
+    metric1Label: "países do Mercosul"
+    metric2Value: 11
+    metric2Suffix: ""
+    metric2Label: "cidades atendidas"
+    metric3Value: 24
+    metric3Suffix: "/7"
+    metric3Label: "horas em contato"
+    metric4Value: 60
+    metric4Suffix: "+"
+    metric4Label: "minutos de espera incluídos"
   howItWorks:
     title: "Como funciona."
     subtitle: "Da solicitação à viagem — quatro passos."
@@ -272,6 +306,10 @@ pt:
     copied: Copiado
     themeLight: Tema claro
     themeDark: Tema escuro
+    search: Buscar
+    searchPlaceholder: Encontrar artigo
+    noResults: Nada encontrado
+    backToTop: Para o topo
   newsletter:
     eyebrow: "Uma vez por trimestre"
     title: "Rotas e dicas sazonais."
@@ -454,6 +492,21 @@ en:
       kicker: "Brazil · Mercosur · since 2024"
       h1: "Private transfers<br>with a fixed price<br>before departure."
       lead: "Route, timing and conditions confirmed before the car leaves. No meter, no surprises mid-route."
+  stats:
+    eyebrow: "In numbers"
+    title: "What sits behind \"premium\"."
+    metric1Value: 4
+    metric1Suffix: ""
+    metric1Label: "Mercosur countries"
+    metric2Value: 11
+    metric2Suffix: ""
+    metric2Label: "cities served"
+    metric3Value: 24
+    metric3Suffix: "/7"
+    metric3Label: "hours on contact"
+    metric4Value: 60
+    metric4Suffix: "+"
+    metric4Label: "min wait included"
   howItWorks:
     title: "How it works."
     subtitle: "From request to ride — four steps."
@@ -470,6 +523,10 @@ en:
     copied: Copied
     themeLight: Light theme
     themeDark: Dark theme
+    search: Search
+    searchPlaceholder: Find an article
+    noResults: Nothing found
+    backToTop: Back to top
   newsletter:
     eyebrow: "Once a quarter"
     title: "Routes and seasonal tips."

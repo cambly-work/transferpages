@@ -17,9 +17,13 @@ breadcrumbs:
 
 <section class="section">
   <div class="container container--narrow">
-    <div class="post-list">
+    <label class="blog-search">
+      {% set iconName = "search" %}{% include "partials/icon.njk" %}
+      <input type="search" data-blog-search placeholder="{{ t.ui.searchPlaceholder }}" aria-label="{{ t.ui.search }}">
+    </label>
+    <div class="post-list" data-blog-list>
       {%- for post in posts.posts %}
-      <a class="post-card" href="/ru/blog/{{ post.slug }}/">
+      <a class="post-card" href="/ru/blog/{{ post.slug }}/" data-searchable="{{ post.title.ru }} {{ post.excerpt.ru }} {{ post.category.ru }}">
         <div class="post-card-meta">
           <span class="post-category">{{ post.category.ru }}</span>
           <span class="post-date num">{{ post.date }}</span>
@@ -31,6 +35,7 @@ breadcrumbs:
       </a>
       {%- endfor %}
     </div>
+    <p class="blog-no-results muted" data-blog-no-results hidden>{{ t.ui.noResults }}</p>
   </div>
 </section>
 

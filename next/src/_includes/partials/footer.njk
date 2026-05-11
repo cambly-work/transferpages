@@ -47,11 +47,11 @@
       </div>
       <div>
         <h4>{{ t.footer.contacts }}</h4>
-        <ul>
-          <li><a href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Telegram</a></li>
-          <li><a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a> <button type="button" class="copy-btn copy-btn--inline" data-copy="{{ site.contacts.email }}" data-copy-label="{{ t.ui.copy }}" data-copied-label="{{ t.ui.copied }}" aria-label="{{ t.ui.copy }} email"><span class="copy-icon" aria-hidden="true">⎘</span></button></li>
-          <li><a href="/{{ lang }}/contact/">{{ t.footer.request }}</a></li>
+        <ul class="footer-contacts">
+          <li><a href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{% set iconName = "chat" %}{% include "partials/icon.njk" %}WhatsApp</a></li>
+          <li><a href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">{% set iconName = "chat" %}{% include "partials/icon.njk" %}Telegram</a></li>
+          <li><a href="mailto:{{ site.contacts.email }}">{% set iconName = "email" %}{% include "partials/icon.njk" %}{{ site.contacts.email }}</a> <button type="button" class="copy-btn copy-btn--inline" data-copy="{{ site.contacts.email }}" data-copy-label="{{ t.ui.copy }}" data-copied-label="{{ t.ui.copied }}" aria-label="{{ t.ui.copy }} email"><span class="copy-icon" aria-hidden="true">⎘</span></button></li>
+          <li><a href="/{{ lang }}/contact/">{% set iconName = "doc" %}{% include "partials/icon.njk" %}{{ t.footer.request }}</a></li>
         </ul>
         <h4 style="margin-top: 1.4rem;">{{ t.footer.languages }}</h4>
         <ul class="footer-langs">

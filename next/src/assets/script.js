@@ -386,6 +386,55 @@
     document.documentElement.setAttribute('data-preferred-language', existingPreference);
   }
 
+  // ---------- Sticky header shrinking + back-to-top ----------
+  const SHRINK_AT = 60;
+  const BACK_AT = 800;
+  const backTopBtn = document.querySelector('[data-back-to-top]');
+  let lastScrollY = 0;
+  let scrollTicking = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    if (Math.abs(y - lastScrollY) > 4) {
+      document.body.classList.toggle('is-scrolled', y > SHRINK_AT);
+      backTopBtn?.classList.toggle('is-visible', y > BACK_AT);
+      lastScrollY = y;
+    }
+    scrollTicking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!scrollTicking) { requestAnimationFrame(onScroll); scrollTicking = true; }
+  }, { passive: true });
+  backTopBtn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    trackEvent('back_to_top', { from_y: lastScrollY });
+  });
+
+  // ---------- Service worker registration (PWA) ----------
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => { /* offline support unavailable */ });
+    });
+  }
+
+  // ---------- Blog search (offline filter) ----------
+  const blogSearch = document.querySelector('[data-blog-search]');
+  if (blogSearch) {
+    const list = document.querySelector('[data-blog-list]');
+    const cards = Array.from(list?.querySelectorAll('.post-card') || []);
+    const noResults = document.querySelector('[data-blog-no-results]');
+    const filter = () => {
+      const q = blogSearch.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((c) => {
+        const match = !q || (c.dataset.searchable || '').toLowerCase().includes(q);
+        c.hidden = !match;
+        if (match) visible += 1;
+      });
+      if (noResults) noResults.hidden = visible !== 0;
+    };
+    blogSearch.addEventListener('input', filter);
+  }
+
   // ---------- Theme toggle (dark mode) ----------
   const THEME_KEY = 'preferredTheme';
   const themeToggle = document.querySelector('[data-theme-toggle]');

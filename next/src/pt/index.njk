@@ -15,11 +15,18 @@ faq:
   - q: "Operam à noite e nos finais de semana?"
     a: "Sim, sem pausas. Apresentações noturnas e finais de semana não têm tarifa especial, mas precisam de mais antecedência para planejamento."
 ---
-<section class="hero">
+<section class="hero hero--motion" data-hero-seasonal>
+  {% include "partials/hero-motion.njk" %}
   <div class="container container--narrow">
-    <p class="kicker reveal-up">Brasil · Mercosul · desde 2024</p>
-    <h1 class="reveal-up">Transfers privados<br>com preço fechado<br>antes da partida.</h1>
-    <p class="lead reveal-up">Rota, horário e condições confirmados antes do carro sair. Sem taxímetro, sem surpresas no meio do caminho.</p>
+    <p class="kicker reveal-up" data-season-kicker>{{ t.seasons.default.kicker }}</p>
+    <h1 class="reveal-up" data-season-h1>{{ t.seasons.default.h1 | safe }}</h1>
+    <p class="lead reveal-up" data-season-lead>{{ t.seasons.default.lead }}</p>
+    <script type="application/json" data-season-data>
+      {
+        "summer": { "kicker": {{ t.seasons.summer.kicker | dump | safe }}, "h1": {{ t.seasons.summer.h1 | dump | safe }}, "lead": {{ t.seasons.summer.lead | dump | safe }} },
+        "winter": { "kicker": {{ t.seasons.winter.kicker | dump | safe }}, "h1": {{ t.seasons.winter.h1 | dump | safe }}, "lead": {{ t.seasons.winter.lead | dump | safe }} }
+      }
+    </script>
     <div class="hero-actions reveal-up">
       <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar viagem</a>
       <a class="btn btn-secondary" href="#calculator">Estimar preço</a>
@@ -34,6 +41,8 @@ faq:
 </section>
 
 {% include "partials/trust-strip.njk" %}
+
+{% include "partials/how-it-works.njk" %}
 
 <section class="section">
   <div class="container">
@@ -134,6 +143,8 @@ faq:
     </div>
   </div>
 </section>
+
+{% include "partials/newsletter.njk" %}
 
 <section class="cta-strip">
   <div class="container container--narrow">

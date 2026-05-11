@@ -384,10 +384,22 @@ p { margin: 0 0 1rem; }
   background-size: cover;
   background-position: center;
 }
-.tile-photo--brazil { background-image: url("/assets/images/rio-dawn.jpg"); }
-.tile-photo--airport { background-image: url("/assets/images/interior-1.jpg"); }
-.tile-photo--intl { background-image: url("/assets/images/tropical-coast.jpg"); }
-.tile-photo--partners { background-image: url("/assets/images/rio-corcovado.jpg"); }
+.tile-photo--brazil {
+  background-image: image-set(url('/assets/images/rio-dawn.webp') type('image/webp'), url('/assets/images/rio-dawn.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/assets/images/rio-dawn.webp') type('image/webp'), url('/assets/images/rio-dawn.jpg') type('image/jpeg'));
+}
+.tile-photo--airport {
+  background-image: image-set(url('/assets/images/interior-1.webp') type('image/webp'), url('/assets/images/interior-1.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/assets/images/interior-1.webp') type('image/webp'), url('/assets/images/interior-1.jpg') type('image/jpeg'));
+}
+.tile-photo--intl {
+  background-image: image-set(url('/assets/images/tropical-coast.webp') type('image/webp'), url('/assets/images/tropical-coast.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/assets/images/tropical-coast.webp') type('image/webp'), url('/assets/images/tropical-coast.jpg') type('image/jpeg'));
+}
+.tile-photo--partners {
+  background-image: image-set(url('/assets/images/rio-corcovado.webp') type('image/webp'), url('/assets/images/rio-corcovado.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/assets/images/rio-corcovado.webp') type('image/webp'), url('/assets/images/rio-corcovado.jpg') type('image/jpeg'));
+}
 .tile::after {
   content: "";
   position: absolute; inset: 0;
@@ -1392,10 +1404,38 @@ a.route-row:hover { background: var(--bg-soft); }
 .bento-cell--photo h3, .bento-cell--photo .eyebrow { color: #fff; }
 .bento-cell--photo p { color: rgba(255,255,255,0.85); }
 .bento-cell--photo .bento-cta { color: #fff; }
-.bento-photo--brazil .bento-bg { background-image: url('/assets/images/rio-dawn.jpg'); }
-.bento-photo--airport .bento-bg { background-image: url('/assets/images/interior-1.jpg'); }
-.bento-photo--intl .bento-bg { background-image: url('/assets/images/tropical-coast.jpg'); }
-.bento-photo--partners .bento-bg { background-image: url('/assets/images/rio-corcovado.jpg'); }
+.bento-photo--brazil .bento-bg {
+  background-image: image-set(
+    url('/assets/images/rio-dawn.avif') type('image/avif'),
+    url('/assets/images/rio-dawn.webp') type('image/webp'),
+    url('/assets/images/rio-dawn.jpg') type('image/jpeg')
+  );
+  background-image: -webkit-image-set(url('/assets/images/rio-dawn.webp') type('image/webp'), url('/assets/images/rio-dawn.jpg') type('image/jpeg'));
+}
+.bento-photo--airport .bento-bg {
+  background-image: image-set(
+    url('/assets/images/interior-1.avif') type('image/avif'),
+    url('/assets/images/interior-1.webp') type('image/webp'),
+    url('/assets/images/interior-1.jpg') type('image/jpeg')
+  );
+  background-image: -webkit-image-set(url('/assets/images/interior-1.webp') type('image/webp'), url('/assets/images/interior-1.jpg') type('image/jpeg'));
+}
+.bento-photo--intl .bento-bg {
+  background-image: image-set(
+    url('/assets/images/tropical-coast.avif') type('image/avif'),
+    url('/assets/images/tropical-coast.webp') type('image/webp'),
+    url('/assets/images/tropical-coast.jpg') type('image/jpeg')
+  );
+  background-image: -webkit-image-set(url('/assets/images/tropical-coast.webp') type('image/webp'), url('/assets/images/tropical-coast.jpg') type('image/jpeg'));
+}
+.bento-photo--partners .bento-bg {
+  background-image: image-set(
+    url('/assets/images/rio-corcovado.avif') type('image/avif'),
+    url('/assets/images/rio-corcovado.webp') type('image/webp'),
+    url('/assets/images/rio-corcovado.jpg') type('image/jpeg')
+  );
+  background-image: -webkit-image-set(url('/assets/images/rio-corcovado.webp') type('image/webp'), url('/assets/images/rio-corcovado.jpg') type('image/jpeg'));
+}
 .bento-cell--stat {
   background: linear-gradient(135deg, var(--bg-soft) 0%, #ebebef 100%);
   display: flex; flex-direction: column; justify-content: center;
@@ -1773,6 +1813,180 @@ ol.checklist li::before {
   background: none;
   border-radius: 0;
 }
+
+/* =========================================================
+   Hero motion / cinemagraph
+   ========================================================= */
+.hero--motion { position: relative; overflow: hidden; isolation: isolate; }
+.hero-motion {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.hero-motion-route {
+  stroke-dasharray: 6 8;
+  animation: routeDash 18s linear infinite;
+}
+@keyframes routeDash { to { stroke-dashoffset: -56; } }
+.hero-motion-pulse {
+  transform-origin: center;
+  animation: pulseDot 4.5s var(--ease-out) infinite;
+}
+.hero-motion-pulse--1 { animation-delay: 0s; }
+.hero-motion-pulse--2 { animation-delay: 1.1s; }
+.hero-motion-pulse--3 { animation-delay: 2.2s; }
+.hero-motion-pulse--4 { animation-delay: 3.3s; r: 5; }
+@keyframes pulseDot {
+  0%, 30% { opacity: 0.3; }
+  40% { opacity: 1; transform: scale(1.4); }
+  60% { opacity: 0.3; transform: scale(1); }
+  100% { opacity: 0.3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-motion-route, .hero-motion-pulse { animation: none; }
+}
+
+/* =========================================================
+   How-it-works steps
+   ========================================================= */
+.how-it-works { position: relative; }
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+  counter-reset: stepCount;
+}
+.step {
+  background: var(--bg-soft);
+  border-radius: var(--radius-tile);
+  padding: 1.8rem 1.6rem;
+  position: relative;
+  counter-increment: stepCount;
+}
+.step-num {
+  display: inline-block;
+  font-family: var(--mono);
+  font-feature-settings: "tnum";
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-right: 1.2rem;
+}
+.step-num::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--line-strong);
+  vertical-align: middle;
+  margin-left: 0.8rem;
+}
+.step h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.012em;
+}
+.step p { color: var(--muted); font-size: 0.94rem; line-height: 1.55; margin: 0; }
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 540px) {
+  .steps { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   Newsletter
+   ========================================================= */
+.newsletter {
+  background: var(--bg-navy);
+  color: var(--text-on-dark);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  background-image: radial-gradient(800px 400px at 10% 0%, rgba(201, 163, 107, 0.1), transparent 60%);
+}
+.newsletter .kicker { color: var(--accent); letter-spacing: 0.16em; }
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.newsletter-copy h3 {
+  color: #fff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.018em;
+  margin: 0.4rem 0 0.6rem;
+}
+.newsletter-copy .muted { color: var(--muted-on-dark); font-size: 0.95rem; line-height: 1.55; }
+.newsletter-form { width: 100%; }
+.newsletter-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+.newsletter-row input[type="email"] {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 0.78rem 1rem;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.newsletter-row input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+.newsletter-row input[type="email"]::placeholder { color: var(--muted-on-dark); }
+.newsletter-row .btn {
+  background: #fff;
+  color: var(--bg-navy);
+  border-color: #fff;
+}
+.newsletter-row .btn:hover { background: var(--accent); border-color: var(--accent); }
+.newsletter-consent {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: 0.78rem;
+  color: var(--muted-on-dark);
+  line-height: 1.5;
+}
+.newsletter-consent input { margin-top: 0.18rem; accent-color: var(--accent); flex-shrink: 0; }
+.newsletter-consent a { color: var(--accent); text-decoration: underline; }
+.newsletter-msg { color: var(--accent); font-size: 0.9rem; margin-top: 0.6rem; }
+@media (max-width: 800px) {
+  .newsletter-inner { grid-template-columns: 1fr; gap: 1.8rem; }
+  .newsletter-row { flex-direction: column; }
+}
+
+/* =========================================================
+   Homepage polish: WhatsApp section mobile fix + hero refinements
+   ========================================================= */
+.section--bg-navy > .container > div[style*="grid-template-columns"] {
+  /* responsive override for the WhatsApp side-by-side block on home */
+}
+@media (max-width: 840px) {
+  .section--bg-navy > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+@media (max-width: 640px) {
+  .whatsapp-mock { max-width: 100%; }
+  .hero { padding-top: clamp(3rem, 6vw, 5rem); }
+}
+
 
 
 

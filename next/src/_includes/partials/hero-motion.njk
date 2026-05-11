@@ -1,0 +1,16 @@
+{# Subtle cinematic SVG: dotted route line drawing itself across the hero. #}
+<svg class="hero-motion" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="route-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a1628" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#0a1628" stop-opacity="0.15"/>
+      <stop offset="80%" stop-color="#0a1628" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0a1628" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path class="hero-motion-route" d="M 80 480 Q 280 360 480 380 T 920 240 T 1120 120" fill="none" stroke="url(#route-gradient)" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--1" cx="80" cy="480" r="3" fill="#0a1628"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--2" cx="480" cy="380" r="3" fill="#0a1628"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--3" cx="920" cy="240" r="3" fill="#0a1628"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--4" cx="1120" cy="120" r="3" fill="#c9a36b"/>
+</svg>

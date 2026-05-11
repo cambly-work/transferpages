@@ -11,7 +11,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "js-yaml": "^4.1.0",
-    "puppeteer": "^24.43.0"
+    "puppeteer": "^24.43.0",
+    "sharp": "^0.34.5"
   },
   "engines": {
     "node": ">=18"

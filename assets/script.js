@@ -386,6 +386,83 @@
     document.documentElement.setAttribute('data-preferred-language', existingPreference);
   }
 
+  // ---------- Seasonal hero ----------
+  const seasonalHero = document.querySelector('[data-hero-seasonal]');
+  if (seasonalHero) {
+    const dataNode = seasonalHero.querySelector('[data-season-data]');
+    let seasons = null;
+    try { seasons = JSON.parse(dataNode?.textContent || '{}'); } catch (e) {}
+    if (seasons) {
+      const m = new Date().getMonth() + 1;
+      // Southern hemisphere: Dec(12), Jan(1), Feb(2), Mar(3) = high coast season
+      const isSummer = m === 12 || m <= 3;
+      const isWinter = m >= 5 && m <= 10;
+      const pick = isSummer ? seasons.summer : isWinter ? seasons.winter : null;
+      if (pick) {
+        const kicker = seasonalHero.querySelector('[data-season-kicker]');
+        const h1 = seasonalHero.querySelector('[data-season-h1]');
+        const lead = seasonalHero.querySelector('[data-season-lead]');
+        if (kicker) kicker.textContent = pick.kicker;
+        if (h1) h1.innerHTML = pick.h1;
+        if (lead) lead.textContent = pick.lead;
+        seasonalHero.dataset.season = isSummer ? 'summer' : 'winter';
+        trackEvent('hero_season', { season: isSummer ? 'summer' : 'winter', month: m });
+      }
+    }
+  }
+
+  // ---------- Newsletter form ----------
+  const newsletterForm = document.querySelector('[data-newsletter]');
+  if (newsletterForm) {
+    const msgEl = newsletterForm.querySelector('[data-newsletter-msg]');
+    const emailTo = newsletterForm.dataset.emailTo;
+    const nlLang = newsletterForm.dataset.lang || 'en';
+    const successByLang = {
+      ru: 'Подписаны. Первое письмо — в начале сезона.',
+      pt: 'Inscrito. Primeiro e-mail no início da temporada.',
+      en: 'Subscribed. First email at the start of the season.',
+    };
+    newsletterForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const fd = new FormData(newsletterForm);
+      const email = (fd.get('email') || '').toString().trim();
+      const consent = !!fd.get('consent');
+      if (!email || !consent || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
+
+      // No backend on GH Pages — escape hatch: open mailto so the email lands in the inbox.
+      const subject = encodeURIComponent('Newsletter signup · ' + nlLang);
+      const body = encodeURIComponent(`email: ${email}\nlang: ${nlLang}\nconsent: yes\nsource: ${window.location.href}`);
+      window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+
+      trackEvent('newsletter_signup', { language: nlLang });
+      msgEl.hidden = false;
+      msgEl.textContent = successByLang[nlLang] || successByLang.en;
+      newsletterForm.querySelector('input[type="email"]').value = '';
+    });
+  }
+
+  // ---------- GA4 scroll depth tracking ----------
+  if (typeof window.gtag === 'function') {
+    const milestones = [25, 50, 75, 100];
+    const fired = new Set();
+    let ticking = false;
+    const checkScroll = () => {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      if (docH <= 0) return;
+      const pct = Math.round((window.scrollY / docH) * 100);
+      milestones.forEach((m) => {
+        if (pct >= m && !fired.has(m)) {
+          fired.add(m);
+          trackEvent('scroll_depth', { depth: m, page: window.location.pathname });
+        }
+      });
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(checkScroll); ticking = true; }
+    }, { passive: true });
+  }
+
   // ---------- Driver tracking demo ----------
   const trackCard = document.querySelector('[data-track-card]');
   if (trackCard) {
@@ -624,6 +701,92 @@
         });
       });
 
+      // Calculator PDF download
+      const calcPdfBtn = calculator.querySelector('[data-calc-pdf]');
+      let lastPair = null;
+      const ensureJsPDFLocal = () => new Promise((resolve, reject) => {
+        if (window.jspdf?.jsPDF) return resolve(window.jspdf);
+        const existing = document.querySelector('script[data-jspdf]');
+        if (existing) {
+          existing.addEventListener('load', () => resolve(window.jspdf), { once: true });
+          existing.addEventListener('error', reject, { once: true });
+          return;
+        }
+        const s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
+        s.async = true;
+        s.dataset.jspdf = 'true';
+        s.onload = () => resolve(window.jspdf);
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+
+      calcPdfBtn?.addEventListener('click', async () => {
+        if (!lastPair) return;
+        try {
+          const { jsPDF } = await ensureJsPDFLocal();
+          const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+          const pageW = doc.internal.pageSize.getWidth();
+          const margin = 56;
+          const fromName = data.cities[fromSel.value];
+          const toName = data.cities[toSel.value];
+
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(20);
+          doc.text('Morrison Premium Transfer', margin, 64);
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(11);
+          doc.setTextColor(110);
+          const titleByLang = { ru: 'Ориентир по маршруту', pt: 'Estimativa de rota', en: 'Route reference' };
+          doc.text(titleByLang[data.lang] || titleByLang.en, margin, 84);
+          doc.setDrawColor(220);
+          doc.line(margin, 100, pageW - margin, 100);
+
+          doc.setTextColor(20);
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(18);
+          doc.text(`${fromName}  →  ${toName}`, margin, 140);
+
+          const labelsByLang = {
+            ru: { dist: 'Расстояние', dur: 'Время в пути', price: 'Ориентир по цене', pax: 'Пассажиры', luggage: 'Багаж', note: 'Точная цена и класс машины — после согласования через WhatsApp.' },
+            pt: { dist: 'Distância', dur: 'Duração', price: 'Preço de referência', pax: 'Passageiros', luggage: 'Bagagem', note: 'Preço exato e classe do veículo — após confirmação pelo WhatsApp.' },
+            en: { dist: 'Distance', dur: 'Duration', price: 'Reference price', pax: 'Passengers', luggage: 'Luggage', note: 'Exact price and vehicle class — after WhatsApp confirmation.' },
+          };
+          const L = labelsByLang[data.lang] || labelsByLang.en;
+          doc.setFont('helvetica', 'normal');
+          doc.setFontSize(11);
+          let y = 180;
+          const rows = [
+            [L.dist, `${lastPair.km} km`],
+            [L.dur, `${Math.floor(lastPair.durationMin / 60)}h ${lastPair.durationMin % 60}min`],
+            [L.price, `R$ ${lastPair.priceMin}–${lastPair.priceMax}`],
+            [L.pax, paxSel.value],
+            [L.luggage, luggageSel.value],
+          ];
+          rows.forEach(([label, value]) => {
+            doc.setFont('helvetica', 'bold');
+            doc.text(label, margin, y);
+            doc.setFont('helvetica', 'normal');
+            doc.text(String(value), margin + 160, y);
+            y += 22;
+          });
+
+          doc.setFontSize(10);
+          doc.setTextColor(110);
+          doc.text(doc.splitTextToSize(L.note, pageW - margin * 2), margin, y + 14);
+
+          doc.setFontSize(9);
+          doc.setTextColor(140);
+          doc.text(`WhatsApp ${data.whatsapp.replace('https://wa.me/', '+')}`, margin, doc.internal.pageSize.getHeight() - 56);
+          doc.text('Generated ' + new Date().toISOString().slice(0, 16).replace('T', ' '), margin, doc.internal.pageSize.getHeight() - 40);
+
+          doc.save(`morrison-${lastPair.slug}.pdf`);
+          trackEvent('calculator_pdf_download', { route: lastPair.slug });
+        } catch (err) {
+          console.error('Calc PDF failed', err);
+        }
+      });
+
       calculator.addEventListener('submit', (event) => {
         event.preventDefault();
         if (!fromSel.value || !toSel.value) {
@@ -639,6 +802,7 @@
           showError(data.messages.notFound);
           return;
         }
+        lastPair = pair;
         showResult(pair);
         updateMap();
       });

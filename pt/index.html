@@ -134,11 +134,34 @@
 </header>
 
 <main id="main">
-<section class="hero">
+<section class="hero hero--motion" data-hero-seasonal>
+  
+<svg class="hero-motion" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="route-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a1628" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#0a1628" stop-opacity="0.15"/>
+      <stop offset="80%" stop-color="#0a1628" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0a1628" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path class="hero-motion-route" d="M 80 480 Q 280 360 480 380 T 920 240 T 1120 120" fill="none" stroke="url(#route-gradient)" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--1" cx="80" cy="480" r="3" fill="#0a1628"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--2" cx="480" cy="380" r="3" fill="#0a1628"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--3" cx="920" cy="240" r="3" fill="#0a1628"/>
+  <circle class="hero-motion-pulse hero-motion-pulse--4" cx="1120" cy="120" r="3" fill="#c9a36b"/>
+</svg>
+
   <div class="container container--narrow">
-    <p class="kicker reveal-up">Brasil · Mercosul · desde 2024</p>
-    <h1 class="reveal-up">Transfers privados<br>com preço fechado<br>antes da partida.</h1>
-    <p class="lead reveal-up">Rota, horário e condições confirmados antes do carro sair. Sem taxímetro, sem surpresas no meio do caminho.</p>
+    <p class="kicker reveal-up" data-season-kicker></p>
+    <h1 class="reveal-up" data-season-h1></h1>
+    <p class="lead reveal-up" data-season-lead></p>
+    <script type="application/json" data-season-data>
+      {
+        "summer": { "kicker": , "h1": , "lead":  },
+        "winter": { "kicker": , "h1": , "lead":  }
+      }
+    </script>
     <div class="hero-actions reveal-up">
       <a class="btn btn-dark btn-arrow" href="/transferpages/pt/contact/">Confirmar viagem</a>
       <a class="btn btn-secondary" href="#calculator">Estimar preço</a>
@@ -161,6 +184,38 @@
       <li>Pix · Visa · Mastercard</li>
       <li>24/7 · WhatsApp · Telegram</li>
     </ul>
+  </div>
+</section>
+
+
+<section class="section how-it-works">
+  <div class="container">
+    <header style="text-align: center; margin-bottom: 2.4rem;">
+      <p class="kicker">Da solicitação à viagem — quatro passos.</p>
+      <h2>Como funciona.</h2>
+    </header>
+    <ol class="steps reveal-stagger">
+      <li class="step">
+        <span class="step-num num">01</span>
+        <h3>Brief</h3>
+        <p>Um minuto no formulário ou uma mensagem no WhatsApp. Rota, data, passageiros, observações.</p>
+      </li>
+      <li class="step">
+        <span class="step-num num">02</span>
+        <h3>Cálculo e confirmação</h3>
+        <p>Em até uma hora — preço exato, classe do veículo, timing. Confirmação por escrito.</p>
+      </li>
+      <li class="step">
+        <span class="step-num num">03</span>
+        <h3>Apresentação e contato</h3>
+        <p>Uma hora antes — nome e contato do motorista. Voo monitorado automaticamente.</p>
+      </li>
+      <li class="step">
+        <span class="step-num num">04</span>
+        <h3>Viagem e relatório</h3>
+        <p>Comprovante Pix após a viagem. Para empresas — NF-e em 5 dias.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -416,6 +471,7 @@
           <div class="calc-result-actions">
             <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirmar pelo WhatsApp</a>
             <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Compartilhar estimativa</button>
+            <button type="button" class="btn btn-secondary" data-calc-pdf>PDF</button>
           </div>
         </div>
       </div>
@@ -632,6 +688,30 @@
     </div>
   </div>
 </section>
+
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-copy">
+        <p class="kicker">Uma vez por trimestre</p>
+        <h3>Rotas e dicas sazonais.</h3>
+        <p class="muted">Sem spam. 4 e-mails por ano — sobre novas rotas e temporadas.</p>
+      </div>
+      <form class="newsletter-form" data-newsletter data-lang="pt" data-email-to="hello@morrison-transfer.com" novalidate>
+        <div class="newsletter-row">
+          <input type="email" name="email" placeholder="Seu e-mail" required aria-label="Seu e-mail">
+          <button type="submit" class="btn btn-dark btn-arrow">Assinar</button>
+        </div>
+        <label class="newsletter-consent">
+          <input type="checkbox" name="consent" required>
+          <span>Concordo com o tratamento do e-mail para envio da newsletter · <a href="/transferpages/pt/privacy/">Política de Privacidade</a></span>
+        </label>
+        <p class="newsletter-msg" data-newsletter-msg hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
 
 <section class="cta-strip">
   <div class="container container--narrow">

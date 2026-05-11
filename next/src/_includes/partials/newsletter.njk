@@ -1,0 +1,23 @@
+{%- set t = i18n[lang] -%}
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="newsletter-copy">
+        <p class="kicker">{{ t.newsletter.eyebrow }}</p>
+        <h3>{{ t.newsletter.title }}</h3>
+        <p class="muted">{{ t.newsletter.body }}</p>
+      </div>
+      <form class="newsletter-form" data-newsletter data-lang="{{ lang }}" data-email-to="{{ site.contacts.email }}" novalidate>
+        <div class="newsletter-row">
+          <input type="email" name="email" placeholder="{{ t.newsletter.placeholder }}" required aria-label="{{ t.newsletter.placeholder }}">
+          <button type="submit" class="btn btn-dark btn-arrow">{{ t.newsletter.submit }}</button>
+        </div>
+        <label class="newsletter-consent">
+          <input type="checkbox" name="consent" required>
+          <span>{{ t.newsletter.consent }} · <a href="/{{ lang }}/privacy/">{{ t.cookies.link }}</a></span>
+        </label>
+        <p class="newsletter-msg" data-newsletter-msg hidden></p>
+      </form>
+    </div>
+  </div>
+</section>

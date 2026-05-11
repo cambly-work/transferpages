@@ -40,6 +40,38 @@ ru:
     whatsapp: WhatsApp
     telegram: Telegram
   copyright: Morrison Premium Transfer
+  seasons:
+    summer:
+      kicker: "Высокий сезон · побережье"
+      h1: "Побережье ждёт.<br>Подача — до сезонных пробок."
+      lead: "Декабрь–март: пик прилётов в FLN/NVT, перегрузка BR-101 и SC-401. Тайминг с поправкой на сезон."
+    winter:
+      kicker: "Бизнес-период · межгород"
+      h1: "Длинные плечи<br>в спокойном ритме."
+      lead: "Апрель–ноябрь: меньше пробок, больше деловых маршрутов. Куритиба, Сан-Паулу, Уругвай — без сезонной нагрузки."
+    default:
+      kicker: "Бразилия · Меркосур · с 2024"
+      h1: "Частные трансферы<br>с фиксированной ценой<br>до выезда."
+      lead: "Маршрут, тайминг и условия согласованы до того, как машина выехала. Без счётчика, без сюрпризов на полпути."
+  howItWorks:
+    title: "Как это работает."
+    subtitle: "От заявки до поездки — четыре шага."
+    step1Title: "Бриф"
+    step1Body: "Минута на форму или одно сообщение в WhatsApp. Маршрут, дата, пассажиры, особое."
+    step2Title: "Расчёт и согласование"
+    step2Body: "В течение часа — точная цена, класс машины, тайминг. Письменное подтверждение."
+    step3Title: "Подача и связь"
+    step3Body: "За час — имя и контакт водителя. Отслеживание рейса автоматически."
+    step4Title: "Поездка и отчёт"
+    step4Body: "Pix-чек после поездки. Для юр. лиц — NF-e в течение 5 дней."
+  newsletter:
+    eyebrow: "Раз в квартал"
+    title: "Маршруты и сезонные подсказки."
+    body: "Без рекламного спама. 4 письма в год — про новые направления и сезоны."
+    placeholder: "Ваш email"
+    submit: "Подписаться"
+    consent: "Согласен на обработку email для рассылки"
+    success: "Подписаны. Первое письмо — в начале сезона."
   cookies:
     title: Cookies и аналитика
     body: Мы используем cookies для базовой аналитики (Google Analytics) и для запоминания выбора языка. Без cookies сайт работает, но мы не сможем понять, какие маршруты вам важнее.
@@ -196,6 +228,38 @@ pt:
     whatsapp: WhatsApp
     telegram: Telegram
   copyright: Morrison Premium Transfer
+  seasons:
+    summer:
+      kicker: "Alta temporada · litoral"
+      h1: "O litoral chama.<br>Apresentação antes do trânsito."
+      lead: "Dez–mar: pico de chegadas em FLN/NVT, congestão na BR-101 e SC-401. Timing ajustado à temporada."
+    winter:
+      kicker: "Período business · intermunicipal"
+      h1: "Trechos longos<br>em ritmo tranquilo."
+      lead: "Abr–nov: menos trânsito, mais rotas business. Curitiba, São Paulo, Uruguai — sem carga sazonal."
+    default:
+      kicker: "Brasil · Mercosul · desde 2024"
+      h1: "Transfers privados<br>com preço fechado<br>antes da partida."
+      lead: "Rota, horário e condições confirmados antes do carro sair. Sem taxímetro, sem surpresas no meio do caminho."
+  howItWorks:
+    title: "Como funciona."
+    subtitle: "Da solicitação à viagem — quatro passos."
+    step1Title: "Brief"
+    step1Body: "Um minuto no formulário ou uma mensagem no WhatsApp. Rota, data, passageiros, observações."
+    step2Title: "Cálculo e confirmação"
+    step2Body: "Em até uma hora — preço exato, classe do veículo, timing. Confirmação por escrito."
+    step3Title: "Apresentação e contato"
+    step3Body: "Uma hora antes — nome e contato do motorista. Voo monitorado automaticamente."
+    step4Title: "Viagem e relatório"
+    step4Body: "Comprovante Pix após a viagem. Para empresas — NF-e em 5 dias."
+  newsletter:
+    eyebrow: "Uma vez por trimestre"
+    title: "Rotas e dicas sazonais."
+    body: "Sem spam. 4 e-mails por ano — sobre novas rotas e temporadas."
+    placeholder: "Seu e-mail"
+    submit: "Assinar"
+    consent: "Concordo com o tratamento do e-mail para envio da newsletter"
+    success: "Inscrito. Primeiro e-mail no início da temporada."
   cookies:
     title: Cookies e analytics
     body: Usamos cookies para analytics básico (Google Analytics) e para lembrar a sua escolha de idioma. Sem cookies o site funciona, mas não conseguimos entender quais rotas importam mais.
@@ -352,6 +416,38 @@ en:
     whatsapp: WhatsApp
     telegram: Telegram
   copyright: Morrison Premium Transfer
+  seasons:
+    summer:
+      kicker: "High season · coast"
+      h1: "The coast is calling.<br>Pickup before the seasonal jam."
+      lead: "Dec–Mar: peak arrivals at FLN/NVT, BR-101 and SC-401 loaded. Timing tuned to the season."
+    winter:
+      kicker: "Business period · intercity"
+      h1: "Long legs<br>at a calm pace."
+      lead: "Apr–Nov: less traffic, more business routes. Curitiba, São Paulo, Uruguay — no seasonal load."
+    default:
+      kicker: "Brazil · Mercosur · since 2024"
+      h1: "Private transfers<br>with a fixed price<br>before departure."
+      lead: "Route, timing and conditions confirmed before the car leaves. No meter, no surprises mid-route."
+  howItWorks:
+    title: "How it works."
+    subtitle: "From request to ride — four steps."
+    step1Title: "Brief"
+    step1Body: "One-minute form or a single WhatsApp message. Route, date, passengers, notes."
+    step2Title: "Quote and confirmation"
+    step2Body: "Within an hour — exact price, vehicle class, timing. Written confirmation."
+    step3Title: "Pickup and contact"
+    step3Body: "An hour before — driver name and contact. Flight tracked automatically."
+    step4Title: "Trip and receipt"
+    step4Body: "Pix receipt after the trip. For companies — NF-e within 5 business days."
+  newsletter:
+    eyebrow: "Once a quarter"
+    title: "Routes and seasonal tips."
+    body: "No spam. 4 emails per year — about new routes and seasons."
+    placeholder: "Your email"
+    submit: "Subscribe"
+    consent: "I consent to email processing for the newsletter"
+    success: "Subscribed. First email at the start of the season."
   cookies:
     title: Cookies and analytics
     body: We use cookies for basic analytics (Google Analytics) and to remember your language choice. The site works without cookies, but we cannot understand which routes matter most.

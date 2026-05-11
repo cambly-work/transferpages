@@ -241,7 +241,7 @@ p { margin: 0 0 1rem; }
   color: var(--muted);
   opacity: 1;
 }
-.lang-switch a.active { background: var(--text); color: #fff; }
+.lang-switch a.active { background: var(--text); color: var(--bg); }
 .lang-switch a:hover { color: var(--text); }
 
 .btn {

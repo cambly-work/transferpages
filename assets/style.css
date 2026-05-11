@@ -792,17 +792,17 @@ body.menu-open .mobile-sticky-cta { opacity: 0; pointer-events: none; }
 }
 
 @media (max-width: 768px) {
-  :root { --header-h: 56px; }
+  :root { --header-h: 96px; }
   .nav-wrap {
     min-height: 0;
-    padding: 0.55rem 0;
+    padding: 0.5rem 0;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     grid-template-areas:
-      "logo nav"
-      "lang lang";
-    column-gap: 0.6rem;
-    row-gap: 0.45rem;
+      "logo theme nav"
+      "lang lang lang";
+    column-gap: 0.5rem;
+    row-gap: 0.4rem;
     align-items: center;
   }
   .logo {
@@ -812,6 +812,8 @@ body.menu-open .mobile-sticky-cta { opacity: 0; pointer-events: none; }
   }
   .logo small { display: none; }
   .site-nav { grid-area: nav; justify-self: end; }
+  .theme-toggle { grid-area: theme; justify-self: end; margin: 0; }
+  .lang-switch { grid-area: lang; justify-self: center; }
   .lang-switch {
     grid-area: lang;
     justify-self: stretch;
@@ -2841,19 +2843,19 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
 .cmdk-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   background: var(--bg-soft);
   border: 1px solid var(--line);
   color: var(--muted);
-  padding: 0.42rem 0.55rem 0.42rem 0.7rem;
+  padding: 0.38rem 0.5rem 0.38rem 0.65rem;
   border-radius: 10px;
   font: inherit;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   cursor: pointer;
-  margin: 0 0.5rem 0 auto;
+  margin: 0 0.4rem 0 auto;
   transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.18s var(--ease-out);
   flex-shrink: 0;
-  min-width: 200px;
+  min-width: 160px;
 }
 .cmdk-trigger:hover {
   color: var(--text);
@@ -2868,9 +2870,9 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
 }
 .cmdk-trigger-kbd {
   font-family: var(--mono);
-  font-size: 0.7rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 6px;
+  font-size: 0.68rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 5px;
   background: var(--bg);
   color: var(--muted);
   border: 1px solid var(--line);
@@ -2879,13 +2881,18 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
 [data-theme="dark"] .cmdk-trigger { background: var(--bg-soft); }
 [data-theme="dark"] .cmdk-trigger:hover { background: var(--surface); }
 [data-theme="dark"] .cmdk-trigger-kbd { background: var(--bg); color: var(--muted); }
-@media (max-width: 900px) {
+/* Compact (tablet): icon-only square pill */
+@media (max-width: 1100px) {
   .cmdk-trigger {
     min-width: auto;
-    padding: 0.45rem;
-    margin-right: 0.35rem;
+    padding: 0.42rem;
+    margin: 0 0.35rem 0 auto;
   }
   .cmdk-trigger-text, .cmdk-trigger-kbd { display: none; }
+}
+/* Mobile: hide entirely — burger menu + lang-switch + theme toggle is enough */
+@media (max-width: 768px) {
+  .cmdk-trigger { display: none; }
 }
 
 .cmdk {

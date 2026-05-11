@@ -527,6 +527,127 @@
     update();
   }
 
+  // ---------- Spotlight effect on bento cells ----------
+  // Each cell tracks cursor position via CSS vars --mx --my (0–100%).
+  // The CSS uses radial-gradient at that position for a soft glow.
+  // Only attached on devices with hover + fine pointer (desktop).
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const spotlightCells = document.querySelectorAll('.bento-cell');
+    spotlightCells.forEach((cell) => {
+      let raf = 0;
+      const update = (e) => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          const r = cell.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width) * 100;
+          const y = ((e.clientY - r.top) / r.height) * 100;
+          cell.style.setProperty('--mx', x + '%');
+          cell.style.setProperty('--my', y + '%');
+          raf = 0;
+        });
+      };
+      cell.addEventListener('pointerenter', () => cell.classList.add('has-spotlight'));
+      cell.addEventListener('pointermove', update, { passive: true });
+      cell.addEventListener('pointerleave', () => {
+        cell.classList.remove('has-spotlight');
+        if (raf) cancelAnimationFrame(raf);
+        raf = 0;
+      });
+    });
+  }
+
+  // ---------- Magnetic CTA (primary buttons pull toward cursor) ----------
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.btn.btn-dark.btn-arrow, .cta-strip-actions .btn-dark').forEach((btn) => {
+      let raf = 0;
+      const onMove = (e) => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          const r = btn.getBoundingClientRect();
+          const cx = r.left + r.width / 2;
+          const cy = r.top + r.height / 2;
+          const dx = (e.clientX - cx) * 0.18;
+          const dy = (e.clientY - cy) * 0.22;
+          btn.style.transform = `translate(${dx.toFixed(2)}px, ${dy.toFixed(2)}px)`;
+          raf = 0;
+        });
+      };
+      const reset = () => {
+        if (raf) cancelAnimationFrame(raf);
+        raf = 0;
+        btn.style.transform = '';
+      };
+      btn.addEventListener('pointerenter', () => btn.classList.add('is-magnetic'));
+      btn.addEventListener('pointermove', onMove, { passive: true });
+      btn.addEventListener('pointerleave', () => {
+        btn.classList.remove('is-magnetic');
+        reset();
+      });
+    });
+  }
+
+  // ---------- Haptic feedback on CTA tap (touch only) ----------
+  if ('vibrate' in navigator && window.matchMedia('(hover: none)').matches) {
+    document.addEventListener('click', (event) => {
+      const cta = event.target.closest('.btn-dark, .btn-primary, .bento-cell, .copy-btn, [data-cmdk-trigger]');
+      if (!cta) return;
+      try { navigator.vibrate(12); } catch (e) { /* noop */ }
+    }, { passive: true });
+  }
+
+  // ---------- Sound brand (opt-in via footer toggle) ----------
+  // Uses Web Audio synthesis — no asset downloads. Tiny click on CTA submit.
+  const SOUND_KEY = 'soundOn';
+  const soundEnabled = () => safeStorageGet(SOUND_KEY) === '1';
+  let audioCtx = null;
+  const playClick = (freq = 880, duration = 0.07) => {
+    if (!soundEnabled()) return;
+    try {
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.005);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    } catch (e) { /* silently fail on unsupported devices */ }
+  };
+  const soundToggle = document.querySelector('[data-sound-toggle]');
+  const soundLabel = soundToggle?.querySelector('[data-sound-label]');
+  const updateSoundLabel = () => {
+    if (!soundLabel) return;
+    const on = soundEnabled();
+    const labels = {
+      ru: on ? 'Звуки вкл' : 'Звуки выкл',
+      pt: on ? 'Som ligado' : 'Som desligado',
+      en: on ? 'Sound on' : 'Sound off',
+      es: on ? 'Sonido on' : 'Sonido off',
+    };
+    soundLabel.textContent = labels[docLangShort] || labels.en;
+    soundToggle.setAttribute('aria-pressed', String(on));
+  };
+  updateSoundLabel();
+  soundToggle?.addEventListener('click', () => {
+    const next = soundEnabled() ? '0' : '1';
+    safeStorageSet(SOUND_KEY, next);
+    updateSoundLabel();
+    if (next === '1') playClick(880, 0.05); // confirm-tick
+  });
+  // Hook into existing flows
+  document.addEventListener('submit', (e) => {
+    if (e.target.matches('[data-brief-form], [data-newsletter], [data-calculator]')) playClick(660, 0.08);
+  });
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-cmdk-trigger], [data-theme-toggle], [data-back-to-top]')) playClick(1100, 0.04);
+  });
+
   // ---------- Route-row hover preview ----------
   document.querySelectorAll('.route-row').forEach((row) => {
     let tip = null;

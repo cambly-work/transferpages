@@ -63,6 +63,9 @@
     </div>
     <div class="footer-fineprint">
       <span>&copy; <span data-year>{{ "" | year }}</span> {{ t.copyright }}</span>
+      <button type="button" class="sound-toggle" data-sound-toggle aria-pressed="false">
+        <span data-sound-label>{{ t.ui.soundOff }}</span>
+      </button>
       <ul class="footer-legal-links">
         {%- for item in nav.footer.legal %}
         <li><a href="/{{ lang }}/{{ item.href }}">{{ t.nav[item.key] }}</a></li>

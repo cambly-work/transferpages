@@ -2907,3 +2907,99 @@ body.cmdk-open { overflow: hidden; }
   .cmdk-panel { max-height: 88vh; }
   .cmdk-hint { display: none; }
 }
+
+/* =========================================================
+   Round 12: Spotlight bento + magnetic CTA + sound toggle
+   ========================================================= */
+
+/* --- Spotlight on bento cells (gradient follows cursor) --- */
+.bento-cell {
+  --mx: 50%;
+  --my: 50%;
+  position: relative;
+}
+.bento-cell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mx) var(--my),
+    rgba(201, 163, 107, 0.18),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.bento-cell.has-spotlight::before { opacity: 1; }
+.bento-cell > * { position: relative; z-index: 1; }
+.bento-cell--photo::before, .bento-cell--photo .bento-bg, .bento-cell--photo .bento-cell-content { z-index: 1; }
+.bento-cell--photo::before {
+  background: radial-gradient(
+    320px circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.22),
+    transparent 60%
+  );
+  mix-blend-mode: overlay;
+}
+.bento-cell--dark::before {
+  background: radial-gradient(
+    280px circle at var(--mx) var(--my),
+    rgba(201, 163, 107, 0.28),
+    transparent 55%
+  );
+}
+[data-theme="dark"] .bento-cell::before {
+  background: radial-gradient(
+    280px circle at var(--mx) var(--my),
+    rgba(201, 163, 107, 0.22),
+    transparent 55%
+  );
+}
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .bento-cell::before { display: none; }
+}
+
+/* --- Magnetic CTA — smooth return when leaving --- */
+.btn.btn-dark.btn-arrow, .cta-strip-actions .btn-dark {
+  transition: transform 0.4s var(--ease-overshoot), background 0.2s, border-color 0.2s;
+  will-change: transform;
+}
+.btn.is-magnetic { transition: transform 0.05s linear, background 0.2s, border-color 0.2s; }
+
+/* --- Sound toggle in footer --- */
+.sound-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.74rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: color 0.15s, border-color 0.15s;
+  margin: 0 0.6rem 0 0;
+}
+.sound-toggle:hover { color: var(--text); border-color: var(--line-strong); }
+.sound-toggle[aria-pressed="true"] {
+  border-color: var(--text);
+  color: var(--text);
+  background: var(--bg-soft);
+}
+.sound-toggle[aria-pressed="true"]::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #25d366;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: 1px;
+}
+@media (max-width: 600px) {
+  .sound-toggle { font-size: 0.7rem; padding: 0.25rem 0.55rem; }
+}
+

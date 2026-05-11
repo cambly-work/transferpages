@@ -3,84 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morrison Premium Transfer | Private transfers in Brazil and Mercosur</title>
-  <meta name="description" content="Premium private transfers in Brazil and Mercosur: airport, intercity and international routes with confirmed timing, clear terms and discreet service.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Morrison Premium Transfer | Private transfers in Brazil and Mercosur">
-  <meta property="og:description" content="Premium private transfers in Brazil and Mercosur: airport, intercity and international routes with confirmed timing, clear terms and discreet service.">
-  <meta property="og:url" content="https://morrison-transfer.com/">
-  <meta property="og:image" content="https://morrison-transfer.com/assets/images/og-cover.svg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Morrison Premium Transfer | Private transfers in Brazil and Mercosur">
-  <meta name="twitter:description" content="Premium private transfers in Brazil and Mercosur: airport, intercity and international routes with confirmed timing, clear terms and discreet service.">
-  <meta name="twitter:image" content="https://morrison-transfer.com/assets/images/og-cover.svg">
-  <meta name="robots" content="index, follow">
+  <title>Morrison Premium Transfer</title>
+  <meta name="description" content="Premium private transfers in Brazil and Mercosur.">
   <link rel="canonical" href="https://morrison-transfer.com/">
   <link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/">
   <link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/">
   <link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script>
     (function () {
-      var SUPPORTED = ['ru', 'pt', 'en'];
-      var defaultLanguage = 'en';
-      var storageKey = 'preferredLanguage';
+      var SUPPORTED = ["ru","pt","en"];
+      var DEFAULT = "en";
+      var KEY = "preferredLanguage";
 
-      function getFromStorage() {
-        try {
-          return localStorage.getItem(storageKey);
-        } catch (error) {
-          return null;
-        }
+      function fromStorage() {
+        try { return localStorage.getItem(KEY); } catch (e) { return null; }
       }
 
-      function detectFromBrowser() {
-        var languages = (navigator.languages && navigator.languages.length)
+      function fromBrowser() {
+        var langs = (navigator.languages && navigator.languages.length)
           ? navigator.languages
-          : [navigator.language || defaultLanguage];
-
-        for (var i = 0; i < languages.length; i += 1) {
-          var lang = String(languages[i] || '').toLowerCase();
-          if (lang.indexOf('ru') === 0) return 'ru';
-          if (lang.indexOf('pt') === 0) return 'pt';
-          if (lang.indexOf('en') === 0) return 'en';
+          : [navigator.language || DEFAULT];
+        for (var i = 0; i < langs.length; i++) {
+          var code = String(langs[i] || "").toLowerCase().split("-")[0];
+          if (SUPPORTED.indexOf(code) !== -1) return code;
         }
-
-        return defaultLanguage;
+        return DEFAULT;
       }
 
-      function resolveBasePath(pathname) {
-        var cleanPath = String(pathname || '/').replace(/index\.html$/, '');
-        if (cleanPath.slice(-1) !== '/') cleanPath += '/';
-
-        // Root can be either "/" (custom domain) or "/repo/" (GitHub Pages project site).
-        var segments = cleanPath.split('/').filter(Boolean);
-        if (!segments.length) return '/';
-        return '/' + segments.join('/') + '/';
-      }
-
-      var preferred = getFromStorage();
-      var selectedLanguage = SUPPORTED.indexOf(preferred) !== -1 ? preferred : detectFromBrowser();
-      var basePath = resolveBasePath(window.location.pathname);
-      var targetPath = basePath + selectedLanguage + '/';
-
-      window.location.replace(targetPath);
+      var preferred = fromStorage();
+      var pick = SUPPORTED.indexOf(preferred) !== -1 ? preferred : fromBrowser();
+      var basePath = window.location.pathname.replace(/index\.html$/, "").replace(/\/$/, "");
+      window.location.replace(basePath + "/" + pick + "/");
     })();
   </script>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMBK0S18RL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-ZMBK0S18RL');
   </script>
 </head>
 <body>
-  <noscript>
-    <p><a href="./en/">Continue to English version</a></p>
-  </noscript>
+  <noscript><p><a href="/en/">Continue to English version</a></p></noscript>
 </body>
 </html>

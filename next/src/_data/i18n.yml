@@ -99,6 +99,11 @@ ru:
     consentLabel: Я согласен на обработку данных в целях оформления заявки
     consentRequired: Необходимо согласие на обработку данных
     fillRequired: Заполните обязательные поля
+    successTitle: Бриф собран и отправлен
+    successBody: WhatsApp открыт с готовым сообщением. Если что-то не отправилось — скачайте PDF и пришлите вручную или на email.
+    downloadPdf: Скачать PDF брифа
+    pdfTitle: Бриф заявки
+    pdfGenerated: Сгенерировано
   fleetPage:
     eyebrow: Автопарк
     title: Машины для конкретных задач.
@@ -130,6 +135,21 @@ ru:
     lead: Отзывы публикуются с разрешения клиента, без вымышленных Михаилов К. Если ваш кейс отсутствует — это потому, что мы не успели спросить разрешение.
     placeholder: Сбор реальных отзывов в процессе. Если вы недавно ездили с нами — напишите в WhatsApp, разместим со ссылкой на ваш профиль или анонимно по выбору.
     cta: Поделиться отзывом
+  trackPage:
+    eyebrow: Отслеживание поездки
+    title: Где сейчас ваш водитель.
+    lead: Это демонстрация страницы отслеживания. На реальную поездку вы получите уникальную ссылку в WhatsApp после подтверждения заявки.
+    routeLabel: Маршрут
+    driverLabel: Водитель
+    vehicleLabel: Машина
+    etaLabel: Расчётное прибытие
+    statusLabel: Статус
+    progressLabel: Прогресс
+    statusOnRoute: В пути
+    statusArrived: На месте
+    contactDriver: Связаться с водителем
+    contactSupport: Связаться с поддержкой
+    demoNote: Демо-режим — все данные на этой странице вымышлены.
 
 pt:
   htmlLang: pt-BR
@@ -232,6 +252,11 @@ pt:
     consentLabel: Concordo com o tratamento dos dados para fins de processamento da solicitação
     consentRequired: É necessário concordar com o tratamento dos dados
     fillRequired: Preencha os campos obrigatórios
+    successTitle: Brief montado e enviado
+    successBody: WhatsApp foi aberto com a mensagem pronta. Se algo não foi enviado, baixe o PDF e envie manualmente ou por e-mail.
+    downloadPdf: Baixar PDF do brief
+    pdfTitle: Brief de solicitação
+    pdfGenerated: Gerado em
   fleetPage:
     eyebrow: Frota
     title: Veículos para tarefas concretas.
@@ -263,6 +288,21 @@ pt:
     lead: Depoimentos são publicados com autorização do cliente, sem "Mikhail K." inventado. Se o seu caso não está aqui, é porque ainda não pedimos autorização.
     placeholder: A coleta de depoimentos reais está em andamento. Se viajou com a gente recentemente — escreva no WhatsApp, publicamos com link para o seu perfil ou de forma anônima.
     cta: Compartilhar depoimento
+  trackPage:
+    eyebrow: Acompanhamento da viagem
+    title: Onde está o seu motorista agora.
+    lead: Esta é uma demonstração da página de acompanhamento. Para uma viagem real, você recebe o link único no WhatsApp ao confirmar a reserva.
+    routeLabel: Rota
+    driverLabel: Motorista
+    vehicleLabel: Veículo
+    etaLabel: Chegada estimada
+    statusLabel: Status
+    progressLabel: Progresso
+    statusOnRoute: A caminho
+    statusArrived: Apresentado
+    contactDriver: Falar com o motorista
+    contactSupport: Falar com o suporte
+    demoNote: Modo demonstração — todos os dados são fictícios.
 
 en:
   htmlLang: en
@@ -365,6 +405,11 @@ en:
     consentLabel: I consent to data processing for handling this request
     consentRequired: Consent is required to process your data
     fillRequired: Please fill in required fields
+    successTitle: Brief built and sent
+    successBody: WhatsApp opened with the prepared message. If something didn't go through, download the PDF and send it manually or by email.
+    downloadPdf: Download brief PDF
+    pdfTitle: Transfer request brief
+    pdfGenerated: Generated
   fleetPage:
     eyebrow: Fleet
     title: Vehicles for specific jobs.
@@ -396,3 +441,18 @@ en:
     lead: Reviews are published with the client's permission — no invented "Mikhail K.". If your case isn't here, it's because we haven't asked yet.
     placeholder: Real reviews are being collected. If you travelled with us recently — message us on WhatsApp and we will publish with a link to your profile, or anonymously by your choice.
     cta: Share a review
+  trackPage:
+    eyebrow: Trip tracking
+    title: Where your driver is now.
+    lead: This is a demo of the tracking page. For a real trip, you receive a unique link via WhatsApp once the booking is confirmed.
+    routeLabel: Route
+    driverLabel: Driver
+    vehicleLabel: Vehicle
+    etaLabel: ETA
+    statusLabel: Status
+    progressLabel: Progress
+    statusOnRoute: En route
+    statusArrived: Arrived
+    contactDriver: Call the driver
+    contactSupport: Reach support
+    demoNote: Demo mode — every value on this page is fictional.

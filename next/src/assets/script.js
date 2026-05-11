@@ -386,6 +386,62 @@
     document.documentElement.setAttribute('data-preferred-language', existingPreference);
   }
 
+  // ---------- Driver tracking demo ----------
+  const trackCard = document.querySelector('[data-track-card]');
+  if (trackCard) {
+    const bar = trackCard.querySelector('[data-track-bar]');
+    const pct = trackCard.querySelector('[data-track-percent]');
+    const eta = trackCard.querySelector('[data-track-eta]');
+    const statusEl = trackCard.querySelector('[data-track-status]');
+    const distEl = trackCard.querySelector('[data-track-distance]');
+    const totalKm = 23;
+    const totalMin = 28;
+    const start = Date.now();
+    const arrivedMs = totalMin * 60 * 1000;
+
+    const fmtTime = (ms) => {
+      const d = new Date(Date.now() + ms);
+      return d.toTimeString().slice(0, 5);
+    };
+
+    const tick = () => {
+      const elapsed = Date.now() - start;
+      const fakeProgress = Math.min(0.96, (elapsed / 1000) * 0.012);
+      const percent = Math.round(fakeProgress * 100);
+      bar.style.width = percent + '%';
+      pct.textContent = percent;
+      const remaining = arrivedMs * (1 - fakeProgress);
+      eta.textContent = fmtTime(remaining);
+      distEl.textContent = `${Math.max(1, Math.round(totalKm * (1 - fakeProgress)))} ${distEl.textContent.split(' ').slice(1).join(' ')}`;
+    };
+    tick();
+    setInterval(tick, 1500);
+  }
+
+  // ---------- Cursor follower (desktop only) ----------
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const cursor = document.createElement('div');
+    cursor.className = 'cursor-follow';
+    cursor.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(cursor);
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+    document.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+    const animate = () => {
+      cx += (tx - cx) * 0.18;
+      cy += (ty - cy) * 0.18;
+      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+    document.addEventListener('mouseenter', () => cursor.classList.add('visible'));
+    document.addEventListener('mouseleave', () => cursor.classList.remove('visible'));
+    document.querySelectorAll('a, button, summary, [data-map-city], [role="button"]').forEach((el) => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+    cursor.classList.add('visible');
+  }
+
   // ---------- Cookie consent banner ----------
   const banner = document.getElementById('cookie-banner');
   if (banner) {
@@ -634,41 +690,55 @@
       }
     });
 
-    briefForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!validateStep()) return;
+    const successEl = briefForm.querySelector('[data-brief-success]');
+    const successTitleEl = briefForm.querySelector('[data-brief-success-title]');
+    const successBodyEl = briefForm.querySelector('[data-brief-success-body]');
+    const pdfBtn = briefForm.querySelector('[data-brief-pdf]');
 
-      const fd = new FormData(briefForm);
+    const ensureJsPDF = () => new Promise((resolve, reject) => {
+      if (window.jspdf?.jsPDF) return resolve(window.jspdf);
+      const existing = document.querySelector('script[data-jspdf]');
+      if (existing) {
+        existing.addEventListener('load', () => resolve(window.jspdf), { once: true });
+        existing.addEventListener('error', reject, { once: true });
+        return;
+      }
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
+      s.async = true;
+      s.dataset.jspdf = 'true';
+      s.onload = () => resolve(window.jspdf);
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+
+    const buildBriefLines = (fd) => {
       const labels = {
         ru: {
           intro: 'Здравствуйте! Заявка с сайта:',
           fromCity: 'Откуда', toCity: 'Куда', service: 'Тип',
           date: 'Дата', time: 'Время', pax: 'Пассажиры', bags: 'Багаж',
           children: 'Дети до 10 лет', childSeat: 'Детское кресло',
-          name: 'Имя', contact: 'Контакт', notes: 'Особое',
-          yes: 'да',
+          name: 'Имя', contact: 'Контакт', notes: 'Особое', yes: 'да',
         },
         pt: {
           intro: 'Olá! Solicitação pelo site:',
           fromCity: 'De', toCity: 'Para', service: 'Tipo',
           date: 'Data', time: 'Hora', pax: 'Passageiros', bags: 'Bagagem',
           children: 'Crianças <10', childSeat: 'Cadeirinha',
-          name: 'Nome', contact: 'Contato', notes: 'Observações',
-          yes: 'sim',
+          name: 'Nome', contact: 'Contato', notes: 'Observações', yes: 'sim',
         },
         en: {
           intro: 'Hello! Request from the website:',
           fromCity: 'From', toCity: 'To', service: 'Service',
           date: 'Date', time: 'Time', pax: 'Passengers', bags: 'Luggage',
           children: 'Children <10', childSeat: 'Child seat',
-          name: 'Name', contact: 'Contact', notes: 'Notes',
-          yes: 'yes',
+          name: 'Name', contact: 'Contact', notes: 'Notes', yes: 'yes',
         },
       };
       const L = labels[lang] || labels.en;
-
-      const lines = [L.intro, ''];
-      const add = (label, value) => { if (value) lines.push(`• ${label}: ${value}`); };
+      const rows = [];
+      const add = (label, value) => { if (value) rows.push([label, String(value)]); };
       add(L.fromCity, fd.get('fromCity'));
       add(L.toCity, fd.get('toCity'));
       add(L.service, fd.get('service'));
@@ -681,8 +751,65 @@
       add(L.name, fd.get('name'));
       add(L.contact, fd.get('contact'));
       add(L.notes, fd.get('notes'));
+      return { intro: L.intro, rows };
+    };
 
-      const message = lines.join('\n');
+    const generatePdf = async (fd) => {
+      try {
+        const { jsPDF } = await ensureJsPDF();
+        const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+        const pageW = doc.internal.pageSize.getWidth();
+        const margin = 56;
+
+        // Header
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(20);
+        doc.text('Morrison Premium Transfer', margin, 64);
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
+        doc.setTextColor(110);
+        doc.text(briefForm.dataset.pdfTitle || 'Transfer brief', margin, 84);
+
+        doc.setDrawColor(220);
+        doc.line(margin, 100, pageW - margin, 100);
+
+        // Brief table
+        const { rows } = buildBriefLines(fd);
+        doc.setTextColor(20);
+        let y = 140;
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(12);
+        rows.forEach(([label, value]) => {
+          doc.setFont('helvetica', 'bold');
+          doc.text(label + ':', margin, y);
+          doc.setFont('helvetica', 'normal');
+          const wrapped = doc.splitTextToSize(value, pageW - margin * 2 - 140);
+          doc.text(wrapped, margin + 140, y);
+          y += 18 * Math.max(1, wrapped.length) + 6;
+        });
+
+        // Footer
+        const cnpj = briefForm.dataset.cnpj || '';
+        const stamp = (briefForm.dataset.pdfGenerated || 'Generated') + ' ' + new Date().toISOString().slice(0, 16).replace('T', ' ');
+        doc.setFontSize(9);
+        doc.setTextColor(140);
+        doc.text(`CNPJ ${cnpj}  ·  WhatsApp ${whatsappBase.replace('https://wa.me/', '+')}`, margin, doc.internal.pageSize.getHeight() - 56);
+        doc.text(stamp, margin, doc.internal.pageSize.getHeight() - 40);
+
+        doc.save(`morrison-brief-${Date.now()}.pdf`);
+        trackEvent('brief_pdf_download', { language: lang });
+      } catch (err) {
+        console.error('PDF generation failed', err);
+      }
+    };
+
+    briefForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!validateStep()) return;
+
+      const fd = new FormData(briefForm);
+      const { intro, rows } = buildBriefLines(fd);
+      const message = [intro, '', ...rows.map(([l, v]) => `• ${l}: ${v}`)].join('\n');
       const url = `${whatsappBase}?text=${encodeURIComponent(message)}`;
 
       trackEvent('brief_form_submit', {
@@ -691,6 +818,20 @@
       });
 
       window.open(url, '_blank', 'noopener');
+
+      // Switch to success state
+      steps.forEach((s) => { s.hidden = true; });
+      backBtn.hidden = true;
+      nextBtn.hidden = true;
+      submitBtn.hidden = true;
+      successEl.hidden = false;
+      successTitleEl.textContent = briefForm.dataset.successTitle || '';
+      successBodyEl.textContent = briefForm.dataset.successBody || '';
+      pdfBtn.textContent = briefForm.dataset.downloadPdf || 'Download PDF';
+      pdfBtn.onclick = () => generatePdf(fd);
+
+      // Preload jsPDF in background
+      ensureJsPDF().catch(() => { /* silent */ });
     });
 
     render();

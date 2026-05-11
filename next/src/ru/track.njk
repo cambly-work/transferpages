@@ -1,0 +1,59 @@
+---
+slug: "track"
+permalink: "/ru/track/index.html"
+title: "Отслеживание поездки · Demo | Morrison Premium Transfer"
+description: "Демонстрация страницы отслеживания трансфера в реальном времени."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Отслеживание", path: "/ru/track/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.trackPage.eyebrow }} · DEMO</p>
+    <h1>{{ t.trackPage.title }}</h1>
+    <p class="lead">{{ t.trackPage.lead }}</p>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <div class="track-card" data-track-card>
+      <div class="track-status">
+        <span class="track-dot"></span>
+        <span data-track-status>{{ t.trackPage.statusOnRoute }}</span>
+      </div>
+      <h2>GRU → Кампинас</h2>
+      <p class="muted">{{ t.trackPage.routeLabel }}</p>
+
+      <div class="track-progress">
+        <div class="track-progress-bar"><span data-track-bar style="width: 0%"></span></div>
+        <div class="track-progress-meta">
+          <span class="num"><span data-track-percent>0</span>%</span>
+          <span class="muted small">{{ t.trackPage.etaLabel }}: <span class="num" data-track-eta>--:--</span></span>
+        </div>
+      </div>
+
+      <dl class="track-grid">
+        <div>
+          <dt>{{ t.trackPage.driverLabel }}</dt>
+          <dd>Carlos M.<br><small class="muted">CNH D · 8 лет · EN B2</small></dd>
+        </div>
+        <div>
+          <dt>{{ t.trackPage.vehicleLabel }}</dt>
+          <dd>Toyota Corolla Altis<br><small class="muted">Sedan executivo · GRU-•••• <span class="muted">demo</span></small></dd>
+        </div>
+        <div>
+          <dt>{{ t.trackPage.statusLabel }}</dt>
+          <dd class="num" data-track-distance>23 км до точки</dd>
+        </div>
+      </dl>
+
+      <div class="track-actions">
+        <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.trackPage.contactDriver }}</a>
+        <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.trackPage.contactSupport }}</a>
+      </div>
+
+      <p class="muted small" style="margin-top: 1.4rem; text-align: center;">{{ t.trackPage.demoNote }}</p>
+    </div>
+  </div>
+</section>

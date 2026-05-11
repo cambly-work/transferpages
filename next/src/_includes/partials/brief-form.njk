@@ -1,5 +1,15 @@
 {%- set t = i18n[lang] -%}
-<form class="brief" data-brief-form data-lang="{{ lang }}" data-whatsapp="{{ site.contacts.whatsappUrl }}" novalidate>
+<form class="brief"
+      data-brief-form
+      data-lang="{{ lang }}"
+      data-whatsapp="{{ site.contacts.whatsappUrl }}"
+      data-cnpj="{{ t.footer.cnpjValue }}"
+      data-pdf-title="{{ t.brief.pdfTitle }}"
+      data-pdf-generated="{{ t.brief.pdfGenerated }}"
+      data-success-title="{{ t.brief.successTitle }}"
+      data-success-body="{{ t.brief.successBody }}"
+      data-download-pdf="{{ t.brief.downloadPdf }}"
+      novalidate>
   <header class="brief-head">
     <p class="kicker">{{ t.brief.step }} <span data-brief-step-current>1</span> {{ t.brief.of }} <span data-brief-step-total>3</span></p>
     <div class="brief-progress"><span data-brief-progress style="width: 33%"></span></div>
@@ -84,4 +94,15 @@
   </div>
 
   <p class="brief-error" data-brief-error hidden></p>
+
+  <div class="brief-success" data-brief-success hidden>
+    <div class="brief-success-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="32" height="32"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3 data-brief-success-title></h3>
+    <p data-brief-success-body></p>
+    <div class="brief-success-actions">
+      <button type="button" class="btn btn-dark btn-arrow" data-brief-pdf></button>
+    </div>
+  </div>
 </form>

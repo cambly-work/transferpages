@@ -272,6 +272,33 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://morrison-transfer.com/ru/track/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/track/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/track/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/track/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/track/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/track/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/track/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/track/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/track/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/track/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/track/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/track/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/track/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/track/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/track/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://morrison-transfer.com/ru/balneario-camboriu/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/balneario-camboriu/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/balneario-camboriu/"/>

@@ -1684,13 +1684,23 @@ a.bento-cell.bento-cell--dark:hover::after { opacity: 1; }
 .track-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: #25d366;
-  box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-  animation: trackPulse 1.6s var(--ease-out) infinite;
+  position: relative;
+}
+/* Pulse via a pseudo element with transform — compositor-only, no repaint cost */
+.track-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  opacity: 0.5;
+  animation: trackPulse 1.8s var(--ease-out) infinite;
+  will-change: transform, opacity;
+  pointer-events: none;
 }
 @keyframes trackPulse {
-  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-  70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  0% { transform: scale(1); opacity: 0.5; }
+  70%, 100% { transform: scale(3); opacity: 0; }
 }
 .track-card h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 0.3rem; }
 .track-progress { margin: 1.6rem 0; }
@@ -1849,32 +1859,12 @@ ol.checklist li::before {
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.35;
-  will-change: contents;
-  transform: translateZ(0);
+  opacity: 0.28;
 }
-.hero-motion-route {
-  stroke-dasharray: 6 8;
-  animation: routeDash 24s linear infinite;
-}
-@keyframes routeDash { to { stroke-dashoffset: -56; } }
-.hero-motion-pulse {
-  transform-origin: center;
-  animation: pulseDot 4.5s var(--ease-out) infinite;
-}
-.hero-motion-pulse--1 { animation-delay: 0s; }
-.hero-motion-pulse--2 { animation-delay: 1.1s; }
-.hero-motion-pulse--3 { animation-delay: 2.2s; }
-.hero-motion-pulse--4 { animation-delay: 3.3s; r: 5; }
-@keyframes pulseDot {
-  0%, 30% { opacity: 0.3; }
-  40% { opacity: 1; transform: scale(1.4); }
-  60% { opacity: 0.3; transform: scale(1); }
-  100% { opacity: 0.3; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-motion-route, .hero-motion-pulse { animation: none; }
-}
+/* No infinite animations — static SVG only. The constant repaint/recomposite was
+   pinning the GPU on idle pages. If we ever want motion back, gate it behind
+   an explicit opt-in or a one-shot intersection observer. */
+.hero-motion-pulse--4 { r: 5; }
 
 /* =========================================================
    How-it-works steps
@@ -2166,12 +2156,13 @@ ol.checklist li::before {
 
 a.fleet-card { color: var(--text); text-decoration: none; display: flex; flex-direction: column; }
 
-/* --- Content-visibility for far-down sections (rendering perf) --- */
-.section, .cases-grid, .post-list, .glossary-list, .compare-wrap {
+/* --- Content-visibility ONLY for long lists below the fold (rendering perf) ---
+   Applying to every .section was overkill — it caused constant intersection
+   recomputation that pinned CPU. Keep it tight: only the truly-long pages. */
+.post-list, .glossary-list, .cases-grid {
   content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
+  contain-intrinsic-size: 0 800px;
 }
-.hero, .hero--motion, .legal-hero { content-visibility: visible; }
 
 /* =========================================================
    Final polish: mobile tightening, layout primitives,

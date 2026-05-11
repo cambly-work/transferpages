@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#f5f5f7"/>
+  <rect x="0" y="0" width="12" height="630" fill="#0a1628"/>
+  <g transform="translate(80, 80)">
+    <path d="M 0 60 L 0 0 L 40 40 L 80 0 L 80 60" fill="none" stroke="#0a1628" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="5" fill="#0a1628"/>
+    <circle cx="40" cy="40" r="5" fill="#0a1628"/>
+    <circle cx="80" cy="0" r="5" fill="#0a1628"/>
+  </g>
+  <text x="80" y="240" fill="#6e6e73" font-size="22" font-weight="600" letter-spacing="3">BLOG · GUIDE</text>
+  <text x="80" y="320" fill="#1d1d1f" font-size="64" font-weight="700" letter-spacing="-2">Что нужно знать</text>
+  <text x="80" y="400" fill="#1d1d1f" font-size="64" font-weight="700" letter-spacing="-2">до выезда.</text>
+  <text x="80" y="490" fill="#6e6e73" font-size="26" font-weight="400">Документы · Сезоны · NF-e · Оплата</text>
+  <g transform="translate(80, 560)">
+    <text x="0" y="0" fill="#0a1628" font-size="18" font-weight="600" letter-spacing="2">morrison-transfer.com</text>
+  </g>
+  <line x1="80" y1="270" x2="200" y2="270" stroke="#c9a36b" stroke-width="3"/>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Inter, system-ui, sans-serif">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <g opacity="0.04">
+    <rect x="0" y="0" width="300" height="630" fill="#0a1628"/>
+    <rect x="600" y="0" width="300" height="630" fill="#0a1628"/>
+  </g>
+  <g transform="translate(80, 80)">
+    <path d="M 0 60 L 0 0 L 40 40 L 80 0 L 80 60" fill="none" stroke="#1d1d1f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="0" r="5" fill="#1d1d1f"/>
+    <circle cx="40" cy="40" r="5" fill="#1d1d1f"/>
+    <circle cx="80" cy="0" r="5" fill="#1d1d1f"/>
+  </g>
+  <text x="80" y="260" fill="#6e6e73" font-size="22" font-weight="600" letter-spacing="3">COMPARE · СРАВНЕНИЕ</text>
+  <text x="80" y="340" fill="#1d1d1f" font-size="68" font-weight="700" letter-spacing="-2">Morrison vs все.</text>
+  <text x="80" y="430" fill="#6e6e73" font-size="28" font-weight="400">8 критериев. Без маркетинга.</text>
+  <g transform="translate(80, 490)" fill="#1d1d1f" font-family="ui-monospace, Menlo, monospace" font-size="20">
+    <text x="0" y="0">Price · Insurance · Languages · NF-e · Cancellation · SLA</text>
+  </g>
+  <text x="80" y="580" fill="#c9a36b" font-size="18" font-weight="600" letter-spacing="2">morrison-transfer.com</text>
+</svg>

@@ -2173,6 +2173,121 @@ a.fleet-card { color: var(--text); text-decoration: none; display: flex; flex-di
 }
 .hero, .hero--motion, .legal-hero { content-visibility: visible; }
 
+/* =========================================================
+   Final polish: mobile tightening, layout primitives,
+   reduced inline styles
+   ========================================================= */
+
+/* Generic section header (replaces inline flex styles in inner pages) */
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+.section-head > p.muted { max-width: 320px; margin: 0; }
+@media (max-width: 600px) { .section-head { gap: 0.6rem; } }
+
+/* Generic 2-col split (replaces inline grid-template-columns: 1fr 1fr) */
+.split-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (max-width: 840px) {
+  .split-2 { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* Generic centered container helpers */
+.text-center { text-align: center; }
+.muted-center { color: var(--muted); text-align: center; }
+.mt-1 { margin-top: 0.6rem; }
+.mt-2 { margin-top: 1.2rem; }
+.mt-3 { margin-top: 1.8rem; }
+.mt-4 { margin-top: 2.4rem; }
+.mb-1 { margin-bottom: 0.6rem; }
+.mb-2 { margin-bottom: 1.2rem; }
+
+/* Tighter hero on inner pages (no motion-svg variants) */
+.hero { padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(2.5rem, 4vw, 3.5rem); }
+.hero--motion { padding: clamp(4.5rem, 9vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem); }
+
+/* Mobile-tighter hero metric strip */
+@media (max-width: 600px) {
+  .metric-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 1.2rem;
+    padding: 1.2rem 0;
+    margin-top: 1.6rem;
+  }
+  .metric-strip dd { font-size: 1.15rem; }
+}
+
+/* Mobile fixes for compare-table (already in horizontal scroll wrap, but font + padding) */
+@media (max-width: 600px) {
+  .compare-table { font-size: 0.84rem; min-width: 600px; }
+  .compare-table th, .compare-table td { padding: 0.7rem 0.6rem; }
+}
+
+/* Mobile fixes for case-card spec grid */
+@media (max-width: 480px) {
+  .case-spec { grid-template-columns: 1fr; gap: 0.6rem; padding: 0.9rem 0; }
+}
+
+/* Mobile newsletter input full-width */
+@media (max-width: 600px) {
+  .newsletter-row input[type="email"] { font-size: 0.95rem; }
+}
+
+/* Smaller hero h1 on tight phones (below 380px) */
+@media (max-width: 380px) {
+  h1 { font-size: 1.85rem; line-height: 1.08; }
+  .hero h1 { font-size: clamp(1.85rem, 8vw, 2.4rem); }
+  .lead { font-size: 1rem; }
+}
+
+/* Logo lockup compact on small screens */
+@media (max-width: 480px) {
+  .logo-text small { display: none; }
+  .logo-mark { width: 26px; height: 26px; }
+}
+
+/* Footer columns more compact on tablet */
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+}
+@media (max-width: 540px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-legal-links { gap: 0.8rem 1.2rem; }
+}
+
+/* Routes-list — better rhythm */
+.routes-list-row { padding: 1rem 1.1rem; }
+@media (max-width: 480px) {
+  .routes-list-row { padding: 0.9rem 1rem; }
+  .routes-list-name { font-size: 0.96rem; }
+  .routes-list-meta { font-size: 0.82rem; }
+}
+
+/* Reduce paint on hover for slow devices */
+@media (max-width: 768px) {
+  .bento-cell { transition: none; }
+  .bento-cell:hover { transform: none; }
+  a.bento-cell::after { display: none; }
+}
+
+/* Print: cleaner output */
+@media print {
+  .site-header, .site-footer, .mobile-sticky-cta, .cookie-banner, .hero-motion, .newsletter, .cursor-follow { display: none !important; }
+  .section { padding: 1.5rem 0; }
+  body { background: #fff; color: #000; }
+  a { color: #000; text-decoration: underline; }
+}
+
+
 
 
 

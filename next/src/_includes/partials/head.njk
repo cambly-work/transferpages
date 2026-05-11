@@ -1,6 +1,17 @@
 {%- set t = i18n[lang] -%}
 {%- set localePath = "/" + lang + "/" -%}
 {%- set canonical = site.domain + localePath + (slug + "/" if slug else "") -%}
+{%- set ogVariant = "default" -%}
+{%- if ogImage -%}
+  {%- set ogVariant = ogImage -%}
+{%- elif slug -%}
+  {%- if "blog" in slug -%}{%- set ogVariant = "blog" -%}
+  {%- elif "fleet" in slug -%}{%- set ogVariant = "fleet" -%}
+  {%- elif slug == "compare" -%}{%- set ogVariant = "compare" -%}
+  {%- elif slug == "cases" -%}{%- set ogVariant = "cases" -%}
+  {%- endif -%}
+{%- endif -%}
+{%- set ogImageUrl = site.domain + "/assets/images/og-" + ogVariant + ".svg" -%}
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title }}</title>
@@ -9,13 +20,13 @@
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ canonical }}">
-<meta property="og:image" content="{{ site.og.image }}">
+<meta property="og:image" content="{{ ogImageUrl }}">
 <meta property="og:site_name" content="{{ site.name }}">
 <meta property="og:locale" content="{{ t.htmlLang | replace('-', '_') }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description }}">
-<meta name="twitter:image" content="{{ site.og.image }}">
+<meta name="twitter:image" content="{{ ogImageUrl }}">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#ffffff">
 <meta name="view-transition" content="same-origin">
@@ -36,7 +47,7 @@
   "@id": "{{ site.domain }}/#business",
   "name": "{{ site.name }}",
   "url": "{{ site.domain }}/{{ lang }}/",
-  "image": "{{ site.og.image }}",
+  "image": "{{ ogImageUrl }}",
   "description": "{{ description }}",
   "telephone": "+{{ site.contacts.whatsapp }}",
   "email": "{{ site.contacts.email }}",

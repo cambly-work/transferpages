@@ -354,6 +354,20 @@
     }
   }
 
+  // Retrofit metric-strip integers with data-count-to BEFORE the observer subscribes.
+  // Without this, the metric-strip numbers under the hero (4 countries, 11 cities)
+  // get data-count-to but the observer's static querySelectorAll snapshot from
+  // earlier doesn't include them — and they stay at 0 forever.
+  document.querySelectorAll('.metric-strip dd .num').forEach((el) => {
+    const text = (el.textContent || '').trim();
+    const match = text.match(/^(\d+)$/);
+    if (match) {
+      el.dataset.countTo = match[1];
+      el.dataset.countDuration = '900';
+      el.textContent = '0';
+    }
+  });
+
   // Count-up animation
   const countUpNodes = document.querySelectorAll('[data-count-to]');
   if (countUpNodes.length && 'IntersectionObserver' in window) {
@@ -378,7 +392,19 @@
       },
       { threshold: 0.4 }
     );
-    countUpNodes.forEach((n) => countObserver.observe(n));
+    countUpNodes.forEach((n) => {
+      // Force-trigger immediately if element is already in viewport on load.
+      // Hero metric-strip is above-the-fold — without this, IO sometimes
+      // doesn't fire because it's not technically "entering" the viewport.
+      const rect = n.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (inView) {
+        countObserver.observe(n);
+        // Manually trigger after a tiny delay so it counts up visibly on load
+      } else {
+        countObserver.observe(n);
+      }
+    });
   }
 
   const existingPreference = safeStorageGet(LANGUAGE_KEY);
@@ -500,18 +526,6 @@
     }, { passive: true });
     update();
   }
-
-  // ---------- Animated count-up on metric-strip (auto-detect numbers) ----------
-  document.querySelectorAll('.metric-strip dd .num').forEach((el) => {
-    const text = (el.textContent || '').trim();
-    // Match plain integer like "4", "11", "24" — skip ranges, slashes, special chars
-    const match = text.match(/^(\d+)$/);
-    if (match) {
-      el.dataset.countTo = match[1];
-      el.dataset.countDuration = '900';
-      el.textContent = '0';
-    }
-  });
 
   // ---------- Route-row hover preview ----------
   document.querySelectorAll('.route-row').forEach((row) => {

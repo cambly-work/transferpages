@@ -23,6 +23,11 @@
         {%- set href = "/" + lang + "/" + item.href -%}
         <li><a href="{{ href }}">{{ t.nav[item.key] }}</a></li>
         {%- endfor %}
+        <li class="nav-list-langs" aria-label="{{ t.meta.languages }}">
+          {%- for code in site.locales %}
+          <a href="/{{ code }}/{{ slug + '/' if slug else '' }}"{% if code == lang %} class="active"{% endif %}>{{ i18n[code].short }}</a>
+          {%- endfor %}
+        </li>
       </ul>
     </nav>
     <button type="button" class="cmdk-trigger" data-cmdk-trigger aria-label="{{ t.ui.cmdkOpen }}">

@@ -791,41 +791,67 @@ body.menu-open .mobile-sticky-cta { opacity: 0; pointer-events: none; }
   .split-figure { aspect-ratio: 5 / 4; max-height: 480px; }
 }
 
+/* Hide the inline language pills in the menu until mobile */
+.nav-list-langs { display: none; }
+
 @media (max-width: 768px) {
-  :root { --header-h: 96px; }
+  :root { --header-h: 64px; }
+  /* body padding-top is var(--header-h). The 1px border + a few px of safe-area
+     mean the actual fixed header is a little taller — add small inline buffer
+     to avoid content sliding under it. */
+  body { padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px)); }
   .nav-wrap {
-    min-height: 0;
-    padding: 0.5rem 0;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto auto;
-    grid-template-areas:
-      "logo theme nav"
-      "lang lang lang";
-    column-gap: 0.5rem;
-    row-gap: 0.4rem;
+    min-height: 56px;
+    padding: 0.3rem 0;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
+    gap: 0.5rem;
   }
   .logo {
-    grid-area: logo;
+    flex: 1;
+    min-width: 0;
+    min-height: 40px;
     font-size: 0.92rem;
     line-height: 1.15;
+    overflow: hidden;
   }
+  .logo-mark { width: 26px; height: 26px; }
+  .logo .logo-text strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .logo small { display: none; }
-  .site-nav { grid-area: nav; justify-self: end; }
-  .theme-toggle { grid-area: theme; justify-self: end; margin: 0; }
-  .lang-switch { grid-area: lang; justify-self: center; }
-  .lang-switch {
-    grid-area: lang;
-    justify-self: stretch;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.18rem;
-    font-size: 0.7rem;
-    padding: 0.16rem;
+  .theme-toggle { margin: 0; flex-shrink: 0; width: 40px; height: 40px; }
+  .site-nav { flex-shrink: 0; }
+  /* Top-level lang-switch hidden on mobile, lives inside open menu instead */
+  .lang-switch { display: none; }
+  .nav-list-langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    list-style: none;
+    margin: 0.8rem 0 0;
+    padding: 0.8rem 0 0;
+    border-top: 1px solid var(--line);
   }
-  .lang-switch a {
-    padding: 0.42rem 0;
-    text-align: center;
+  .nav-list-langs a {
+    flex: 1;
+    min-width: 60px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: var(--muted);
+  }
+  .nav-list-langs a.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+    font-weight: 600;
   }
   .nav-toggle { display: inline-flex; padding: 0.42rem 0.78rem; min-height: 36px; font-size: 0.74rem; }
   .nav-list {
@@ -2422,7 +2448,7 @@ a.fleet-card { color: var(--text); text-decoration: none; display: flex; flex-di
 .theme-icon--moon { display: none; }
 [data-theme="dark"] .theme-icon--sun { display: none; }
 [data-theme="dark"] .theme-icon--moon { display: block; }
-@media (max-width: 480px) { .theme-toggle { width: 32px; height: 32px; margin-right: 0.2rem; } }
+@media (max-width: 480px) { .theme-toggle { width: 40px; height: 40px; margin-right: 0.2rem; } }
 
 /* --- Click-to-copy button --- */
 .copy-btn {

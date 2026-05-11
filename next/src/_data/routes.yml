@@ -1,0 +1,132 @@
+# Routes data: cities + pairs with distance, duration, price range.
+# Used by quote calculator and SEO route landing pages.
+# Prices are reference ranges in BRL. TODO Tim: tune actual ranges.
+
+cities:
+  - id: gru
+    name:
+      ru: Сан-Паулу (GRU)
+      pt: São Paulo (GRU)
+      en: São Paulo (GRU)
+  - id: gig
+    name:
+      ru: Рио-де-Жанейро (GIG)
+      pt: Rio de Janeiro (GIG)
+      en: Rio de Janeiro (GIG)
+  - id: cwb
+    name:
+      ru: Куритиба (CWB)
+      pt: Curitiba (CWB)
+      en: Curitiba (CWB)
+  - id: fln
+    name:
+      ru: Флорианополис (FLN)
+      pt: Florianópolis (FLN)
+      en: Florianópolis (FLN)
+  - id: nvt
+    name:
+      ru: Навегантес (NVT)
+      pt: Navegantes (NVT)
+      en: Navegantes (NVT)
+  - id: poa
+    name:
+      ru: Порту-Алегри (POA)
+      pt: Porto Alegre (POA)
+      en: Porto Alegre (POA)
+  - id: bnu
+    name:
+      ru: Балнеариу-Камбориу
+      pt: Balneário Camboriú
+      en: Balneário Camboriú
+  - id: igr
+    name:
+      ru: Фос-ду-Игуасу (IGU)
+      pt: Foz do Iguaçu (IGU)
+      en: Foz do Iguaçu (IGU)
+  - id: mvd
+    name:
+      ru: Монтевидео
+      pt: Montevidéu
+      en: Montevideo
+  - id: pde
+    name:
+      ru: Пунта-дель-Эсте
+      pt: Punta del Este
+      en: Punta del Este
+  - id: asu
+    name:
+      ru: Асунсьон
+      pt: Assunção
+      en: Asunción
+
+pairs:
+  - from: fln
+    to: bnu
+    km: 95
+    durationMin: 80
+    priceMin: 450
+    priceMax: 650
+    slug: florianopolis-balneario-camboriu
+  - from: cwb
+    to: gru
+    km: 410
+    durationMin: 330
+    priceMin: 1900
+    priceMax: 2600
+    slug: curitiba-sao-paulo
+  - from: gru
+    to: gig
+    km: 430
+    durationMin: 360
+    priceMin: 2100
+    priceMax: 2900
+    slug: sao-paulo-rio-de-janeiro
+  - from: poa
+    to: fln
+    km: 480
+    durationMin: 390
+    priceMin: 2200
+    priceMax: 3100
+    slug: porto-alegre-florianopolis
+  - from: nvt
+    to: bnu
+    km: 25
+    durationMin: 25
+    priceMin: 220
+    priceMax: 320
+    slug: navegantes-balneario-camboriu
+  - from: fln
+    to: nvt
+    km: 90
+    durationMin: 75
+    priceMin: 420
+    priceMax: 600
+    slug: florianopolis-navegantes
+  - from: igr
+    to: cwb
+    km: 640
+    durationMin: 480
+    priceMin: 2800
+    priceMax: 3900
+    slug: foz-do-iguacu-curitiba
+  - from: poa
+    to: mvd
+    km: 870
+    durationMin: 720
+    priceMin: 4500
+    priceMax: 6200
+    slug: porto-alegre-montevideo
+  - from: poa
+    to: pde
+    km: 990
+    durationMin: 780
+    priceMin: 5000
+    priceMax: 7000
+    slug: porto-alegre-punta-del-este
+  - from: igr
+    to: asu
+    km: 330
+    durationMin: 300
+    priceMin: 1600
+    priceMax: 2300
+    slug: foz-do-iguacu-asuncion

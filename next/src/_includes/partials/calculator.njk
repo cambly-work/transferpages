@@ -1,0 +1,98 @@
+{%- set t = i18n[lang] -%}
+<section class="section section--bg-soft" id="calculator">
+  <div class="container container--narrow">
+    <p class="kicker" style="text-align: center;">{{ t.calc.title }}</p>
+    <h2 style="text-align: center;">{{ t.calc.subtitle }}</h2>
+
+    <form class="calc" data-calculator data-lang="{{ lang }}" novalidate>
+      <div class="calc-row">
+        <label class="field">
+          <span>{{ t.calc.from }}</span>
+          <select name="from" data-calc-from required>
+            <option value="">—</option>
+            {%- for city in routes.cities %}
+            <option value="{{ city.id }}">{{ city.name[lang] }}</option>
+            {%- endfor %}
+          </select>
+        </label>
+        <label class="field">
+          <span>{{ t.calc.to }}</span>
+          <select name="to" data-calc-to required>
+            <option value="">—</option>
+            {%- for city in routes.cities %}
+            <option value="{{ city.id }}">{{ city.name[lang] }}</option>
+            {%- endfor %}
+          </select>
+        </label>
+      </div>
+      <div class="calc-row">
+        <label class="field">
+          <span>{{ t.calc.passengers }}</span>
+          <select name="pax" data-calc-pax>
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8+</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>{{ t.calc.luggage }}</span>
+          <select name="luggage" data-calc-luggage>
+            <option value="standard">{{ t.calc.luggageStandard }}</option>
+            <option value="extra">{{ t.calc.luggageExtra }}</option>
+            <option value="oversized">{{ t.calc.luggageOversized }}</option>
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-dark btn-arrow calc-submit">{{ t.calc.cta }}</button>
+
+      <div class="calc-result" data-calc-result hidden>
+        <div class="calc-result-state" data-calc-state-error hidden></div>
+        <div class="calc-result-state" data-calc-state-ok hidden>
+          <p class="eyebrow" data-calc-route-name></p>
+          <div class="calc-result-grid">
+            <div><dt>{{ t.calc.distance }}</dt><dd data-calc-distance></dd></div>
+            <div><dt>{{ t.calc.duration }}</dt><dd data-calc-duration></dd></div>
+            <div><dt>{{ t.calc.result }}</dt><dd data-calc-price></dd></div>
+          </div>
+          <p class="muted small">{{ t.calc.perKm }}</p>
+          <a class="btn btn-dark btn-arrow" data-calc-confirm href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.calc.confirm }}</a>
+        </div>
+      </div>
+    </form>
+
+    <script type="application/json" data-calc-data>
+      {
+        "pairs": [
+          {%- for pair in routes.pairs -%}
+          {
+            "from": "{{ pair.from }}",
+            "to": "{{ pair.to }}",
+            "km": {{ pair.km }},
+            "durationMin": {{ pair.durationMin }},
+            "priceMin": {{ pair.priceMin }},
+            "priceMax": {{ pair.priceMax }},
+            "slug": "{{ pair.slug }}"
+          }{% if not loop.last %},{% endif %}
+          {%- endfor -%}
+        ],
+        "cities": {
+          {%- for city in routes.cities -%}
+          "{{ city.id }}": "{{ city.name[lang] }}"{% if not loop.last %},{% endif %}
+          {%- endfor -%}
+        },
+        "messages": {
+          "pickFirst": "{{ t.calc.pickFirst }}",
+          "sameCity": "{{ t.calc.sameCity }}",
+          "notFound": "{{ t.calc.notFound }}"
+        },
+        "whatsapp": "{{ site.contacts.whatsappUrl }}",
+        "lang": "{{ lang }}"
+      }
+    </script>
+  </div>
+</section>

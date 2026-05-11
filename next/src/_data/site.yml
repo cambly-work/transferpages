@@ -7,9 +7,29 @@ contacts:
   whatsapp: "5513996532915"
   whatsappUrl: https://wa.me/5513996532915
   telegramUrl: https://t.me/premium_transfer_latam
+  email: hello@morrison-transfer.com
+
+# TODO Tim: replace with real CNPJ / legal entity name when registered
+legal:
+  cnpj: "00.000.000/0001-00"
+  entityName: "Morrison Premium Transfer LTDA"
+  city: "São Paulo"
+  state: "SP"
+  country: "BR"
+  founded: "2024"
 
 analytics:
   ga4: G-ZMBK0S18RL
 
 og:
   image: https://morrison-transfer.com/assets/images/og-cover.svg
+
+areaServed:
+  - name: Brazil
+    code: BR
+  - name: Uruguay
+    code: UY
+  - name: Paraguay
+    code: PY
+  - name: Argentina
+    code: AR

@@ -1,0 +1,40 @@
+---
+slug: "routes"
+permalink: "/pt/routes/index.html"
+title: "Rotas | Morrison Premium Transfer"
+description: "Rotas regulares da Morrison Premium Transfer pelo Brasil e Mercosul: distância, duração, preço de referência."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Rotas", path: "/pt/routes/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">Rotas</p>
+    <h1>Rotas regulares na região.</h1>
+    <p class="lead">Cada rota tem sua própria página com distância, duração e referência de preço. O cálculo exato é feito conforme o formato da viagem.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="routes-list">
+      {%- for pair in routes.pairs %}
+      <a class="routes-list-row" href="/pt/routes/{{ pair.slug }}/">
+        <div class="routes-list-name">{{ pair.from | cityName("pt", routes.cities) }} → {{ pair.to | cityName("pt", routes.cities) }}</div>
+        <div class="routes-list-meta">{{ pair.km }} km · {{ pair.durationMin | formatDuration("pt") }}</div>
+        <div class="routes-list-price">a partir de R$ {{ pair.priceMin }}</div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Não encontrou sua rota?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/">Abrir solicitação</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

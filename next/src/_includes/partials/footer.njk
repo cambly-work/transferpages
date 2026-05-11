@@ -8,11 +8,23 @@
           <small>{{ t.brand.tagline }}</small>
         </a>
         <p>{{ t.footer.description }}</p>
+        <p class="footer-legal-line">
+          <span>{{ t.footer.cnpjLabel }}: {{ t.footer.cnpjValue }}</span>
+          <span>{{ t.footer.legalNote }}</span>
+        </p>
       </div>
       <div>
         <h4>{{ t.footer.sections }}</h4>
         <ul>
-          {%- for item in nav.footer %}
+          {%- for item in nav.footer.services %}
+          <li><a href="/{{ lang }}/{{ item.href }}">{{ t.nav[item.key] }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4>{{ t.footer.company }}</h4>
+        <ul>
+          {%- for item in nav.footer.company %}
           <li><a href="/{{ lang }}/{{ item.href }}">{{ t.nav[item.key] }}</a></li>
           {%- endfor %}
         </ul>
@@ -22,12 +34,11 @@
         <ul>
           <li><a href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Telegram</a></li>
+          <li><a href="mailto:{{ site.contacts.email }}">{{ site.contacts.email }}</a></li>
           <li><a href="/{{ lang }}/contact/">{{ t.footer.request }}</a></li>
         </ul>
-      </div>
-      <div>
-        <h4>{{ t.footer.languages }}</h4>
-        <ul>
+        <h4 style="margin-top: 1.4rem;">{{ t.footer.languages }}</h4>
+        <ul class="footer-langs">
           {%- for code in site.locales %}
           <li><a href="/{{ code }}/">{{ i18n[code].label }}</a></li>
           {%- endfor %}
@@ -36,7 +47,23 @@
     </div>
     <div class="footer-fineprint">
       <span>&copy; <span data-year>{{ "" | year }}</span> {{ t.copyright }}</span>
-      <span>{{ site.contacts.whatsappUrl | replace("https://", "") }}</span>
+      <ul class="footer-legal-links">
+        {%- for item in nav.footer.legal %}
+        <li><a href="/{{ lang }}/{{ item.href }}">{{ t.nav[item.key] }}</a></li>
+        {%- endfor %}
+      </ul>
     </div>
   </div>
 </footer>
+<div class="cookie-banner" id="cookie-banner" hidden aria-live="polite">
+  <div class="cookie-banner-inner">
+    <div class="cookie-banner-copy">
+      <strong>{{ t.cookies.title }}</strong>
+      <p>{{ t.cookies.body }} <a href="/{{ lang }}/privacy/">{{ t.cookies.link }}</a>.</p>
+    </div>
+    <div class="cookie-banner-actions">
+      <button type="button" class="btn btn-secondary" data-cookie-action="reject">{{ t.cookies.reject }}</button>
+      <button type="button" class="btn btn-dark" data-cookie-action="accept">{{ t.cookies.accept }}</button>
+    </div>
+  </div>
+</div>

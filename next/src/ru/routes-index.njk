@@ -1,0 +1,40 @@
+---
+slug: "routes"
+permalink: "/ru/routes/index.html"
+title: "Маршруты | Morrison Premium Transfer"
+description: "Регулярные маршруты Morrison Premium Transfer по Бразилии и Mercosur: расстояние, время в пути, ориентир по цене."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Маршруты", path: "/ru/routes/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">Маршруты</p>
+    <h1>Регулярные маршруты по региону.</h1>
+    <p class="lead">Каждый маршрут — отдельная страница с расстоянием, временем и ориентиром по стоимости. Точный расчёт делаем под формат поездки.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="routes-list">
+      {%- for pair in routes.pairs %}
+      <a class="routes-list-row" href="/ru/routes/{{ pair.slug }}/">
+        <div class="routes-list-name">{{ pair.from | cityName("ru", routes.cities) }} → {{ pair.to | cityName("ru", routes.cities) }}</div>
+        <div class="routes-list-meta">{{ pair.km }} км · {{ pair.durationMin | formatDuration("ru") }}</div>
+        <div class="routes-list-price">от R$ {{ pair.priceMin }}</div>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Не нашли свой маршрут?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">Открыть заявку</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

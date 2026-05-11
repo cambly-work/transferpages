@@ -10,11 +10,14 @@
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:image" content="{{ site.og.image }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:locale" content="{{ t.htmlLang | replace('-', '_') }}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description }}">
 <meta name="twitter:image" content="{{ site.og.image }}">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="{{ canonical }}">
 {%- for code in site.locales %}
 <link rel="alternate" hreflang="{{ i18n[code].hreflang }}" href="{{ site.domain }}/{{ code }}/{{ slug + '/' if slug else '' }}">
@@ -25,10 +28,103 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "{{ site.domain }}/#business",
+  "name": "{{ site.name }}",
+  "url": "{{ site.domain }}/{{ lang }}/",
+  "image": "{{ site.og.image }}",
+  "description": "{{ description }}",
+  "telephone": "+{{ site.contacts.whatsapp }}",
+  "email": "{{ site.contacts.email }}",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ site.legal.city }}",
+    "addressRegion": "{{ site.legal.state }}",
+    "addressCountry": "{{ site.legal.country }}"
+  },
+  "areaServed": [
+    {%- for area in site.areaServed -%}
+    { "@type": "Country", "name": "{{ area.name }}" }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ],
+  "sameAs": [
+    "{{ site.contacts.whatsappUrl }}",
+    "{{ site.contacts.telegramUrl }}"
+  ],
+  "founder": { "@type": "Organization", "name": "{{ site.legal.entityName }}" },
+  "foundingDate": "{{ site.legal.founded }}",
+  "knowsLanguage": ["pt", "ru", "en"]
+}
+</script>
+{%- if schema == "Service" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "{{ serviceType or title }}",
+  "name": "{{ title }}",
+  "description": "{{ description }}",
+  "provider": { "@id": "{{ site.domain }}/#business" },
+  "areaServed": [
+    {%- for area in site.areaServed -%}
+    { "@type": "Country", "name": "{{ area.name }}" }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ],
+  "url": "{{ canonical }}"
+}
+</script>
+{%- endif %}
+{%- if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for item in faq -%}
+    {
+      "@type": "Question",
+      "name": {{ item.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
+{%- if breadcrumbs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {%- for crumb in breadcrumbs -%}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "name": {{ crumb.name | dump | safe }},
+      "item": "{{ site.domain }}{{ crumb.path }}"
+    }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4 }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '{{ site.analytics.ga4 }}');
+  // GA4 consent mode v2 — denied by default, upgraded by cookie banner accept.
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+  gtag('config', '{{ site.analytics.ga4 }}', { 'anonymize_ip': true });
 </script>

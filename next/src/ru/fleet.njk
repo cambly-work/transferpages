@@ -1,0 +1,52 @@
+---
+slug: "fleet"
+permalink: "/ru/fleet/index.html"
+title: "Автопарк | Morrison Premium Transfer"
+description: "Классы автомобилей Morrison Premium Transfer: бизнес-седан, премиум-SUV, минивэн, vans — под конкретные форматы поездок."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Автопарк", path: "/ru/fleet/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.fleetPage.eyebrow }}</p>
+    <h1>{{ t.fleetPage.title }}</h1>
+    <p class="lead">{{ t.fleetPage.lead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">{{ t.fleetPage.bookCta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="fleet-grid">
+      {%- for veh in fleet.classes %}
+      <article class="fleet-card">
+        <div class="fleet-card-head">
+          <h3>{{ veh.nameRu }}</h3>
+          <div class="fleet-stats">
+            <span><strong>{{ veh.pax }}</strong> мест</span>
+            <span><strong>{{ veh.bags }}</strong> багажа</span>
+          </div>
+        </div>
+        <p class="fleet-examples">{{ veh.examplesRu }}</p>
+        <p class="fleet-for"><strong>Для кого:</strong> {{ veh.forRu }}</p>
+        <p class="fleet-features"><strong>В оснащении:</strong> {{ veh.featuresRu }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="muted" style="text-align: center; margin-top: 2rem;">{{ t.fleetPage.note }}</p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Подобрать машину под маршрут?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">Открыть заявку</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+---
+permalink: "/sitemap.xml"
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- set pages = [
+  "",
+  "brazil-transfers/",
+  "airport-transfer/",
+  "international/",
+  "partners/",
+  "contact/",
+  "about/",
+  "fleet/",
+  "team/",
+  "testimonials/",
+  "balneario-camboriu/",
+  "porto-alegre/",
+  "florianopolis/",
+  "privacy/",
+  "terms/",
+  "cookies/"
+] %}
+{%- for path in pages %}
+{%- for code in site.locales %}
+  <url>
+    <loc>{{ site.domain }}/{{ code }}/{{ path }}</loc>
+    {%- for alt in site.locales %}
+    <xhtml:link rel="alternate" hreflang="{{ i18n[alt].hreflang }}" href="{{ site.domain }}/{{ alt }}/{{ path }}"/>
+    {%- endfor %}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.domain }}/{{ site.defaultLocale }}/{{ path }}"/>
+    <changefreq>monthly</changefreq>
+    <priority>{% if path == "" %}1.0{% elif path == "contact/" %}0.9{% else %}0.7{% endif %}</priority>
+  </url>
+{%- endfor %}
+{%- endfor %}
+{%- for pair in routes.pairs %}
+{%- for code in site.locales %}
+  <url>
+    <loc>{{ site.domain }}/{{ code }}/routes/{{ pair.slug }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+{%- endfor %}
+{%- endfor %}
+</urlset>

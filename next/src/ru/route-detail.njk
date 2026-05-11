@@ -1,0 +1,61 @@
+---
+pagination:
+  data: routes.pairs
+  size: 1
+  alias: pair
+permalink: "/ru/routes/{{ pair.slug }}/index.html"
+eleventyComputed:
+  title: "Трансфер {{ pair.from | cityName('ru', routes.cities) }} → {{ pair.to | cityName('ru', routes.cities) }} | Morrison"
+  description: "Частный трансфер {{ pair.from | cityName('ru', routes.cities) }} → {{ pair.to | cityName('ru', routes.cities) }}. {{ pair.km }} км, ориентировочно {{ pair.durationMin | formatDuration('ru') }}. Цена фиксируется до выезда."
+  slug: "routes/{{ pair.slug }}"
+schema: "Service"
+serviceType: "Private passenger transfer"
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">Маршрут</p>
+    <h1>{{ pair.from | cityName("ru", routes.cities) }} → {{ pair.to | cityName("ru", routes.cities) }}</h1>
+    <p class="lead">Частный трансфер с фиксированной ценой и согласованными условиями до выезда.</p>
+    <dl class="hero-meta">
+      <div><dt>Расстояние</dt><dd>{{ pair.km }} км</dd></div>
+      <div><dt>Время в пути</dt><dd>{{ pair.durationMin | formatDuration("ru") }}</dd></div>
+      <div><dt>Ориентир по цене</dt><dd>R$ {{ pair.priceMin }}–{{ pair.priceMax }}</dd></div>
+    </dl>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/?route={{ pair.slug }}">Запросить точную цену</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>Что входит в цену</h2>
+    <ul class="checklist">
+      <li>Водитель, топливо, платные дороги, парковка на маршруте</li>
+      <li>Кондиционер, бутилированная вода, USB-зарядка</li>
+      <li>Wi-Fi (опц.), детское кресло (по запросу)</li>
+      <li>Отслеживание рейса и корректировка времени без доплаты</li>
+      <li>NF-e для юр. лиц</li>
+    </ul>
+
+    <h2>Что подтверждается до выезда</h2>
+    <ul class="checklist">
+      <li>Точка подачи (адрес или терминал аэропорта) и точка высадки</li>
+      <li>Класс автомобиля под количество пассажиров и багажа</li>
+      <li>Время в пути с учётом сезона и времени суток</li>
+      <li>Промежуточные остановки и время ожидания</li>
+      <li>Цена и условия оплаты</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Поехали по этому маршруту?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/?route={{ pair.slug }}">Открыть заявку</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

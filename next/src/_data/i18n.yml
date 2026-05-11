@@ -17,16 +17,119 @@ ru:
     international: Международные
     partners: Партнёры
     contact: Контакты
+    fleet: Автопарк
+    team: Команда
+    about: О компании
+    testimonials: Отзывы
+    routes: Маршруты
+    privacy: Политика конфиденциальности
+    terms: Условия обслуживания
+    cookies: Cookies
   footer:
     sections: Разделы
     contacts: Контакты
     languages: Языки
+    company: Компания
+    legal: Документы
     request: Страница заявки
     description: Сервис частных трансферов для клиентов, которым нужен спокойный, организованный и предсказуемый результат.
+    cnpjLabel: "CNPJ"
+    cnpjValue: "00.000.000/0001-00"
+    legalNote: Лицензированный частный транспорт пассажиров. Юридическое лицо зарегистрировано в Бразилии.
   cta:
     whatsapp: WhatsApp
     telegram: Telegram
   copyright: Morrison Premium Transfer
+  cookies:
+    title: Cookies и аналитика
+    body: Мы используем cookies для базовой аналитики (Google Analytics) и для запоминания выбора языка. Без cookies сайт работает, но мы не сможем понять, какие маршруты вам важнее.
+    accept: Принять все
+    reject: Только необходимые
+    manage: Подробнее
+    link: Политика конфиденциальности
+  calc:
+    title: Оценка стоимости маршрута
+    subtitle: Выберите города — получите ориентир по цене. Точная цена подтверждается перед выездом.
+    from: Откуда
+    to: Куда
+    passengers: Пассажиры
+    luggage: Багаж
+    luggageStandard: Стандартный (1 место/чел.)
+    luggageExtra: Увеличенный (>1 место/чел.)
+    luggageOversized: Крупногабаритный (велосипеды, сёрф)
+    cta: Получить расчёт
+    result: Ориентир
+    distance: Расстояние
+    duration: Время в пути
+    perKm: Тариф включает водителя, топливо, платные дороги.
+    confirm: Подтвердить через WhatsApp
+    pickFirst: Сначала выберите города
+    sameCity: Выберите разные города
+    notFound: На этот маршрут расчёт согласовывается отдельно — напишите нам.
+  brief:
+    title: Бриф заявки
+    subtitle: 60 секунд — и у нас есть всё для расчёта. Ничего лишнего.
+    step: Шаг
+    of: из
+    next: Далее
+    back: Назад
+    submit: Отправить через WhatsApp
+    step1Title: Маршрут и формат
+    step1Desc: Откуда, куда, тип трансфера.
+    fromCity: Откуда (город / адрес / аэропорт)
+    toCity: Куда (город / адрес / аэропорт)
+    service: Тип услуги
+    serviceAirport: Аэропорт ↔ адрес
+    serviceIntercity: Межгород
+    serviceInternational: Международный
+    serviceHourly: Почасовая аренда
+    step2Title: Дата и пассажиры
+    step2Desc: Когда, сколько вас, багаж.
+    date: Дата выезда
+    time: Время (примерно)
+    pax: Пассажиры
+    bags: Багаж (мест)
+    children: Дети младше 10 лет
+    childSeat: Нужно детское кресло
+    step3Title: Контакты и пожелания
+    step3Desc: Куда писать и что важно учесть.
+    name: Имя
+    contact: WhatsApp или Telegram
+    notes: Особые пожелания (язык водителя, домашние животные, остановки)
+    consentLabel: Я согласен на обработку данных в целях оформления заявки
+    consentRequired: Необходимо согласие на обработку данных
+    fillRequired: Заполните обязательные поля
+  fleetPage:
+    eyebrow: Автопарк
+    title: Машины для конкретных задач.
+    lead: Не "у нас премиум-автомобили", а конкретно — модель, мест, багаж, что внутри. Под формат поездки подбираем класс заранее.
+    note: Фотографии актуального парка обновляются. Точная модель на конкретный заезд подтверждается при бронировании.
+    bookCta: Подобрать машину под маршрут
+  teamPage:
+    eyebrow: Команда
+    title: Люди, которые сидят за рулём.
+    lead: В дальней поездке вы 8 часов проведёте с одним человеком. Кто это — мы рассказываем заранее, не "пришлю фото на месте".
+    note: Все водители — официально оформлены, с действующими правами категории D или CNH B + EAR, с подтверждённым стажем работы с пассажирами и владением английским или испанским в той мере, которая нужна на маршруте.
+    placeholder: Раздел собирается. Реальные карточки появятся после согласования с водителями — мы не публикуем фото и имена без письменного согласия.
+  aboutPage:
+    eyebrow: О компании
+    title: Спокойный, организованный, предсказуемый результат.
+    lead: Morrison Premium Transfer — частные трансферы по Бразилии и странам Mercosur с фиксированной ценой и согласованными условиями до выезда.
+    valuesTitle: Чем мы отличаемся от такси и райдшеринга
+    val1Title: Цена фиксируется до выезда
+    val1Body: Никаких "счётчик показал больше" и доплат на полпути. Стоимость и условия — в письменном подтверждении.
+    val2Title: Юридическая ответственность
+    val2Body: Юр. лицо в Бразилии, страховка пассажиров, NF-e (электронная накладная) для бизнеса.
+    val3Title: Мультиязычная поддержка
+    val3Body: Заявки и сопровождение на русском, португальском и английском. Без "Google Translate в WhatsApp".
+    val4Title: Подготовленный сценарий
+    val4Body: Маршрут, остановки, документы для пересечения границы — собираем до выезда, а не на ходу.
+  testimonialsPage:
+    eyebrow: Отзывы
+    title: Что говорят клиенты.
+    lead: Отзывы публикуются с разрешения клиента, без вымышленных Михаилов К. Если ваш кейс отсутствует — это потому, что мы не успели спросить разрешение.
+    placeholder: Сбор реальных отзывов в процессе. Если вы недавно ездили с нами — напишите в WhatsApp, разместим со ссылкой на ваш профиль или анонимно по выбору.
+    cta: Поделиться отзывом
 
 pt:
   htmlLang: pt-BR
@@ -47,16 +150,119 @@ pt:
     international: Internacional
     partners: Parceiros
     contact: Contato
+    fleet: Frota
+    team: Equipe
+    about: Sobre
+    testimonials: Depoimentos
+    routes: Rotas
+    privacy: Política de Privacidade
+    terms: Termos de Serviço
+    cookies: Cookies
   footer:
     sections: Seções
     contacts: Contatos
     languages: Idiomas
+    company: Empresa
+    legal: Documentos
     request: Página de solicitação
     description: Serviço de transfer privado para clientes que precisam de um resultado calmo, organizado e previsível.
+    cnpjLabel: "CNPJ"
+    cnpjValue: "00.000.000/0001-00"
+    legalNote: Transporte privado licenciado de passageiros. Pessoa jurídica registrada no Brasil.
   cta:
     whatsapp: WhatsApp
     telegram: Telegram
   copyright: Morrison Premium Transfer
+  cookies:
+    title: Cookies e analytics
+    body: Usamos cookies para analytics básico (Google Analytics) e para lembrar a sua escolha de idioma. Sem cookies o site funciona, mas não conseguimos entender quais rotas importam mais.
+    accept: Aceitar tudo
+    reject: Somente essenciais
+    manage: Saber mais
+    link: Política de Privacidade
+  calc:
+    title: Estimativa de preço da rota
+    subtitle: Escolha as cidades — receba uma referência de preço. O valor exato é confirmado antes da partida.
+    from: De onde
+    to: Para onde
+    passengers: Passageiros
+    luggage: Bagagem
+    luggageStandard: Padrão (1 peça/pessoa)
+    luggageExtra: Ampliado (>1 peça/pessoa)
+    luggageOversized: Volume grande (bicicletas, pranchas)
+    cta: Obter estimativa
+    result: Referência
+    distance: Distância
+    duration: Duração
+    perKm: O preço inclui motorista, combustível, pedágios.
+    confirm: Confirmar pelo WhatsApp
+    pickFirst: Selecione as cidades primeiro
+    sameCity: Selecione cidades diferentes
+    notFound: Esta rota é cotada caso a caso — escreva pra gente.
+  brief:
+    title: Brief de solicitação
+    subtitle: 60 segundos e temos tudo para calcular. Nada de excesso.
+    step: Passo
+    of: de
+    next: Avançar
+    back: Voltar
+    submit: Enviar pelo WhatsApp
+    step1Title: Rota e formato
+    step1Desc: De onde, para onde, tipo de transfer.
+    fromCity: De onde (cidade / endereço / aeroporto)
+    toCity: Para onde (cidade / endereço / aeroporto)
+    service: Tipo de serviço
+    serviceAirport: Aeroporto ↔ endereço
+    serviceIntercity: Intermunicipal
+    serviceInternational: Internacional
+    serviceHourly: Locação por hora
+    step2Title: Data e passageiros
+    step2Desc: Quando, quantos vocês são, bagagem.
+    date: Data da viagem
+    time: Horário (aproximado)
+    pax: Passageiros
+    bags: Bagagem (peças)
+    children: Crianças menores de 10 anos
+    childSeat: Necessita cadeirinha
+    step3Title: Contato e observações
+    step3Desc: Para onde responder e o que é importante saber.
+    name: Nome
+    contact: WhatsApp ou Telegram
+    notes: Observações (idioma do motorista, animais, paradas)
+    consentLabel: Concordo com o tratamento dos dados para fins de processamento da solicitação
+    consentRequired: É necessário concordar com o tratamento dos dados
+    fillRequired: Preencha os campos obrigatórios
+  fleetPage:
+    eyebrow: Frota
+    title: Veículos para tarefas concretas.
+    lead: Não "temos premium", mas concreto — modelo, lugares, bagagem, o que tem dentro. A classe é escolhida antes conforme o formato da viagem.
+    note: As fotos da frota atual são atualizadas. O modelo exato para cada viagem é confirmado na reserva.
+    bookCta: Escolher veículo para a rota
+  teamPage:
+    eyebrow: Equipe
+    title: Pessoas que ficam ao volante.
+    lead: Numa viagem longa, você passa 8 horas com uma pessoa. Quem é — contamos antes, não "envio a foto no momento".
+    note: Todos os motoristas têm contrato formal, CNH categoria D ou B + EAR válida, comprovada experiência com passageiros e domínio de inglês ou espanhol na medida exigida pela rota.
+    placeholder: A seção está sendo montada. Cards reais aparecem após o aceite por escrito dos motoristas — não publicamos fotos e nomes sem autorização.
+  aboutPage:
+    eyebrow: Sobre nós
+    title: Resultado calmo, organizado, previsível.
+    lead: Morrison Premium Transfer — transfers privados pelo Brasil e países do Mercosul com preço fixado e condições acordadas antes da partida.
+    valuesTitle: Como nos diferenciamos de táxi e ride-sharing
+    val1Title: Preço fechado antes da partida
+    val1Body: Nada de "o taxímetro marcou mais" e cobranças no meio do caminho. Valor e condições — em confirmação escrita.
+    val2Title: Responsabilidade jurídica
+    val2Body: Pessoa jurídica no Brasil, seguro de passageiros, NF-e para empresas.
+    val3Title: Suporte multilíngue
+    val3Body: Atendimento em russo, português e inglês. Sem "Google Translate no WhatsApp".
+    val4Title: Cenário preparado
+    val4Body: Rota, paradas, documentos para travessia de fronteira — montados antes, não na estrada.
+  testimonialsPage:
+    eyebrow: Depoimentos
+    title: O que dizem os clientes.
+    lead: Depoimentos são publicados com autorização do cliente, sem "Mikhail K." inventado. Se o seu caso não está aqui, é porque ainda não pedimos autorização.
+    placeholder: A coleta de depoimentos reais está em andamento. Se viajou com a gente recentemente — escreva no WhatsApp, publicamos com link para o seu perfil ou de forma anônima.
+    cta: Compartilhar depoimento
 
 en:
   htmlLang: en
@@ -77,13 +283,116 @@ en:
     international: International
     partners: Partners
     contact: Contact
+    fleet: Fleet
+    team: Team
+    about: About
+    testimonials: Reviews
+    routes: Routes
+    privacy: Privacy Policy
+    terms: Terms of Service
+    cookies: Cookies
   footer:
     sections: Sections
     contacts: Contacts
     languages: Languages
+    company: Company
+    legal: Legal
     request: Request page
     description: Private transfer service for clients who need a calm, organized and predictable result.
+    cnpjLabel: "CNPJ"
+    cnpjValue: "00.000.000/0001-00"
+    legalNote: Licensed private passenger transport. Legal entity registered in Brazil.
   cta:
     whatsapp: WhatsApp
     telegram: Telegram
   copyright: Morrison Premium Transfer
+  cookies:
+    title: Cookies and analytics
+    body: We use cookies for basic analytics (Google Analytics) and to remember your language choice. The site works without cookies, but we cannot understand which routes matter most.
+    accept: Accept all
+    reject: Essential only
+    manage: Learn more
+    link: Privacy Policy
+  calc:
+    title: Route price estimate
+    subtitle: Pick cities — get a reference price. The exact fare is confirmed before departure.
+    from: From
+    to: To
+    passengers: Passengers
+    luggage: Luggage
+    luggageStandard: Standard (1 piece / person)
+    luggageExtra: Extra (>1 piece / person)
+    luggageOversized: Oversized (bikes, surfboards)
+    cta: Get estimate
+    result: Reference
+    distance: Distance
+    duration: Duration
+    perKm: Price includes driver, fuel, tolls.
+    confirm: Confirm via WhatsApp
+    pickFirst: Pick the cities first
+    sameCity: Pick different cities
+    notFound: This route is priced case by case — message us.
+  brief:
+    title: Request brief
+    subtitle: 60 seconds and we have everything we need to quote. No fluff.
+    step: Step
+    of: of
+    next: Next
+    back: Back
+    submit: Send via WhatsApp
+    step1Title: Route and format
+    step1Desc: From, to, transfer type.
+    fromCity: From (city / address / airport)
+    toCity: To (city / address / airport)
+    service: Service type
+    serviceAirport: Airport ↔ address
+    serviceIntercity: Intercity
+    serviceInternational: International
+    serviceHourly: Hourly hire
+    step2Title: Date and passengers
+    step2Desc: When, how many of you, luggage.
+    date: Travel date
+    time: Time (approximate)
+    pax: Passengers
+    bags: Luggage (pieces)
+    children: Children under 10
+    childSeat: Need child seat
+    step3Title: Contact and notes
+    step3Desc: Where to reply and what matters.
+    name: Name
+    contact: WhatsApp or Telegram
+    notes: Special requests (driver language, pets, stops)
+    consentLabel: I consent to data processing for handling this request
+    consentRequired: Consent is required to process your data
+    fillRequired: Please fill in required fields
+  fleetPage:
+    eyebrow: Fleet
+    title: Vehicles for specific jobs.
+    lead: Not "we have premium cars", but specific — model, seats, luggage, what is inside. The class is matched to the trip format before booking.
+    note: Photos of the current fleet are updated regularly. The exact model for a given trip is confirmed at booking.
+    bookCta: Pick a vehicle for the route
+  teamPage:
+    eyebrow: Team
+    title: People who sit behind the wheel.
+    lead: On a long trip you spend 8 hours with one person. Who that is — we tell you in advance, not "I'll send a photo on the spot".
+    note: All drivers are formally employed, hold valid CNH category D or B+EAR, have verified passenger experience and speak English or Spanish to the level the route requires.
+    placeholder: Section under construction. Real driver cards appear after written consent — we do not publish photos and names without authorization.
+  aboutPage:
+    eyebrow: About
+    title: Calm, organized, predictable result.
+    lead: Morrison Premium Transfer — private transfers across Brazil and Mercosur countries with a fixed price and agreed conditions before departure.
+    valuesTitle: How we differ from taxi and ride-sharing
+    val1Title: Price locked before departure
+    val1Body: No "the meter went higher" or surprise add-ons mid-route. Price and conditions in a written confirmation.
+    val2Title: Legal accountability
+    val2Body: Legal entity in Brazil, passenger insurance, NF-e (electronic invoice) for companies.
+    val3Title: Multilingual support
+    val3Body: Requests and support in Russian, Portuguese and English. No "Google Translate over WhatsApp".
+    val4Title: Prepared scenario
+    val4Body: Route, stops, border-crossing documents — assembled before the trip, not on the road.
+  testimonialsPage:
+    eyebrow: Reviews
+    title: What clients say.
+    lead: Reviews are published with the client's permission — no invented "Mikhail K.". If your case isn't here, it's because we haven't asked yet.
+    placeholder: Real reviews are being collected. If you travelled with us recently — message us on WhatsApp and we will publish with a link to your profile, or anonymously by your choice.
+    cta: Share a review

@@ -1,0 +1,87 @@
+{%- set t = i18n[lang] -%}
+<form class="brief" data-brief-form data-lang="{{ lang }}" data-whatsapp="{{ site.contacts.whatsappUrl }}" novalidate>
+  <header class="brief-head">
+    <p class="kicker">{{ t.brief.step }} <span data-brief-step-current>1</span> {{ t.brief.of }} <span data-brief-step-total>3</span></p>
+    <div class="brief-progress"><span data-brief-progress style="width: 33%"></span></div>
+  </header>
+
+  <section class="brief-step" data-brief-step="1" aria-hidden="false">
+    <h3>{{ t.brief.step1Title }}</h3>
+    <p class="muted">{{ t.brief.step1Desc }}</p>
+    <div class="brief-grid">
+      <label class="field">
+        <span>{{ t.brief.fromCity }}*</span>
+        <input type="text" name="fromCity" required data-brief-required>
+      </label>
+      <label class="field">
+        <span>{{ t.brief.toCity }}*</span>
+        <input type="text" name="toCity" required data-brief-required>
+      </label>
+    </div>
+    <fieldset class="brief-radios">
+      <legend>{{ t.brief.service }}*</legend>
+      <label><input type="radio" name="service" value="airport" required data-brief-required> {{ t.brief.serviceAirport }}</label>
+      <label><input type="radio" name="service" value="intercity"> {{ t.brief.serviceIntercity }}</label>
+      <label><input type="radio" name="service" value="international"> {{ t.brief.serviceInternational }}</label>
+      <label><input type="radio" name="service" value="hourly"> {{ t.brief.serviceHourly }}</label>
+    </fieldset>
+  </section>
+
+  <section class="brief-step" data-brief-step="2" aria-hidden="true" hidden>
+    <h3>{{ t.brief.step2Title }}</h3>
+    <p class="muted">{{ t.brief.step2Desc }}</p>
+    <div class="brief-grid">
+      <label class="field">
+        <span>{{ t.brief.date }}*</span>
+        <input type="date" name="date" required data-brief-required>
+      </label>
+      <label class="field">
+        <span>{{ t.brief.time }}</span>
+        <input type="time" name="time">
+      </label>
+      <label class="field">
+        <span>{{ t.brief.pax }}*</span>
+        <input type="number" name="pax" min="1" max="20" value="2" required data-brief-required>
+      </label>
+      <label class="field">
+        <span>{{ t.brief.bags }}</span>
+        <input type="number" name="bags" min="0" max="30" value="2">
+      </label>
+    </div>
+    <div class="brief-checks">
+      <label><input type="checkbox" name="children"> {{ t.brief.children }}</label>
+      <label><input type="checkbox" name="childSeat"> {{ t.brief.childSeat }}</label>
+    </div>
+  </section>
+
+  <section class="brief-step" data-brief-step="3" aria-hidden="true" hidden>
+    <h3>{{ t.brief.step3Title }}</h3>
+    <p class="muted">{{ t.brief.step3Desc }}</p>
+    <div class="brief-grid">
+      <label class="field">
+        <span>{{ t.brief.name }}*</span>
+        <input type="text" name="name" required data-brief-required>
+      </label>
+      <label class="field">
+        <span>{{ t.brief.contact }}*</span>
+        <input type="text" name="contact" required data-brief-required>
+      </label>
+    </div>
+    <label class="field">
+      <span>{{ t.brief.notes }}</span>
+      <textarea name="notes" rows="3"></textarea>
+    </label>
+    <label class="brief-consent">
+      <input type="checkbox" name="consent" required data-brief-required>
+      <span>{{ t.brief.consentLabel }} (<a href="/{{ lang }}/privacy/">{{ t.cookies.link }}</a>)</span>
+    </label>
+  </section>
+
+  <div class="brief-actions">
+    <button type="button" class="btn btn-secondary" data-brief-back hidden>{{ t.brief.back }}</button>
+    <button type="button" class="btn btn-dark btn-arrow" data-brief-next>{{ t.brief.next }}</button>
+    <button type="submit" class="btn btn-dark btn-arrow" data-brief-submit hidden>{{ t.brief.submit }}</button>
+  </div>
+
+  <p class="brief-error" data-brief-error hidden></p>
+</form>

@@ -1,69 +1,56 @@
 ---
 slug: "contact"
 permalink: "/pt/contact/index.html"
-title: "Confirmar uma viagem | Morrison Premium Transfer"
-description: "Como confirmar um transfer privado: o que enviar, o que você recebe em troca e os três canais de contato que mantemos abertos."
+title: "Solicitar transfer | Morrison Premium Transfer"
+description: "Brief para confirmar o transfer: rota, data, passageiros, contato. Preenche em um minuto."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Contato", path: "/pt/contact/" }
 ---
-<section class="section section--tight" style="padding-top: clamp(3rem, 6vw, 5rem);">
-  <div class="container">
-    <p class="kicker">Contato</p>
-    <h1>Uma viagem começa<br><span>com uma mensagem.</span></h1>
-    <p class="lead">Sem calculadora online, sem formulário de doze campos. Conte a rota — voltamos com preço e horário confirmados antes do carro sair.</p>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-block">
-        <p class="eyebrow">O que enviar na primeira mensagem</p>
-        <h3>Quatro coisas bastam.</h3>
-        <ul>
-          <li>pontos A → B e paradas relevantes pelo caminho;</li>
-          <li>data e horário preferido de início;</li>
-          <li>passageiros e volume de bagagem;</li>
-          <li>preferência de classe do veículo ou formato — se houver.</li>
-        </ul>
-      </div>
-      <div class="contact-block">
-        <p class="eyebrow">O que você recebe em troca</p>
-        <h3>Rota confirmada antes da partida.</h3>
-        <p>Uma rota com horários por pontos. Um preço em uma mensagem. Formato combinado para o encontro e a comunicação na estrada. Sem "vamos ver depois" — se algo mudar, você fica sabendo primeiro.</p>
-      </div>
-    </div>
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.brief.title }}</p>
+    <h1>A viagem começa com um brief.</h1>
+    <p class="lead">{{ t.brief.subtitle }}</p>
   </div>
 </section>
 
 <section class="section">
+  <div class="container container--narrow">
+    {% include "partials/brief-form.njk" %}
+  </div>
+</section>
+
+<section class="section section--bg-soft">
   <div class="container">
-    <p class="kicker">Canais</p>
-    <h2>Use o que for mais cômodo.</h2>
+    <p class="kicker">Canais de contato</p>
+    <h2>Escreva por onde for melhor pra você.</h2>
     <div class="contact-channels">
       <a class="contact-channel" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">
         <span class="eyebrow">Mais rápido</span>
         <span class="contact-channel-name">WhatsApp</span>
-        <span class="contact-channel-detail">Resposta normalmente em até uma hora durante o expediente. Áudios também são bem-vindos.</span>
+        <span class="contact-channel-detail">Resposta normalmente em até uma hora em horário comercial. Áudios também são aceitos.</span>
       </a>
       <a class="contact-channel" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">
         <span class="eyebrow">Mais calmo</span>
         <span class="contact-channel-name">Telegram</span>
-        <span class="contact-channel-detail">Melhor para itinerários longos e troca de documentos antes da viagem.</span>
+        <span class="contact-channel-detail">Bom para rotas longas e envio de documentos antes da viagem.</span>
       </a>
-      <a class="contact-channel" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">
-        <span class="eyebrow">Urgente</span>
-        <span class="contact-channel-name">Telefone</span>
-        <span class="contact-channel-detail">Precisa sair agora ou teve voo remarcado? Ligue. Ficamos acessíveis na estrada também.</span>
+      <a class="contact-channel" href="mailto:{{ site.contacts.email }}">
+        <span class="eyebrow">Por escrito</span>
+        <span class="contact-channel-name">E-mail</span>
+        <span class="contact-channel-detail">Para correspondência corporativa, NF-e e casos com anexos.</span>
       </a>
     </div>
   </div>
 </section>
 
 <section class="cta-strip">
-  <div class="container cta-strip-grid">
-    <h2>Pronto para confirmar?</h2>
+  <div class="container container--narrow">
+    <h2>Urgente?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">Falar no WhatsApp</a>
-      <a class="btn btn-secondary" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Abrir Telegram</a>
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp agora</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Telegram</a>
     </div>
   </div>
 </section>

@@ -3,6 +3,17 @@ slug: ""
 permalink: "/pt/index.html"
 title: "Transfer privado premium no Brasil | Morrison Premium Transfer"
 description: "Transfers privados pelo Brasil e Mercosul: encontros em aeroportos, rotas intermunicipais e trechos internacionais com condições confirmadas antes da partida."
+faq:
+  - q: "Como e quando é feito o pagamento?"
+    a: "Depois que a rota está combinada e o preço confirmado, antes do carro sair. PIX, transferência, dinheiro e cartão. Para parceiros recorrentes e empresas — faturamento com pagamento posterior."
+  - q: "E se o voo atrasar?"
+    a: "Acompanhamos o status do voo pelo número da reserva. A apresentação se ajusta automaticamente ao novo ETA — sem taxa de espera."
+  - q: "Posso cancelar ou alterar a viagem?"
+    a: "Mais de 24 horas antes — alteração e cancelamento sem multa. 24–6 horas: taxa parcial de preparação. Menos de 6 horas: apresentação cobrada."
+  - q: "O que está incluído no preço?"
+    a: "Motorista, combustível, pedágios e estacionamento na rota. Paradas extras ou tempo de espera — apenas combinados antes."
+  - q: "Operam à noite e nos finais de semana?"
+    a: "Sim, sem pausas. Apresentações noturnas e finais de semana não têm tarifa especial, mas precisam de mais antecedência para planejamento."
 ---
 <section class="hero">
   <div class="container container--narrow">
@@ -67,36 +78,23 @@ description: "Transfers privados pelo Brasil e Mercosul: encontros em aeroportos
   </div>
 </section>
 
+{% include "partials/calculator.njk" %}
+
 <section class="section">
   <div class="container container--narrow">
     <h2 style="text-align: center;">Rotas regulares.</h2>
     <div class="routes">
-      <div class="route-row">
-        <div class="route-name">Florianópolis → Balneário Camboriú</div>
-        <div class="route-meta">95 km · sul de Santa Catarina</div>
-        <div class="route-duration">~1h 20min</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Curitiba → São Paulo</div>
-        <div class="route-meta">410 km · corredor de negócios</div>
-        <div class="route-duration">~5h 30min</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">São Paulo → Rio de Janeiro</div>
-        <div class="route-meta">430 km · BR-116</div>
-        <div class="route-duration">~6h</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Porto Alegre → Florianópolis</div>
-        <div class="route-meta">480 km · litoral</div>
-        <div class="route-duration">~6h 30min</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Foz do Iguaçu → Curitiba</div>
-        <div class="route-meta">640 km · após a fronteira</div>
-        <div class="route-duration">~8h</div>
-      </div>
+      {%- for pair in routes.pairs %}
+      {%- if loop.index <= 5 %}
+      <a class="route-row" href="/{{ lang }}/routes/{{ pair.slug }}/">
+        <div class="route-name">{{ pair.from | cityName(lang, routes.cities) }} → {{ pair.to | cityName(lang, routes.cities) }}</div>
+        <div class="route-meta">{{ pair.km }} km · a partir de R$ {{ pair.priceMin }}</div>
+        <div class="route-duration">{{ pair.durationMin | formatDuration(lang) }}</div>
+      </a>
+      {%- endif %}
+      {%- endfor %}
     </div>
+    <p style="text-align: center; margin-top: 1.4rem;"><a class="btn-arrow" href="/{{ lang }}/routes/">Todas as rotas</a></p>
   </div>
 </section>
 
@@ -104,36 +102,12 @@ description: "Transfers privados pelo Brasil e Mercosul: encontros em aeroportos
   <div class="container container--narrow">
     <h2 style="text-align: center;">Perguntas frequentes.</h2>
     <div class="faq">
+      {%- for item in faq %}
       <details class="faq-item">
-        <summary class="faq-summary">Como e quando é feito o pagamento?</summary>
-        <div class="faq-body">
-          <p>Depois que a rota está combinada e o preço confirmado, antes do carro sair. PIX, transferência, dinheiro e cartão. Para parceiros recorrentes e empresas — faturamento com pagamento posterior.</p>
-        </div>
+        <summary class="faq-summary">{{ item.q }}</summary>
+        <div class="faq-body"><p>{{ item.a }}</p></div>
       </details>
-      <details class="faq-item">
-        <summary class="faq-summary">E se o voo atrasar?</summary>
-        <div class="faq-body">
-          <p>Acompanhamos o status do voo pelo número da reserva. A apresentação se ajusta automaticamente ao novo ETA — sem "taxa de espera".</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">Posso cancelar ou alterar a viagem?</summary>
-        <div class="faq-body">
-          <p>Mais de 24 horas antes — alteração e cancelamento sem multa. 24–6 horas: taxa parcial de preparação. Menos de 6 horas: apresentação cobrada.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">O que está incluído no preço?</summary>
-        <div class="faq-body">
-          <p>Motorista, combustível, pedágios e estacionamento na rota. Paradas extras ou tempo de espera — apenas combinados antes, nunca "no caminho".</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">Operam à noite e nos finais de semana?</summary>
-        <div class="faq-body">
-          <p>Sim, sem pausas. Apresentações noturnas e finais de semana não têm "tarifa especial", mas precisam de mais antecedência para planejamento.</p>
-        </div>
-      </details>
+      {%- endfor %}
     </div>
   </div>
 </section>

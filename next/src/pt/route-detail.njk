@@ -1,0 +1,61 @@
+---
+pagination:
+  data: routes.pairs
+  size: 1
+  alias: pair
+permalink: "/pt/routes/{{ pair.slug }}/index.html"
+eleventyComputed:
+  title: "Transfer {{ pair.from | cityName('pt', routes.cities) }} → {{ pair.to | cityName('pt', routes.cities) }} | Morrison"
+  description: "Transfer privado {{ pair.from | cityName('pt', routes.cities) }} → {{ pair.to | cityName('pt', routes.cities) }}. {{ pair.km }} km, aprox. {{ pair.durationMin | formatDuration('pt') }}. Preço fechado antes da partida."
+  slug: "routes/{{ pair.slug }}"
+schema: "Service"
+serviceType: "Private passenger transfer"
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">Rota</p>
+    <h1>{{ pair.from | cityName("pt", routes.cities) }} → {{ pair.to | cityName("pt", routes.cities) }}</h1>
+    <p class="lead">Transfer privado com preço fechado e condições acordadas antes da partida.</p>
+    <dl class="hero-meta">
+      <div><dt>Distância</dt><dd>{{ pair.km }} km</dd></div>
+      <div><dt>Duração</dt><dd>{{ pair.durationMin | formatDuration("pt") }}</dd></div>
+      <div><dt>Preço de referência</dt><dd>R$ {{ pair.priceMin }}–{{ pair.priceMax }}</dd></div>
+    </dl>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/?route={{ pair.slug }}">Pedir preço exato</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>O que está incluído</h2>
+    <ul class="checklist">
+      <li>Motorista, combustível, pedágios, estacionamento na rota</li>
+      <li>Ar-condicionado, água, carregador USB</li>
+      <li>Wi-Fi (opc.), cadeirinha (sob solicitação)</li>
+      <li>Monitoramento do voo e ajuste de horário sem custo adicional</li>
+      <li>NF-e para empresas</li>
+    </ul>
+
+    <h2>O que é confirmado antes da partida</h2>
+    <ul class="checklist">
+      <li>Ponto de embarque (endereço ou terminal) e ponto de desembarque</li>
+      <li>Classe do veículo para o número de passageiros e bagagem</li>
+      <li>Tempo de viagem considerando estação e horário</li>
+      <li>Paradas intermediárias e tempo de espera</li>
+      <li>Preço e forma de pagamento</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Vamos por esta rota?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/?route={{ pair.slug }}">Abrir solicitação</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

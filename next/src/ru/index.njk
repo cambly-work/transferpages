@@ -3,6 +3,17 @@ slug: ""
 permalink: "/ru/index.html"
 title: "Премиум-трансфер по Бразилии | Morrison Premium Transfer"
 description: "Частные премиум-трансферы по Бразилии и Меркосур: аэропорт, межгород и международные маршруты с подтверждёнными условиями до выезда."
+faq:
+  - q: "Как и когда происходит оплата?"
+    a: "После согласования маршрута и подтверждения цены, до подачи машины. PIX, банковский перевод, наличные и карты. Для регулярных партнёров и компаний — постоплата по счёту."
+  - q: "Что если рейс задержали?"
+    a: "Мы отслеживаем статус рейса по номеру, который вы прислали при бронировании. Подача автоматически сдвигается к новому ETA — без доплаты за ожидание."
+  - q: "Можно ли отменить или изменить поездку?"
+    a: "До 24 часов до подачи — изменения и отмена без штрафа. От 24 до 6 часов — частичный сбор за подготовку. Менее 6 часов — оплата подачи."
+  - q: "Что включено в цену?"
+    a: "Водитель, топливо, платные дороги и парковка по маршруту. Дополнительные остановки или ожидание — только по согласованию заранее."
+  - q: "Работаете ночью и в выходные?"
+    a: "Да, без перерывов. Ночные подачи и работа в выходные не считаются спецтарифом, но требуют большего времени на согласование."
 ---
 <section class="hero">
   <div class="container container--narrow">
@@ -67,36 +78,23 @@ description: "Частные премиум-трансферы по Бразил
   </div>
 </section>
 
+{% include "partials/calculator.njk" %}
+
 <section class="section">
   <div class="container container--narrow">
     <h2 style="text-align: center;">Регулярные маршруты.</h2>
     <div class="routes">
-      <div class="route-row">
-        <div class="route-name">Флорианополис → Балнеариу-Камбориу</div>
-        <div class="route-meta">95 км · юг Санта-Катарины</div>
-        <div class="route-duration">~1 ч 20 мин</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Куритиба → Сан-Паулу</div>
-        <div class="route-meta">410 км · бизнес-коридор</div>
-        <div class="route-duration">~5 ч 30 мин</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Сан-Паулу → Рио-де-Жанейро</div>
-        <div class="route-meta">430 км · BR-116</div>
-        <div class="route-duration">~6 ч</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Порту-Алегри → Флорианополис</div>
-        <div class="route-meta">480 км · побережье</div>
-        <div class="route-duration">~6 ч 30 мин</div>
-      </div>
-      <div class="route-row">
-        <div class="route-name">Фоз-ду-Игуасу → Куритиба</div>
-        <div class="route-meta">640 км · после границы</div>
-        <div class="route-duration">~8 ч</div>
-      </div>
+      {%- for pair in routes.pairs %}
+      {%- if loop.index <= 5 %}
+      <a class="route-row" href="/{{ lang }}/routes/{{ pair.slug }}/">
+        <div class="route-name">{{ pair.from | cityName(lang, routes.cities) }} → {{ pair.to | cityName(lang, routes.cities) }}</div>
+        <div class="route-meta">{{ pair.km }} км · ориентир R$ {{ pair.priceMin }}</div>
+        <div class="route-duration">{{ pair.durationMin | formatDuration(lang) }}</div>
+      </a>
+      {%- endif %}
+      {%- endfor %}
     </div>
+    <p style="text-align: center; margin-top: 1.4rem;"><a class="btn-arrow" href="/{{ lang }}/routes/">Все маршруты</a></p>
   </div>
 </section>
 
@@ -104,36 +102,12 @@ description: "Частные премиум-трансферы по Бразил
   <div class="container container--narrow">
     <h2 style="text-align: center;">Частые вопросы.</h2>
     <div class="faq">
+      {%- for item in faq %}
       <details class="faq-item">
-        <summary class="faq-summary">Как и когда происходит оплата?</summary>
-        <div class="faq-body">
-          <p>После согласования маршрута и подтверждения цены, до подачи машины. PIX, банковский перевод, наличные и карты. Для регулярных партнёров и компаний — постоплата по счёту.</p>
-        </div>
+        <summary class="faq-summary">{{ item.q }}</summary>
+        <div class="faq-body"><p>{{ item.a }}</p></div>
       </details>
-      <details class="faq-item">
-        <summary class="faq-summary">Что если рейс задержали?</summary>
-        <div class="faq-body">
-          <p>Мы отслеживаем статус рейса по номеру, который вы прислали при бронировании. Подача автоматически сдвигается к новому ETA — без доплаты за «ожидание».</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">Можно ли отменить или изменить поездку?</summary>
-        <div class="faq-body">
-          <p>До 24 часов до подачи — изменения и отмена без штрафа. От 24 до 6 часов — частичный сбор за подготовку. Менее 6 часов — оплата подачи.</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">Что включено в цену?</summary>
-        <div class="faq-body">
-          <p>Водитель, топливо, платные дороги и парковка по маршруту. Дополнительные остановки или ожидание — только по согласованию заранее, не «на ходу».</p>
-        </div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-summary">Работаете ночью и в выходные?</summary>
-        <div class="faq-body">
-          <p>Да, без перерывов. Ночные подачи и работа в выходные не считаются «спецтарифом», но требуют большего времени на согласование.</p>
-        </div>
-      </details>
+      {%- endfor %}
     </div>
   </div>
 </section>

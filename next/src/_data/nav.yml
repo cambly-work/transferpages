@@ -13,11 +13,28 @@ primary:
     href: "contact/"
 
 footer:
-  - key: brazil
-    href: "brazil-transfers/"
-  - key: airports
-    href: "airport-transfer/"
-  - key: international
-    href: "international/"
-  - key: partners
-    href: "partners/"
+  services:
+    - key: brazil
+      href: "brazil-transfers/"
+    - key: airports
+      href: "airport-transfer/"
+    - key: international
+      href: "international/"
+    - key: partners
+      href: "partners/"
+  company:
+    - key: about
+      href: "about/"
+    - key: fleet
+      href: "fleet/"
+    - key: team
+      href: "team/"
+    - key: testimonials
+      href: "testimonials/"
+  legal:
+    - key: privacy
+      href: "privacy/"
+    - key: terms
+      href: "terms/"
+    - key: cookies
+      href: "cookies/"

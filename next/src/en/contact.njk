@@ -1,69 +1,56 @@
 ---
 slug: "contact"
 permalink: "/en/contact/index.html"
-title: "Confirm a trip | Morrison Premium Transfer"
-description: "How to confirm a private transfer: what to share, what you get back, and the three contact channels we keep open."
+title: "Request a transfer | Morrison Premium Transfer"
+description: "Brief to confirm a transfer: route, date, passengers, contact. One minute to fill."
+breadcrumbs:
+  - { name: "Home", path: "/en/" }
+  - { name: "Contact", path: "/en/contact/" }
 ---
-<section class="section section--tight" style="padding-top: clamp(3rem, 6vw, 5rem);">
-  <div class="container">
-    <p class="kicker">Contact</p>
-    <h1>A trip begins<br><span>with one message.</span></h1>
-    <p class="lead">No online calculators, no twelve-field form. Tell us the route — we come back with confirmed price and timing before the car leaves.</p>
-  </div>
-</section>
-
-<section class="section--tight">
-  <div class="container">
-    <div class="contact-grid">
-      <div class="contact-block">
-        <p class="eyebrow">What to share in the first message</p>
-        <h3>Four things are enough.</h3>
-        <ul>
-          <li>A → B points and any meaningful stops in between;</li>
-          <li>date and preferred start time;</li>
-          <li>passengers and luggage volume;</li>
-          <li>vehicle class or format preferences — if any.</li>
-        </ul>
-      </div>
-      <div class="contact-block">
-        <p class="eyebrow">What you get back</p>
-        <h3>A confirmed route, before departure.</h3>
-        <p>One route with timing by checkpoints. One price in one message. An agreed format for the meeting and the on-road communication. No "let's see later" — if anything changes, you hear it first.</p>
-      </div>
-    </div>
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.brief.title }}</p>
+    <h1>Every trip starts with a brief.</h1>
+    <p class="lead">{{ t.brief.subtitle }}</p>
   </div>
 </section>
 
 <section class="section">
+  <div class="container container--narrow">
+    {% include "partials/brief-form.njk" %}
+  </div>
+</section>
+
+<section class="section section--bg-soft">
   <div class="container">
-    <p class="kicker">Channels</p>
-    <h2>Wherever is comfortable for you.</h2>
+    <p class="kicker">Contact channels</p>
+    <h2>Reach us where it's easiest for you.</h2>
     <div class="contact-channels">
       <a class="contact-channel" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">
         <span class="eyebrow">Fastest</span>
         <span class="contact-channel-name">WhatsApp</span>
-        <span class="contact-channel-detail">Usually a reply within the hour during business time. Voice notes welcome.</span>
+        <span class="contact-channel-detail">Reply usually within an hour in business hours. Voice notes welcome too.</span>
       </a>
       <a class="contact-channel" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">
-        <span class="eyebrow">Calmer</span>
+        <span class="eyebrow">More relaxed</span>
         <span class="contact-channel-name">Telegram</span>
-        <span class="contact-channel-detail">Better for long itineraries and pre-trip document handover.</span>
+        <span class="contact-channel-detail">Great for long routes and exchanging documents before the trip.</span>
       </a>
-      <a class="contact-channel" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">
-        <span class="eyebrow">Urgent</span>
-        <span class="contact-channel-name">Phone</span>
-        <span class="contact-channel-detail">Need to leave now or had a flight reroute? Call. We stay reachable on the road too.</span>
+      <a class="contact-channel" href="mailto:{{ site.contacts.email }}">
+        <span class="eyebrow">Written</span>
+        <span class="contact-channel-name">Email</span>
+        <span class="contact-channel-detail">For corporate correspondence, NF-e and cases with attachments.</span>
       </a>
     </div>
   </div>
 </section>
 
 <section class="cta-strip">
-  <div class="container cta-strip-grid">
-    <h2>Ready to confirm?</h2>
+  <div class="container container--narrow">
+    <h2>Urgent?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">Message on WhatsApp</a>
-      <a class="btn btn-secondary" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Open Telegram</a>
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp now</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.telegramUrl }}" target="_blank" rel="noopener">Telegram</a>
     </div>
   </div>
 </section>

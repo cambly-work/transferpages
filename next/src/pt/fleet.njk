@@ -1,0 +1,52 @@
+---
+slug: "fleet"
+permalink: "/pt/fleet/index.html"
+title: "Frota | Morrison Premium Transfer"
+description: "Classes de veículos da Morrison Premium Transfer: sedan executivo, SUV premium, minivan, vans — para formatos específicos de viagem."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Frota", path: "/pt/fleet/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.fleetPage.eyebrow }}</p>
+    <h1>{{ t.fleetPage.title }}</h1>
+    <p class="lead">{{ t.fleetPage.lead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/">{{ t.fleetPage.bookCta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="fleet-grid">
+      {%- for veh in fleet.classes %}
+      <article class="fleet-card">
+        <div class="fleet-card-head">
+          <h3>{{ veh.namePt }}</h3>
+          <div class="fleet-stats">
+            <span><strong>{{ veh.pax }}</strong> lugares</span>
+            <span><strong>{{ veh.bags }}</strong> malas</span>
+          </div>
+        </div>
+        <p class="fleet-examples">{{ veh.examplesPt }}</p>
+        <p class="fleet-for"><strong>Para quem:</strong> {{ veh.forPt }}</p>
+        <p class="fleet-features"><strong>O que tem:</strong> {{ veh.featuresPt }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+    <p class="muted" style="text-align: center; margin-top: 2rem;">{{ t.fleetPage.note }}</p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Escolher o veículo para a rota?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/">Abrir solicitação</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

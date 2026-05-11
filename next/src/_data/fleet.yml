@@ -1,0 +1,64 @@
+# Fleet data. Reference vehicles available across the operating regions.
+# TODO Tim: photo, exact plate/year omitted by design. Confirm class names match real availability.
+
+classes:
+  - id: sedan
+    pax: 3
+    bags: 3
+    nameRu: Бизнес-седан
+    namePt: Sedan executivo
+    nameEn: Executive sedan
+    examplesRu: Toyota Corolla Altis / Chevrolet Cruze / VW Jetta
+    examplesPt: Toyota Corolla Altis / Chevrolet Cruze / VW Jetta
+    examplesEn: Toyota Corolla Altis / Chevrolet Cruze / VW Jetta
+    forRu: 1–3 пассажира, аэропорт, межгород, деловой формат.
+    forPt: 1–3 passageiros, aeroporto, intermunicipal, formato business.
+    forEn: 1–3 passengers, airport, intercity, business format.
+    featuresRu: Кондиционер, бутилированная вода, USB-зарядка, Wi-Fi (опц.)
+    featuresPt: Ar-condicionado, água, carregador USB, Wi-Fi (opc.)
+    featuresEn: Air conditioning, bottled water, USB charger, Wi-Fi (opt.)
+  - id: suv
+    pax: 4
+    bags: 5
+    nameRu: Премиум-SUV
+    namePt: SUV premium
+    nameEn: Premium SUV
+    examplesRu: Toyota SW4 / Jeep Compass / VW Tiguan
+    examplesPt: Toyota SW4 / Jeep Compass / VW Tiguan
+    examplesEn: Toyota SW4 / Jeep Compass / VW Tiguan
+    forRu: 1–4 пассажира с увеличенным багажом, семья с детьми, серф/велосипеды.
+    forPt: 1–4 passageiros com bagagem ampla, família com crianças, surf/bikes.
+    forEn: 1–4 passengers with extra luggage, family with kids, surf/bikes.
+    featuresRu: Кожаный салон, климат, увеличенный багажник, детское кресло (опц.)
+    featuresPt: Couro, climatização, porta-malas amplo, cadeirinha (opc.)
+    featuresEn: Leather interior, climate, extra trunk, child seat (opt.)
+  - id: minivan
+    pax: 7
+    bags: 9
+    nameRu: Минивэн
+    namePt: Minivan
+    nameEn: Minivan
+    examplesRu: Hyundai HR / Mercedes Vito / Toyota Hiace
+    examplesPt: Hyundai HR / Mercedes Vito / Toyota Hiace
+    examplesEn: Hyundai HR / Mercedes Vito / Toyota Hiace
+    forRu: 4–7 пассажиров, команды, семейные поездки с большим багажом.
+    forPt: 4–7 passageiros, equipes, viagens em família com bagagem volumosa.
+    forEn: 4–7 passengers, teams, family trips with large luggage.
+    featuresRu: Высокий потолок, отдельные кресла, два кондиционера, USB на каждом ряду.
+    featuresPt: Pé-direito alto, poltronas individuais, dois ACs, USB em cada fileira.
+    featuresEn: High roof, individual seats, dual AC, USB per row.
+  - id: van
+    pax: 14
+    bags: 16
+    nameRu: Vans / микроавтобус
+    namePt: Vans / micro-ônibus
+    nameEn: Vans / minibus
+    examplesRu: Mercedes Sprinter / Iveco Daily
+    examplesPt: Mercedes Sprinter / Iveco Daily
+    examplesEn: Mercedes Sprinter / Iveco Daily
+    forRu: Группы 8–14 человек, корпоративные группы, длинные дистанции с комфортом.
+    forPt: Grupos de 8 a 14 pessoas, grupos corporativos, longas distâncias com conforto.
+    forEn: Groups of 8 to 14, corporate groups, long distances with comfort.
+    featuresRu: Раздельный салон с водителем, телевизор/Wi-Fi (опц.), холодильник на больших трассах.
+    featuresPt: Cabine separada do motorista, TV/Wi-Fi (opc.), geladeira em rotas longas.
+    featuresEn: Separate driver cabin, TV/Wi-Fi (opt.), fridge on long routes.

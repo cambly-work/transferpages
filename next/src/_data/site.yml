@@ -9,14 +9,15 @@ contacts:
   telegramUrl: https://t.me/premium_transfer_latam
   email: hello@morrison-transfer.com
 
-# TODO Tim: replace with real CNPJ / legal entity name when registered
 legal:
-  cnpj: "00.000.000/0001-00"
-  entityName: "Morrison Premium Transfer LTDA"
+  cnpj: "53.294.776/0001-28"
+  entityName: "Artem Balabanov MEI"
+  formalName: "53.294.776 ARTEM BALABANOV"
+  tradeName: "Morrison Premium Transfer"
   city: "São Paulo"
   state: "SP"
   country: "BR"
-  founded: "2024"
+  founded: "2026"
 
 analytics:
   ga4: G-ZMBK0S18RL

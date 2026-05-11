@@ -39,7 +39,7 @@ ru:
     request: Страница заявки
     description: Сервис частных трансферов для клиентов, которым нужен спокойный, организованный и предсказуемый результат.
     cnpjLabel: "CNPJ"
-    cnpjValue: "00.000.000/0001-00"
+    cnpjValue: "53.294.776/0001-28"
     legalNote: Лицензированный частный транспорт пассажиров. Юридическое лицо зарегистрировано в Бразилии.
   cta:
     whatsapp: WhatsApp
@@ -256,7 +256,7 @@ pt:
     request: Página de solicitação
     description: Serviço de transfer privado para clientes que precisam de um resultado calmo, organizado e previsível.
     cnpjLabel: "CNPJ"
-    cnpjValue: "00.000.000/0001-00"
+    cnpjValue: "53.294.776/0001-28"
     legalNote: Transporte privado licenciado de passageiros. Pessoa jurídica registrada no Brasil.
   cta:
     whatsapp: WhatsApp
@@ -473,7 +473,7 @@ en:
     request: Request page
     description: Private transfer service for clients who need a calm, organized and predictable result.
     cnpjLabel: "CNPJ"
-    cnpjValue: "00.000.000/0001-00"
+    cnpjValue: "53.294.776/0001-28"
     legalNote: Licensed private passenger transport. Legal entity registered in Brazil.
   cta:
     whatsapp: WhatsApp

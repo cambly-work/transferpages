@@ -20,11 +20,30 @@
     <div class="calc-map" data-calc-map>
       <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
         <defs>
-          <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+          <pattern id="map-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(10, 22, 40, 0.06)" stroke-width="1"/>
           </pattern>
+          <radialGradient id="map-glow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="rgba(201, 163, 107, 0.08)"/>
+            <stop offset="100%" stop-color="rgba(201, 163, 107, 0)"/>
+          </radialGradient>
         </defs>
         <rect width="100%" height="100%" fill="url(#map-grid)"/>
+        <rect width="100%" height="100%" fill="url(#map-glow)"/>
+
+        <!-- Simplified Brazil + Mercosur outline (abstract) -->
+        <path class="map-outline"
+              d="M 50 200 L 80 130 L 200 100 L 360 70 L 520 55 L 680 70 L 820 95 L 900 145 L 940 230 L 960 340 L 920 460 L 870 580 L 800 680 L 700 740 L 580 790 L 450 800 L 320 780 L 230 740 L 160 660 L 110 540 L 70 410 L 50 280 Z"
+              fill="rgba(10, 22, 40, 0.025)"
+              stroke="rgba(10, 22, 40, 0.12)"
+              stroke-width="1.5"
+              stroke-dasharray="6 6"/>
+
+        <!-- Region labels -->
+        <text class="map-region" x="500" y="40" text-anchor="middle">BRAZIL</text>
+        <text class="map-region" x="50" y="240" text-anchor="start">PARAGUAY</text>
+        <text class="map-region" x="160" y="820" text-anchor="start">URUGUAY</text>
+
         {%- for pair in routes.pairs %}
         <line class="map-line"
               data-map-line="{{ pair.from }}-{{ pair.to }}"
@@ -33,10 +52,11 @@
         {%- endfor %}
         {%- for city in routes.cities %}
         {%- set c = cityCoords[city.id] %}
-        <g data-map-city="{{ city.id }}">
-          <circle class="map-city" cx="{{ c.x }}" cy="{{ c.y }}" r="5"/>
+        <g data-map-city="{{ city.id }}" class="map-city-group">
+          <circle class="map-city-halo" cx="{{ c.x }}" cy="{{ c.y }}" r="14"/>
+          <circle class="map-city" cx="{{ c.x }}" cy="{{ c.y }}" r="6"/>
           <text class="map-label"
-                x="{{ c.x + (8 if c.anchor == 'start' else -8) }}"
+                x="{{ c.x + (12 if c.anchor == 'start' else -12) }}"
                 y="{{ c.y + 4 }}"
                 text-anchor="{{ c.anchor }}">{{ city.name[lang] }}</text>
         </g>

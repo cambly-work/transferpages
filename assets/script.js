@@ -602,21 +602,26 @@
   const SOUND_KEY = 'soundOn';
   const soundEnabled = () => safeStorageGet(SOUND_KEY) === '1';
   let audioCtx = null;
-  const playClick = (freq = 880, duration = 0.07) => {
+  const playClick = (freq = 880, duration = 0.08) => {
     if (!soundEnabled()) return;
     try {
       audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      // Chrome/Safari suspend AudioContext until user gesture — resume on every play.
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const t0 = audioCtx.currentTime;
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.08, audioCtx.currentTime + 0.005);
-      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, t0);
+      // Slight frequency dip for a "click" feel.
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.78, t0 + duration);
+      gain.gain.setValueAtTime(0.0001, t0);
+      gain.gain.exponentialRampToValueAtTime(0.18, t0 + 0.006);
+      gain.gain.exponentialRampToValueAtTime(0.0001, t0 + duration);
       osc.connect(gain);
       gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
+      osc.start(t0);
+      osc.stop(t0 + duration + 0.02);
     } catch (e) { /* silently fail on unsupported devices */ }
   };
   const soundToggle = document.querySelector('[data-sound-toggle]');

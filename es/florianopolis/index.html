@@ -219,11 +219,29 @@
     <div class="calc-map" data-calc-map>
       <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
         <defs>
-          <pattern id="map-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+          <pattern id="map-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(10, 22, 40, 0.06)" stroke-width="1"/>
           </pattern>
+          <radialGradient id="map-glow" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="rgba(201, 163, 107, 0.08)"/>
+            <stop offset="100%" stop-color="rgba(201, 163, 107, 0)"/>
+          </radialGradient>
         </defs>
         <rect width="100%" height="100%" fill="url(#map-grid)"/>
+        <rect width="100%" height="100%" fill="url(#map-glow)"/>
+
+        <!-- Simplified Brazil + Mercosur outline (abstract) -->
+        <path class="map-outline"
+              d="M 50 200 L 80 130 L 200 100 L 360 70 L 520 55 L 680 70 L 820 95 L 900 145 L 940 230 L 960 340 L 920 460 L 870 580 L 800 680 L 700 740 L 580 790 L 450 800 L 320 780 L 230 740 L 160 660 L 110 540 L 70 410 L 50 280 Z"
+              fill="rgba(10, 22, 40, 0.025)"
+              stroke="rgba(10, 22, 40, 0.12)"
+              stroke-width="1.5"
+              stroke-dasharray="6 6"/>
+
+        <!-- Region labels -->
+        <text class="map-region" x="500" y="40" text-anchor="middle">BRAZIL</text>
+        <text class="map-region" x="50" y="240" text-anchor="start">PARAGUAY</text>
+        <text class="map-region" x="160" y="820" text-anchor="start">URUGUAY</text>
         <line class="map-line"
               data-map-line="fln-bnu"
               x1="600" y1="345"
@@ -264,80 +282,91 @@
               data-map-line="igr-asu"
               x1="220" y1="230"
               x2="50" y2="210"/>
-        <g data-map-city="gru">
-          <circle class="map-city" cx="725" cy="100" r="5"/>
+        <g data-map-city="gru" class="map-city-group">
+          <circle class="map-city-halo" cx="725" cy="100" r="14"/>
+          <circle class="map-city" cx="725" cy="100" r="6"/>
           <text class="map-label"
-                x="733"
+                x="737"
                 y="104"
                 text-anchor="start">São Paulo (GRU)</text>
         </g>
-        <g data-map-city="gig">
-          <circle class="map-city" cx="920" cy="60" r="5"/>
+        <g data-map-city="gig" class="map-city-group">
+          <circle class="map-city-halo" cx="920" cy="60" r="14"/>
+          <circle class="map-city" cx="920" cy="60" r="6"/>
           <text class="map-label"
-                x="912"
+                x="908"
                 y="64"
                 text-anchor="end">Rio de Janeiro (GIG)</text>
         </g>
-        <g data-map-city="cwb">
-          <circle class="map-city" cx="550" cy="220" r="5"/>
+        <g data-map-city="cwb" class="map-city-group">
+          <circle class="map-city-halo" cx="550" cy="220" r="14"/>
+          <circle class="map-city" cx="550" cy="220" r="6"/>
           <text class="map-label"
-                x="542"
+                x="538"
                 y="224"
                 text-anchor="end">Curitiba (CWB)</text>
         </g>
-        <g data-map-city="fln">
-          <circle class="map-city" cx="600" cy="345" r="5"/>
+        <g data-map-city="fln" class="map-city-group">
+          <circle class="map-city-halo" cx="600" cy="345" r="14"/>
+          <circle class="map-city" cx="600" cy="345" r="6"/>
           <text class="map-label"
-                x="608"
+                x="612"
                 y="349"
                 text-anchor="start">Florianópolis (FLN)</text>
         </g>
-        <g data-map-city="nvt">
-          <circle class="map-city" cx="590" cy="300" r="5"/>
+        <g data-map-city="nvt" class="map-city-group">
+          <circle class="map-city-halo" cx="590" cy="300" r="14"/>
+          <circle class="map-city" cx="590" cy="300" r="6"/>
           <text class="map-label"
-                x="582"
+                x="578"
                 y="304"
                 text-anchor="end">Navegantes (NVT)</text>
         </g>
-        <g data-map-city="poa">
-          <circle class="map-city" cx="430" cy="490" r="5"/>
+        <g data-map-city="poa" class="map-city-group">
+          <circle class="map-city-halo" cx="430" cy="490" r="14"/>
+          <circle class="map-city" cx="430" cy="490" r="6"/>
           <text class="map-label"
-                x="422"
+                x="418"
                 y="494"
                 text-anchor="end">Porto Alegre (POA)</text>
         </g>
-        <g data-map-city="bnu">
-          <circle class="map-city" cx="605" cy="320" r="5"/>
+        <g data-map-city="bnu" class="map-city-group">
+          <circle class="map-city-halo" cx="605" cy="320" r="14"/>
+          <circle class="map-city" cx="605" cy="320" r="6"/>
           <text class="map-label"
-                x="613"
+                x="617"
                 y="324"
                 text-anchor="start">Balneário Camboriú</text>
         </g>
-        <g data-map-city="igr">
-          <circle class="map-city" cx="220" cy="230" r="5"/>
+        <g data-map-city="igr" class="map-city-group">
+          <circle class="map-city-halo" cx="220" cy="230" r="14"/>
+          <circle class="map-city" cx="220" cy="230" r="6"/>
           <text class="map-label"
-                x="228"
+                x="232"
                 y="234"
                 text-anchor="start">Foz do Iguaçu (IGU)</text>
         </g>
-        <g data-map-city="mvd">
-          <circle class="map-city" cx="120" cy="760" r="5"/>
+        <g data-map-city="mvd" class="map-city-group">
+          <circle class="map-city-halo" cx="120" cy="760" r="14"/>
+          <circle class="map-city" cx="120" cy="760" r="6"/>
           <text class="map-label"
-                x="128"
+                x="132"
                 y="764"
                 text-anchor="start">Montevideo</text>
         </g>
-        <g data-map-city="pde">
-          <circle class="map-city" cx="200" cy="760" r="5"/>
+        <g data-map-city="pde" class="map-city-group">
+          <circle class="map-city-halo" cx="200" cy="760" r="14"/>
+          <circle class="map-city" cx="200" cy="760" r="6"/>
           <text class="map-label"
-                x="208"
+                x="212"
                 y="764"
                 text-anchor="start">Punta del Este</text>
         </g>
-        <g data-map-city="asu">
-          <circle class="map-city" cx="50" cy="210" r="5"/>
+        <g data-map-city="asu" class="map-city-group">
+          <circle class="map-city-halo" cx="50" cy="210" r="14"/>
+          <circle class="map-city" cx="50" cy="210" r="6"/>
           <text class="map-label"
-                x="58"
+                x="62"
                 y="214"
                 text-anchor="start">Asunción</text>
         </g>

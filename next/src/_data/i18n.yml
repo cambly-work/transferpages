@@ -25,11 +25,16 @@ ru:
     privacy: Политика конфиденциальности
     terms: Условия обслуживания
     cookies: Cookies
+    blog: Блог
+    compare: Сравнение
+    glossary: Глоссарий
+    cases: Сценарии
   footer:
     sections: Разделы
     contacts: Контакты
     languages: Языки
     company: Компания
+    resources: Материалы
     legal: Документы
     request: Страница заявки
     description: Сервис частных трансферов для клиентов, которым нужен спокойный, организованный и предсказуемый результат.
@@ -213,11 +218,16 @@ pt:
     privacy: Política de Privacidade
     terms: Termos de Serviço
     cookies: Cookies
+    blog: Blog
+    compare: Comparação
+    glossary: Glossário
+    cases: Cenários
   footer:
     sections: Seções
     contacts: Contatos
     languages: Idiomas
     company: Empresa
+    resources: Materiais
     legal: Documentos
     request: Página de solicitação
     description: Serviço de transfer privado para clientes que precisam de um resultado calmo, organizado e previsível.
@@ -401,11 +411,16 @@ en:
     privacy: Privacy Policy
     terms: Terms of Service
     cookies: Cookies
+    blog: Blog
+    compare: Compare
+    glossary: Glossary
+    cases: Scenarios
   footer:
     sections: Sections
     contacts: Contacts
     languages: Languages
     company: Company
+    resources: Resources
     legal: Legal
     request: Request page
     description: Private transfer service for clients who need a calm, organized and predictable result.

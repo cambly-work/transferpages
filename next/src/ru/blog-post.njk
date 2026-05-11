@@ -1,0 +1,35 @@
+---
+pagination:
+  data: posts.posts
+  size: 1
+  alias: post
+permalink: "/ru/blog/{{ post.slug }}/index.html"
+eleventyComputed:
+  title: "{{ post.title.ru }} | Morrison Premium Transfer"
+  description: "{{ post.excerpt.ru }}"
+  slug: "blog/{{ post.slug }}"
+---
+<article>
+  <section class="legal-hero">
+    <div class="container container--narrow">
+      <p class="kicker">{{ post.category.ru }} · <span class="num">{{ post.date }}</span> · <span class="num">{{ post.readMinutes }} мин</span></p>
+      <h1>{{ post.title.ru }}</h1>
+      <p class="lead">{{ post.excerpt.ru }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+      <p>{{ post.intro.ru }}</p>
+
+      <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+        Это пилотная версия статьи. Полное содержание готовится. Если у вас конкретный вопрос по теме — напишите в WhatsApp, ответим за час.
+      </p>
+
+      <div class="cta-strip-actions" style="margin-top: 1.6rem;">
+        <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">Спросить в WhatsApp</a>
+        <a class="btn btn-secondary" href="/ru/blog/">Все статьи</a>
+      </div>
+    </div>
+  </section>
+</article>

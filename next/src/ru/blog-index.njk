@@ -1,0 +1,45 @@
+---
+slug: "blog"
+permalink: "/ru/blog/index.html"
+title: "Блог · Гид по трансферам Бразилии и Меркосур | Morrison"
+description: "Документы для пересечения границы, сезонность побережья, NF-e для иностранных компаний и другие материалы для тех, кто едет."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Блог", path: "/ru/blog/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Блог · Гид</p>
+    <h1 class="reveal-up">Что нужно знать<br>до выезда.</h1>
+    <p class="lead reveal-up">Документы, сезоны, оплата, NF-e — материалы для пассажиров и бухгалтерий. Без воды.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="post-list">
+      {%- for post in posts.posts %}
+      <a class="post-card" href="/ru/blog/{{ post.slug }}/">
+        <div class="post-card-meta">
+          <span class="post-category">{{ post.category.ru }}</span>
+          <span class="post-date num">{{ post.date }}</span>
+          <span class="post-read num">{{ post.readMinutes }} мин</span>
+        </div>
+        <h3>{{ post.title.ru }}</h3>
+        <p>{{ post.excerpt.ru }}</p>
+        <span class="bento-cta">Читать</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Вопрос не закрылся в статье?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">Спросить напрямую</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

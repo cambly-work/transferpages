@@ -38,6 +38,12 @@
           <li><a href="/{{ lang }}/{{ item.href }}">{{ t.nav[item.key] }}</a></li>
           {%- endfor %}
         </ul>
+        <h4 style="margin-top: 1.4rem;">{{ t.footer.resources }}</h4>
+        <ul>
+          {%- for item in nav.footer.resources %}
+          <li><a href="/{{ lang }}/{{ item.href }}">{{ t.nav[item.key] }}</a></li>
+          {%- endfor %}
+        </ul>
       </div>
       <div>
         <h4>{{ t.footer.contacts }}</h4>

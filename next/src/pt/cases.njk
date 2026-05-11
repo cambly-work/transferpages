@@ -1,0 +1,50 @@
+---
+slug: "cases"
+permalink: "/pt/cases/index.html"
+title: "Cenários prontos: business, família, relocação, grupos | Morrison"
+description: "5 configurações reais de transfer com horário, veículo e preço de referência. Ache o seu — já sabemos montar."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Cenários", path: "/pt/cases/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Cenários</p>
+    <h1 class="reveal-up">Configurações prontas<br>para situações comuns.</h1>
+    <p class="lead reveal-up">5 casos que vemos regularmente. Se o seu é parecido, montamos num dia. Se for diferente, montamos sob medida.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cases-grid">
+      {%- for sc in cases.scenarios %}
+      <article class="case-card" id="{{ sc.id }}">
+        <p class="case-audience">{{ sc.audience.pt }}</p>
+        <h2>{{ sc.headline.pt }}</h2>
+        <p>{{ sc.summary.pt }}</p>
+        <dl class="case-spec">
+          <div><dt>Veículo</dt><dd>{{ sc.spec.vehicle }}</dd></div>
+          <div><dt>Passageiros</dt><dd class="num">{{ sc.spec.pax }}</dd></div>
+          <div><dt>Duração</dt><dd class="num">{{ sc.spec.duration }}</dd></div>
+          <div><dt>Rota</dt><dd>{{ sc.spec.route }}</dd></div>
+          <div><dt>A partir de</dt><dd class="num">R$ {{ sc.spec.priceFromBrl }}</dd></div>
+        </dl>
+        <a class="btn btn-dark btn-arrow" href="/pt/contact/?case={{ sc.id }}">Pedir este formato</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-navy">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">Não achou o seu</p>
+    <h2>Montamos para o seu caso.</h2>
+    <p style="max-width: 560px; margin: 1.2rem auto 1.8rem;">Conte a tarefa — enviamos configuração, preço e horário em uma mensagem.</p>
+    <div class="cta-strip-actions" style="justify-content: center;">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/">Abrir formulário</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

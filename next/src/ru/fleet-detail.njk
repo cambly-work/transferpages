@@ -1,0 +1,70 @@
+---
+pagination:
+  data: fleet.classes
+  size: 1
+  alias: veh
+permalink: "/ru/fleet/{{ veh.id }}/index.html"
+eleventyComputed:
+  title: "{{ veh.nameRu }} · автопарк | Morrison Premium Transfer"
+  description: "{{ veh.nameRu }} в Morrison Premium Transfer: {{ veh.pax }} мест, {{ veh.bags }} багажа. {{ veh.forRu }}"
+  slug: "fleet/{{ veh.id }}"
+schema: "Service"
+serviceType: "Private transfer · {veh.nameRu}"
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Автопарк · {{ veh.nameRu }}</p>
+    <h1 class="reveal-up">{{ veh.nameRu }}.</h1>
+    <p class="lead reveal-up">{{ veh.forRu }}</p>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Пассажиров</dt><dd><span class="num">{{ veh.pax }}</span></dd></div>
+      <div><dt>Багажа</dt><dd><span class="num">{{ veh.bags }}</span><span class="unit">мест</span></dd></div>
+      <div><dt>Класс</dt><dd>{{ veh.id | upper }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>Какие модели</h2>
+    <p class="lead">{{ veh.examplesRu }}</p>
+    <p class="muted small">Конкретная модель подтверждается при бронировании в зависимости от региона и доступности.</p>
+
+    <h2 style="margin-top: 3rem;">Что внутри</h2>
+    <p>{{ veh.featuresRu }}</p>
+
+    <h2 style="margin-top: 3rem;">Под какие задачи</h2>
+    <ul class="checklist">
+      <li>{{ veh.forRu }}</li>
+      <li>Аэропортовые встречи и продолжение в межгород</li>
+      <li>Деловые маршруты по согласованному таймингу</li>
+      <li>Международные плечи в Mercosur (с соответствующей документацией)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Сравните с другими классами</h2>
+    <div class="fleet-compact-grid">
+      {%- for other in fleet.classes %}
+      {%- if other.id != veh.id %}
+      <a class="fleet-compact-card" href="/ru/fleet/{{ other.id }}/">
+        <h3>{{ other.nameRu }}</h3>
+        <p class="muted small num">{{ other.pax }} мест · {{ other.bags }} багажа</p>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Берём этот класс?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/?vehicle={{ veh.id }}">Запросить расчёт</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+---
+slug: "blog"
+permalink: "/pt/blog/index.html"
+title: "Blog · Guia de transfers no Brasil e Mercosul | Morrison"
+description: "Documentos para travessia de fronteira, sazonalidade do litoral, NF-e para empresas estrangeiras e outros materiais para quem viaja."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Blog", path: "/pt/blog/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Blog · Guia</p>
+    <h1 class="reveal-up">O que vale saber<br>antes da partida.</h1>
+    <p class="lead reveal-up">Documentos, temporadas, pagamento, NF-e — material para passageiros e contabilidades. Sem enrolação.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <div class="post-list">
+      {%- for post in posts.posts %}
+      <a class="post-card" href="/pt/blog/{{ post.slug }}/">
+        <div class="post-card-meta">
+          <span class="post-category">{{ post.category.pt }}</span>
+          <span class="post-date num">{{ post.date }}</span>
+          <span class="post-read num">{{ post.readMinutes }} min</span>
+        </div>
+        <h3>{{ post.title.pt }}</h3>
+        <p>{{ post.excerpt.pt }}</p>
+        <span class="bento-cta">Ler</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Dúvida não fechada pelo artigo?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/">Perguntar diretamente</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

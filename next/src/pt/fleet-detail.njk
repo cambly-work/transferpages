@@ -1,0 +1,70 @@
+---
+pagination:
+  data: fleet.classes
+  size: 1
+  alias: veh
+permalink: "/pt/fleet/{{ veh.id }}/index.html"
+eleventyComputed:
+  title: "{{ veh.namePt }} · frota | Morrison Premium Transfer"
+  description: "{{ veh.namePt }} na Morrison: {{ veh.pax }} lugares, {{ veh.bags }} malas. {{ veh.forPt }}"
+  slug: "fleet/{{ veh.id }}"
+schema: "Service"
+serviceType: "Private transfer · {veh.namePt}"
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Frota · {{ veh.namePt }}</p>
+    <h1 class="reveal-up">{{ veh.namePt }}.</h1>
+    <p class="lead reveal-up">{{ veh.forPt }}</p>
+    <dl class="metric-strip reveal-up">
+      <div><dt>Passageiros</dt><dd><span class="num">{{ veh.pax }}</span></dd></div>
+      <div><dt>Bagagem</dt><dd><span class="num">{{ veh.bags }}</span><span class="unit">peças</span></dd></div>
+      <div><dt>Classe</dt><dd>{{ veh.id | upper }}</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <h2>Modelos típicos</h2>
+    <p class="lead">{{ veh.examplesPt }}</p>
+    <p class="muted small">A modelo exata é confirmada na reserva, conforme região e disponibilidade.</p>
+
+    <h2 style="margin-top: 3rem;">O que tem dentro</h2>
+    <p>{{ veh.featuresPt }}</p>
+
+    <h2 style="margin-top: 3rem;">Para que tipo de tarefa</h2>
+    <ul class="checklist">
+      <li>{{ veh.forPt }}</li>
+      <li>Recepção em aeroporto e continuação intermunicipal</li>
+      <li>Rotas business em horário acordado</li>
+      <li>Trechos internacionais no Mercosul (com documentação)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Compare com outras classes</h2>
+    <div class="fleet-compact-grid">
+      {%- for other in fleet.classes %}
+      {%- if other.id != veh.id %}
+      <a class="fleet-compact-card" href="/pt/fleet/{{ other.id }}/">
+        <h3>{{ other.namePt }}</h3>
+        <p class="muted small num">{{ other.pax }} lugares · {{ other.bags }} malas</p>
+      </a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Pegamos essa classe?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/contact/?vehicle={{ veh.id }}">Pedir orçamento</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

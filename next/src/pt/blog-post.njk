@@ -1,0 +1,35 @@
+---
+pagination:
+  data: posts.posts
+  size: 1
+  alias: post
+permalink: "/pt/blog/{{ post.slug }}/index.html"
+eleventyComputed:
+  title: "{{ post.title.pt }} | Morrison Premium Transfer"
+  description: "{{ post.excerpt.pt }}"
+  slug: "blog/{{ post.slug }}"
+---
+<article>
+  <section class="legal-hero">
+    <div class="container container--narrow">
+      <p class="kicker">{{ post.category.pt }} · <span class="num">{{ post.date }}</span> · <span class="num">{{ post.readMinutes }} min</span></p>
+      <h1>{{ post.title.pt }}</h1>
+      <p class="lead">{{ post.excerpt.pt }}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--narrow prose">
+      <p>{{ post.intro.pt }}</p>
+
+      <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+        Esta é uma versão piloto do artigo. O conteúdo completo está em preparação. Se tem uma dúvida específica sobre o tema — escreva no WhatsApp, respondemos em uma hora.
+      </p>
+
+      <div class="cta-strip-actions" style="margin-top: 1.6rem;">
+        <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">Perguntar no WhatsApp</a>
+        <a class="btn btn-secondary" href="/pt/blog/">Todos os artigos</a>
+      </div>
+    </div>
+  </section>
+</article>

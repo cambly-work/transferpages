@@ -1,0 +1,50 @@
+---
+slug: "cases"
+permalink: "/ru/cases/index.html"
+title: "Готовые сценарии: бизнес, семья, релокация, группы | Morrison"
+description: "5 реальных конфигураций трансферов с временем, машиной и ориентиром по цене. Найдите свой сценарий — мы уже знаем, как его собрать."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Сценарии", path: "/ru/cases/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Сценарии</p>
+    <h1 class="reveal-up">Готовые конфигурации<br>под типовые задачи.</h1>
+    <p class="lead reveal-up">5 случаев, которые встречаются регулярно. Если ваш — рядом, мы соберём за день. Если другой — соберём под него.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cases-grid">
+      {%- for sc in cases.scenarios %}
+      <article class="case-card" id="{{ sc.id }}">
+        <p class="case-audience">{{ sc.audience.ru }}</p>
+        <h2>{{ sc.headline.ru }}</h2>
+        <p>{{ sc.summary.ru }}</p>
+        <dl class="case-spec">
+          <div><dt>Машина</dt><dd>{{ sc.spec.vehicle }}</dd></div>
+          <div><dt>Пассажиры</dt><dd class="num">{{ sc.spec.pax }}</dd></div>
+          <div><dt>Время</dt><dd class="num">{{ sc.spec.duration }}</dd></div>
+          <div><dt>Маршрут</dt><dd>{{ sc.spec.route }}</dd></div>
+          <div><dt>От</dt><dd class="num">R$ {{ sc.spec.priceFromBrl }}</dd></div>
+        </dl>
+        <a class="btn btn-dark btn-arrow" href="/ru/contact/?case={{ sc.id }}">Запросить такой формат</a>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-navy">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">Не нашли свой</p>
+    <h2>Соберём под ваш случай.</h2>
+    <p style="max-width: 560px; margin: 1.2rem auto 1.8rem;">Расскажите задачу — пришлём конфигурацию, цену и тайминг в одном сообщении.</p>
+    <div class="cta-strip-actions" style="justify-content: center;">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">Открыть форму</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,69 @@
+# Glossary of Brazilian / Mercosur terms shown on the website.
+# Used by /<lang>/glossary/.
+
+terms:
+  - term: NF-e
+    def:
+      ru: "Nota Fiscal Eletrônica — обязательная электронная фактура в Бразилии. Выставляется на CNPJ компании-клиента. Для бухгалтерии — основной отчётный документ по расходам на трансфер."
+      pt: "Nota Fiscal Eletrônica — documento fiscal obrigatório no Brasil. Emitida ao CNPJ do cliente. Para a contabilidade, é o principal comprovante das despesas com o transfer."
+      en: "Nota Fiscal Eletrônica — mandatory electronic invoice in Brazil. Issued against the client's CNPJ. For accounting, it's the primary record for transfer expenses."
+  - term: CNPJ
+    def:
+      ru: "Cadastro Nacional da Pessoa Jurídica — налоговый номер юр. лица в Бразилии. Аналог ИНН для компаний. Без CNPJ нельзя получить NF-e."
+      pt: "Cadastro Nacional da Pessoa Jurídica — número de identificação fiscal da pessoa jurídica no Brasil. Sem CNPJ não é possível receber NF-e."
+      en: "Cadastro Nacional da Pessoa Jurídica — corporate tax ID in Brazil. Without a CNPJ you cannot receive an NF-e."
+  - term: CPF
+    def:
+      ru: "Cadastro de Pessoas Físicas — налоговый номер физ. лица. Аналог ИНН для людей. Нужен для безналичных платежей крупного размера."
+      pt: "Cadastro de Pessoas Físicas — número de identificação fiscal individual. Necessário para pagamentos significativos."
+      en: "Cadastro de Pessoas Físicas — personal tax ID. Needed for sizeable cashless payments."
+  - term: Pix
+    def:
+      ru: "Мгновенная межбанковская оплата в Бразилии. Работает 24/7, без комиссии для частных лиц. Самый быстрый способ оплаты разового трансфера."
+      pt: "Transferência bancária instantânea no Brasil. 24/7, sem taxa para pessoa física. O método mais rápido de pagar um transfer pontual."
+      en: "Brazil's instant interbank payment. 24/7, fee-free for individuals. The fastest way to pay for a one-off transfer."
+  - term: DPVAT
+    def:
+      ru: "Обязательная страховка пассажиров наземного транспорта в Бразилии. Покрывает базовые случаи травм или гибели. Действует автоматически."
+      pt: "Seguro obrigatório de passageiros no transporte terrestre no Brasil. Cobre casos básicos de invalidez ou morte. Acionado automaticamente."
+      en: "Mandatory passenger insurance on Brazilian ground transport. Covers basic injury/death scenarios. Applies automatically."
+  - term: CNH
+    def:
+      ru: "Carteira Nacional de Habilitação — водительские права в Бразилии. Для пассажирских перевозок нужна категория D или B + EAR (Exercício de Atividade Remunerada)."
+      pt: "Carteira Nacional de Habilitação. Para transporte de passageiros, é exigida CNH categoria D ou B + EAR."
+      en: "Carteira Nacional de Habilitação — Brazilian driver's licence. For passenger transport, category D or B + EAR is required."
+  - term: BR-101
+    def:
+      ru: "Прибрежная федеральная трасса вдоль восточного побережья Бразилии. Основной маршрут на юге: SP → Curitiba → Florianópolis → Porto Alegre."
+      pt: "Rodovia federal litorânea no leste do Brasil. Principal eixo do sul: SP → Curitiba → Florianópolis → Porto Alegre."
+      en: "Coastal federal highway along Brazil's east. Main southern artery: SP → Curitiba → Florianópolis → Porto Alegre."
+  - term: BR-116
+    def:
+      ru: "Самая длинная федеральная трасса Бразилии, проходит от Fortaleza до Jaguarão (граница с Уругваем). Основной деловой коридор."
+      pt: "A rodovia federal mais longa do Brasil, de Fortaleza a Jaguarão (fronteira com o Uruguai). Principal corredor business."
+      en: "Brazil's longest federal highway, from Fortaleza to Jaguarão (Uruguay border). The main business corridor."
+  - term: LGPD
+    def:
+      ru: "Lei Geral de Proteção de Dados (Law 13.709/2018) — бразильский аналог GDPR. Регулирует обработку персональных данных. Контролирует ANPD."
+      pt: "Lei Geral de Proteção de Dados (Lei 13.709/2018) — base legal brasileira para tratamento de dados pessoais. Fiscalizada pela ANPD."
+      en: "Lei Geral de Proteção de Dados (Law 13.709/2018) — Brazil's GDPR-equivalent. Governs personal data processing. Supervised by ANPD."
+  - term: ANPD
+    def:
+      ru: "Autoridade Nacional de Proteção de Dados — национальный регулятор персональных данных. Принимает жалобы пассажиров, если права по LGPD нарушены."
+      pt: "Autoridade Nacional de Proteção de Dados. Recebe reclamações se direitos da LGPD forem desrespeitados."
+      en: "Autoridade Nacional de Proteção de Dados — Brazil's data protection regulator. Receives complaints if LGPD rights are violated."
+  - term: CDC
+    def:
+      ru: "Código de Defesa do Consumidor — основной потребительский закон Бразилии. Регулирует претензии, отмены и компенсации в B2C."
+      pt: "Código de Defesa do Consumidor — principal lei consumerista do Brasil. Rege reclamações, cancelamentos e compensações em B2C."
+      en: "Código de Defesa do Consumidor — Brazil's consumer protection code. Governs claims, cancellations and compensation in B2C."
+  - term: Mercosur / Mercosul
+    def:
+      ru: "Экономический блок: Бразилия, Аргентина, Уругвай, Парагвай. Между странами действует упрощённый таможенный режим для пассажиров."
+      pt: "Bloco econômico: Brasil, Argentina, Uruguai, Paraguai. Entre os países há regime aduaneiro simplificado para passageiros."
+      en: "Economic bloc: Brazil, Argentina, Uruguay, Paraguay. Between members there's a simplified customs regime for passengers."
+  - term: Chuí
+    def:
+      ru: "Сухопутный пограничный город между Бразилией и Уругваем. Основной автомобильный переход с юга Бразилии в Mercosur."
+      pt: "Cidade de fronteira terrestre entre Brasil e Uruguai. Principal travessia rodoviária do sul do Brasil para o Mercosul."
+      en: "Land border town between Brazil and Uruguay. The main road crossing from southern Brazil into Mercosur."

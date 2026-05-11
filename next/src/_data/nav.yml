@@ -31,6 +31,15 @@ footer:
       href: "team/"
     - key: testimonials
       href: "testimonials/"
+  resources:
+    - key: blog
+      href: "blog/"
+    - key: cases
+      href: "cases/"
+    - key: compare
+      href: "compare/"
+    - key: glossary
+      href: "glossary/"
   legal:
     - key: privacy
       href: "privacy/"

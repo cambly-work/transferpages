@@ -1,0 +1,63 @@
+---
+slug: "compare"
+permalink: "/ru/compare/index.html"
+title: "Сравнение: Morrison vs Uber Black, Blacklane, такси | Morrison"
+description: "Честное сравнение по 8 критериям: цена, страховка, языки, NF-e, отмена, SLA, маршрут, международные плечи."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Сравнение", path: "/ru/compare/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Сравнение</p>
+    <h1 class="reveal-up">Чем мы отличаемся<br>от такси и райдшеринга.</h1>
+    <p class="lead reveal-up">8 критериев, по которым клиенты обычно решают. Без маркетинговых натяжек — каждая ячейка соответствует реальной практике рынка.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="compare-us">Morrison</th>
+            <th>Uber Black</th>
+            <th>Blacklane</th>
+            <th>Такси</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in compare.rows %}
+          <tr>
+            <th scope="row">{{ row.label.ru }}</th>
+            <td class="compare-us">{{ row.morrison.ru }}</td>
+            <td>{{ row.uber.ru }}</td>
+            <td>{{ row.blacklane.ru }}</td>
+            <td>{{ row.taxi.ru }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-navy">
+  <div class="container container--narrow" style="text-align: center;">
+    <p class="kicker">Где мы не лучше</p>
+    <h2>Mы не дешевле такси. И не быстрее Uber для коротких поездок.</h2>
+    <p style="max-width: 560px; margin: 1.2rem auto 1.8rem;">Если нужно проехать 5 км по городу прямо сейчас — вызовите Uber или такси. Morrison имеет смысл, когда поездка длинная, важная, или у вас не один пассажир.</p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Тогда поедем?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">Открыть форму</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

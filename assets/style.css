@@ -1,3 +1,11 @@
+@view-transition { navigation: auto; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.22s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
 :root {
   --bg: #ffffff;
   --bg-soft: #f5f5f7;
@@ -2004,6 +2012,167 @@ ol.checklist li::before {
   .whatsapp-mock { max-width: 100%; }
   .hero { padding-top: clamp(3rem, 6vw, 5rem); }
 }
+
+/* =========================================================
+   Blog · Compare · Glossary · Cases · Fleet-detail
+   ========================================================= */
+
+/* --- Blog post list --- */
+.post-list { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+.post-card {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-tile);
+  padding: clamp(1.3rem, 2.4vw, 1.8rem);
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.2s var(--ease-out), border-color 0.2s ease;
+}
+.post-card:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+.post-card-meta {
+  display: flex; gap: 1.2rem; align-items: center;
+  font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 0.8rem; flex-wrap: wrap;
+}
+.post-category { font-weight: 600; color: var(--text); }
+.post-card h3 { font-size: 1.25rem; margin: 0 0 0.5rem; letter-spacing: -0.018em; }
+.post-card p { font-size: 0.96rem; color: var(--muted); margin: 0 0 0.8rem; line-height: 1.55; }
+.post-card .bento-cta { color: var(--text); font-weight: 500; }
+.post-card .bento-cta::after { content: " →"; }
+
+/* --- Compare table --- */
+.compare-wrap { overflow-x: auto; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+  font-size: 0.92rem;
+}
+.compare-table th, .compare-table td {
+  padding: 1rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.compare-table thead th {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 2px solid var(--line-strong);
+  background: var(--bg-soft);
+}
+.compare-table th[scope="row"] {
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  width: 18%;
+}
+.compare-table .compare-us {
+  background: rgba(10, 22, 40, 0.04);
+  font-weight: 500;
+  color: var(--text);
+}
+.compare-table thead th.compare-us {
+  background: var(--bg-navy);
+  color: #fff;
+  border-bottom-color: var(--bg-navy);
+}
+
+/* --- Glossary --- */
+.glossary-list { margin: 2rem 0; }
+.glossary-item {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.4rem;
+  align-items: baseline;
+}
+.glossary-item:last-child { border-bottom: none; }
+.glossary-item dt { margin: 0; }
+.glossary-item dd { margin: 0; color: var(--text); font-size: 0.96rem; line-height: 1.6; }
+.glossary-term {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: var(--text);
+}
+@media (max-width: 640px) {
+  .glossary-item { grid-template-columns: 1fr; gap: 0.3rem; }
+}
+
+/* --- Cases grid --- */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+.case-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-tile);
+  padding: clamp(1.4rem, 2.4vw, 1.8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.case-audience {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0;
+}
+.case-card h2 { font-size: 1.3rem; letter-spacing: -0.018em; margin: 0; }
+.case-card > p { color: var(--muted); margin: 0; line-height: 1.55; font-size: 0.94rem; }
+.case-spec {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0.6rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.case-spec > div { display: flex; flex-direction: column; gap: 0.2rem; }
+.case-spec dt { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.case-spec dd { margin: 0; font-size: 0.9rem; font-weight: 500; }
+.case-card .btn { align-self: flex-start; margin-top: auto; }
+
+/* --- Fleet detail / compact grid --- */
+.fleet-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+.fleet-compact-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s var(--ease-out), border-color 0.2s;
+}
+.fleet-compact-card:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+.fleet-compact-card h3 { font-size: 0.98rem; margin: 0 0 0.3rem; letter-spacing: -0.012em; }
+
+a.fleet-card { color: var(--text); text-decoration: none; display: flex; flex-direction: column; }
+
+/* --- Content-visibility for far-down sections (rendering perf) --- */
+.section, .cases-grid, .post-list, .glossary-list, .compare-wrap {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+.hero, .hero--motion, .legal-hero { content-visibility: visible; }
+
 
 
 

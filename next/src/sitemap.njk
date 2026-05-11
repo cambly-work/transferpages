@@ -22,7 +22,11 @@ eleventyExcludeFromCollections: true
   "florianopolis/",
   "privacy/",
   "terms/",
-  "cookies/"
+  "cookies/",
+  "blog/",
+  "compare/",
+  "glossary/",
+  "cases/"
 ] %}
 {%- for path in pages %}
 {%- for code in site.locales %}
@@ -41,6 +45,24 @@ eleventyExcludeFromCollections: true
 {%- for code in site.locales %}
   <url>
     <loc>{{ site.domain }}/{{ code }}/routes/{{ pair.slug }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+{%- endfor %}
+{%- endfor %}
+{%- for post in posts.posts %}
+{%- for code in site.locales %}
+  <url>
+    <loc>{{ site.domain }}/{{ code }}/blog/{{ post.slug }}/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+{%- endfor %}
+{%- endfor %}
+{%- for veh in fleet.classes %}
+{%- for code in site.locales %}
+  <url>
+    <loc>{{ site.domain }}/{{ code }}/fleet/{{ veh.id }}/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

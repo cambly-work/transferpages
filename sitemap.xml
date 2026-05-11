@@ -461,6 +461,114 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://morrison-transfer.com/ru/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/blog/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/blog/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/blog/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/blog/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/compare/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/compare/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/compare/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/compare/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/compare/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/compare/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/compare/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/compare/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/compare/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/glossary/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/glossary/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/glossary/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/glossary/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/glossary/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/glossary/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/glossary/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/cases/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/cases/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/cases/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/cases/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/cases/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/cases/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/cases/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/cases/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/cases/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/cases/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/cases/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/cases/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://morrison-transfer.com/ru/routes/florianopolis-balneario-camboriu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -607,6 +715,141 @@
   </url>
   <url>
     <loc>https://morrison-transfer.com/en/routes/foz-do-iguacu-asuncion/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/documents-chui/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/documents-chui/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/documents-chui/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/uruguay-seasons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/uruguay-seasons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/uruguay-seasons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/long-trip-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/long-trip-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/long-trip-checklist/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/nfe-foreign-companies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/nfe-foreign-companies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/nfe-foreign-companies/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/payment-methods-brazil/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/payment-methods-brazil/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/payment-methods-brazil/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/fleet/sedan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/fleet/sedan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/fleet/sedan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/fleet/suv/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/fleet/suv/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/fleet/suv/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/fleet/minivan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/fleet/minivan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/fleet/minivan/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/fleet/van/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/fleet/van/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/fleet/van/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

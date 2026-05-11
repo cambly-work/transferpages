@@ -23,7 +23,7 @@ breadcrumbs:
   <div class="container">
     <div class="fleet-grid">
       {%- for veh in fleet.classes %}
-      <article class="fleet-card">
+      <a class="fleet-card" href="/ru/fleet/{{ veh.id }}/">
         <div class="fleet-card-head">
           <h3>{{ veh.nameRu }}</h3>
           <div class="fleet-stats">

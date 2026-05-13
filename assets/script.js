@@ -533,6 +533,15 @@
     update();
   }
 
+  // ---------- Idle initialiser for non-critical interactive features ----------
+  // These don't affect first-paint or core flows. Run them after idle so
+  // hero render isn't blocked by setting up hover/pointer/audio plumbing.
+  const idle = (cb) => ('requestIdleCallback' in window)
+    ? window.requestIdleCallback(cb, { timeout: 1800 })
+    : setTimeout(cb, 600);
+
+  idle(() => {
+
   // ---------- Spotlight effect on bento cells ----------
   // Each cell tracks cursor position via CSS vars --mx --my (0–100%).
   // The CSS uses radial-gradient at that position for a soft glow.
@@ -658,6 +667,8 @@
   document.addEventListener('click', (e) => {
     if (e.target.closest('[data-cmdk-trigger], [data-theme-toggle], [data-back-to-top]')) playClick(1100, 0.04);
   });
+
+  }); // end idle()
 
   // ---------- Route-row hover preview ----------
   document.querySelectorAll('.route-row').forEach((row) => {
@@ -1121,7 +1132,7 @@
   // ---------- Command-K palette ----------
   const cmdk = document.querySelector('[data-cmdk]');
   if (cmdk) {
-    const trigger = document.querySelector('[data-cmdk-trigger]');
+    const triggers = document.querySelectorAll('[data-cmdk-trigger]');
     const input = cmdk.querySelector('[data-cmdk-input]');
     const list = cmdk.querySelector('[data-cmdk-list]');
     const items = Array.from(cmdk.querySelectorAll('[data-cmdk-item]'));
@@ -1180,7 +1191,7 @@
       items.forEach((el) => el.classList.remove('is-active'));
     };
 
-    trigger?.addEventListener('click', open);
+    triggers.forEach((t) => t.addEventListener('click', open));
     closeNodes.forEach((n) => n.addEventListener('click', close));
     input?.addEventListener('input', filter);
 

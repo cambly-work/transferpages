@@ -51,17 +51,17 @@ ru:
   copyright: Morrison Premium Transfer
   seasons:
     summer:
-      kicker: "Private executive mobility · побережье · сезон"
+      kicker: "Премиум-мобильность · побережье · сезон"
       h1: "Координация поездки<br>в высокий сезон побережья."
-      lead: "Декабрь–март: BR-101, SC-401 и FLN под нагрузкой. Маршрут, окно прилёта и план B собираются до выезда — не на дороге."
+      lead: "Декабрь–март: BR-101, SC-401 и FLN под нагрузкой. Маршрут, окно прилёта и план Б собираются до выезда — не на дороге."
     winter:
-      kicker: "Private executive mobility · long-distance"
+      kicker: "Премиум-мобильность · межгород"
       h1: "Длинные плечи<br>с протоколом, а не таксометром."
-      lead: "Апрель–ноябрь: межгород и Mercosur. Куритиба, Сан-Паулу, Уругвай — поездка ведётся диспетчером 24/7, водитель официальный, отчётность для юр. лица."
+      lead: "Апрель–ноябрь: межгород и Меркосур. Куритиба, Сан-Паулу, Уругвай — поездка ведётся диспетчером 24/7, водитель официальный, отчётность для юр. лица."
     default:
-      kicker: "Private executive mobility · Бразилия · Mercosur"
-      h1: "Mobility для частных<br>и корпоративных поездок,<br>скоординированная end-to-end."
-      lead: "Maршрут, безопасность, тайминг, многоязычная связь — собираются до выезда. Не «такси с надбавкой за дальность», а единый сервис с диспетчером 24/7."
+      kicker: "Премиум-мобильность · Бразилия · Меркосур"
+      h1: "Мобильность для частных<br>и корпоративных поездок,<br>под единым контролем."
+      lead: "Маршрут, безопасность, тайминг, многоязычная связь — собираются до выезда. Не «такси с надбавкой за дальность», а единый сервис с диспетчером 24/7."
   stats:
     eyebrow: "В цифрах"
     title: "Что стоит за словом «премиум»."
@@ -79,7 +79,7 @@ ru:
     metric4Label: "минут с подачей вовремя"
   howItWorks:
     title: "Поездка под полным контролем."
-    subtitle: "Service protocol · от заявки до возвращения — шесть фаз."
+    subtitle: "Протокол сервиса · от заявки до возвращения — шесть фаз."
     step1Title: "Запрос принят"
     step1Body: "Маршрут, дата, пассажиры, конфиденциальность. Подтверждение получения — в течение 15 минут."
     step2Title: "Оценка маршрута и безопасности"
@@ -93,7 +93,7 @@ ru:
     step6Title: "Прибытие и follow-up"
     step6Body: "Помощь на месте, передача багажа, координация следующего сегмента. Финансовый отчёт — на e-mail в течение 5 дней."
   capabilities:
-    eyebrow: "Operational capabilities"
+    eyebrow: "Операционные возможности"
     title: "Что мы координируем"
     lead: "Не просто «довезли». Каждая способность — звено единого протокола."
     c1Title: "Диспетчер 24/7"
@@ -113,7 +113,7 @@ ru:
     c8Title: "Координация частной встречи"
     c8Body: "VIP-зал, парковка, обход терминала — согласовано с аэропортом, без задержек у выхода."
   vipBusiness:
-    eyebrow: "Executive & corporate"
+    eyebrow: "Бизнес и VIP"
     title: "Для бизнес-клиентов и закрытых поездок"
     lead: "Когда поездка — часть рабочего процесса, а не просто перемещение. Морисон работает с C-level, инвесторами, делегациями и закрытыми мероприятиями."
     b1Title: "Executive-встречи в аэропорту"
@@ -131,7 +131,7 @@ ru:
     ctaPrimary: "Обсудить программу"
     ctaSecondary: "Запросить рамочное предложение"
   geoNetwork:
-    eyebrow: "Geography of operation"
+    eyebrow: "География работы"
     title: "Транспортная сеть, а не список городов"
     lead: "11 точек в 4 странах. Покрытие выстроено вдоль реальных маршрутов клиентов, а не на карте по принципу «и тут возим»."
     g1Title: "Юг Бразилии"
@@ -141,23 +141,23 @@ ru:
     g3Title: "Международные плечи"
     g3Cities: "Уругвай · Парагвай · Аргентина · переход Чуй · переход Foz–Ciudad del Este"
   typicalJourneys:
-    eyebrow: "Typical journeys"
+    eyebrow: "Типичные сценарии"
     title: "Как это выглядит на практике"
     lead: "Пять реальных конфигураций, которые мы делаем регулярно. Цены и тайминг — ориентир, точная сумма — после брифа."
     j1Route: "Балнеариу-Камбориу → Сан-Паулу"
-    j1Format: "Executive long-leg"
-    j1Body: "~9 часов с ночёвкой в Куритибе. Premium SUV или executive sedan, диспетчер на связи в каждый ключевой час."
+    j1Format: "Бизнес-плечо"
+    j1Body: "~9 часов с ночёвкой в Куритибе. Премиум-SUV или бизнес-седан, диспетчер на связи в каждый ключевой час."
     j2Route: "Флорианополис → Порту-Алегри"
-    j2Format: "Business intercity"
+    j2Format: "Бизнес-межгород"
     j2Body: "~6,5 часов. Сценарий: утренний выезд, встреча после обеда, обратный сегмент следующим утром."
     j3Route: "Аэропорт → частная резиденция"
-    j3Format: "Private pickup"
-    j3Body: "GRU/FLN/POA встреча по треку рейса, обход терминала, тишина в салоне. NF-e на корпоратив."
+    j3Format: "Частная встреча"
+    j3Body: "GRU/FLN/POA — встреча по треку рейса, обход терминала, тишина в салоне. NF-e на корпоратив."
     j4Route: "Юг Бразилии → граница Уругвая"
-    j4Format: "Cross-border"
+    j4Format: "Международный"
     j4Body: "Чуй или Жагуарьон. Документы согласованы за 48 часов, переход — одной поездкой."
     j5Route: "Координация бизнес-делегации"
-    j5Format: "Multi-day program"
+    j5Format: "Многодневная программа"
     j5Body: "3–5 дней, несколько городов, выделенный диспетчер, отчёт по поездкам и километрам ежедневно."
   ui:
     copy: Скопировать
@@ -409,16 +409,16 @@ pt:
   copyright: Morrison Premium Transfer
   seasons:
     summer:
-      kicker: "Private executive mobility · litoral · temporada"
+      kicker: "Mobilidade executiva · litoral · temporada"
       h1: "Coordenação de viagem<br>na alta temporada do litoral."
       lead: "Dez–mar: BR-101, SC-401 e FLN sob carga. Rota, janela de chegada e plano B montados antes da partida — não na estrada."
     winter:
-      kicker: "Private executive mobility · long-distance"
+      kicker: "Mobilidade executiva · intermunicipal"
       h1: "Trechos longos<br>com protocolo, não com taxímetro."
       lead: "Abr–nov: intermunicipal e Mercosul. Curitiba, São Paulo, Uruguai — viagem conduzida por despachante 24/7, motorista formal, reportagem para pessoa jurídica."
     default:
-      kicker: "Private executive mobility · Brasil · Mercosul"
-      h1: "Mobilidade para viagens<br>privadas e corporativas,<br>coordenada end-to-end."
+      kicker: "Mobilidade executiva · Brasil · Mercosul"
+      h1: "Mobilidade para viagens<br>privadas e corporativas,<br>sob controle único."
       lead: "Rota, segurança, horário e comunicação multilíngue — montados antes da partida. Não é 'táxi com taxa de distância' — é um serviço único com despachante 24/7."
   stats:
     eyebrow: "Em números"
@@ -437,7 +437,7 @@ pt:
     metric4Label: "minutos de espera incluídos"
   howItWorks:
     title: "A viagem sob controle total."
-    subtitle: "Service protocol · da solicitação ao retorno — seis fases."
+    subtitle: "Protocolo de serviço · da solicitação ao retorno — seis fases."
     step1Title: "Solicitação registrada"
     step1Body: "Rota, data, passageiros, confidencialidade. Confirmação de recebimento em até 15 minutos."
     step2Title: "Avaliação de rota e segurança"
@@ -451,7 +451,7 @@ pt:
     step6Title: "Chegada e follow-up"
     step6Body: "Apoio no destino, bagagem, coordenação do próximo segmento. Relatório financeiro no e-mail em até 5 dias."
   capabilities:
-    eyebrow: "Operational capabilities"
+    eyebrow: "Capacidades operacionais"
     title: "O que coordenamos"
     lead: "Não é só 'levou'. Cada capacidade é parte de um protocolo único."
     c1Title: "Despachante 24/7"
@@ -471,7 +471,7 @@ pt:
     c8Title: "Coordenação de retirada privada"
     c8Body: "Sala VIP/FBO, estacionamento, contorno do terminal — alinhado com o aeroporto, sem espera na saída."
   vipBusiness:
-    eyebrow: "Executive & corporate"
+    eyebrow: "Corporativo e VIP"
     title: "Para viagens corporativas e discretas"
     lead: "Quando a viagem faz parte do processo de trabalho, não é só deslocamento. Morrison atende C-level, investidores, delegações e eventos fechados."
     b1Title: "Transfers executivos de aeroporto"
@@ -489,7 +489,7 @@ pt:
     ctaPrimary: "Discutir um programa"
     ctaSecondary: "Pedir proposta-base"
   geoNetwork:
-    eyebrow: "Geografia de operação"
+    eyebrow: "Geografia da operação"
     title: "Uma rede de transporte, não uma lista de cidades"
     lead: "11 pontos em 4 países. A cobertura segue as rotas reais dos clientes, não pinta o mapa por extensão."
     g1Title: "Sul do Brasil"
@@ -499,23 +499,23 @@ pt:
     g3Title: "Trechos internacionais"
     g3Cities: "Uruguai · Paraguai · Argentina · travessia do Chuí · travessia Foz–Ciudad del Este"
   typicalJourneys:
-    eyebrow: "Typical journeys"
+    eyebrow: "Cenários típicos"
     title: "Como aparece na prática"
     lead: "Cinco configurações reais que fazemos regularmente. Preços e tempos são referência, o valor exato vem após o briefing."
     j1Route: "Balneário Camboriú → São Paulo"
-    j1Format: "Executive long-leg"
-    j1Body: "~9 horas com pernoite em Curitiba. Premium SUV ou sedan executivo, despachante em contato a cada hora-chave."
+    j1Format: "Trajeto executivo"
+    j1Body: "~9 horas com pernoite em Curitiba. SUV premium ou sedan executivo, despachante em contato a cada hora-chave."
     j2Route: "Florianópolis → Porto Alegre"
-    j2Format: "Business intercity"
+    j2Format: "Intermunicipal corporativo"
     j2Body: "~6h30. Cenário: saída de manhã, reunião à tarde, retorno na manhã seguinte."
     j3Route: "Aeroporto → residência privada"
-    j3Format: "Private pickup"
-    j3Body: "GRU/FLN/POA recepção via tracker, contorno do terminal, silêncio na cabine. NF-e ao corporativo."
+    j3Format: "Recepção privada"
+    j3Body: "GRU/FLN/POA — recepção via tracker, contorno do terminal, silêncio na cabine. NF-e ao corporativo."
     j4Route: "Sul do Brasil → fronteira do Uruguai"
-    j4Format: "Cross-border"
+    j4Format: "Travessia internacional"
     j4Body: "Chuí ou Jaguarão. Documentos validados 48h antes, travessia em viagem única."
     j5Route: "Coordenação de delegação corporativa"
-    j5Format: "Multi-day program"
+    j5Format: "Programa multi-dia"
     j5Body: "3–5 dias, várias cidades, despachante dedicado, relatório diário de viagens e km."
   ui:
     copy: Copiar
@@ -1125,20 +1125,20 @@ es:
   copyright: Morrison Premium Transfer
   seasons:
     summer:
-      kicker: "Private executive mobility · litoral · temporada"
+      kicker: "Movilidad ejecutiva · litoral · temporada"
       h1: "Coordinación de viaje<br>en la temporada alta del litoral."
       lead: "Dic–mar: BR-101, SC-401 y FLN bajo carga. Ruta, ventana de llegada y plan B se arman antes de salir — no en la ruta."
     winter:
-      kicker: "Private executive mobility · long-distance"
+      kicker: "Movilidad ejecutiva · interurbano"
       h1: "Tramos largos<br>con protocolo, no con taxímetro."
-      lead: "Abr–nov: intermunicipal y Mercosur. Curitiba, São Paulo, Uruguay — el viaje lo conduce un despachador 24/7, conductor formal, reportes para persona jurídica."
+      lead: "Abr–nov: interurbano y Mercosur. Curitiba, São Paulo, Uruguay — el viaje lo conduce un despachador 24/7, conductor formal, reportes para persona jurídica."
     default:
-      kicker: "Private executive mobility · Brasil · Mercosur"
-      h1: "Movilidad para viajes<br>privados y corporativos,<br>coordinada end-to-end."
+      kicker: "Movilidad ejecutiva · Brasil · Mercosur"
+      h1: "Movilidad para viajes<br>privados y corporativos,<br>bajo control único."
       lead: "Ruta, seguridad, horario y comunicación multilingüe — armados antes de salir. No es 'taxi con recargo por distancia' — es un servicio único con despachador 24/7."
   howItWorks:
     title: "El viaje bajo control total."
-    subtitle: "Service protocol · de la solicitud al regreso — seis fases."
+    subtitle: "Protocolo de servicio · de la solicitud al regreso — seis fases."
     step1Title: "Solicitud registrada"
     step1Body: "Ruta, fecha, pasajeros, confidencialidad. Confirmación de recepción en 15 minutos."
     step2Title: "Evaluación de ruta y seguridad"
@@ -1152,7 +1152,7 @@ es:
     step6Title: "Llegada y follow-up"
     step6Body: "Asistencia en destino, equipaje, coordinación del siguiente segmento. Informe financiero al e-mail en 5 días."
   capabilities:
-    eyebrow: "Operational capabilities"
+    eyebrow: "Capacidades operativas"
     title: "Lo que coordinamos"
     lead: "No es solo 'te llevó'. Cada capacidad es parte de un mismo protocolo."
     c1Title: "Despachador 24/7"
@@ -1172,7 +1172,7 @@ es:
     c8Title: "Coordinación de retiro privado"
     c8Body: "Sala VIP/FBO, estacionamiento, evitar terminal — alineado con el aeropuerto, sin espera en la salida."
   vipBusiness:
-    eyebrow: "Executive & corporate"
+    eyebrow: "Corporativo y VIP"
     title: "Para viajes corporativos y discretos"
     lead: "Cuando el viaje es parte del proceso de trabajo, no solo desplazamiento. Morrison atiende a C-level, inversores, delegaciones y eventos cerrados."
     b1Title: "Transfers ejecutivos de aeropuerto"
@@ -1200,23 +1200,23 @@ es:
     g3Title: "Tramos internacionales"
     g3Cities: "Uruguay · Paraguay · Argentina · cruce de Chuí · cruce Foz–Ciudad del Este"
   typicalJourneys:
-    eyebrow: "Typical journeys"
+    eyebrow: "Escenarios típicos"
     title: "Cómo se ve en la práctica"
     lead: "Cinco configuraciones reales que hacemos con regularidad. Precios y tiempos son referencia; el monto exacto se ajusta tras el briefing."
     j1Route: "Balneário Camboriú → São Paulo"
-    j1Format: "Executive long-leg"
+    j1Format: "Trayecto ejecutivo"
     j1Body: "~9 horas con pernocte en Curitiba. SUV premium o sedan ejecutivo, despachador en contacto cada hora clave."
     j2Route: "Florianópolis → Porto Alegre"
-    j2Format: "Business intercity"
+    j2Format: "Interurbano corporativo"
     j2Body: "~6h30. Escenario: salida por la mañana, reunión por la tarde, regreso a la mañana siguiente."
     j3Route: "Aeropuerto → residencia privada"
-    j3Format: "Private pickup"
+    j3Format: "Recepción privada"
     j3Body: "GRU/FLN/POA — recepción por tracker, evita terminal, cabina silenciosa. NF-e al corporativo."
     j4Route: "Sur de Brasil → frontera con Uruguay"
-    j4Format: "Cross-border"
+    j4Format: "Cruce internacional"
     j4Body: "Chuí o Jaguarão. Documentos validados 48h antes, cruce en un solo viaje."
     j5Route: "Coordinación de delegación corporativa"
-    j5Format: "Multi-day program"
+    j5Format: "Programa multi-día"
     j5Body: "3–5 días, varias ciudades, despachador dedicado, informe diario de viajes y km."
   stats:
     eyebrow: "En cifras"

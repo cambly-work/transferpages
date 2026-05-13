@@ -692,6 +692,174 @@
     });
   });
 
+  // ---------- UTM-aware hero personalisation ----------
+  // ?utm_source=<partner> rewrites the hero kicker + lead. Mapping table is
+  // intentionally small — add real partners here when onboarded.
+  const utmParams = new URLSearchParams(window.location.search);
+  const utmSource = (utmParams.get('utm_source') || '').toLowerCase();
+  const utmMap = {
+    marriott: {
+      ru: { kicker: 'Для гостей Marriott', lead: 'Премиум-трансфер из/в отель с проверенным водителем. NF-e на компанию.' },
+      pt: { kicker: 'Para hóspedes Marriott', lead: 'Transfer premium de/para o hotel com motorista verificado. NF-e para empresa.' },
+      en: { kicker: 'For Marriott guests', lead: 'Premium transfer to/from the hotel with a verified driver. NF-e on the company.' },
+      es: { kicker: 'Para huéspedes Marriott', lead: 'Transfer premium de/al hotel con conductor verificado. NF-e a la empresa.' },
+    },
+    hotel: {
+      ru: { kicker: 'Для гостей отеля-партнёра', lead: 'Премиум-трансфер по preferred rate для гостей наших отелей-партнёров.' },
+      pt: { kicker: 'Para hóspedes de hotel parceiro', lead: 'Transfer premium em tarifa preferencial para hóspedes de hotéis parceiros.' },
+      en: { kicker: 'For partner hotel guests', lead: 'Premium transfer at preferred rate for guests of our partner hotels.' },
+      es: { kicker: 'Para huéspedes de hotel asociado', lead: 'Transfer premium a tarifa preferente para huéspedes de hoteles asociados.' },
+    },
+    relocation: {
+      ru: { kicker: 'Для тех, кто переезжает', lead: 'Транспортная часть релокации: длинные плечи с багажом, школой, банком и адаптацией первой недели.' },
+      pt: { kicker: 'Para quem está se mudando', lead: 'O transporte da relocação: trechos longos com bagagem, escola, banco e adaptação da primeira semana.' },
+      en: { kicker: 'For those relocating', lead: 'The transport leg of relocation: long routes with luggage, school, bank, and first-week onboarding.' },
+      es: { kicker: 'Para quien se está mudando', lead: 'El transporte de la reubicación: rutas largas con equipaje, escuela, banco y primera semana.' },
+    },
+  };
+  if (utmMap[utmSource]) {
+    const seasonalHero = document.querySelector('[data-hero-seasonal]');
+    if (seasonalHero) {
+      const k = seasonalHero.querySelector('[data-season-kicker]');
+      const l = seasonalHero.querySelector('[data-season-lead]');
+      const v = utmMap[utmSource][docLangShort] || utmMap[utmSource].en;
+      if (k && v.kicker) k.textContent = v.kicker;
+      if (l && v.lead) l.textContent = v.lead;
+      seasonalHero.dataset.utm = utmSource;
+      trackEvent('utm_personalised', { utm_source: utmSource });
+    }
+  }
+
+  // ---------- Time-of-day hero adaptation ----------
+  // Subtle: between 22:00 and 5:00 in the user's local timezone, swap the
+  // hero kicker for a night-flight friendly variant. Doesn't override UTM.
+  if (!utmMap[utmSource]) {
+    const hr = new Date().getHours();
+    const isNight = hr >= 22 || hr < 5;
+    if (isNight) {
+      const seasonalHero = document.querySelector('[data-hero-seasonal]');
+      const k = seasonalHero?.querySelector('[data-season-kicker]');
+      const nightKicker = {
+        ru: 'Ночной рейс? Подача за час до вылета.',
+        pt: 'Voo noturno? Apresentação 1h antes da decolagem.',
+        en: 'Night flight? Pickup an hour before departure.',
+        es: 'Vuelo nocturno? Recogida una hora antes.',
+      };
+      if (k) {
+        k.textContent = nightKicker[docLangShort] || nightKicker.en;
+        trackEvent('hero_time_of_day', { period: 'night' });
+      }
+    }
+  }
+
+  // ---------- Returning visitor recognition ----------
+  // Save the last calculator query so a return visit can offer one-tap re-run.
+  // Lives in localStorage under 'lastQuote'.
+  try {
+    const lastQuoteRaw = window.localStorage.getItem('lastQuote');
+    if (lastQuoteRaw) {
+      const lastQuote = JSON.parse(lastQuoteRaw);
+      const ageHrs = (Date.now() - (lastQuote.t || 0)) / 1000 / 3600;
+      if (ageHrs < 168 && lastQuote.from && lastQuote.to) {
+        // Show a soft banner above the calculator suggesting to re-run
+        const calc = document.getElementById('calculator');
+        if (calc && !calc.querySelector('.return-visitor-banner')) {
+          const labels = {
+            ru: { hi: 'С возвращением', cta: 'Повторить расчёт', sep: '→' },
+            pt: { hi: 'De volta', cta: 'Repetir a estimativa', sep: '→' },
+            en: { hi: 'Welcome back', cta: 'Re-run the quote', sep: '→' },
+            es: { hi: 'Bienvenido', cta: 'Repetir la estimación', sep: '→' },
+          };
+          const l = labels[docLangShort] || labels.en;
+          const banner = document.createElement('div');
+          banner.className = 'return-visitor-banner';
+          banner.innerHTML = `
+            <span class="rvb-hi">${l.hi}.</span>
+            <span class="rvb-route num">${lastQuote.from} ${l.sep} ${lastQuote.to}</span>
+            <a class="rvb-cta" href="?from=${encodeURIComponent(lastQuote.from)}&to=${encodeURIComponent(lastQuote.to)}&pax=${lastQuote.pax || ''}&luggage=${lastQuote.luggage || ''}#calculator">${l.cta}</a>
+          `;
+          const container = calc.querySelector('.container');
+          if (container) container.insertBefore(banner, container.firstChild);
+          trackEvent('returning_visitor_banner', { age_hours: Math.round(ageHrs) });
+        }
+      }
+    }
+  } catch (e) { /* localStorage may be unavailable */ }
+
+  // Hook into calculator submit to save the latest quote
+  document.addEventListener('submit', (e) => {
+    if (!e.target.matches('[data-calculator]')) return;
+    const fd = new FormData(e.target);
+    const data = {
+      from: fd.get('from'), to: fd.get('to'),
+      pax: fd.get('pax'), luggage: fd.get('luggage'),
+      t: Date.now(),
+    };
+    if (data.from && data.to) {
+      try { window.localStorage.setItem('lastQuote', JSON.stringify(data)); } catch (e) {}
+    }
+  });
+
+  // ---------- Save-and-resume brief form ----------
+  // Persists field values to localStorage as user types. Restores on next visit
+  // (within 7 days). Cleared after successful submit.
+  const briefDraftKey = 'briefDraft';
+  const briefDraftForm = document.querySelector('[data-brief-form]');
+  if (briefDraftForm) {
+    try {
+      const raw = window.localStorage.getItem(briefDraftKey);
+      if (raw) {
+        const draft = JSON.parse(raw);
+        const ageHrs = (Date.now() - (draft.t || 0)) / 1000 / 3600;
+        if (ageHrs < 168) {
+          // Only fill empty fields (don't override URL prefill)
+          Object.entries(draft.fields || {}).forEach(([name, value]) => {
+            const el = briefDraftForm.querySelector(`[name="${name}"]`);
+            if (!el || !value) return;
+            if (el.type === 'checkbox') { if (value === 'true') el.checked = true; }
+            else if (el.type === 'radio') {
+              const r = briefDraftForm.querySelector(`[name="${name}"][value="${value}"]`);
+              if (r) r.checked = true;
+            } else if (!el.value) {
+              el.value = value;
+            }
+          });
+          // Show small note
+          const note = document.createElement('p');
+          note.className = 'brief-resume-note muted small';
+          note.textContent = ({
+            ru: 'Восстановлены данные из вашей прошлой заявки.',
+            pt: 'Recuperamos os dados da sua última solicitação.',
+            en: 'Restored fields from your last draft.',
+            es: 'Restauramos los campos del último borrador.',
+          })[docLangShort] || 'Restored fields from your last draft.';
+          briefDraftForm.querySelector('.brief-head')?.appendChild(note);
+        }
+      }
+    } catch (e) {}
+
+    const saveDraft = () => {
+      try {
+        const fd = new FormData(briefDraftForm);
+        const fields = {};
+        fd.forEach((v, k) => { fields[k] = String(v); });
+        // Also include checkboxes that are unchecked (they don't appear in FormData)
+        briefDraftForm.querySelectorAll('input[type="checkbox"]').forEach((c) => {
+          fields[c.name] = c.checked ? 'true' : 'false';
+        });
+        window.localStorage.setItem(briefDraftKey, JSON.stringify({ fields, t: Date.now() }));
+      } catch (e) {}
+    };
+    let debounce;
+    briefDraftForm.addEventListener('input', () => {
+      clearTimeout(debounce);
+      debounce = setTimeout(saveDraft, 400);
+    });
+    briefDraftForm.addEventListener('submit', () => {
+      try { window.localStorage.removeItem(briefDraftKey); } catch (e) {}
+    });
+  }
+
   // ---------- Seasonal hero ----------
   const seasonalHero = document.querySelector('[data-hero-seasonal]');
   if (seasonalHero) {

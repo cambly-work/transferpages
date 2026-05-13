@@ -3215,3 +3215,51 @@ body.cmdk-open { overflow: hidden; }
   .sound-toggle { font-size: 0.7rem; padding: 0.25rem 0.55rem; }
 }
 
+/* =========================================================
+   Sprint B: returning-visitor banner, draft restoration note
+   ========================================================= */
+.return-visitor-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  padding: 0.7rem 1rem;
+  margin: 0 auto 1.4rem;
+  max-width: 720px;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  box-shadow: 0 6px 20px -10px rgba(201, 163, 107, 0.3);
+}
+[data-theme="dark"] .return-visitor-banner { background: var(--bg-soft); }
+.return-visitor-banner .rvb-hi { color: var(--muted); }
+.return-visitor-banner .rvb-route {
+  color: var(--text);
+  font-weight: 500;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.return-visitor-banner .rvb-cta {
+  color: var(--bg);
+  background: var(--text);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.84rem;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.return-visitor-banner .rvb-cta:hover { opacity: 0.85; }
+.brief-resume-note {
+  background: rgba(201, 163, 107, 0.12);
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  margin: 0.5rem 0 0;
+  color: var(--text);
+}
+
+

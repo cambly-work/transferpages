@@ -36,6 +36,14 @@ module.exports = function (eleventyConfig) {
         ? `${data.page.filePathStem.replace(/\/index$/, "/")}/index.html`.replace(/\/+/g, "/")
         : undefined;
     },
+    // Expose `t` (i18n shortcut for current page lang) to all templates including
+    // page bodies. Without this, page-level {{ t.* }} renders empty because the
+    // layout's {%- set t = i18n[lang] -%} is scoped to the layout only — page
+    // content is rendered first, then injected into the layout.
+    t: (data) => {
+      if (!data.i18n || !data.lang) return undefined;
+      return data.i18n[data.lang];
+    },
   });
 
   return {

@@ -1,0 +1,18 @@
+# Cloudflare Worker config — Morrison booking intake.
+# Deploy with: wrangler deploy
+# Set secrets with: wrangler secret put TELEGRAM_BOT_TOKEN  (etc., see morrison-intake.js)
+
+name = "morrison-intake"
+main = "morrison-intake.js"
+compatibility_date = "2025-01-01"
+
+# Public env (non-secret). All secrets go via `wrangler secret put`.
+[vars]
+ALLOWED_ORIGINS = "https://morrison-transfer.com,https://cambly-work.github.io"
+MORRISON_OPS_EMAIL = "hello@morrison-transfer.com"
+MORRISON_FROM_EMAIL = "hello@morrison-transfer.com"
+
+# Optional: bind a custom subdomain (api.morrison-transfer.com → this worker).
+# [[routes]]
+# pattern = "api.morrison-transfer.com/intake"
+# zone_name = "morrison-transfer.com"

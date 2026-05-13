@@ -246,8 +246,8 @@
 
 <section class="section section--bg-soft" id="calculator">
   <div class="container container--narrow">
-    <p class="kicker" style="text-align: center;">Route price estimate</p>
-    <h2 style="text-align: center;">Pick cities — get a reference price. The exact fare is confirmed before departure.</h2>
+    <p class="kicker" style="text-align: center;">Trip quote</p>
+    <h2 style="text-align: center;">Pick cities and class — get a price locked for 24 hours.</h2>
 
     <div class="calc-map" data-calc-map>
       <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
@@ -280,6 +280,18 @@
               x1="600" y1="345"
               x2="605" y2="320"/>
         <line class="map-line"
+              data-map-line="fln-nvt"
+              x1="600" y1="345"
+              x2="590" y2="300"/>
+        <line class="map-line"
+              data-map-line="nvt-bnu"
+              x1="590" y1="300"
+              x2="605" y2="320"/>
+        <line class="map-line"
+              data-map-line="fln-cwb"
+              x1="600" y1="345"
+              x2="550" y2="220"/>
+        <line class="map-line"
               data-map-line="cwb-gru"
               x1="550" y1="220"
               x2="725" y2="100"/>
@@ -292,25 +304,17 @@
               x1="430" y1="490"
               x2="600" y2="345"/>
         <line class="map-line"
-              data-map-line="nvt-bnu"
-              x1="590" y1="300"
-              x2="605" y2="320"/>
-        <line class="map-line"
-              data-map-line="fln-nvt"
-              x1="600" y1="345"
-              x2="590" y2="300"/>
-        <line class="map-line"
-              data-map-line="igr-cwb"
-              x1="220" y1="230"
-              x2="550" y2="220"/>
+              data-map-line="poa-pde"
+              x1="430" y1="490"
+              x2="200" y2="760"/>
         <line class="map-line"
               data-map-line="poa-mvd"
               x1="430" y1="490"
               x2="120" y2="760"/>
         <line class="map-line"
-              data-map-line="poa-pde"
-              x1="430" y1="490"
-              x2="200" y2="760"/>
+              data-map-line="cwb-igr"
+              x1="550" y1="220"
+              x2="220" y2="230"/>
         <line class="map-line"
               data-map-line="igr-asu"
               x1="220" y1="230"
@@ -443,6 +447,32 @@
           </select>
         </label>
       </div>
+      <fieldset class="calc-tier-fieldset">
+        <legend>Vehicle class</legend>
+        <div class="calc-tier-grid" role="radiogroup"><label class="calc-tier is-selected">
+            <input type="radio" name="tier" value="sedan" checked data-calc-tier>
+            <span class="calc-tier-brand">Morrison Business</span>
+            <span class="calc-tier-name">Executive sedan</span>
+            <span class="calc-tier-pax muted small">1–3 · R$ 4.5/km</span>
+          </label><label class="calc-tier">
+            <input type="radio" name="tier" value="suv" data-calc-tier>
+            <span class="calc-tier-brand">Morrison First</span>
+            <span class="calc-tier-name">Premium SUV</span>
+            <span class="calc-tier-pax muted small">1–4 · R$ 5.5/km</span>
+          </label><label class="calc-tier">
+            <input type="radio" name="tier" value="minivan" data-calc-tier>
+            <span class="calc-tier-brand">Morrison Comfort</span>
+            <span class="calc-tier-name">Minivan</span>
+            <span class="calc-tier-pax muted small">4–7 · R$ 7/km</span>
+          </label><label class="calc-tier">
+            <input type="radio" name="tier" value="van" data-calc-tier>
+            <span class="calc-tier-brand">Morrison Group</span>
+            <span class="calc-tier-name">Vans / minibus</span>
+            <span class="calc-tier-pax muted small">8–14 · R$ 9/km</span>
+          </label>
+        </div>
+      </fieldset>
+
       <div class="calc-row">
         <label class="field">
           <span>Passengers</span>
@@ -466,7 +496,7 @@
           </select>
         </label>
       </div>
-      <button type="submit" class="btn btn-dark btn-arrow calc-submit">Get estimate</button>
+      <button type="submit" class="btn btn-dark btn-arrow calc-submit">Get quote</button>
 
       <div class="calc-result" data-calc-result hidden>
         <div class="calc-result-state" data-calc-state-error hidden></div>
@@ -475,9 +505,13 @@
           <div class="calc-result-grid">
             <div><dt>Distance</dt><dd data-calc-distance class="num"></dd></div>
             <div><dt>Duration</dt><dd data-calc-duration class="num"></dd></div>
-            <div><dt>Reference</dt><dd data-calc-price class="num"></dd></div>
+            <div><dt>Quote</dt><dd data-calc-price class="num"></dd></div>
           </div>
-          <p class="muted small">Price includes driver, fuel, tolls.</p>
+          <details class="calc-breakdown">
+            <summary>Price breakdown</summary>
+            <ul class="calc-breakdown-list" data-calc-breakdown></ul>
+          </details>
+          <p class="muted small">Price locked until confirmation, valid for 24 hours.</p>
           <div class="calc-result-actions">
             <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Confirm via WhatsApp</a>
             <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Share this quote</button>
@@ -498,86 +532,125 @@
             "priceMax": 650,
             "slug": "florianopolis-balneario-camboriu"
           },{
+            "from": "fln",
+            "to": "nvt",
+            "km": 55,
+            "durationMin": 50,
+            "priceMin": 280,
+            "priceMax": 380,
+            "slug": "florianopolis-navegantes"
+          },{
+            "from": "nvt",
+            "to": "bnu",
+            "km": 18,
+            "durationMin": 25,
+            "priceMin": 150,
+            "priceMax": 220,
+            "slug": "navegantes-balneario-camboriu"
+          },{
+            "from": "fln",
+            "to": "cwb",
+            "km": 290,
+            "durationMin": 215,
+            "priceMin": 1200,
+            "priceMax": 1700,
+            "slug": "florianopolis-curitiba"
+          },{
             "from": "cwb",
             "to": "gru",
             "km": 410,
-            "durationMin": 330,
-            "priceMin": 1900,
-            "priceMax": 2600,
+            "durationMin": 320,
+            "priceMin": 1800,
+            "priceMax": 2400,
             "slug": "curitiba-sao-paulo"
           },{
             "from": "gru",
             "to": "gig",
             "km": 430,
             "durationMin": 360,
-            "priceMin": 2100,
-            "priceMax": 2900,
+            "priceMin": 2000,
+            "priceMax": 2600,
             "slug": "sao-paulo-rio-de-janeiro"
           },{
             "from": "poa",
             "to": "fln",
             "km": 480,
-            "durationMin": 390,
-            "priceMin": 2200,
-            "priceMax": 3100,
+            "durationMin": 380,
+            "priceMin": 1900,
+            "priceMax": 2500,
             "slug": "porto-alegre-florianopolis"
           },{
-            "from": "nvt",
-            "to": "bnu",
-            "km": 25,
-            "durationMin": 25,
-            "priceMin": 220,
-            "priceMax": 320,
-            "slug": "navegantes-balneario-camboriu"
-          },{
-            "from": "fln",
-            "to": "nvt",
-            "km": 90,
-            "durationMin": 75,
-            "priceMin": 420,
-            "priceMax": 600,
-            "slug": "florianopolis-navegantes"
-          },{
-            "from": "igr",
-            "to": "cwb",
-            "km": 640,
-            "durationMin": 480,
-            "priceMin": 2800,
-            "priceMax": 3900,
-            "slug": "foz-do-iguacu-curitiba"
+            "from": "poa",
+            "to": "pde",
+            "km": 770,
+            "durationMin": 660,
+            "priceMin": 3800,
+            "priceMax": 4800,
+            "slug": "porto-alegre-punta-del-este"
           },{
             "from": "poa",
             "to": "mvd",
             "km": 870,
             "durationMin": 720,
-            "priceMin": 4500,
-            "priceMax": 6200,
+            "priceMin": 4200,
+            "priceMax": 5200,
             "slug": "porto-alegre-montevideo"
           },{
-            "from": "poa",
-            "to": "pde",
-            "km": 990,
-            "durationMin": 780,
-            "priceMin": 5000,
-            "priceMax": 7000,
-            "slug": "porto-alegre-punta-del-este"
+            "from": "cwb",
+            "to": "igr",
+            "km": 640,
+            "durationMin": 510,
+            "priceMin": 2700,
+            "priceMax": 3400,
+            "slug": "foz-do-iguacu-curitiba"
           },{
             "from": "igr",
             "to": "asu",
             "km": 330,
-            "durationMin": 300,
-            "priceMin": 1600,
-            "priceMax": 2300,
+            "durationMin": 270,
+            "priceMin": 2200,
+            "priceMax": 2900,
             "slug": "foz-do-iguacu-asuncion"
           }],
-        "cities": {"gru": "São Paulo (GRU)","gig": "Rio de Janeiro (GIG)","cwb": "Curitiba (CWB)","fln": "Florianópolis (FLN)","nvt": "Navegantes (NVT)","poa": "Porto Alegre (POA)","bnu": "Balneário Camboriú","igr": "Foz do Iguaçu (IGU)","mvd": "Montevideo","pde": "Punta del Este","asu": "Asunción"},
+        "cities": {"gru": { "name": "São Paulo (GRU)", "country": "BR" },"gig": { "name": "Rio de Janeiro (GIG)", "country": "BR" },"cwb": { "name": "Curitiba (CWB)", "country": "BR" },"fln": { "name": "Florianópolis (FLN)", "country": "BR" },"nvt": { "name": "Navegantes (NVT)", "country": "BR" },"poa": { "name": "Porto Alegre (POA)", "country": "BR" },"bnu": { "name": "Balneário Camboriú", "country": "BR" },"igr": { "name": "Foz do Iguaçu (IGU)", "country": "BR" },"mvd": { "name": "Montevideo", "country": "UY" },"pde": { "name": "Punta del Este", "country": "UY" },"asu": { "name": "Asunción", "country": "PY" }},
+        "tiers": {"sedan": {
+            "name": "Executive sedan",
+            "brand": "Morrison Business",
+            "cityFromBrl": 220,
+            "intercityPerKmBrl": 4.5,
+            "internationalPerKmBrl": 5.5
+          },"suv": {
+            "name": "Premium SUV",
+            "brand": "Morrison First",
+            "cityFromBrl": 280,
+            "intercityPerKmBrl": 5.5,
+            "internationalPerKmBrl": 6.5
+          },"minivan": {
+            "name": "Minivan",
+            "brand": "Morrison Comfort",
+            "cityFromBrl": 360,
+            "intercityPerKmBrl": 7,
+            "internationalPerKmBrl": 8.5
+          },"van": {
+            "name": "Vans / minibus",
+            "brand": "Morrison Group",
+            "cityFromBrl": 520,
+            "intercityPerKmBrl": 9,
+            "internationalPerKmBrl": 11
+          }},
         "messages": {
           "pickFirst": "Pick the cities first",
           "sameCity": "Pick different cities",
           "notFound": "This route is priced case by case — message us.",
           "share": "Share this quote",
           "shareCopied": "Link copied",
-          "shareFailed": "Could not copy — please select manually"
+          "shareFailed": "Could not copy — please select manually",
+          "breakdownBase": "Base rate",
+          "breakdownDistance": "{km} km × R$ {rate}/km",
+          "breakdownNight": "Overnight window (22:00–05:00) +15 %",
+          "breakdownWeekend": "Weekend +10 %",
+          "breakdownIntl": "International leg +15 %",
+          "lockNote": "Price locked until confirmation, valid for 24 hours."
         },
         "whatsapp": "https://wa.me/5513996532915",
         "lang": "en"
@@ -790,6 +863,36 @@ Request page</a></li>
           <span>Florianópolis (FLN) → Balneário Camboriú</span>
           <span class="cmdk-meta num">95 km</span>
         </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/florianopolis-navegantes/" data-search="fln nvt Florianópolis (FLN) Navegantes (NVT)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Florianópolis (FLN) → Navegantes (NVT)</span>
+          <span class="cmdk-meta num">55 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/navegantes-balneario-camboriu/" data-search="nvt bnu Navegantes (NVT) Balneário Camboriú">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Navegantes (NVT) → Balneário Camboriú</span>
+          <span class="cmdk-meta num">18 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/florianopolis-curitiba/" data-search="fln cwb Florianópolis (FLN) Curitiba (CWB)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Florianópolis (FLN) → Curitiba (CWB)</span>
+          <span class="cmdk-meta num">290 km</span>
+        </a>
         <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/curitiba-sao-paulo/" data-search="cwb gru Curitiba (CWB) São Paulo (GRU)">
           
 <svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
@@ -820,35 +923,15 @@ Request page</a></li>
           <span>Porto Alegre (POA) → Florianópolis (FLN)</span>
           <span class="cmdk-meta num">480 km</span>
         </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/navegantes-balneario-camboriu/" data-search="nvt bnu Navegantes (NVT) Balneário Camboriú">
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/porto-alegre-punta-del-este/" data-search="poa pde Porto Alegre (POA) Punta del Este">
           
 <svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
   <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
 
-          <span>Navegantes (NVT) → Balneário Camboriú</span>
-          <span class="cmdk-meta num">25 km</span>
-        </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/florianopolis-navegantes/" data-search="fln nvt Florianópolis (FLN) Navegantes (NVT)">
-          
-<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
-  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
-
-          <span>Florianópolis (FLN) → Navegantes (NVT)</span>
-          <span class="cmdk-meta num">90 km</span>
-        </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/foz-do-iguacu-curitiba/" data-search="igr cwb Foz do Iguaçu (IGU) Curitiba (CWB)">
-          
-<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
-  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
-
-          <span>Foz do Iguaçu (IGU) → Curitiba (CWB)</span>
-          <span class="cmdk-meta num">640 km</span>
+          <span>Porto Alegre (POA) → Punta del Este</span>
+          <span class="cmdk-meta num">770 km</span>
         </a>
         <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/porto-alegre-montevideo/" data-search="poa mvd Porto Alegre (POA) Montevideo">
           
@@ -860,15 +943,15 @@ Request page</a></li>
           <span>Porto Alegre (POA) → Montevideo</span>
           <span class="cmdk-meta num">870 km</span>
         </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/porto-alegre-punta-del-este/" data-search="poa pde Porto Alegre (POA) Punta del Este">
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/foz-do-iguacu-curitiba/" data-search="cwb igr Curitiba (CWB) Foz do Iguaçu (IGU)">
           
 <svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
   <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
 
-          <span>Porto Alegre (POA) → Punta del Este</span>
-          <span class="cmdk-meta num">990 km</span>
+          <span>Curitiba (CWB) → Foz do Iguaçu (IGU)</span>
+          <span class="cmdk-meta num">640 km</span>
         </a>
         <a class="cmdk-item" data-cmdk-item href="/transferpages/en/routes/foz-do-iguacu-asuncion/" data-search="igr asu Foz do Iguaçu (IGU) Asunción">
           

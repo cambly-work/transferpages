@@ -1262,6 +1262,66 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://morrison-transfer.com/ru/routes/florianopolis-navegantes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/routes/florianopolis-navegantes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/routes/florianopolis-navegantes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/routes/florianopolis-navegantes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/routes/navegantes-balneario-camboriu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/routes/navegantes-balneario-camboriu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/routes/navegantes-balneario-camboriu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/routes/navegantes-balneario-camboriu/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/routes/florianopolis-curitiba/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/routes/florianopolis-curitiba/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/routes/florianopolis-curitiba/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/routes/florianopolis-curitiba/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://morrison-transfer.com/ru/routes/curitiba-sao-paulo/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1322,62 +1382,22 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/ru/routes/navegantes-balneario-camboriu/</loc>
+    <loc>https://morrison-transfer.com/ru/routes/porto-alegre-punta-del-este/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/pt/routes/navegantes-balneario-camboriu/</loc>
+    <loc>https://morrison-transfer.com/pt/routes/porto-alegre-punta-del-este/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/en/routes/navegantes-balneario-camboriu/</loc>
+    <loc>https://morrison-transfer.com/en/routes/porto-alegre-punta-del-este/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/es/routes/navegantes-balneario-camboriu/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/ru/routes/florianopolis-navegantes/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/pt/routes/florianopolis-navegantes/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/en/routes/florianopolis-navegantes/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/es/routes/florianopolis-navegantes/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/ru/routes/foz-do-iguacu-curitiba/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/pt/routes/foz-do-iguacu-curitiba/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/en/routes/foz-do-iguacu-curitiba/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://morrison-transfer.com/es/routes/foz-do-iguacu-curitiba/</loc>
+    <loc>https://morrison-transfer.com/es/routes/porto-alegre-punta-del-este/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1402,22 +1422,22 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/ru/routes/porto-alegre-punta-del-este/</loc>
+    <loc>https://morrison-transfer.com/ru/routes/foz-do-iguacu-curitiba/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/pt/routes/porto-alegre-punta-del-este/</loc>
+    <loc>https://morrison-transfer.com/pt/routes/foz-do-iguacu-curitiba/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/en/routes/porto-alegre-punta-del-este/</loc>
+    <loc>https://morrison-transfer.com/en/routes/foz-do-iguacu-curitiba/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://morrison-transfer.com/es/routes/porto-alegre-punta-del-este/</loc>
+    <loc>https://morrison-transfer.com/es/routes/foz-do-iguacu-curitiba/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -1,84 +1,85 @@
 # Routes data: cities + pairs with distance, duration, price range.
 # Used by quote calculator and SEO route landing pages.
 # Prices are reference ranges in BRL. TODO Tim: tune actual ranges.
+# country code drives the international-crossing surcharge in the quote engine.
 
 cities:
   - id: gru
+    country: BR
     name:
       ru: Сан-Паулу (GRU)
       pt: São Paulo (GRU)
       en: São Paulo (GRU)
-
       es: São Paulo (GRU)
   - id: gig
+    country: BR
     name:
       ru: Рио-де-Жанейро (GIG)
       pt: Rio de Janeiro (GIG)
       en: Rio de Janeiro (GIG)
-
       es: Rio de Janeiro (GIG)
   - id: cwb
+    country: BR
     name:
       ru: Куритиба (CWB)
       pt: Curitiba (CWB)
       en: Curitiba (CWB)
-
       es: Curitiba (CWB)
   - id: fln
+    country: BR
     name:
       ru: Флорианополис (FLN)
       pt: Florianópolis (FLN)
       en: Florianópolis (FLN)
-
       es: Florianópolis (FLN)
   - id: nvt
+    country: BR
     name:
       ru: Навегантес (NVT)
       pt: Navegantes (NVT)
       en: Navegantes (NVT)
-
       es: Navegantes (NVT)
   - id: poa
+    country: BR
     name:
       ru: Порту-Алегри (POA)
       pt: Porto Alegre (POA)
       en: Porto Alegre (POA)
-
       es: Porto Alegre (POA)
   - id: bnu
+    country: BR
     name:
       ru: Балнеариу-Камбориу
       pt: Balneário Camboriú
       en: Balneário Camboriú
-
       es: Balneário Camboriú
   - id: igr
+    country: BR
     name:
       ru: Фос-ду-Игуасу (IGU)
       pt: Foz do Iguaçu (IGU)
       en: Foz do Iguaçu (IGU)
-
       es: Foz do Iguaçu (IGU)
   - id: mvd
+    country: UY
     name:
       ru: Монтевидео
       pt: Montevidéu
       en: Montevideo
-
       es: Montevideo
   - id: pde
+    country: UY
     name:
       ru: Пунта-дель-Эсте
       pt: Punta del Este
       en: Punta del Este
-
       es: Punta del Este
   - id: asu
+    country: PY
     name:
       ru: Асунсьон
       pt: Assunção
       en: Asunción
-
       es: Asunción
 
 pairs:
@@ -89,66 +90,73 @@ pairs:
     priceMin: 450
     priceMax: 650
     slug: florianopolis-balneario-camboriu
+  - from: fln
+    to: nvt
+    km: 55
+    durationMin: 50
+    priceMin: 280
+    priceMax: 380
+    slug: florianopolis-navegantes
+  - from: nvt
+    to: bnu
+    km: 18
+    durationMin: 25
+    priceMin: 150
+    priceMax: 220
+    slug: navegantes-balneario-camboriu
+  - from: fln
+    to: cwb
+    km: 290
+    durationMin: 215
+    priceMin: 1200
+    priceMax: 1700
+    slug: florianopolis-curitiba
   - from: cwb
     to: gru
     km: 410
-    durationMin: 330
-    priceMin: 1900
-    priceMax: 2600
+    durationMin: 320
+    priceMin: 1800
+    priceMax: 2400
     slug: curitiba-sao-paulo
   - from: gru
     to: gig
     km: 430
     durationMin: 360
-    priceMin: 2100
-    priceMax: 2900
+    priceMin: 2000
+    priceMax: 2600
     slug: sao-paulo-rio-de-janeiro
   - from: poa
     to: fln
     km: 480
-    durationMin: 390
-    priceMin: 2200
-    priceMax: 3100
+    durationMin: 380
+    priceMin: 1900
+    priceMax: 2500
     slug: porto-alegre-florianopolis
-  - from: nvt
-    to: bnu
-    km: 25
-    durationMin: 25
-    priceMin: 220
-    priceMax: 320
-    slug: navegantes-balneario-camboriu
-  - from: fln
-    to: nvt
-    km: 90
-    durationMin: 75
-    priceMin: 420
-    priceMax: 600
-    slug: florianopolis-navegantes
-  - from: igr
-    to: cwb
-    km: 640
-    durationMin: 480
-    priceMin: 2800
-    priceMax: 3900
-    slug: foz-do-iguacu-curitiba
+  - from: poa
+    to: pde
+    km: 770
+    durationMin: 660
+    priceMin: 3800
+    priceMax: 4800
+    slug: porto-alegre-punta-del-este
   - from: poa
     to: mvd
     km: 870
     durationMin: 720
-    priceMin: 4500
-    priceMax: 6200
+    priceMin: 4200
+    priceMax: 5200
     slug: porto-alegre-montevideo
-  - from: poa
-    to: pde
-    km: 990
-    durationMin: 780
-    priceMin: 5000
-    priceMax: 7000
-    slug: porto-alegre-punta-del-este
+  - from: cwb
+    to: igr
+    km: 640
+    durationMin: 510
+    priceMin: 2700
+    priceMax: 3400
+    slug: foz-do-iguacu-curitiba
   - from: igr
     to: asu
     km: 330
-    durationMin: 300
-    priceMin: 1600
-    priceMax: 2300
+    durationMin: 270
+    priceMin: 2200
+    priceMax: 2900
     slug: foz-do-iguacu-asuncion

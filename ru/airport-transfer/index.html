@@ -318,8 +318,8 @@
 
 <section class="section section--bg-soft" id="calculator">
   <div class="container container--narrow">
-    <p class="kicker" style="text-align: center;">Оценка стоимости маршрута</p>
-    <h2 style="text-align: center;">Выберите города — получите ориентир по цене. Точная цена подтверждается перед выездом.</h2>
+    <p class="kicker" style="text-align: center;">Расчёт стоимости поездки</p>
+    <h2 style="text-align: center;">Выберите города и класс — получите цену, зафиксированную на 24 часа.</h2>
 
     <div class="calc-map" data-calc-map>
       <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
@@ -352,6 +352,18 @@
               x1="600" y1="345"
               x2="605" y2="320"/>
         <line class="map-line"
+              data-map-line="fln-nvt"
+              x1="600" y1="345"
+              x2="590" y2="300"/>
+        <line class="map-line"
+              data-map-line="nvt-bnu"
+              x1="590" y1="300"
+              x2="605" y2="320"/>
+        <line class="map-line"
+              data-map-line="fln-cwb"
+              x1="600" y1="345"
+              x2="550" y2="220"/>
+        <line class="map-line"
               data-map-line="cwb-gru"
               x1="550" y1="220"
               x2="725" y2="100"/>
@@ -364,25 +376,17 @@
               x1="430" y1="490"
               x2="600" y2="345"/>
         <line class="map-line"
-              data-map-line="nvt-bnu"
-              x1="590" y1="300"
-              x2="605" y2="320"/>
-        <line class="map-line"
-              data-map-line="fln-nvt"
-              x1="600" y1="345"
-              x2="590" y2="300"/>
-        <line class="map-line"
-              data-map-line="igr-cwb"
-              x1="220" y1="230"
-              x2="550" y2="220"/>
+              data-map-line="poa-pde"
+              x1="430" y1="490"
+              x2="200" y2="760"/>
         <line class="map-line"
               data-map-line="poa-mvd"
               x1="430" y1="490"
               x2="120" y2="760"/>
         <line class="map-line"
-              data-map-line="poa-pde"
-              x1="430" y1="490"
-              x2="200" y2="760"/>
+              data-map-line="cwb-igr"
+              x1="550" y1="220"
+              x2="220" y2="230"/>
         <line class="map-line"
               data-map-line="igr-asu"
               x1="220" y1="230"
@@ -515,6 +519,32 @@
           </select>
         </label>
       </div>
+      <fieldset class="calc-tier-fieldset">
+        <legend>Класс автомобиля</legend>
+        <div class="calc-tier-grid" role="radiogroup"><label class="calc-tier is-selected">
+            <input type="radio" name="tier" value="sedan" checked data-calc-tier>
+            <span class="calc-tier-brand">Morrison Business</span>
+            <span class="calc-tier-name">Бизнес-седан</span>
+            <span class="calc-tier-pax muted small">1–3 · R$ 4.5/km</span>
+          </label><label class="calc-tier">
+            <input type="radio" name="tier" value="suv" data-calc-tier>
+            <span class="calc-tier-brand">Morrison First</span>
+            <span class="calc-tier-name">Премиум-SUV</span>
+            <span class="calc-tier-pax muted small">1–4 · R$ 5.5/km</span>
+          </label><label class="calc-tier">
+            <input type="radio" name="tier" value="minivan" data-calc-tier>
+            <span class="calc-tier-brand">Morrison Comfort</span>
+            <span class="calc-tier-name">Минивэн</span>
+            <span class="calc-tier-pax muted small">4–7 · R$ 7/km</span>
+          </label><label class="calc-tier">
+            <input type="radio" name="tier" value="van" data-calc-tier>
+            <span class="calc-tier-brand">Morrison Group</span>
+            <span class="calc-tier-name">Vans / микроавтобус</span>
+            <span class="calc-tier-pax muted small">8–14 · R$ 9/km</span>
+          </label>
+        </div>
+      </fieldset>
+
       <div class="calc-row">
         <label class="field">
           <span>Пассажиры</span>
@@ -538,7 +568,7 @@
           </select>
         </label>
       </div>
-      <button type="submit" class="btn btn-dark btn-arrow calc-submit">Получить расчёт</button>
+      <button type="submit" class="btn btn-dark btn-arrow calc-submit">Рассчитать</button>
 
       <div class="calc-result" data-calc-result hidden>
         <div class="calc-result-state" data-calc-state-error hidden></div>
@@ -547,9 +577,13 @@
           <div class="calc-result-grid">
             <div><dt>Расстояние</dt><dd data-calc-distance class="num"></dd></div>
             <div><dt>Время в пути</dt><dd data-calc-duration class="num"></dd></div>
-            <div><dt>Ориентир</dt><dd data-calc-price class="num"></dd></div>
+            <div><dt>Стоимость</dt><dd data-calc-price class="num"></dd></div>
           </div>
-          <p class="muted small">Тариф включает водителя, топливо, платные дороги.</p>
+          <details class="calc-breakdown">
+            <summary>Состав цены</summary>
+            <ul class="calc-breakdown-list" data-calc-breakdown></ul>
+          </details>
+          <p class="muted small">Цена зафиксирована до подтверждения, действительна 24 часа.</p>
           <div class="calc-result-actions">
             <a class="btn btn-dark btn-arrow" data-calc-confirm href="https://wa.me/5513996532915" target="_blank" rel="noopener">Подтвердить через WhatsApp</a>
             <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">Поделиться расчётом</button>
@@ -570,86 +604,125 @@
             "priceMax": 650,
             "slug": "florianopolis-balneario-camboriu"
           },{
+            "from": "fln",
+            "to": "nvt",
+            "km": 55,
+            "durationMin": 50,
+            "priceMin": 280,
+            "priceMax": 380,
+            "slug": "florianopolis-navegantes"
+          },{
+            "from": "nvt",
+            "to": "bnu",
+            "km": 18,
+            "durationMin": 25,
+            "priceMin": 150,
+            "priceMax": 220,
+            "slug": "navegantes-balneario-camboriu"
+          },{
+            "from": "fln",
+            "to": "cwb",
+            "km": 290,
+            "durationMin": 215,
+            "priceMin": 1200,
+            "priceMax": 1700,
+            "slug": "florianopolis-curitiba"
+          },{
             "from": "cwb",
             "to": "gru",
             "km": 410,
-            "durationMin": 330,
-            "priceMin": 1900,
-            "priceMax": 2600,
+            "durationMin": 320,
+            "priceMin": 1800,
+            "priceMax": 2400,
             "slug": "curitiba-sao-paulo"
           },{
             "from": "gru",
             "to": "gig",
             "km": 430,
             "durationMin": 360,
-            "priceMin": 2100,
-            "priceMax": 2900,
+            "priceMin": 2000,
+            "priceMax": 2600,
             "slug": "sao-paulo-rio-de-janeiro"
           },{
             "from": "poa",
             "to": "fln",
             "km": 480,
-            "durationMin": 390,
-            "priceMin": 2200,
-            "priceMax": 3100,
+            "durationMin": 380,
+            "priceMin": 1900,
+            "priceMax": 2500,
             "slug": "porto-alegre-florianopolis"
           },{
-            "from": "nvt",
-            "to": "bnu",
-            "km": 25,
-            "durationMin": 25,
-            "priceMin": 220,
-            "priceMax": 320,
-            "slug": "navegantes-balneario-camboriu"
-          },{
-            "from": "fln",
-            "to": "nvt",
-            "km": 90,
-            "durationMin": 75,
-            "priceMin": 420,
-            "priceMax": 600,
-            "slug": "florianopolis-navegantes"
-          },{
-            "from": "igr",
-            "to": "cwb",
-            "km": 640,
-            "durationMin": 480,
-            "priceMin": 2800,
-            "priceMax": 3900,
-            "slug": "foz-do-iguacu-curitiba"
+            "from": "poa",
+            "to": "pde",
+            "km": 770,
+            "durationMin": 660,
+            "priceMin": 3800,
+            "priceMax": 4800,
+            "slug": "porto-alegre-punta-del-este"
           },{
             "from": "poa",
             "to": "mvd",
             "km": 870,
             "durationMin": 720,
-            "priceMin": 4500,
-            "priceMax": 6200,
+            "priceMin": 4200,
+            "priceMax": 5200,
             "slug": "porto-alegre-montevideo"
           },{
-            "from": "poa",
-            "to": "pde",
-            "km": 990,
-            "durationMin": 780,
-            "priceMin": 5000,
-            "priceMax": 7000,
-            "slug": "porto-alegre-punta-del-este"
+            "from": "cwb",
+            "to": "igr",
+            "km": 640,
+            "durationMin": 510,
+            "priceMin": 2700,
+            "priceMax": 3400,
+            "slug": "foz-do-iguacu-curitiba"
           },{
             "from": "igr",
             "to": "asu",
             "km": 330,
-            "durationMin": 300,
-            "priceMin": 1600,
-            "priceMax": 2300,
+            "durationMin": 270,
+            "priceMin": 2200,
+            "priceMax": 2900,
             "slug": "foz-do-iguacu-asuncion"
           }],
-        "cities": {"gru": "Сан-Паулу (GRU)","gig": "Рио-де-Жанейро (GIG)","cwb": "Куритиба (CWB)","fln": "Флорианополис (FLN)","nvt": "Навегантес (NVT)","poa": "Порту-Алегри (POA)","bnu": "Балнеариу-Камбориу","igr": "Фос-ду-Игуасу (IGU)","mvd": "Монтевидео","pde": "Пунта-дель-Эсте","asu": "Асунсьон"},
+        "cities": {"gru": { "name": "Сан-Паулу (GRU)", "country": "BR" },"gig": { "name": "Рио-де-Жанейро (GIG)", "country": "BR" },"cwb": { "name": "Куритиба (CWB)", "country": "BR" },"fln": { "name": "Флорианополис (FLN)", "country": "BR" },"nvt": { "name": "Навегантес (NVT)", "country": "BR" },"poa": { "name": "Порту-Алегри (POA)", "country": "BR" },"bnu": { "name": "Балнеариу-Камбориу", "country": "BR" },"igr": { "name": "Фос-ду-Игуасу (IGU)", "country": "BR" },"mvd": { "name": "Монтевидео", "country": "UY" },"pde": { "name": "Пунта-дель-Эсте", "country": "UY" },"asu": { "name": "Асунсьон", "country": "PY" }},
+        "tiers": {"sedan": {
+            "name": "Бизнес-седан",
+            "brand": "Morrison Business",
+            "cityFromBrl": 220,
+            "intercityPerKmBrl": 4.5,
+            "internationalPerKmBrl": 5.5
+          },"suv": {
+            "name": "Премиум-SUV",
+            "brand": "Morrison First",
+            "cityFromBrl": 280,
+            "intercityPerKmBrl": 5.5,
+            "internationalPerKmBrl": 6.5
+          },"minivan": {
+            "name": "Минивэн",
+            "brand": "Morrison Comfort",
+            "cityFromBrl": 360,
+            "intercityPerKmBrl": 7,
+            "internationalPerKmBrl": 8.5
+          },"van": {
+            "name": "Vans / микроавтобус",
+            "brand": "Morrison Group",
+            "cityFromBrl": 520,
+            "intercityPerKmBrl": 9,
+            "internationalPerKmBrl": 11
+          }},
         "messages": {
           "pickFirst": "Сначала выберите города",
           "sameCity": "Выберите разные города",
           "notFound": "На этот маршрут расчёт согласовывается отдельно — напишите нам.",
           "share": "Поделиться расчётом",
           "shareCopied": "Ссылка скопирована",
-          "shareFailed": "Не удалось скопировать — выделите вручную"
+          "shareFailed": "Не удалось скопировать — выделите вручную",
+          "breakdownBase": "Базовая ставка",
+          "breakdownDistance": "{km} км × R$ {rate}/км",
+          "breakdownNight": "Ночное окно (22:00–05:00) +15 %",
+          "breakdownWeekend": "Выходной +10 %",
+          "breakdownIntl": "Международное плечо +15 %",
+          "lockNote": "Цена зафиксирована до подтверждения, действительна 24 часа."
         },
         "whatsapp": "https://wa.me/5513996532915",
         "lang": "ru"
@@ -886,6 +959,36 @@ hello@morrison-transfer.com</a> <button type="button" class="copy-btn copy-btn--
           <span>Флорианополис (FLN) → Балнеариу-Камбориу</span>
           <span class="cmdk-meta num">95 km</span>
         </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/florianopolis-navegantes/" data-search="fln nvt Флорианополис (FLN) Навегантес (NVT)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Флорианополис (FLN) → Навегантес (NVT)</span>
+          <span class="cmdk-meta num">55 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/navegantes-balneario-camboriu/" data-search="nvt bnu Навегантес (NVT) Балнеариу-Камбориу">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Навегантес (NVT) → Балнеариу-Камбориу</span>
+          <span class="cmdk-meta num">18 km</span>
+        </a>
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/florianopolis-curitiba/" data-search="fln cwb Флорианополис (FLN) Куритиба (CWB)">
+          
+<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
+  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
+  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+
+          <span>Флорианополис (FLN) → Куритиба (CWB)</span>
+          <span class="cmdk-meta num">290 km</span>
+        </a>
         <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/curitiba-sao-paulo/" data-search="cwb gru Куритиба (CWB) Сан-Паулу (GRU)">
           
 <svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
@@ -916,35 +1019,15 @@ hello@morrison-transfer.com</a> <button type="button" class="copy-btn copy-btn--
           <span>Порту-Алегри (POA) → Флорианополис (FLN)</span>
           <span class="cmdk-meta num">480 km</span>
         </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/navegantes-balneario-camboriu/" data-search="nvt bnu Навегантес (NVT) Балнеариу-Камбориу">
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/porto-alegre-punta-del-este/" data-search="poa pde Порту-Алегри (POA) Пунта-дель-Эсте">
           
 <svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
   <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
 
-          <span>Навегантес (NVT) → Балнеариу-Камбориу</span>
-          <span class="cmdk-meta num">25 km</span>
-        </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/florianopolis-navegantes/" data-search="fln nvt Флорианополис (FLN) Навегантес (NVT)">
-          
-<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
-  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
-
-          <span>Флорианополис (FLN) → Навегантес (NVT)</span>
-          <span class="cmdk-meta num">90 km</span>
-        </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/foz-do-iguacu-curitiba/" data-search="igr cwb Фос-ду-Игуасу (IGU) Куритиба (CWB)">
-          
-<svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
-  <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
-  <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
-
-          <span>Фос-ду-Игуасу (IGU) → Куритиба (CWB)</span>
-          <span class="cmdk-meta num">640 km</span>
+          <span>Порту-Алегри (POA) → Пунта-дель-Эсте</span>
+          <span class="cmdk-meta num">770 km</span>
         </a>
         <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/porto-alegre-montevideo/" data-search="poa mvd Порту-Алегри (POA) Монтевидео">
           
@@ -956,15 +1039,15 @@ hello@morrison-transfer.com</a> <button type="button" class="copy-btn copy-btn--
           <span>Порту-Алегри (POA) → Монтевидео</span>
           <span class="cmdk-meta num">870 km</span>
         </a>
-        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/porto-alegre-punta-del-este/" data-search="poa pde Порту-Алегри (POA) Пунта-дель-Эсте">
+        <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/foz-do-iguacu-curitiba/" data-search="cwb igr Куритиба (CWB) Фос-ду-Игуасу (IGU)">
           
 <svg class="icon icon--route" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M 5 19 L 5 5 L 12 12 L 19 5 L 19 19"/>
   <circle cx="5" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="19" cy="5" r="1.4" fill="currentColor" stroke="none"/>
   <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
 
-          <span>Порту-Алегри (POA) → Пунта-дель-Эсте</span>
-          <span class="cmdk-meta num">990 km</span>
+          <span>Куритиба (CWB) → Фос-ду-Игуасу (IGU)</span>
+          <span class="cmdk-meta num">640 km</span>
         </a>
         <a class="cmdk-item" data-cmdk-item href="/transferpages/ru/routes/foz-do-iguacu-asuncion/" data-search="igr asu Фос-ду-Игуасу (IGU) Асунсьон">
           

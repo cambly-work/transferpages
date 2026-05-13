@@ -300,8 +300,8 @@ ru:
     manage: Подробнее
     link: Политика конфиденциальности
   calc:
-    title: Оценка стоимости маршрута
-    subtitle: Выберите города — получите ориентир по цене. Точная цена подтверждается перед выездом.
+    title: Расчёт стоимости поездки
+    subtitle: Выберите города и класс — получите цену, зафиксированную на 24 часа.
     from: Откуда
     to: Куда
     passengers: Пассажиры
@@ -309,11 +309,15 @@ ru:
     luggageStandard: Стандартный (1 место/чел.)
     luggageExtra: Увеличенный (>1 место/чел.)
     luggageOversized: Крупногабаритный (велосипеды, сёрф)
-    cta: Получить расчёт
-    result: Ориентир
+    tier: Класс автомобиля
+    when: Когда поездка
+    whenNow: Сейчас
+    whenScheduled: По расписанию
+    cta: Рассчитать
+    result: Стоимость
     distance: Расстояние
     duration: Время в пути
-    perKm: Тариф включает водителя, топливо, платные дороги.
+    perKm: Включено водитель, топливо, платные дороги. Цена держится 24 часа.
     confirm: Подтвердить через WhatsApp
     pickFirst: Сначала выберите города
     sameCity: Выберите разные города
@@ -321,6 +325,15 @@ ru:
     share: Поделиться расчётом
     shareCopied: Ссылка скопирована
     shareFailed: Не удалось скопировать — выделите вручную
+    breakdownTitle: Состав цены
+    breakdownBase: Базовая ставка
+    breakdownDistance: "{km} км × R$ {rate}/км"
+    breakdownNight: "Ночное окно (22:00–05:00) +15 %"
+    breakdownWeekend: "Выходной +10 %"
+    breakdownIntl: "Международное плечо +15 %"
+    breakdownAirport: "Аэропортовая встреча с трекингом"
+    lockNote: "Цена зафиксирована до подтверждения, действительна 24 часа."
+    estimate: Точная сумма подтверждается письменно после брифа.
   brief:
     title: Бриф заявки
     subtitle: 60 секунд — и у нас есть всё для расчёта. Ничего лишнего.
@@ -766,8 +779,8 @@ pt:
     manage: Saber mais
     link: Política de Privacidade
   calc:
-    title: Estimativa de preço da rota
-    subtitle: Escolha as cidades — receba uma referência de preço. O valor exato é confirmado antes da partida.
+    title: Cotação da viagem
+    subtitle: Escolha as cidades e a classe — receba um preço travado por 24 horas.
     from: De onde
     to: Para onde
     passengers: Passageiros
@@ -775,18 +788,31 @@ pt:
     luggageStandard: Padrão (1 peça/pessoa)
     luggageExtra: Ampliado (>1 peça/pessoa)
     luggageOversized: Volume grande (bicicletas, pranchas)
-    cta: Obter estimativa
-    result: Referência
+    tier: Classe do veículo
+    when: Quando viajar
+    whenNow: Agora
+    whenScheduled: Em data marcada
+    cta: Calcular
+    result: Preço
     distance: Distância
     duration: Duração
-    perKm: O preço inclui motorista, combustível, pedágios.
+    perKm: Inclui motorista, combustível e pedágios. Preço vale por 24 horas.
     confirm: Confirmar pelo WhatsApp
     pickFirst: Selecione as cidades primeiro
     sameCity: Selecione cidades diferentes
     notFound: Esta rota é cotada caso a caso — escreva pra gente.
-    share: Compartilhar estimativa
+    share: Compartilhar cotação
     shareCopied: Link copiado
     shareFailed: Não foi possível copiar — selecione manualmente
+    breakdownTitle: Composição do preço
+    breakdownBase: Tarifa base
+    breakdownDistance: "{km} km × R$ {rate}/km"
+    breakdownNight: "Janela noturna (22:00–05:00) +15 %"
+    breakdownWeekend: "Fim de semana +10 %"
+    breakdownIntl: "Trecho internacional +15 %"
+    breakdownAirport: "Recepção em aeroporto com tracking"
+    lockNote: "Preço travado até a confirmação, válido por 24 horas."
+    estimate: O valor exato é confirmado por escrito após o briefing.
   brief:
     title: Brief de solicitação
     subtitle: 60 segundos e temos tudo para calcular. Nada de excesso.
@@ -1232,8 +1258,8 @@ en:
     manage: Learn more
     link: Privacy Policy
   calc:
-    title: Route price estimate
-    subtitle: Pick cities — get a reference price. The exact fare is confirmed before departure.
+    title: Trip quote
+    subtitle: Pick cities and class — get a price locked for 24 hours.
     from: From
     to: To
     passengers: Passengers
@@ -1241,11 +1267,15 @@ en:
     luggageStandard: Standard (1 piece / person)
     luggageExtra: Extra (>1 piece / person)
     luggageOversized: Oversized (bikes, surfboards)
-    cta: Get estimate
-    result: Reference
+    tier: Vehicle class
+    when: When you travel
+    whenNow: Now
+    whenScheduled: Scheduled
+    cta: Get quote
+    result: Quote
     distance: Distance
     duration: Duration
-    perKm: Price includes driver, fuel, tolls.
+    perKm: Includes driver, fuel, tolls. Price holds for 24 hours.
     confirm: Confirm via WhatsApp
     pickFirst: Pick the cities first
     sameCity: Pick different cities
@@ -1253,6 +1283,15 @@ en:
     share: Share this quote
     shareCopied: Link copied
     shareFailed: Could not copy — please select manually
+    breakdownTitle: Price breakdown
+    breakdownBase: Base rate
+    breakdownDistance: "{km} km × R$ {rate}/km"
+    breakdownNight: "Overnight window (22:00–05:00) +15 %"
+    breakdownWeekend: "Weekend +10 %"
+    breakdownIntl: "International leg +15 %"
+    breakdownAirport: "Airport pickup with flight tracking"
+    lockNote: "Price locked until confirmation, valid for 24 hours."
+    estimate: The exact amount is confirmed in writing after the briefing.
   brief:
     title: Request brief
     subtitle: 60 seconds and we have everything we need to quote. No fluff.
@@ -1698,8 +1737,8 @@ es:
     loadingPdf: "Imprimiendo brief…"
     loadingCalc: "Calculando la ruta más rápida…"
   calc:
-    title: Estimación de precio de la ruta
-    subtitle: Elige las ciudades — recibe un precio de referencia. El valor exacto se confirma antes de la salida.
+    title: Cotización del viaje
+    subtitle: Elige las ciudades y la clase — recibe un precio fijado por 24 horas.
     from: Desde
     to: Hasta
     passengers: Pasajeros
@@ -1707,11 +1746,15 @@ es:
     luggageStandard: Estándar (1 pieza/persona)
     luggageExtra: Ampliado (>1 pieza/persona)
     luggageOversized: Sobredimensionado (bicicletas, tablas)
-    cta: Obtener estimación
-    result: Referencia
+    tier: Clase de vehículo
+    when: Cuándo viajas
+    whenNow: Ahora
+    whenScheduled: Programado
+    cta: Calcular
+    result: Precio
     distance: Distancia
     duration: Duración
-    perKm: El precio incluye conductor, combustible, peajes.
+    perKm: Incluye conductor, combustible, peajes. El precio se mantiene 24 horas.
     confirm: Confirmar por WhatsApp
     pickFirst: Selecciona primero las ciudades
     sameCity: Selecciona ciudades distintas
@@ -1719,6 +1762,15 @@ es:
     share: Compartir esta cotización
     shareCopied: Enlace copiado
     shareFailed: No se pudo copiar — selecciona manualmente
+    breakdownTitle: Desglose del precio
+    breakdownBase: Tarifa base
+    breakdownDistance: "{km} km × R$ {rate}/km"
+    breakdownNight: "Ventana nocturna (22:00–05:00) +15 %"
+    breakdownWeekend: "Fin de semana +10 %"
+    breakdownIntl: "Tramo internacional +15 %"
+    breakdownAirport: "Recepción en aeropuerto con tracking"
+    lockNote: "Precio fijado hasta la confirmación, válido por 24 horas."
+    estimate: El monto exacto se confirma por escrito tras el briefing.
   brief:
     title: Brief de solicitud
     subtitle: 60 segundos y tenemos todo para cotizar. Nada de relleno.

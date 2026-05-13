@@ -85,6 +85,24 @@
           </select>
         </label>
       </div>
+      <fieldset class="calc-tier-fieldset">
+        <legend>{{ t.calc.tier }}</legend>
+        <div class="calc-tier-grid" role="radiogroup">
+          {%- for tier in pricing.tiers -%}
+          {%- set tierName = tier.nameEn -%}
+          {%- if lang == "ru" -%}{%- set tierName = tier.nameRu -%}{%- endif -%}
+          {%- if lang == "pt" -%}{%- set tierName = tier.namePt -%}{%- endif -%}
+          {%- if lang == "es" -%}{%- set tierName = tier.nameEs -%}{%- endif -%}
+          <label class="calc-tier{% if tier.id == 'sedan' %} is-selected{% endif %}">
+            <input type="radio" name="tier" value="{{ tier.id }}"{% if tier.id == 'sedan' %} checked{% endif %} data-calc-tier>
+            <span class="calc-tier-brand">{{ fleet.classes[loop.index0].tier }}</span>
+            <span class="calc-tier-name">{{ tierName }}</span>
+            <span class="calc-tier-pax muted small">{{ tier.pax }} · R$ {{ tier.intercityPerKmBrl }}/km</span>
+          </label>
+          {%- endfor %}
+        </div>
+      </fieldset>
+
       <div class="calc-row">
         <label class="field">
           <span>{{ t.calc.passengers }}</span>
@@ -119,7 +137,11 @@
             <div><dt>{{ t.calc.duration }}</dt><dd data-calc-duration class="num"></dd></div>
             <div><dt>{{ t.calc.result }}</dt><dd data-calc-price class="num"></dd></div>
           </div>
-          <p class="muted small">{{ t.calc.perKm }}</p>
+          <details class="calc-breakdown">
+            <summary>{{ t.calc.breakdownTitle }}</summary>
+            <ul class="calc-breakdown-list" data-calc-breakdown></ul>
+          </details>
+          <p class="muted small">{{ t.calc.lockNote }}</p>
           <div class="calc-result-actions">
             <a class="btn btn-dark btn-arrow" data-calc-confirm href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.calc.confirm }}</a>
             <button type="button" class="btn btn-secondary" data-calc-share aria-live="polite">{{ t.calc.share }}</button>
@@ -146,16 +168,37 @@
         ],
         "cities": {
           {%- for city in routes.cities -%}
-          "{{ city.id }}": "{{ city.name[lang] }}"{% if not loop.last %},{% endif %}
+          "{{ city.id }}": { "name": "{{ city.name[lang] }}", "country": "{{ city.country }}" }{% if not loop.last %},{% endif %}
+          {%- endfor -%}
+        },
+        "tiers": {
+          {%- for tier in pricing.tiers -%}
+          {%- set tierName = tier.nameEn -%}
+          {%- if lang == "ru" -%}{%- set tierName = tier.nameRu -%}{%- endif -%}
+          {%- if lang == "pt" -%}{%- set tierName = tier.namePt -%}{%- endif -%}
+          {%- if lang == "es" -%}{%- set tierName = tier.nameEs -%}{%- endif -%}
+          "{{ tier.id }}": {
+            "name": {{ tierName | dump | safe }},
+            "brand": {{ fleet.classes[loop.index0].tier | dump | safe }},
+            "cityFromBrl": {{ tier.cityFromBrl }},
+            "intercityPerKmBrl": {{ tier.intercityPerKmBrl }},
+            "internationalPerKmBrl": {{ tier.internationalPerKmBrl }}
+          }{% if not loop.last %},{% endif %}
           {%- endfor -%}
         },
         "messages": {
-          "pickFirst": "{{ t.calc.pickFirst }}",
-          "sameCity": "{{ t.calc.sameCity }}",
-          "notFound": "{{ t.calc.notFound }}",
-          "share": "{{ t.calc.share }}",
-          "shareCopied": "{{ t.calc.shareCopied }}",
-          "shareFailed": "{{ t.calc.shareFailed }}"
+          "pickFirst": {{ t.calc.pickFirst | dump | safe }},
+          "sameCity": {{ t.calc.sameCity | dump | safe }},
+          "notFound": {{ t.calc.notFound | dump | safe }},
+          "share": {{ t.calc.share | dump | safe }},
+          "shareCopied": {{ t.calc.shareCopied | dump | safe }},
+          "shareFailed": {{ t.calc.shareFailed | dump | safe }},
+          "breakdownBase": {{ t.calc.breakdownBase | dump | safe }},
+          "breakdownDistance": {{ t.calc.breakdownDistance | dump | safe }},
+          "breakdownNight": {{ t.calc.breakdownNight | dump | safe }},
+          "breakdownWeekend": {{ t.calc.breakdownWeekend | dump | safe }},
+          "breakdownIntl": {{ t.calc.breakdownIntl | dump | safe }},
+          "lockNote": {{ t.calc.lockNote | dump | safe }}
         },
         "whatsapp": "{{ site.contacts.whatsappUrl }}",
         "lang": "{{ lang }}"

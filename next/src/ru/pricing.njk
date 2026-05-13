@@ -22,8 +22,11 @@ breadcrumbs:
         <thead>
           <tr>
             <th></th>
-            {%- for tier in pricing.tiers %}
-            <th>{{ tier.nameRu }}</th>
+            {%- for tier in pricing.tiers -%}
+            <th>
+              <span class="pricing-th-brand">{{ fleet.classes[loop.index0].tier }}</span>
+              <span class="pricing-th-name">{{ tier.nameRu }}</span>
+            </th>
             {%- endfor %}
           </tr>
         </thead>

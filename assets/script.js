@@ -39,7 +39,7 @@
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload),
       });
-      return { ok: res.ok, status: res.status };
+      return { ok: res.ok, status: res.status, response: res };
     } catch (err) {
       return { ok: false, reason: 'network', error: err };
     }
@@ -1230,32 +1230,130 @@
         stateOk.hidden = true;
       };
 
+      const getCity = (id) => {
+        const c = data.cities?.[id];
+        if (!c) return null;
+        return typeof c === 'string' ? { name: c, country: 'BR' } : c;
+      };
+
+      const getTier = () => {
+        const checked = calculator.querySelector('[data-calc-tier]:checked');
+        const id = checked?.value || 'sedan';
+        return data.tiers?.[id] ? { id, ...data.tiers[id] } : null;
+      };
+
+      const breakdownEl = calculator.querySelector('[data-calc-breakdown]');
+      const formatBRL = (n) => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
+
+      // Quote engine v2 — produces concrete price (not range).
+      // base = km × per-km rate (intercity or international based on country).
+      // Modifiers compound on top: night window (22:00–05:00) +15 %, weekend +10 %.
+      // Result rounded to nearest R$ 10.
+      const computeQuote = (pair, tier, opts = {}) => {
+        const from = getCity(fromSel.value);
+        const to = getCity(toSel.value);
+        const isIntl = from && to && from.country !== to.country;
+        const rate = isIntl ? tier.internationalPerKmBrl : tier.intercityPerKmBrl;
+        const base = pair.km * rate;
+        const now = opts.now || new Date();
+        const hour = now.getHours();
+        const isNight = hour >= 22 || hour < 5;
+        const dow = now.getDay();
+        const isWeekend = dow === 0 || dow === 6;
+        let multiplier = 1;
+        const lines = [{
+          label: (data.messages.breakdownDistance || '{km} km × R$ {rate}/km').replace('{km}', pair.km).replace('{rate}', rate.toFixed(1)),
+          amount: base,
+        }];
+        if (isNight) {
+          multiplier *= 1.15;
+          lines.push({ label: data.messages.breakdownNight, amount: base * 0.15 });
+        }
+        if (isWeekend) {
+          multiplier *= 1.10;
+          lines.push({ label: data.messages.breakdownWeekend, amount: base * 0.10 });
+        }
+        if (isIntl) {
+          lines.push({ label: data.messages.breakdownIntl, amount: 0, note: true });
+        }
+        const total = Math.round((base * multiplier) / 10) * 10;
+        return { total, lines, isIntl, isNight, isWeekend, rate };
+      };
+
+      const renderBreakdown = (lines) => {
+        if (!breakdownEl) return;
+        breakdownEl.innerHTML = '';
+        lines.forEach((line) => {
+          const li = document.createElement('li');
+          li.className = 'calc-breakdown-row';
+          const label = document.createElement('span');
+          label.textContent = line.label;
+          const amount = document.createElement('span');
+          amount.className = 'num';
+          amount.textContent = line.note ? '—' : (line.amount > 0 ? '+ ' + formatBRL(line.amount) : formatBRL(line.amount));
+          li.appendChild(label);
+          li.appendChild(amount);
+          breakdownEl.appendChild(li);
+        });
+      };
+
       const showResult = (pair) => {
         result.hidden = false;
         stateError.hidden = true;
         stateOk.hidden = false;
-        const fromName = data.cities[fromSel.value];
-        const toName = data.cities[toSel.value];
-        routeNameEl.textContent = `${fromName} → ${toName}`;
+        const from = getCity(fromSel.value);
+        const to = getCity(toSel.value);
+        const fromName = from?.name || fromSel.value;
+        const toName = to?.name || toSel.value;
+        const tier = getTier();
+        routeNameEl.textContent = `${fromName} → ${toName}${tier ? ' · ' + tier.brand : ''}`;
         distEl.textContent = `${pair.km} km`;
         durEl.textContent = formatDuration(pair.durationMin, data.lang);
-        priceEl.textContent = `R$ ${pair.priceMin}–${pair.priceMax}`;
 
+        let quote = null;
+        if (tier) {
+          quote = computeQuote(pair, tier);
+          priceEl.textContent = formatBRL(quote.total);
+          renderBreakdown(quote.lines);
+        } else {
+          priceEl.textContent = `R$ ${pair.priceMin}–${pair.priceMax}`;
+        }
+
+        const priceForMsg = quote ? formatBRL(quote.total) : `R$ ${pair.priceMin}–${pair.priceMax}`;
+        const brandLabel = tier?.brand || '';
         const msg = data.lang === 'pt'
-          ? `Olá! Quero um orçamento para ${fromName} → ${toName}. ${paxSel.value} passageiro(s), bagagem ${luggageSel.value}.`
+          ? `Olá! Cotação para ${fromName} → ${toName}. ${brandLabel}, ${paxSel.value} passageiro(s), bagagem ${luggageSel.value}. Calculado: ${priceForMsg}.`
           : data.lang === 'ru'
-          ? `Здравствуйте! Прошу расчёт на маршрут ${fromName} → ${toName}. Пассажиров: ${paxSel.value}, багаж: ${luggageSel.value}.`
-          : `Hello! I'd like a quote for ${fromName} → ${toName}. ${paxSel.value} passenger(s), luggage: ${luggageSel.value}.`;
+          ? `Здравствуйте! Расчёт ${fromName} → ${toName}. Класс: ${brandLabel}, пассажиров: ${paxSel.value}, багаж: ${luggageSel.value}. По калькулятору: ${priceForMsg}.`
+          : data.lang === 'es'
+          ? `Hola! Cotización ${fromName} → ${toName}. Clase: ${brandLabel}, ${paxSel.value} pasajero(s), equipaje: ${luggageSel.value}. Calculado: ${priceForMsg}.`
+          : `Hello! Quote ${fromName} → ${toName}. Class: ${brandLabel}, ${paxSel.value} passenger(s), luggage: ${luggageSel.value}. Calculated: ${priceForMsg}.`;
         confirmBtn.href = `${data.whatsapp}?text=${encodeURIComponent(msg)}`;
 
-        trackEvent('calculator_estimate', {
+        trackEvent('calculator_quote', {
           route_slug: pair.slug,
           from: fromSel.value,
           to: toSel.value,
+          tier: tier?.id || 'sedan',
           pax: paxSel.value,
           luggage: luggageSel.value,
+          price: quote?.total || null,
         });
       };
+
+      // Tier picker — visual sync + re-quote
+      calculator.querySelectorAll('[data-calc-tier]').forEach((radio) => {
+        radio.addEventListener('change', () => {
+          calculator.querySelectorAll('.calc-tier').forEach((el) => {
+            const r = el.querySelector('[data-calc-tier]');
+            el.classList.toggle('is-selected', !!r?.checked);
+          });
+          if (!result.hidden && stateOk.hidden === false) {
+            const pair = findPair(fromSel.value, toSel.value);
+            if (pair) showResult(pair);
+          }
+        });
+      });
 
       // Share-quote button + URL-params auto-fill
       const shareBtn = calculator.querySelector('[data-calc-share]');
@@ -1364,8 +1462,8 @@
           const doc = new jsPDF({ unit: 'pt', format: 'a4' });
           const pageW = doc.internal.pageSize.getWidth();
           const margin = 56;
-          const fromName = data.cities[fromSel.value];
-          const toName = data.cities[toSel.value];
+          const fromName = getCity(fromSel.value)?.name || fromSel.value;
+          const toName = getCity(toSel.value)?.name || toSel.value;
 
           doc.setFont('helvetica', 'bold');
           doc.setFontSize(20);
@@ -1384,18 +1482,24 @@
           doc.text(`${fromName}  →  ${toName}`, margin, 140);
 
           const labelsByLang = {
-            ru: { dist: 'Расстояние', dur: 'Время в пути', price: 'Ориентир по цене', pax: 'Пассажиры', luggage: 'Багаж', note: 'Точная цена и класс машины — после согласования через WhatsApp.' },
-            pt: { dist: 'Distância', dur: 'Duração', price: 'Preço de referência', pax: 'Passageiros', luggage: 'Bagagem', note: 'Preço exato e classe do veículo — após confirmação pelo WhatsApp.' },
-            en: { dist: 'Distance', dur: 'Duration', price: 'Reference price', pax: 'Passengers', luggage: 'Luggage', note: 'Exact price and vehicle class — after WhatsApp confirmation.' },
+            ru: { dist: 'Расстояние', dur: 'Время в пути', price: 'Цена по калькулятору', tier: 'Класс', pax: 'Пассажиры', luggage: 'Багаж', note: 'Цена зафиксирована на 24 часа. Финальное подтверждение — после брифа в WhatsApp.' },
+            pt: { dist: 'Distância', dur: 'Duração', price: 'Preço calculado', tier: 'Classe', pax: 'Passageiros', luggage: 'Bagagem', note: 'Preço travado por 24 horas. Confirmação final após o briefing no WhatsApp.' },
+            en: { dist: 'Distance', dur: 'Duration', price: 'Calculated price', tier: 'Class', pax: 'Passengers', luggage: 'Luggage', note: 'Price locked for 24 hours. Final confirmation after WhatsApp briefing.' },
+            es: { dist: 'Distancia', dur: 'Duración', price: 'Precio calculado', tier: 'Clase', pax: 'Pasajeros', luggage: 'Equipaje', note: 'Precio fijado por 24 horas. Confirmación final tras el briefing en WhatsApp.' },
           };
           const L = labelsByLang[data.lang] || labelsByLang.en;
+          const tier = getTier();
+          const pair = lastPair;
+          const quote = tier ? computeQuote(pair, tier) : null;
+          const priceStr = quote ? formatBRL(quote.total) : `R$ ${pair.priceMin}–${pair.priceMax}`;
           doc.setFont('helvetica', 'normal');
           doc.setFontSize(11);
           let y = 180;
           const rows = [
             [L.dist, `${lastPair.km} km`],
             [L.dur, `${Math.floor(lastPair.durationMin / 60)}h ${lastPair.durationMin % 60}min`],
-            [L.price, `R$ ${lastPair.priceMin}–${lastPair.priceMax}`],
+            [L.tier, tier?.brand || '—'],
+            [L.price, priceStr],
             [L.pax, paxSel.value],
             [L.luggage, luggageSel.value],
           ];
@@ -1812,8 +1916,19 @@
           source: window.location.href,
           ts: new Date().toISOString(),
         };
-        submitToEndpoint(endpoint, payload).then((r) => {
-          if (!r.ok && (!navigator.onLine || r.reason === 'network')) {
+        submitToEndpoint(endpoint, payload).then(async (r) => {
+          if (r.ok && r.status === 200) {
+            // Worker returned confirmation id — surface it on the success state
+            try {
+              const body = await r.response?.json();
+              if (body?.confirmationId) {
+                const idEl = document.createElement('p');
+                idEl.className = 'brief-confirmation muted small';
+                idEl.innerHTML = `<strong>ID:</strong> <code>${body.confirmationId}</code>`;
+                successBodyEl?.parentNode?.insertBefore(idEl, successBodyEl.nextSibling);
+              }
+            } catch (e) { /* ignore — payload not JSON or no body */ }
+          } else if (!r.ok && (!navigator.onLine || r.reason === 'network')) {
             enqueueForm({ endpoint, payload });
           }
           trackEvent('brief_endpoint_delivery', { ok: r.ok, language: lang });

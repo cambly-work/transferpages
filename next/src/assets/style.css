@@ -4262,3 +4262,113 @@ body.cmdk-open { overflow: hidden; }
 @media (max-width: 540px) {
   .chat-widget { right: 0.9rem; bottom: calc(var(--mobile-cta-height, 0px) + 0.9rem); }
 }
+
+/* =========================================================
+   Calculator: tier picker + breakdown
+   ========================================================= */
+.calc-tier-fieldset {
+  border: none;
+  padding: 0;
+  margin: 1.2rem 0 0;
+}
+.calc-tier-fieldset legend {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+  padding: 0;
+}
+.calc-tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.7rem;
+}
+.calc-tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+.calc-tier:hover { border-color: var(--line-strong); transform: translateY(-1px); }
+.calc-tier input[type="radio"] { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.calc-tier.is-selected {
+  border-color: var(--accent);
+  background: rgba(201, 163, 107, 0.06);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.calc-tier-brand {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+.calc-tier-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.calc-tier-pax { font-size: 0.78rem; }
+
+.calc-breakdown {
+  margin: 1rem 0 0.6rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+.calc-breakdown summary {
+  cursor: pointer;
+  font-size: 0.86rem;
+  color: var(--muted);
+  padding: 0.5rem 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.calc-breakdown summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  transition: transform 200ms ease;
+  font-size: 0.7em;
+}
+.calc-breakdown[open] summary::before { transform: rotate(90deg); }
+.calc-breakdown summary::-webkit-details-marker { display: none; }
+.calc-breakdown-list {
+  list-style: none;
+  padding: 0.4rem 0 0.2rem;
+  margin: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+.calc-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  padding: 0.25rem 0;
+  color: var(--muted);
+}
+.calc-breakdown-row .num { color: var(--text); font-weight: 500; }
+
+/* Pricing table — brand chip above class name */
+.pricing-th-brand {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.pricing-th-name {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+}

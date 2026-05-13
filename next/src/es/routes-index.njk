@@ -1,17 +1,17 @@
 ---
 slug: "routes"
 permalink: "/es/routes/index.html"
-title: "Routes | Morrison Premium Transfer"
-description: "Regular Morrison Premium Transfer routes across Brazil and Mercosur: distance, duration, reference price."
+title: "Rutas | Morrison Premium Transfer"
+description: "Rutas habituales de Morrison Premium Transfer por Brasil y Mercosur: distancia, duración, precio de referencia."
 breadcrumbs:
   - { name: "Inicio", path: "/es/" }
-  - { name: "Routes", path: "/es/routes/" }
+  - { name: "Rutas", path: "/es/routes/" }
 ---
 <section class="hero">
   <div class="container container--narrow">
-    <p class="kicker">Routes</p>
-    <h1>Regular routes in the region.</h1>
-    <p class="lead">Each route has its own page with distance, duration and a reference price. The exact quote is tuned to your trip format.</p>
+    <p class="kicker">Rutas</p>
+    <h1>Rutas habituales en la región.</h1>
+    <p class="lead">Cada ruta tiene su propia página con distancia, duración y precio de referencia. La cotización exacta se ajusta al formato de tu viaje.</p>
   </div>
 </section>
 
@@ -20,9 +20,9 @@ breadcrumbs:
     <div class="routes-list">
       {%- for pair in routes.pairs %}
       <a class="routes-list-row" href="/es/routes/{{ pair.slug }}/">
-        <div class="routes-list-name">{{ pair.from | cityName("en", routes.cities) }} → {{ pair.to | cityName("en", routes.cities) }}</div>
-        <div class="routes-list-meta">{{ pair.km }} km · {{ pair.durationMin | formatDuration("en") }}</div>
-        <div class="routes-list-price">from R$ {{ pair.priceMin }}</div>
+        <div class="routes-list-name">{{ pair.from | cityName("es", routes.cities) }} → {{ pair.to | cityName("es", routes.cities) }}</div>
+        <div class="routes-list-meta">{{ pair.km }} km · {{ pair.durationMin | formatDuration("es") }}</div>
+        <div class="routes-list-price">desde R$ {{ pair.priceMin }}</div>
       </a>
       {%- endfor %}
     </div>
@@ -31,9 +31,9 @@ breadcrumbs:
 
 <section class="cta-strip">
   <div class="container container--narrow">
-    <h2>Don't see your route?</h2>
+    <h2>¿No ves tu ruta?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="/es/contact/">Open a request</a>
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Abrir solicitud</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>

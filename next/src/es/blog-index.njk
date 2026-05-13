@@ -1,17 +1,17 @@
 ---
 slug: "blog"
 permalink: "/es/blog/index.html"
-title: "Blog · Guide to transfers in Brazil and Mercosur | Morrison"
-description: "Border-crossing documents, coastal seasonality, NF-e for foreign companies and other material for travellers and partners."
+title: "Blog · Guía de transfers en Brasil y Mercosur | Morrison"
+description: "Documentos de cruce fronterizo, estacionalidad costera, NF-e para empresas extranjeras y otros materiales para viajeros y socios."
 breadcrumbs:
   - { name: "Inicio", path: "/es/" }
   - { name: "Blog", path: "/es/blog/" }
 ---
 <section class="hero">
   <div class="container container--narrow">
-    <p class="kicker reveal-up">Blog · Guide</p>
-    <h1 class="reveal-up">What's worth knowing<br>before departure.</h1>
-    <p class="lead reveal-up">Documents, seasons, payment, NF-e — material for passengers and finance teams. No fluff.</p>
+    <p class="kicker reveal-up">Blog · Guía</p>
+    <h1 class="reveal-up">Lo que conviene saber<br>antes de partir.</h1>
+    <p class="lead reveal-up">Documentos, temporadas, pagos, NF-e — material para pasajeros y equipos financieros. Sin paja.</p>
   </div>
 </section>
 
@@ -23,15 +23,15 @@ breadcrumbs:
     </label>
     <div class="post-list" data-blog-list>
       {%- for post in posts.posts %}
-      <a class="post-card" href="/es/blog/{{ post.slug }}/" data-searchable="{{ post.title.en }} {{ post.excerpt.en }} {{ post.category.en }}">
+      <a class="post-card" href="/es/blog/{{ post.slug }}/" data-searchable="{{ post.title.es or post.title.en }} {{ post.excerpt.es or post.excerpt.en }} {{ post.category.es or post.category.en }}">
         <div class="post-card-meta">
-          <span class="post-category">{{ post.category.en }}</span>
+          <span class="post-category">{{ post.category.es or post.category.en }}</span>
           <span class="post-date num">{{ post.date }}</span>
           <span class="post-read num">{{ post.readMinutes }} min</span>
         </div>
-        <h3>{{ post.title.en }}</h3>
-        <p>{{ post.excerpt.en }}</p>
-        <span class="bento-cta">Read</span>
+        <h3>{{ post.title.es or post.title.en }}</h3>
+        <p>{{ post.excerpt.es or post.excerpt.en }}</p>
+        <span class="bento-cta">Leer</span>
       </a>
       {%- endfor %}
     </div>
@@ -41,9 +41,9 @@ breadcrumbs:
 
 <section class="cta-strip">
   <div class="container container--narrow">
-    <h2>Article didn't fully answer?</h2>
+    <h2>¿El artículo no responde del todo?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="/es/contact/">Ask us directly</a>
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Pregúntanos directamente</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>

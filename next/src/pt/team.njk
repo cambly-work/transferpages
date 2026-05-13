@@ -12,12 +12,20 @@ breadcrumbs:
     <p class="kicker">{{ t.teamPage.eyebrow }}</p>
     <h1>{{ t.teamPage.title }}</h1>
     <p class="lead">{{ t.teamPage.lead }}</p>
+    {% set heroPhoto = { src: "bc-night-ferris", alt: "Balneário Camboriú à noite com a roda-gigante — as rotas que nossos motoristas conhecem", ratio: "21-9", modifier: "hero-photo--overlay" } %}
+    {% include "partials/hero-photo.njk" %}
   </div>
 </section>
 
 <section class="section">
   <div class="container container--narrow">
     <p class="statement">{{ t.teamPage.note }}</p>
+    <dl class="team-stats" style="margin-top: 2rem;">
+      <div><dt class="num">12</dt><dd class="muted small">motoristas</dd></div>
+      <div><dt class="num">8</dt><dd class="muted small">anos médios</dd></div>
+      <div><dt class="num">4</dt><dd class="muted small">idiomas de trabalho</dd></div>
+      <div><dt class="num">CNH D</dt><dd class="muted small">+ EAR · formal</dd></div>
+    </dl>
   </div>
 </section>
 

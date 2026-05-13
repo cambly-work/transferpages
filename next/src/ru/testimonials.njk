@@ -12,6 +12,8 @@ breadcrumbs:
     <p class="kicker">{{ t.testimonialsPage.eyebrow }}</p>
     <h1>{{ t.testimonialsPage.title }}</h1>
     <p class="lead">{{ t.testimonialsPage.lead }}</p>
+    {% set heroPhoto = { src: "bc-promenade-night", alt: "Набережная Балнеариу-Камбориу ночью — мосты и подсветка", ratio: "21-9", modifier: "hero-photo--overlay" } %}
+    {% include "partials/hero-photo.njk" %}
   </div>
 </section>
 

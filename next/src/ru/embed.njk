@@ -1,0 +1,71 @@
+---
+slug: "embed"
+permalink: "/ru/embed/index.html"
+title: "Embed-виджет для партнёров | Morrison Premium Transfer"
+description: "Готовый виджет бронирования трансфера для отелей, агентств и риелторов. Iframe-снippet, никакого SDK."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Партнёры", path: "/ru/partners/" }
+  - { name: "Embed", path: "/ru/embed/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Партнёрский embed</p>
+    <h1 class="reveal-up">Вставьте бронирование<br>трансфера на свой сайт.</h1>
+    <p class="lead reveal-up">Готовый iframe-виджет с вашим preferred rate. Заявки идут к нашему менеджеру с пометкой партнёра.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow prose">
+    <h2>Как подключить</h2>
+    <ol class="checklist">
+      <li><strong>Свяжитесь с нами</strong> — получаете уникальный <code>partner_id</code>.</li>
+      <li><strong>Вставляете snippet</strong> на нужную страницу вашего сайта.</li>
+      <li><strong>Заявки приходят</strong> к менеджеру с пометкой вашего <code>partner_id</code> — раз в месяц видите отчёт.</li>
+    </ol>
+
+    <h2 style="margin-top: 3rem;">HTML snippet</h2>
+    <p class="muted small">Замените <code>YOUR_PARTNER_ID</code> на полученный ID.</p>
+    <div class="code-block">
+      <button type="button" class="copy-btn copy-btn--code" data-copy='&lt;iframe src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID" width="100%" height="640" frameborder="0" loading="lazy" title="Morrison Premium Transfer"&gt;&lt;/iframe&gt;' data-copy-label="Скопировать" data-copied-label="Скопировано"><span class="copy-icon">⎘</span> Скопировать</button>
+<pre><code>&lt;iframe
+  src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID"
+  width="100%" height="640"
+  frameborder="0" loading="lazy"
+  title="Morrison Premium Transfer"&gt;
+&lt;/iframe&gt;</code></pre>
+    </div>
+
+    <h2 style="margin-top: 3rem;">Что внутри виджета</h2>
+    <ul class="checklist">
+      <li>Калькулятор расчёта маршрута</li>
+      <li>Бриф-форма (адрес, дата, пассажиры)</li>
+      <li>Отправка через WhatsApp на вашего менеджера</li>
+      <li>Брендинг: ваш логотип сверху виджета (по согласованию)</li>
+    </ul>
+
+    <h2 style="margin-top: 3rem;">Параметры</h2>
+    <p>Дополнительные URL-параметры:</p>
+    <ul class="checklist">
+      <li><code>?partner=ID</code> — обязательно, ваш ID</li>
+      <li><code>&theme=dark</code> — тёмная тема виджета</li>
+      <li><code>&lang=pt</code> — язык по умолчанию</li>
+      <li><code>&from=GRU</code> — предзаполнить откуда</li>
+    </ul>
+
+    <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+      Embed-виджет в pilot-стадии. Чтобы получить <code>partner_id</code> сейчас — напишите менеджеру в WhatsApp, оформление за один день.
+    </p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Запросить partner_id?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.contacts.email }}">Email</a>
+    </div>
+  </div>
+</section>

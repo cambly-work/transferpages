@@ -1,0 +1,46 @@
+---
+slug: "coverage"
+permalink: "/en/coverage/index.html"
+title: "Coverage — Brazil & Mercosur | Morrison Premium Transfer"
+description: "Where we operate: 11 cities, 4 countries, 10 regular routes. Clickable coverage map."
+breadcrumbs:
+  - { name: "Home", path: "/en/" }
+  - { name: "Coverage", path: "/en/coverage/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Coverage</p>
+    <h1 class="reveal-up">11 cities,<br>4 Mercosur countries.</h1>
+    <p class="lead reveal-up">Regular-route map. Out-of-zone runs available on request.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    {% include "partials/coverage-map.njk" %}
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Cities in the core zone</h2>
+    <div class="coverage-cities">
+      {%- for city in routes.cities %}
+      <div class="coverage-city">
+        <span class="num">{{ loop.index }}</span>
+        <strong>{{ city.name.en }}</strong>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>City not on the map?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/en/contact/">Request a one-off run</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

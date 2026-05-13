@@ -1,0 +1,70 @@
+---
+slug: "pricing"
+permalink: "/pt/pricing/index.html"
+title: "Tarifas e referência de preços | Morrison Premium Transfer"
+description: "Preços de referência por classe de veículo e tipo de rota. O valor exato é fechado por escrito antes da partida."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Tarifas", path: "/pt/pricing/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Tarifas</p>
+    <h1 class="reveal-up">Preços de referência —<br>sem surpresas no caminho.</h1>
+    <p class="lead reveal-up">O valor exato é fechado por escrito antes da partida. Abaixo, a partir de quanto considerar.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="compare-wrap">
+      <table class="compare-table pricing-table">
+        <thead>
+          <tr>
+            <th></th>
+            {%- for tier in pricing.tiers %}<th>{{ tier.namePt }}</th>{%- endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Passageiros</th>{%- for tier in pricing.tiers %}<td class="num">{{ tier.pax }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Bagagem (peças)</th>{%- for tier in pricing.tiers %}<td class="num">{{ tier.bags }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Cidade / aeroporto a partir de</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.cityFromBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Intermunicipal por km a partir de</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.intercityPerKmBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Internacional por km a partir de</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.internationalPerKmBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Por hora a partir de</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.hourlyBrl }} / h</td>{%- endfor %}</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">O que está incluído em todas as tarifas</h2>
+    <ul class="checklist" style="max-width: 640px; margin: 1.6rem auto 0;">
+      <li>Motorista, combustível, pedágios e estacionamento na rota</li>
+      <li>Água, carregador USB, ar-condicionado</li>
+      <li>Monitoramento do voo pelo número (espera grátis até 60 min)</li>
+      <li>NF-e para empresas em até 5 dias úteis</li>
+      <li>WhatsApp / Telegram com o motorista antes da partida</li>
+    </ul>
+    <h2 style="text-align: center; margin-top: 3rem;">O que é cobrado à parte</h2>
+    <ul class="checklist" style="max-width: 640px; margin: 1.6rem auto 0;">
+      <li>Cadeirinha (sob solicitação)</li>
+      <li>Wi-Fi em trechos longos</li>
+      <li>Paradas além do plano</li>
+      <li>Apresentações noturnas (21h–6h) — +15%</li>
+      <li>Datas de pico (feriados) — combinado separadamente</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Calcular uma rota específica?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/pt/#calculator">Abrir calculadora</a>
+      <a class="btn btn-secondary" href="/pt/contact/">Enviar solicitação</a>
+    </div>
+  </div>
+</section>

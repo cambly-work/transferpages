@@ -40,6 +40,10 @@ footer:
       href: "compare/"
     - key: glossary
       href: "glossary/"
+    - key: pricing
+      href: "pricing/"
+    - key: coverage
+      href: "coverage/"
   legal:
     - key: privacy
       href: "privacy/"

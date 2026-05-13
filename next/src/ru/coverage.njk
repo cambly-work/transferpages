@@ -1,0 +1,46 @@
+---
+slug: "coverage"
+permalink: "/ru/coverage/index.html"
+title: "Карта покрытия — Бразилия и Меркосур | Morrison Premium Transfer"
+description: "Где мы работаем: 11 городов, 4 страны, 10 регулярных маршрутов. Кликабельная схема покрытия."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Покрытие", path: "/ru/coverage/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Покрытие</p>
+    <h1 class="reveal-up">11 городов,<br>4 страны Меркосур.</h1>
+    <p class="lead reveal-up">Карта регулярных маршрутов. Точечные выезды за пределы — по запросу.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    {% include "partials/coverage-map.njk" %}
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Города в основной зоне</h2>
+    <div class="coverage-cities">
+      {%- for city in routes.cities %}
+      <div class="coverage-city">
+        <span class="num">{{ loop.index }}</span>
+        <strong>{{ city.name.ru }}</strong>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Город не на карте?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/contact/">Запросить точечный выезд</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

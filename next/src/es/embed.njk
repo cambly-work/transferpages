@@ -1,0 +1,54 @@
+---
+slug: "embed"
+permalink: "/es/embed/index.html"
+title: "Widget de reservas para socios | Morrison Premium Transfer"
+description: "Widget de transfer listo para hoteles, agencias e inmobiliarias. Iframe sin SDK."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Socios", path: "/es/partners/" }
+  - { name: "Embed", path: "/es/embed/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Embed para socios</p>
+    <h1 class="reveal-up">Pon la reserva de transfer<br>en tu sitio.</h1>
+    <p class="lead reveal-up">Widget iframe listo con tu tarifa preferente. Las solicitudes llegan a nuestro gestor marcadas con tu partner_id.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow prose">
+    <h2>Cómo integrar</h2>
+    <ol class="checklist">
+      <li><strong>Contáctanos</strong> — recibes un <code>partner_id</code> único.</li>
+      <li><strong>Pega el snippet</strong> en tu sitio.</li>
+      <li><strong>Las reservas llegan</strong> marcadas con tu <code>partner_id</code> — informe mensual incluido.</li>
+    </ol>
+
+    <h2 style="margin-top: 3rem;">HTML snippet</h2>
+    <p class="muted small">Sustituye <code>YOUR_PARTNER_ID</code> por el ID recibido.</p>
+    <div class="code-block">
+      <button type="button" class="copy-btn copy-btn--code" data-copy='&lt;iframe src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID" width="100%" height="640" frameborder="0" loading="lazy" title="Morrison Premium Transfer"&gt;&lt;/iframe&gt;' data-copy-label="Copiar" data-copied-label="Copiado"><span class="copy-icon">⎘</span> Copiar</button>
+<pre><code>&lt;iframe
+  src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID"
+  width="100%" height="640"
+  frameborder="0" loading="lazy"
+  title="Morrison Premium Transfer"&gt;
+&lt;/iframe&gt;</code></pre>
+    </div>
+
+    <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+      Widget en fase piloto. Para recibir tu <code>partner_id</code> ahora — escríbenos por WhatsApp.
+    </p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>¿Solicitar partner_id?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.contacts.email }}">Email</a>
+    </div>
+  </div>
+</section>

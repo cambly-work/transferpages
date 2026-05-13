@@ -1,0 +1,60 @@
+---
+slug: "status"
+permalink: "/en/status/index.html"
+title: "Status — operational | Morrison Premium Transfer"
+description: "Operational status of Morrison Premium Transfer: dispatch, communication channels, payment systems."
+breadcrumbs:
+  - { name: "Home", path: "/en/" }
+  - { name: "Status", path: "/en/status/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Status</p>
+    <h1 class="reveal-up">All systems operational.</h1>
+    <p class="lead reveal-up">Real-time status of dispatch, channels and billing.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <ul class="status-list">
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>Dispatch</strong><span class="muted">All regions operational</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>WhatsApp</strong><span class="muted">Responding in &lt; 1 hour</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>Telegram</strong><span class="muted">Active</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>Email</strong><span class="muted">Delivering normally</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>Pix payments</strong><span class="muted">Instant confirmation</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>Card payments</strong><span class="muted">Authorisation normal</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>NF-e issuance</strong><span class="muted">Within 5 business days</span></li>
+      <li class="status-row status-row--ok"><span class="status-dot"></span><strong>Border crossings · Chuí / Foz</strong><span class="muted">Normal queue times</span></li>
+    </ul>
+    <p class="muted small" style="margin-top: 1.6rem;">Last updated: <span class="num" data-status-updated></span></p>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Past 30 days</h2>
+    <p class="muted" style="text-align: center;">Uptime aggregated across all operational components.</p>
+    <div class="status-uptime">
+      <div class="status-uptime-figure"><span class="num">99.4</span><span class="unit">%</span></div>
+      <p class="muted small">Two scheduled WhatsApp Business migration windows on Apr-18 and May-02 (40 min each, communicated in advance).</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Need urgent help?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.contacts.email }}">Email</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.querySelector('[data-status-updated]');
+    if (el) el.textContent = new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
+  });
+</script>

@@ -1,0 +1,48 @@
+# Pricing reference table.
+# Used by /<lang>/pricing/. Real ranges depend on day/season/airport surcharge.
+
+tiers:
+  - id: sedan
+    nameRu: Бизнес-седан
+    namePt: Sedan executivo
+    nameEn: Executive sedan
+    nameEs: Sedan ejecutivo
+    pax: "1–3"
+    bags: 3
+    cityFromBrl: 220
+    intercityPerKmBrl: 4.5
+    internationalPerKmBrl: 5.5
+    hourlyBrl: 220
+  - id: suv
+    nameRu: Премиум-SUV
+    namePt: SUV premium
+    nameEn: Premium SUV
+    nameEs: SUV premium
+    pax: "1–4"
+    bags: 5
+    cityFromBrl: 280
+    intercityPerKmBrl: 5.5
+    internationalPerKmBrl: 6.5
+    hourlyBrl: 280
+  - id: minivan
+    nameRu: Минивэн
+    namePt: Minivan
+    nameEn: Minivan
+    nameEs: Minivan
+    pax: "4–7"
+    bags: 9
+    cityFromBrl: 360
+    intercityPerKmBrl: 7
+    internationalPerKmBrl: 8.5
+    hourlyBrl: 360
+  - id: van
+    nameRu: Vans / микроавтобус
+    namePt: Vans / micro-ônibus
+    nameEn: Vans / minibus
+    nameEs: Vans / minibús
+    pax: "8–14"
+    bags: 16
+    cityFromBrl: 520
+    intercityPerKmBrl: 9
+    internationalPerKmBrl: 11
+    hourlyBrl: 520

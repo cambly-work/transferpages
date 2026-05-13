@@ -1,0 +1,90 @@
+---
+slug: "pricing"
+permalink: "/ru/pricing/index.html"
+title: "Тарифы и ориентиры по цене | Morrison Premium Transfer"
+description: "Ориентировочные цены по классам машин и типам маршрутов. Точная цена фиксируется до выезда после согласования деталей."
+breadcrumbs:
+  - { name: "Главная", path: "/ru/" }
+  - { name: "Тарифы", path: "/ru/pricing/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Тарифы</p>
+    <h1 class="reveal-up">Ориентиры по цене —<br>без сюрпризов на полпути.</h1>
+    <p class="lead reveal-up">Точная цена фиксируется в письменном подтверждении до выезда. Ниже — ориентиры от каких сумм считать.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="compare-wrap">
+      <table class="compare-table pricing-table">
+        <thead>
+          <tr>
+            <th></th>
+            {%- for tier in pricing.tiers %}
+            <th>{{ tier.nameRu }}</th>
+            {%- endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Пассажиров</th>
+            {%- for tier in pricing.tiers %}<td class="num">{{ tier.pax }}</td>{%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Багажа (мест)</th>
+            {%- for tier in pricing.tiers %}<td class="num">{{ tier.bags }}</td>{%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Город / аэропорт от</th>
+            {%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.cityFromBrl }}</td>{%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Межгород за км от</th>
+            {%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.intercityPerKmBrl }}</td>{%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Международный за км от</th>
+            {%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.internationalPerKmBrl }}</td>{%- endfor %}
+          </tr>
+          <tr>
+            <th scope="row">Почасовая аренда от</th>
+            {%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.hourlyBrl }} / ч</td>{%- endfor %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Что входит во все тарифы</h2>
+    <ul class="checklist" style="max-width: 640px; margin: 1.6rem auto 0;">
+      <li>Водитель, топливо, платные дороги и парковка по маршруту</li>
+      <li>Бутилированная вода, USB-зарядка, кондиционер</li>
+      <li>Отслеживание рейса по номеру (без доплаты за ожидание до 60 мин)</li>
+      <li>NF-e для юр. лиц в течение 5 рабочих дней</li>
+      <li>WhatsApp / Telegram связь с водителем перед выездом</li>
+    </ul>
+    <h2 style="text-align: center; margin-top: 3rem;">Что докладывается</h2>
+    <ul class="checklist" style="max-width: 640px; margin: 1.6rem auto 0;">
+      <li>Детское кресло (по запросу)</li>
+      <li>Wi-Fi на длинные плечи</li>
+      <li>Промежуточные остановки сверх плана</li>
+      <li>Ночные подачи (21:00–06:00) — +15%</li>
+      <li>Праздничные пиковые дни — обсуждается отдельно</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Посчитать конкретный маршрут?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/ru/#calculator">Открыть калькулятор</a>
+      <a class="btn btn-secondary" href="/ru/contact/">Оставить заявку</a>
+    </div>
+  </div>
+</section>

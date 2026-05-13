@@ -1,0 +1,48 @@
+{%- set cityCoords = {
+  "gru": { x: 725, y: 100, anchor: "start" },
+  "gig": { x: 920, y: 60,  anchor: "end" },
+  "cwb": { x: 550, y: 220, anchor: "end" },
+  "fln": { x: 600, y: 345, anchor: "start" },
+  "nvt": { x: 590, y: 300, anchor: "end" },
+  "bnu": { x: 605, y: 320, anchor: "start" },
+  "poa": { x: 430, y: 490, anchor: "end" },
+  "igr": { x: 220, y: 230, anchor: "start" },
+  "asu": { x: 50,  y: 210, anchor: "start" },
+  "mvd": { x: 120, y: 760, anchor: "start" },
+  "pde": { x: 200, y: 760, anchor: "start" }
+} -%}
+<div class="coverage-map" data-coverage-map>
+  <svg viewBox="0 0 1000 850" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Brazil & Mercosur coverage map">
+    <defs>
+      <pattern id="cov-grid" width="50" height="50" patternUnits="userSpaceOnUse">
+        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(10, 22, 40, 0.05)" stroke-width="1"/>
+      </pattern>
+      <radialGradient id="cov-glow" cx="50%" cy="40%" r="60%">
+        <stop offset="0%" stop-color="rgba(201, 163, 107, 0.1)"/>
+        <stop offset="100%" stop-color="rgba(201, 163, 107, 0)"/>
+      </radialGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#cov-grid)"/>
+    <rect width="100%" height="100%" fill="url(#cov-glow)"/>
+    <path class="map-outline"
+          d="M 50 200 L 80 130 L 200 100 L 360 70 L 520 55 L 680 70 L 820 95 L 900 145 L 940 230 L 960 340 L 920 460 L 870 580 L 800 680 L 700 740 L 580 790 L 450 800 L 320 780 L 230 740 L 160 660 L 110 540 L 70 410 L 50 280 Z"
+          fill="rgba(10, 22, 40, 0.025)" stroke="rgba(10, 22, 40, 0.12)" stroke-width="1.5" stroke-dasharray="6 6"/>
+    <text class="map-region" x="500" y="40" text-anchor="middle">BRAZIL</text>
+    <text class="map-region" x="50" y="240" text-anchor="start">PARAGUAY</text>
+    <text class="map-region" x="160" y="820" text-anchor="start">URUGUAY</text>
+    {%- for pair in routes.pairs %}
+    <line class="map-line"
+          x1="{{ cityCoords[pair.from].x }}" y1="{{ cityCoords[pair.from].y }}"
+          x2="{{ cityCoords[pair.to].x }}" y2="{{ cityCoords[pair.to].y }}"
+          stroke="rgba(10, 22, 40, 0.15)" stroke-dasharray="4 5" stroke-width="1.5"/>
+    {%- endfor %}
+    {%- for city in routes.cities %}
+    {%- set c = cityCoords[city.id] %}
+    <g class="map-city-group" data-city="{{ city.id }}">
+      <circle class="map-city-halo" cx="{{ c.x }}" cy="{{ c.y }}" r="16" fill="rgba(201, 163, 107, 0.2)" opacity="0"/>
+      <circle class="map-city" cx="{{ c.x }}" cy="{{ c.y }}" r="7" fill="var(--bg-navy)" stroke="#fff" stroke-width="2"/>
+      <text class="map-label" x="{{ c.x + (14 if c.anchor == 'start' else -14) }}" y="{{ c.y + 4 }}" text-anchor="{{ c.anchor }}">{{ city.name[lang] }}</text>
+    </g>
+    {%- endfor %}
+  </svg>
+</div>

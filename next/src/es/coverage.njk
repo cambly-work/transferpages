@@ -1,0 +1,46 @@
+---
+slug: "coverage"
+permalink: "/es/coverage/index.html"
+title: "Cobertura — Brasil y Mercosur | Morrison Premium Transfer"
+description: "Dónde operamos: 11 ciudades, 4 países, 10 rutas regulares. Mapa de cobertura clicable."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Cobertura", path: "/es/coverage/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Cobertura</p>
+    <h1 class="reveal-up">11 ciudades,<br>4 países del Mercosur.</h1>
+    <p class="lead reveal-up">Mapa de rutas regulares. Salidas puntuales fuera de la zona — a solicitud.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    {% include "partials/coverage-map.njk" %}
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Ciudades de la zona principal</h2>
+    <div class="coverage-cities">
+      {%- for city in routes.cities %}
+      <div class="coverage-city">
+        <span class="num">{{ loop.index }}</span>
+        <strong>{{ city.name.es }}</strong>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>¿Ciudad fuera del mapa?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Pedir una salida puntual</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

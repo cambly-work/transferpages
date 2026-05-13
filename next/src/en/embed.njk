@@ -1,0 +1,70 @@
+---
+slug: "embed"
+permalink: "/en/embed/index.html"
+title: "Partner booking widget | Morrison Premium Transfer"
+description: "Ready-to-embed transfer booking widget for hotels, agencies and brokers. Iframe snippet, no SDK."
+breadcrumbs:
+  - { name: "Home", path: "/en/" }
+  - { name: "Partners", path: "/en/partners/" }
+  - { name: "Embed", path: "/en/embed/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Partner embed</p>
+    <h1 class="reveal-up">Drop transfer booking<br>onto your site.</h1>
+    <p class="lead reveal-up">Ready iframe widget with your preferred rate. Requests reach our manager tagged with your partner ID.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow prose">
+    <h2>How to onboard</h2>
+    <ol class="checklist">
+      <li><strong>Reach out</strong> — receive a unique <code>partner_id</code>.</li>
+      <li><strong>Paste the snippet</strong> on your site.</li>
+      <li><strong>Requests arrive</strong> tagged with your <code>partner_id</code> — monthly report included.</li>
+    </ol>
+
+    <h2 style="margin-top: 3rem;">HTML snippet</h2>
+    <p class="muted small">Replace <code>YOUR_PARTNER_ID</code> with the ID you received.</p>
+    <div class="code-block">
+      <button type="button" class="copy-btn copy-btn--code" data-copy='&lt;iframe src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID" width="100%" height="640" frameborder="0" loading="lazy" title="Morrison Premium Transfer"&gt;&lt;/iframe&gt;' data-copy-label="Copy" data-copied-label="Copied"><span class="copy-icon">⎘</span> Copy</button>
+<pre><code>&lt;iframe
+  src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID"
+  width="100%" height="640"
+  frameborder="0" loading="lazy"
+  title="Morrison Premium Transfer"&gt;
+&lt;/iframe&gt;</code></pre>
+    </div>
+
+    <h2 style="margin-top: 3rem;">Inside the widget</h2>
+    <ul class="checklist">
+      <li>Route calculator</li>
+      <li>Booking brief (address, date, passengers)</li>
+      <li>Submit via WhatsApp to your manager</li>
+      <li>Branding: your logo at top of the widget (by arrangement)</li>
+    </ul>
+
+    <h2 style="margin-top: 3rem;">Parameters</h2>
+    <ul class="checklist">
+      <li><code>?partner=ID</code> — required</li>
+      <li><code>&theme=dark</code> — dark theme</li>
+      <li><code>&lang=pt</code> — default language</li>
+      <li><code>&from=GRU</code> — prefill origin</li>
+    </ul>
+
+    <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+      Embed widget is in pilot. To get a <code>partner_id</code> now — message us on WhatsApp, activated in one day.
+    </p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Request a partner_id?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.contacts.email }}">Email</a>
+    </div>
+  </div>
+</section>

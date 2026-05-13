@@ -1,0 +1,70 @@
+---
+slug: "pricing"
+permalink: "/en/pricing/index.html"
+title: "Pricing reference | Morrison Premium Transfer"
+description: "Reference prices by vehicle class and route type. Final price is locked in writing before departure."
+breadcrumbs:
+  - { name: "Home", path: "/en/" }
+  - { name: "Pricing", path: "/en/pricing/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Pricing</p>
+    <h1 class="reveal-up">Reference prices —<br>no surprises mid-route.</h1>
+    <p class="lead reveal-up">The exact price is locked in writing before departure. Below — what to budget from.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="compare-wrap">
+      <table class="compare-table pricing-table">
+        <thead>
+          <tr>
+            <th></th>
+            {%- for tier in pricing.tiers %}<th>{{ tier.nameEn }}</th>{%- endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Passengers</th>{%- for tier in pricing.tiers %}<td class="num">{{ tier.pax }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Luggage</th>{%- for tier in pricing.tiers %}<td class="num">{{ tier.bags }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">City / airport from</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.cityFromBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Intercity per km from</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.intercityPerKmBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">International per km from</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.internationalPerKmBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Hourly from</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.hourlyBrl }} / h</td>{%- endfor %}</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">Included in every tariff</h2>
+    <ul class="checklist" style="max-width: 640px; margin: 1.6rem auto 0;">
+      <li>Driver, fuel, tolls and parking on the route</li>
+      <li>Bottled water, USB charger, air-con</li>
+      <li>Flight tracking by number (60 min free wait)</li>
+      <li>NF-e for companies within 5 business days</li>
+      <li>WhatsApp / Telegram with the driver before departure</li>
+    </ul>
+    <h2 style="text-align: center; margin-top: 3rem;">Billed separately</h2>
+    <ul class="checklist" style="max-width: 640px; margin: 1.6rem auto 0;">
+      <li>Child seat (on request)</li>
+      <li>Wi-Fi on long routes</li>
+      <li>Extra stops beyond plan</li>
+      <li>Night pickups (9 PM–6 AM) — +15%</li>
+      <li>Holiday peak dates — discussed separately</li>
+    </ul>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Quote a specific route?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/en/#calculator">Open the calculator</a>
+      <a class="btn btn-secondary" href="/en/contact/">Send a request</a>
+    </div>
+  </div>
+</section>

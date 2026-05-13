@@ -29,6 +29,8 @@ ru:
     compare: Сравнение
     glossary: Глоссарий
     cases: Сценарии
+    pricing: Тарифы
+    coverage: Покрытие
   footer:
     sections: Разделы
     contacts: Контакты
@@ -254,6 +256,8 @@ pt:
     compare: Comparação
     glossary: Glossário
     cases: Cenários
+    pricing: Tarifas
+    coverage: Cobertura
   footer:
     sections: Seções
     contacts: Contatos
@@ -479,6 +483,8 @@ en:
     compare: Compare
     glossary: Glossary
     cases: Scenarios
+    pricing: Pricing
+    coverage: Coverage
   footer:
     sections: Sections
     contacts: Contacts
@@ -704,6 +710,8 @@ es:
     compare: Comparación
     glossary: Glosario
     cases: Escenarios
+    pricing: Tarifas
+    coverage: Cobertura
   footer:
     sections: Secciones
     contacts: Contactos

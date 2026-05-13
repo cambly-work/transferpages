@@ -1,0 +1,49 @@
+---
+slug: "pricing"
+permalink: "/es/pricing/index.html"
+title: "Referencia de precios | Morrison Premium Transfer"
+description: "Precios de referencia por clase de vehículo y tipo de ruta. El precio final se confirma por escrito antes de la salida."
+breadcrumbs:
+  - { name: "Inicio", path: "/es/" }
+  - { name: "Tarifas", path: "/es/pricing/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Tarifas</p>
+    <h1 class="reveal-up">Precios de referencia —<br>sin sorpresas en el camino.</h1>
+    <p class="lead reveal-up">El valor exacto se confirma por escrito antes de la salida. Abajo — desde qué presupuestar.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="compare-wrap">
+      <table class="compare-table pricing-table">
+        <thead>
+          <tr>
+            <th></th>
+            {%- for tier in pricing.tiers %}<th>{{ tier.nameEs }}</th>{%- endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Pasajeros</th>{%- for tier in pricing.tiers %}<td class="num">{{ tier.pax }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Equipaje</th>{%- for tier in pricing.tiers %}<td class="num">{{ tier.bags }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Ciudad / aeropuerto desde</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.cityFromBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Intermunicipal por km desde</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.intercityPerKmBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Internacional por km desde</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.internationalPerKmBrl }}</td>{%- endfor %}</tr>
+          <tr><th scope="row">Por hora desde</th>{%- for tier in pricing.tiers %}<td class="num">R$ {{ tier.hourlyBrl }} / h</td>{%- endfor %}</tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>¿Cotizar una ruta específica?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/es/#calculator">Abrir calculadora</a>
+      <a class="btn btn-secondary" href="/es/contact/">Enviar solicitud</a>
+    </div>
+  </div>
+</section>

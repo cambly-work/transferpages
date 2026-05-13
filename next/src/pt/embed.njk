@@ -1,0 +1,70 @@
+---
+slug: "embed"
+permalink: "/pt/embed/index.html"
+title: "Widget de reserva para parceiros | Morrison Premium Transfer"
+description: "Widget de transfer pronto para hotéis, agências e imobiliárias. Snippet iframe, sem SDK."
+breadcrumbs:
+  - { name: "Início", path: "/pt/" }
+  - { name: "Parceiros", path: "/pt/partners/" }
+  - { name: "Embed", path: "/pt/embed/" }
+---
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker reveal-up">Embed para parceiros</p>
+    <h1 class="reveal-up">Coloque a reserva de transfer<br>no seu site.</h1>
+    <p class="lead reveal-up">Widget iframe pronto com a sua tarifa preferencial. Solicitações chegam ao nosso gerente marcadas com o seu ID.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow prose">
+    <h2>Como integrar</h2>
+    <ol class="checklist">
+      <li><strong>Fale com a gente</strong> — recebe um <code>partner_id</code> único.</li>
+      <li><strong>Cole o snippet</strong> na página desejada do seu site.</li>
+      <li><strong>As reservas chegam</strong> ao gerente com a marca do seu <code>partner_id</code> — relatório mensal incluído.</li>
+    </ol>
+
+    <h2 style="margin-top: 3rem;">HTML snippet</h2>
+    <p class="muted small">Substitua <code>YOUR_PARTNER_ID</code> pelo ID recebido.</p>
+    <div class="code-block">
+      <button type="button" class="copy-btn copy-btn--code" data-copy='&lt;iframe src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID" width="100%" height="640" frameborder="0" loading="lazy" title="Morrison Premium Transfer"&gt;&lt;/iframe&gt;' data-copy-label="Copiar" data-copied-label="Copiado"><span class="copy-icon">⎘</span> Copiar</button>
+<pre><code>&lt;iframe
+  src="https://morrison-transfer.com/widget/?partner=YOUR_PARTNER_ID"
+  width="100%" height="640"
+  frameborder="0" loading="lazy"
+  title="Morrison Premium Transfer"&gt;
+&lt;/iframe&gt;</code></pre>
+    </div>
+
+    <h2 style="margin-top: 3rem;">O que tem no widget</h2>
+    <ul class="checklist">
+      <li>Calculadora de rota</li>
+      <li>Brief de reserva (endereço, data, passageiros)</li>
+      <li>Envio via WhatsApp para o seu gerente</li>
+      <li>Branding: o seu logo no topo do widget (combinado)</li>
+    </ul>
+
+    <h2 style="margin-top: 3rem;">Parâmetros</h2>
+    <ul class="checklist">
+      <li><code>?partner=ID</code> — obrigatório</li>
+      <li><code>&theme=dark</code> — tema escuro</li>
+      <li><code>&lang=pt</code> — idioma padrão</li>
+      <li><code>&from=GRU</code> — pré-preencher origem</li>
+    </ul>
+
+    <p class="muted small" style="margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line);">
+      O widget está em fase piloto. Para receber o <code>partner_id</code> agora — escreva no WhatsApp, ativação em um dia.
+    </p>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>Pedir partner_id?</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-secondary" href="mailto:{{ site.contacts.email }}">E-mail</a>
+    </div>
+  </div>
+</section>

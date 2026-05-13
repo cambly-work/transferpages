@@ -1082,6 +1082,166 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://morrison-transfer.com/ru/hourly/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/hourly/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/hourly/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/hourly/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/hourly/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/hourly/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/hourly/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/hourly/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/hourly/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/events/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/events/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/events/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/events/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/events/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/events/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/events/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/events/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/events/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/events/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/events/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/events/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/events/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/events/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/events/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/events/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/events/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/events/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/events/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/events/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/events/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/events/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/events/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/events/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/guarantees/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/guarantees/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/guarantees/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/guarantees/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/guarantees/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/guarantees/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/guarantees/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/guarantees/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/guarantees/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/drivers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/drivers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/drivers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/drivers/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/drivers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/drivers/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://morrison-transfer.com/ru/routes/florianopolis-balneario-camboriu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

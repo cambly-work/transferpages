@@ -1,0 +1,45 @@
+{%- set t = i18n[lang] -%}
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.eventsPage.eyebrow }}</p>
+    <h1>{{ t.eventsPage.title }}</h1>
+    <p class="lead">{{ t.eventsPage.lead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=event">{{ t.eventsPage.cta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="event-grid reveal-stagger">
+      <article class="event-card"><h3>{{ t.eventsPage.g1Title }}</h3><p class="muted">{{ t.eventsPage.g1Body }}</p></article>
+      <article class="event-card"><h3>{{ t.eventsPage.g2Title }}</h3><p class="muted">{{ t.eventsPage.g2Body }}</p></article>
+      <article class="event-card"><h3>{{ t.eventsPage.g3Title }}</h3><p class="muted">{{ t.eventsPage.g3Body }}</p></article>
+      <article class="event-card"><h3>{{ t.eventsPage.g4Title }}</h3><p class="muted">{{ t.eventsPage.g4Body }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">{{ t.eventsPage.formatTitle }}</h2>
+    <ol class="how-list" style="margin-top: 1.6rem;">
+      <li class="how-item"><span class="how-num num">01</span><div><strong>{{ t.eventsPage.f1Title }}.</strong> {{ t.eventsPage.f1Body }}</div></li>
+      <li class="how-item"><span class="how-num num">02</span><div><strong>{{ t.eventsPage.f2Title }}.</strong> {{ t.eventsPage.f2Body }}</div></li>
+      <li class="how-item"><span class="how-num num">03</span><div><strong>{{ t.eventsPage.f3Title }}.</strong> {{ t.eventsPage.f3Body }}</div></li>
+      <li class="how-item"><span class="how-num num">04</span><div><strong>{{ t.eventsPage.f4Title }}.</strong> {{ t.eventsPage.f4Body }}</div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>{{ t.eventsPage.cta }}</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=event">{{ t.eventsPage.cta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

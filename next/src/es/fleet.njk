@@ -25,6 +25,7 @@ breadcrumbs:
       {%- for veh in fleet.classes %}
       <a class="fleet-card" href="/es/fleet/{{ veh.id }}/">
         <div class="fleet-card-head">
+          <span class="fleet-tier">{{ veh.tier }}</span>
           <h3>{{ veh.nameEs }}</h3>
           <div class="fleet-stats">
             <span><strong>{{ veh.pax }}</strong> plazas</span>

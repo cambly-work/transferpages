@@ -1,0 +1,73 @@
+{%- set t = i18n[lang] -%}
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.hourlyPage.eyebrow }}</p>
+    <h1>{{ t.hourlyPage.title }}</h1>
+    <p class="lead">{{ t.hourlyPage.lead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=hourly">{{ t.hourlyPage.cta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="hourly-packages reveal-stagger">
+      <article class="hourly-pkg">
+        <span class="hourly-pkg-hours num">2h</span>
+        <h3>{{ t.hourlyPage.p2Title }}</h3>
+        <p class="muted">{{ t.hourlyPage.p2Body }}</p>
+      </article>
+      <article class="hourly-pkg">
+        <span class="hourly-pkg-hours num">4h</span>
+        <h3>{{ t.hourlyPage.p4Title }}</h3>
+        <p class="muted">{{ t.hourlyPage.p4Body }}</p>
+      </article>
+      <article class="hourly-pkg">
+        <span class="hourly-pkg-hours num">8h</span>
+        <h3>{{ t.hourlyPage.p8Title }}</h3>
+        <p class="muted">{{ t.hourlyPage.p8Body }}</p>
+      </article>
+      <article class="hourly-pkg">
+        <span class="hourly-pkg-hours num">12h</span>
+        <h3>{{ t.hourlyPage.p12Title }}</h3>
+        <p class="muted">{{ t.hourlyPage.p12Body }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <div class="hourly-incs">
+      <div>
+        <h2>{{ t.hourlyPage.includesTitle }}</h2>
+        <ul class="checklist">
+          <li>{{ t.hourlyPage.inc1 }}</li>
+          <li>{{ t.hourlyPage.inc2 }}</li>
+          <li>{{ t.hourlyPage.inc3 }}</li>
+          <li>{{ t.hourlyPage.inc4 }}</li>
+        </ul>
+      </div>
+      <div>
+        <h2>{{ t.hourlyPage.notIncludesTitle }}</h2>
+        <ul class="checklist checklist--neutral">
+          <li>{{ t.hourlyPage.notInc1 }}</li>
+          <li>{{ t.hourlyPage.notInc2 }}</li>
+          <li>{{ t.hourlyPage.notInc3 }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>{{ t.hourlyPage.cta }}</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=hourly">{{ t.hourlyPage.cta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

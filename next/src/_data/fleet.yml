@@ -3,6 +3,7 @@
 
 classes:
   - id: sedan
+    tier: Morrison Business
     pax: 3
     bags: 3
     nameRu: Бизнес-седан
@@ -22,6 +23,7 @@ classes:
     featuresEn: Air conditioning, bottled water, USB charger, Wi-Fi (opt.)
     featuresEs: Aire acondicionado, agua embotellada, cargador USB, Wi-Fi (opc.)
   - id: suv
+    tier: Morrison First
     pax: 4
     bags: 5
     nameRu: Премиум-SUV
@@ -41,6 +43,7 @@ classes:
     featuresEn: Leather interior, climate, extra trunk, child seat (opt.)
     featuresEs: Interior de cuero, clima, baúl ampliado, silla infantil (opc.)
   - id: minivan
+    tier: Morrison Comfort
     pax: 7
     bags: 9
     nameRu: Минивэн
@@ -60,6 +63,7 @@ classes:
     featuresEn: High roof, individual seats, dual AC, USB per row.
     featuresEs: Techo alto, asientos individuales, doble AC, USB por fila.
   - id: van
+    tier: Morrison Group
     pax: 14
     bags: 16
     nameRu: Vans / микроавтобус

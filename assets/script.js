@@ -1895,4 +1895,46 @@
 
     render();
   }
+
+  // ---------- Floating chat widget ----------
+  const chatWidget = document.querySelector('[data-chat-widget]');
+  if (chatWidget) {
+    const toggle = chatWidget.querySelector('[data-chat-toggle]');
+    const panel = chatWidget.querySelector('[data-chat-panel]');
+    const closeBtn = chatWidget.querySelector('[data-chat-close]');
+    const options = chatWidget.querySelectorAll('[data-chat-option]');
+    const whatsappBase = 'https://wa.me/5513996532915';
+
+    const setOpen = (open) => {
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      chatWidget.classList.toggle('is-open', open);
+      if (open) trackEvent('chat_widget_open', {});
+    };
+
+    toggle.addEventListener('click', () => setOpen(panel.hidden));
+    closeBtn.addEventListener('click', () => setOpen(false));
+
+    options.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-chat-option') || '';
+        const url = `${whatsappBase}?text=${encodeURIComponent(text)}`;
+        trackEvent('chat_widget_handoff', { option: text.slice(0, 40) });
+        window.open(url, '_blank', 'noopener');
+        setOpen(false);
+      });
+    });
+
+    // Esc closes
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !panel.hidden) setOpen(false);
+    });
+
+    // Outside click closes
+    document.addEventListener('click', (e) => {
+      if (panel.hidden) return;
+      if (chatWidget.contains(e.target)) return;
+      setOpen(false);
+    });
+  }
 })();

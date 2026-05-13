@@ -34,6 +34,14 @@ footer:
     - key: portal
       href: "portal/"
   resources:
+    - key: hourly
+      href: "hourly/"
+    - key: events
+      href: "events/"
+    - key: guarantees
+      href: "guarantees/"
+    - key: drivers
+      href: "drivers/"
     - key: blog
       href: "blog/"
     - key: cases

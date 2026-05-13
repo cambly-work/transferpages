@@ -25,6 +25,7 @@ breadcrumbs:
       {%- for veh in fleet.classes %}
       <a class="fleet-card" href="/ru/fleet/{{ veh.id }}/">
         <div class="fleet-card-head">
+          <span class="fleet-tier">{{ veh.tier }}</span>
           <h3>{{ veh.nameRu }}</h3>
           <div class="fleet-stats">
             <span><strong>{{ veh.pax }}</strong> мест</span>
@@ -34,7 +35,7 @@ breadcrumbs:
         <p class="fleet-examples">{{ veh.examplesRu }}</p>
         <p class="fleet-for"><strong>Для кого:</strong> {{ veh.forRu }}</p>
         <p class="fleet-features"><strong>В оснащении:</strong> {{ veh.featuresRu }}</p>
-      </article>
+      </a>
       {%- endfor %}
     </div>
     <p class="muted" style="text-align: center; margin-top: 2rem;">{{ t.fleetPage.note }}</p>

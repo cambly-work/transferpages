@@ -1,0 +1,51 @@
+{%- set t = i18n[lang] -%}
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.driversPage.eyebrow }}</p>
+    <h1>{{ t.driversPage.title }}</h1>
+    <p class="lead">{{ t.driversPage.lead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=driver">{{ t.driversPage.applyCta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <div class="drivers-two">
+      <div class="drivers-block reveal-up">
+        <h2>{{ t.driversPage.requirementsTitle }}</h2>
+        <ul class="checklist">
+          <li>{{ t.driversPage.req1 }}</li>
+          <li>{{ t.driversPage.req2 }}</li>
+          <li>{{ t.driversPage.req3 }}</li>
+          <li>{{ t.driversPage.req4 }}</li>
+          <li>{{ t.driversPage.req5 }}</li>
+          <li>{{ t.driversPage.req6 }}</li>
+        </ul>
+      </div>
+      <div class="drivers-block reveal-up">
+        <h2>{{ t.driversPage.offerTitle }}</h2>
+        <ul class="checklist">
+          <li>{{ t.driversPage.off1 }}</li>
+          <li>{{ t.driversPage.off2 }}</li>
+          <li>{{ t.driversPage.off3 }}</li>
+          <li>{{ t.driversPage.off4 }}</li>
+          <li>{{ t.driversPage.off5 }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>{{ t.driversPage.applyTitle }}</h2>
+    <p class="muted" style="text-align: center; max-width: 540px; margin: 0 auto 1.6rem;">{{ t.driversPage.applyLead }}</p>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=driver">{{ t.driversPage.applyCta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

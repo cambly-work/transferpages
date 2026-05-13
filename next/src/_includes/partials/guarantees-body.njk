@@ -1,0 +1,73 @@
+{%- set t = i18n[lang] -%}
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker">{{ t.guaranteesPage.eyebrow }}</p>
+    <h1>{{ t.guaranteesPage.title }}</h1>
+    <p class="lead">{{ t.guaranteesPage.lead }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--narrow">
+    <ol class="guarantee-list reveal-stagger">
+      <li class="guarantee">
+        <span class="guarantee-num num">01</span>
+        <div>
+          <h3>{{ t.guaranteesPage.g1Title }}</h3>
+          <p>{{ t.guaranteesPage.g1Body }}</p>
+          {% if t.guaranteesPage.g1Penalty %}<p class="guarantee-penalty">{{ t.guaranteesPage.g1Penalty }}</p>{% endif %}
+        </div>
+      </li>
+      <li class="guarantee">
+        <span class="guarantee-num num">02</span>
+        <div>
+          <h3>{{ t.guaranteesPage.g2Title }}</h3>
+          <p>{{ t.guaranteesPage.g2Body }}</p>
+          {% if t.guaranteesPage.g2Penalty %}<p class="guarantee-penalty">{{ t.guaranteesPage.g2Penalty }}</p>{% endif %}
+        </div>
+      </li>
+      <li class="guarantee">
+        <span class="guarantee-num num">03</span>
+        <div>
+          <h3>{{ t.guaranteesPage.g3Title }}</h3>
+          <p>{{ t.guaranteesPage.g3Body }}</p>
+          {% if t.guaranteesPage.g3Penalty %}<p class="guarantee-penalty">{{ t.guaranteesPage.g3Penalty }}</p>{% endif %}
+        </div>
+      </li>
+      <li class="guarantee">
+        <span class="guarantee-num num">04</span>
+        <div>
+          <h3>{{ t.guaranteesPage.g4Title }}</h3>
+          <p>{{ t.guaranteesPage.g4Body }}</p>
+          {% if t.guaranteesPage.g4Penalty %}<p class="guarantee-penalty">{{ t.guaranteesPage.g4Penalty }}</p>{% endif %}
+        </div>
+      </li>
+      <li class="guarantee">
+        <span class="guarantee-num num">05</span>
+        <div>
+          <h3>{{ t.guaranteesPage.g5Title }}</h3>
+          <p>{{ t.guaranteesPage.g5Body }}</p>
+          {% if t.guaranteesPage.g5Penalty %}<p class="guarantee-penalty">{{ t.guaranteesPage.g5Penalty }}</p>{% endif %}
+        </div>
+      </li>
+      <li class="guarantee">
+        <span class="guarantee-num num">06</span>
+        <div>
+          <h3>{{ t.guaranteesPage.g6Title }}</h3>
+          <p>{{ t.guaranteesPage.g6Body }}</p>
+          {% if t.guaranteesPage.g6Penalty %}<p class="guarantee-penalty">{{ t.guaranteesPage.g6Penalty }}</p>{% endif %}
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>{{ t.guaranteesPage.cta }}</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=terms">{{ t.guaranteesPage.cta }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

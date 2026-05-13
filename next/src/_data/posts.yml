@@ -117,3 +117,72 @@ posts:
       pt: "Pix é a transferência instantânea brasileira — 24/7 e sem taxa. Para transfers pontuais é o mais rápido. Aceitamos cartão também, mas via adquirente — com taxa adicional. Para parceiros recorrentes, boleto com pagamento posterior, NF-e no CNPJ, prazo de 7 a 14 dias."
       en: "Pix is Brazil's instant interbank payment — 24/7 and fee-free. For one-off transfers, it's the fastest. We accept cards too, but through an acquirer — with a fee. For recurring partners, deferred-payment invoice, NF-e to the CNPJ, 7–14 days settlement."
       es: "Pix is Brazil's instant interbank payment — 24/7 and fee-free. For one-off transfers, it's the fastest. We accept cards too, but through an acquirer — with a fee. For recurring partners, deferred-payment invoice, NF-e to the CNPJ, 7–14 days settlement."
+  - slug: iguazu-vip-itinerary
+    date: "2026-06-04"
+    readMinutes: 7
+    category:
+      ru: Маршруты
+      pt: Rotas
+      en: Routes
+      es: Rutas
+    title:
+      ru: "Игуасу для VIP-гостя: 36 часов без очередей"
+      pt: "Iguaçu para VIP: 36 horas sem filas"
+      en: "Iguaçu for a VIP guest: 36 hours without queues"
+      es: "Iguazú para invitado VIP: 36 horas sin colas"
+    excerpt:
+      ru: "Как уложить водопады с обеих сторон, парк птиц и кайандо в полтора дня — без потерянного времени в кассах."
+      pt: "Como encaixar as cataratas dos dois lados, parque das aves e cassino em um dia e meio — sem perder tempo em bilheteria."
+      en: "How to fit both sides of the falls, the bird park and the casino into a day and a half — no time lost at ticket windows."
+      es: "Cómo encajar las cataratas de ambos lados, el parque de aves y el casino en un día y medio — sin perder tempo en taquilla."
+    intro:
+      ru: "Большинство турагентств отправляют гостя на «обзорный день» — приезжаешь в 11:00 на бразильскую сторону, к водопадам подходишь к полудню, толпа уже растёт. Если у вас 36 часов и важное окно, есть другая схема — мы разъясняем тайминг по часам, какие билеты покупаем заранее и как избежать очередей."
+      pt: "A maioria das agências oferece um 'dia panorâmico' — chegando ao lado brasileiro às 11:00, você encontra as cataratas ao meio-dia com a multidão já formada. Se você tem 36 horas e uma janela importante, há outra forma — explicamos o cronograma por hora, quais ingressos compramos antes e como evitar filas."
+      en: "Most travel agencies push a 'panoramic day' — you arrive at the Brazilian side at 11 AM, reach the falls at noon, by which point the crowd is already growing. If you have 36 hours and a meaningful window, there is another way — we explain the timing hour-by-hour, which tickets we purchase in advance, and how to skip queues."
+      es: "La mayoría de las agencias venden un 'día panorámico' — llegando al lado brasileño a las 11 AM ya hay multitud al mediodía. Si tienes 36 horas y una ventana relevante, hay otra forma — explicamos el cronograma hora por hora, qué entradas compramos por adelantado y cómo evitar colas."
+  - slug: hotel-pickup-best-practices
+    date: "2026-06-18"
+    readMinutes: 5
+    category:
+      ru: Партнёры
+      pt: Parceiros
+      en: Partners
+      es: Socios
+    title:
+      ru: "Подача в отель: 7 вещей, которые мы согласовываем с консьержем заранее"
+      pt: "Retirada no hotel: 7 detalhes acertados com o concierge antes"
+      en: "Hotel pickup: 7 things we sync with the concierge in advance"
+      es: "Recogida en hotel: 7 detalles que coordinamos con el conserje antes"
+    excerpt:
+      ru: "Почему трансфер от отеля — самый «дорогой» с точки зрения ошибок: подъезд, лобби, багаж, оплата паркинга, время сдачи номера."
+      pt: "Por que o transfer a partir do hotel é o 'mais caro' em termos de erros: acesso, lobby, bagagem, pagamento de estacionamento, horário de check-out."
+      en: "Why a hotel pickup is the 'most expensive' in terms of mistakes: driveway, lobby, luggage, parking fee, check-out timing."
+      es: "Por qué la recogida en hotel es la 'más cara' en errores: acceso, lobby, equipaje, pago de estacionamiento, hora de check-out."
+    intro:
+      ru: "Большинство наших клиентов не подозревает, сколько координации скрывается за фразой «водитель ждёт в лобби в 8:00». В этой статье — семь точек согласования, которые мы прорабатываем с консьержем за день до выезда, чтобы вы не выясняли на месте, где паркинг и кому отдать чаевые носильщику."
+      pt: "A maior parte dos hóspedes não imagina quanta coordenação está por trás da frase 'motorista no lobby às 8:00'. Aqui ficam os sete pontos que alinhamos com o concierge na véspera, para você não descobrir no momento onde fica o estacionamento e a quem entregar gorjeta do mensageiro."
+      en: "Most guests don't realize how much coordination sits behind 'driver in the lobby at 8 AM.' Here are seven items we align with the concierge the day before, so you don't have to figure out where the loading zone is — or whom to tip — in real time."
+      es: "La mayoría de los huéspedes no imagina cuánta coordinación hay detrás de 'chofer en lobby a las 8:00'. Aquí los siete puntos que alineamos con el conserje el día anterior, para que no tengas que averiguar en el momento dónde está el estacionamiento ni a quién dar propina."
+  - slug: rainy-season-driving
+    date: "2026-07-02"
+    readMinutes: 4
+    category:
+      ru: Сезоны
+      pt: Temporadas
+      en: Seasons
+      es: Temporadas
+    title:
+      ru: "Сезон дождей в Бразилии: что меняется в плане трансфера"
+      pt: "Temporada de chuvas no Brasil: o que muda no plano do transfer"
+      en: "Rainy season in Brazil: what changes in the transfer plan"
+      es: "Temporada de lluvias en Brasil: qué cambia en el plan del transfer"
+    excerpt:
+      ru: "Январь–март на побережье: дороги, fog, скорость подачи. Запас по времени и сценарии резерва."
+      pt: "Janeiro a março no litoral: estradas, neblina, tempo de chegada. Reservas de tempo e cenários de contingência."
+      en: "January to March on the coast: roads, fog, pickup timing. Time buffers and fallback scenarios."
+      es: "Enero a marzo en el litoral: rutas, niebla, tiempo de llegada. Márgenes de tiempo y planes de contingencia."
+    intro:
+      ru: "Бразильский сезон дождей — это не «весь день ливень». Это короткие, но интенсивные грозы, fog на серра-роадах и почти гарантированная задержка в одном из аэропортов региона за неделю. Что мы добавляем в стандартный план поездки в эти месяцы — ниже."
+      pt: "A temporada de chuvas no Brasil não é 'chove o dia todo'. São tempestades curtas e intensas, neblina nas serras e quase sempre uma operação aérea atrasada nos aeroportos do litoral durante a semana. O que adicionamos ao plano padrão nesses meses está abaixo."
+      en: "Brazil's rainy season is not 'all-day rain.' It's short, intense storms, fog on mountain roads, and an almost guaranteed delay at one of the region's airports each week. Here's what we add to the standard trip plan during these months."
+      es: "La temporada de lluvias en Brasil no es 'llueve todo el día'. Son tormentas cortas e intensas, niebla en rutas serranas y casi siempre algún retraso aéreo en los aeropuertos del litoral. Lo que añadimos al plan estándar en estos meses, abajo."

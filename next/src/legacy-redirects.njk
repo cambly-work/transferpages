@@ -1,0 +1,32 @@
+---
+pagination:
+  data: legacy
+  size: 1
+  alias: page
+legacy:
+  - { from: "/brazil-transfers.html", to: "/ru/brazil-transfers/" }
+  - { from: "/airport-transfer.html", to: "/ru/airport-transfer/" }
+  - { from: "/international.html", to: "/ru/international/" }
+  - { from: "/partners.html", to: "/ru/partners/" }
+  - { from: "/contact.html", to: "/ru/contact/" }
+  - { from: "/balneario-camboriu.html", to: "/ru/balneario-camboriu/" }
+  - { from: "/porto-alegre.html", to: "/ru/porto-alegre/" }
+  - { from: "/florianopolis.html", to: "/ru/florianopolis/" }
+permalink: "{{ page.from }}"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Перенаправление · Morrison Premium Transfer</title>
+<link rel="canonical" href="https://morrison-transfer.com{{ page.to }}">
+<meta http-equiv="refresh" content="0; url={{ page.to }}">
+<meta name="robots" content="noindex, follow">
+<style>body{font-family:system-ui,sans-serif;max-width:480px;margin:4rem auto;padding:0 1rem;color:#222;text-align:center}a{color:#7a5828}</style>
+</head>
+<body>
+<p>Эта страница переехала на <a href="{{ page.to }}">{{ page.to }}</a>.</p>
+<script>window.location.replace({{ page.to | dump | safe }});</script>
+</body>
+</html>

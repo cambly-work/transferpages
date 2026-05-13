@@ -1,8 +1,10 @@
 (() => {
   const LANGUAGE_KEY = 'preferredLanguage';
   const CONSENT_KEY = 'cookie_consent';
-  const SUPPORTED_LANGUAGES = ['ru', 'pt', 'en'];
+  const SUPPORTED_LANGUAGES = ['ru', 'pt', 'en', 'es'];
   const TELEGRAM_URL = 'https://t.me/premium_transfer_latam';
+  const FORM_QUEUE_KEY = 'morrison_form_queue';
+  const AB_FLAGS_KEY = 'morrison_ab_flags';
 
   const safeStorageGet = (key) => {
     try {
@@ -24,6 +26,103 @@
     if (typeof window.gtag !== 'function') return;
     window.gtag('event', eventName, eventParams);
   };
+
+  // ---------- Generic form endpoint submission ----------
+  // Configurable via <form data-endpoint="...">. Falls back to fallbackFn (mailto/whatsapp) on error or no endpoint.
+  // Queues to localStorage if offline; flushes on next page load with network.
+  const submitToEndpoint = async (endpoint, payload) => {
+    if (!endpoint) return { ok: false, reason: 'no-endpoint' };
+    if (typeof fetch !== 'function') return { ok: false, reason: 'no-fetch' };
+    try {
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      return { ok: res.ok, status: res.status };
+    } catch (err) {
+      return { ok: false, reason: 'network', error: err };
+    }
+  };
+
+  const enqueueForm = (entry) => {
+    try {
+      const raw = safeStorageGet(FORM_QUEUE_KEY);
+      const queue = raw ? JSON.parse(raw) : [];
+      queue.push({ ...entry, queuedAt: Date.now() });
+      safeStorageSet(FORM_QUEUE_KEY, JSON.stringify(queue.slice(-20)));
+    } catch (e) { /* ignore */ }
+  };
+
+  const flushFormQueue = async () => {
+    if (!navigator.onLine) return;
+    let queue;
+    try {
+      const raw = safeStorageGet(FORM_QUEUE_KEY);
+      queue = raw ? JSON.parse(raw) : [];
+    } catch (e) { return; }
+    if (!queue || !queue.length) return;
+    const remaining = [];
+    for (const entry of queue) {
+      const r = await submitToEndpoint(entry.endpoint, entry.payload);
+      if (!r.ok) remaining.push(entry);
+    }
+    safeStorageSet(FORM_QUEUE_KEY, JSON.stringify(remaining));
+    if (queue.length > remaining.length) {
+      trackEvent('form_queue_flushed', { delivered: queue.length - remaining.length });
+    }
+  };
+
+  // ---------- Simple A/B testing flag system ----------
+  // Persistent per-visitor assignment, opt-in by adding data-ab="experiment_id:variant_a|variant_b" on body.
+  // Variants distributed 50/50 by FNV-1a hash of visitor id.
+  const abAssign = (experimentId, variants) => {
+    if (!variants || !variants.length) return null;
+    let store = {};
+    try { store = JSON.parse(safeStorageGet(AB_FLAGS_KEY) || '{}'); } catch (e) {}
+    if (store[experimentId]) return store[experimentId];
+    let visitorId = store.__visitor;
+    if (!visitorId) {
+      visitorId = (window.crypto?.randomUUID?.() || (Date.now().toString(36) + Math.random().toString(36).slice(2)));
+      store.__visitor = visitorId;
+    }
+    let h = 2166136261;
+    const seed = visitorId + ':' + experimentId;
+    for (let i = 0; i < seed.length; i++) {
+      h ^= seed.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    const variant = variants[Math.abs(h) % variants.length];
+    store[experimentId] = variant;
+    safeStorageSet(AB_FLAGS_KEY, JSON.stringify(store));
+    trackEvent('ab_assigned', { experiment_id: experimentId, variant });
+    return variant;
+  };
+  window.morrisonAB = { assign: abAssign };
+
+  // ---------- Sentry init (env-driven via meta tag, no-op otherwise) ----------
+  const sentryDsnMeta = document.querySelector('meta[name="sentry-dsn"]');
+  const sentryDsn = sentryDsnMeta?.content?.trim();
+  if (sentryDsn && /^https:\/\/[a-f0-9]+@/i.test(sentryDsn)) {
+    const s = document.createElement('script');
+    s.src = 'https://browser.sentry-cdn.com/7.119.0/bundle.tracing.min.js';
+    s.crossOrigin = 'anonymous';
+    s.async = true;
+    s.onload = () => {
+      try {
+        window.Sentry?.init({
+          dsn: sentryDsn,
+          tracesSampleRate: 0.05,
+          environment: location.hostname === 'morrison-transfer.com' ? 'production' : 'staging',
+          beforeSend(event) {
+            if (event.request?.url?.includes('localhost')) return null;
+            return event;
+          },
+        });
+      } catch (e) { /* silent */ }
+    };
+    document.head.appendChild(s);
+  }
 
 
   const nav = document.querySelector('.site-nav');
@@ -890,30 +989,73 @@
   if (newsletterForm) {
     const msgEl = newsletterForm.querySelector('[data-newsletter-msg]');
     const emailTo = newsletterForm.dataset.emailTo;
+    const endpoint = newsletterForm.dataset.endpoint || '';
     const nlLang = newsletterForm.dataset.lang || 'en';
     const successByLang = {
       ru: 'Подписаны. Первое письмо — в начале сезона.',
       pt: 'Inscrito. Primeiro e-mail no início da temporada.',
       en: 'Subscribed. First email at the start of the season.',
+      es: 'Suscrito. Primer correo al inicio de la temporada.',
     };
-    newsletterForm.addEventListener('submit', (event) => {
+    const queuedByLang = {
+      ru: 'Подписка сохранена локально — отправим, как только появится сеть.',
+      pt: 'Inscrição salva localmente — enviamos assim que houver rede.',
+      en: 'Subscription saved locally — we will send it once you are back online.',
+      es: 'Suscripción guardada localmente — la enviaremos cuando vuelva la conexión.',
+    };
+    newsletterForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const fd = new FormData(newsletterForm);
       const email = (fd.get('email') || '').toString().trim();
       const consent = !!fd.get('consent');
       if (!email || !consent || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
 
-      // No backend on GH Pages — escape hatch: open mailto so the email lands in the inbox.
-      const subject = encodeURIComponent('Newsletter signup · ' + nlLang);
-      const body = encodeURIComponent(`email: ${email}\nlang: ${nlLang}\nconsent: yes\nsource: ${window.location.href}`);
-      window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+      const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+      submitBtn?.classList.add('is-loading');
+      submitBtn?.setAttribute('disabled', 'disabled');
 
-      trackEvent('newsletter_signup', { language: nlLang });
+      const payload = {
+        type: 'newsletter',
+        email,
+        language: nlLang,
+        consent: true,
+        source: window.location.href,
+        ts: new Date().toISOString(),
+      };
+
+      let delivered = false;
+      let queued = false;
+
+      if (endpoint) {
+        const r = await submitToEndpoint(endpoint, payload);
+        if (r.ok) {
+          delivered = true;
+        } else if (!navigator.onLine || r.reason === 'network') {
+          enqueueForm({ endpoint, payload });
+          queued = true;
+        }
+      }
+
+      if (!delivered && !queued) {
+        // Fallback: mailto so the email still lands in inbox.
+        const subject = encodeURIComponent('Newsletter signup · ' + nlLang);
+        const body = encodeURIComponent(`email: ${email}\nlang: ${nlLang}\nconsent: yes\nsource: ${window.location.href}`);
+        try { window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`; } catch (e) {}
+      }
+
+      trackEvent('newsletter_signup', { language: nlLang, delivery: delivered ? 'endpoint' : (queued ? 'queued' : 'mailto') });
       msgEl.hidden = false;
-      msgEl.textContent = successByLang[nlLang] || successByLang.en;
+      msgEl.textContent = queued ? (queuedByLang[nlLang] || queuedByLang.en) : (successByLang[nlLang] || successByLang.en);
       newsletterForm.querySelector('input[type="email"]').value = '';
+      submitBtn?.classList.remove('is-loading');
+      submitBtn?.removeAttribute('disabled');
     });
   }
+
+  // Flush any queued form submissions on page load + when network returns.
+  if ('requestIdleCallback' in window) requestIdleCallback(() => flushFormQueue(), { timeout: 4000 });
+  else setTimeout(() => flushFormQueue(), 2500);
+  window.addEventListener('online', () => flushFormQueue());
 
   // ---------- GA4 scroll depth tracking ----------
   if (typeof window.gtag === 'function') {
@@ -1638,6 +1780,36 @@
         service: fd.get('service') || '',
         language: lang,
       });
+
+      // Parallel: post structured payload to endpoint so it lands in inbox / CRM,
+      // independently of WhatsApp open. Queue locally if offline.
+      const endpoint = briefForm.dataset.endpoint || '';
+      if (endpoint) {
+        const payload = {
+          type: 'brief',
+          language: lang,
+          service: fd.get('service') || '',
+          fromCity: fd.get('fromCity') || '',
+          toCity: fd.get('toCity') || '',
+          date: fd.get('date') || '',
+          time: fd.get('time') || '',
+          pax: fd.get('pax') || '',
+          bags: fd.get('bags') || '',
+          children: !!fd.get('children'),
+          childSeat: !!fd.get('childSeat'),
+          name: fd.get('name') || '',
+          contact: fd.get('contact') || '',
+          notes: fd.get('notes') || '',
+          source: window.location.href,
+          ts: new Date().toISOString(),
+        };
+        submitToEndpoint(endpoint, payload).then((r) => {
+          if (!r.ok && (!navigator.onLine || r.reason === 'network')) {
+            enqueueForm({ endpoint, payload });
+          }
+          trackEvent('brief_endpoint_delivery', { ok: r.ok, language: lang });
+        });
+      }
 
       window.open(url, '_blank', 'noopener');
 

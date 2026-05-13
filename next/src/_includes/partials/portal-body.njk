@@ -1,0 +1,73 @@
+{%- set t = i18n[lang] -%}
+<section class="hero">
+  <div class="container container--narrow">
+    <p class="kicker"><span class="badge-soft">{{ t.portalPage.earlyBadge }}</span> · {{ t.portalPage.eyebrow }}</p>
+    <h1>{{ t.portalPage.title }}</h1>
+    <p class="lead">{{ t.portalPage.lead }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=portal-early-access">{{ t.portalPage.earlyAccess }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.portalPage.contactManager }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <div class="portal-login-card" aria-disabled="true">
+      <header class="portal-login-head">
+        <h2>{{ t.portalPage.loginTitle }}</h2>
+        <p class="muted small">{{ t.portalPage.loginHint }}</p>
+      </header>
+      <form class="portal-login-form" onsubmit="event.preventDefault();return false;">
+        <label class="field">
+          <span>{{ t.portalPage.loginEmail }}</span>
+          <input type="email" placeholder="account@yourbrand.com" disabled aria-disabled="true">
+        </label>
+        <label class="field">
+          <span>{{ t.portalPage.loginPassword }}</span>
+          <input type="password" placeholder="••••••••" disabled aria-disabled="true">
+        </label>
+        <button type="button" class="btn btn-dark btn-arrow" disabled aria-disabled="true">{{ t.portalPage.loginDisabled }}</button>
+      </form>
+      <div class="portal-login-meta">
+        <span class="status-dot status-dot--amber" aria-hidden="true"></span>
+        <span class="muted small">{{ t.portalPage.timelineQ3 }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 style="text-align: center;">{{ t.portalPage.featuresTitle }}</h2>
+    <div class="value-grid">
+      <article class="value-card"><h3>{{ t.portalPage.feat1Title }}</h3><p>{{ t.portalPage.feat1Body }}</p></article>
+      <article class="value-card"><h3>{{ t.portalPage.feat2Title }}</h3><p>{{ t.portalPage.feat2Body }}</p></article>
+      <article class="value-card"><h3>{{ t.portalPage.feat3Title }}</h3><p>{{ t.portalPage.feat3Body }}</p></article>
+      <article class="value-card"><h3>{{ t.portalPage.feat4Title }}</h3><p>{{ t.portalPage.feat4Body }}</p></article>
+      <article class="value-card"><h3>{{ t.portalPage.feat5Title }}</h3><p>{{ t.portalPage.feat5Body }}</p></article>
+      <article class="value-card"><h3>{{ t.portalPage.feat6Title }}</h3><p>{{ t.portalPage.feat6Body }}</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--bg-soft">
+  <div class="container container--narrow">
+    <h2 style="text-align: center;">{{ t.portalPage.timelineTitle }}</h2>
+    <ol class="portal-timeline">
+      <li><span class="portal-q num">Q2</span><p>{{ t.portalPage.timelineQ2 }}</p></li>
+      <li class="is-current"><span class="portal-q num">Q3</span><p>{{ t.portalPage.timelineQ3 }}</p></li>
+      <li><span class="portal-q num">Q4</span><p>{{ t.portalPage.timelineQ4 }}</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container container--narrow">
+    <h2>{{ t.portalPage.earlyAccess }}</h2>
+    <div class="cta-strip-actions">
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/?topic=portal-early-access">{{ t.portalPage.earlyAccess }}</a>
+      <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</section>

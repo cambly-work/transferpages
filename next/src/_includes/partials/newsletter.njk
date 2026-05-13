@@ -7,7 +7,7 @@
         <h3>{{ t.newsletter.title }}</h3>
         <p class="muted">{{ t.newsletter.body }}</p>
       </div>
-      <form class="newsletter-form" data-newsletter data-lang="{{ lang }}" data-email-to="{{ site.contacts.email }}" novalidate>
+      <form class="newsletter-form" data-newsletter data-lang="{{ lang }}" data-email-to="{{ site.contacts.email }}" data-endpoint="{{ site.forms.endpoint }}" novalidate>
         <div class="newsletter-row">
           <input type="email" name="email" placeholder="{{ t.newsletter.placeholder }}" required aria-label="{{ t.newsletter.placeholder }}">
           <button type="submit" class="btn btn-dark btn-arrow">{{ t.newsletter.submit }}</button>

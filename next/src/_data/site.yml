@@ -9,6 +9,18 @@ contacts:
   telegramUrl: https://t.me/premium_transfer_latam
   email: hello@morrison-transfer.com
 
+# Form submission endpoint. When empty, forms fall back to mailto/WhatsApp open.
+# When set to a Formspree/Web3Forms/Cloudflare Worker URL, forms POST JSON there.
+# Swap value here to flip the whole site from mailto-mode to API-mode without code changes.
+forms:
+  endpoint: ""
+  # Example: "https://formspree.io/f/xpzxxxxx" or "https://api.morrison-transfer.com/intake"
+
+# Optional Sentry DSN. When empty, error reporting is a no-op.
+# Set in production via env (built into HTML by hand or via a small build step).
+sentry:
+  dsn: ""
+
 legal:
   cnpj: "53.294.776/0001-28"
   entityName: "Artem Balabanov MEI"

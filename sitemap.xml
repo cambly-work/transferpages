@@ -562,6 +562,86 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://morrison-transfer.com/ru/curitiba/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/curitiba/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/curitiba/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/curitiba/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/curitiba/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/curitiba/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/curitiba/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/curitiba/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/curitiba/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/punta-del-este/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/punta-del-este/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/punta-del-este/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/punta-del-este/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/punta-del-este/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/punta-del-este/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://morrison-transfer.com/ru/privacy/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/privacy/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/privacy/"/>
@@ -962,6 +1042,46 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://morrison-transfer.com/ru/portal/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/portal/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/portal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/portal/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/portal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/portal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/portal/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/portal/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/portal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/portal/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/portal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/portal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/portal/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/portal/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/portal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/portal/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/portal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/portal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/portal/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://morrison-transfer.com/ru/portal/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://morrison-transfer.com/pt/portal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://morrison-transfer.com/en/portal/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://morrison-transfer.com/es/portal/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://morrison-transfer.com/en/portal/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://morrison-transfer.com/ru/routes/florianopolis-balneario-camboriu/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1258,6 +1378,66 @@
   </url>
   <url>
     <loc>https://morrison-transfer.com/es/blog/payment-methods-brazil/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/iguazu-vip-itinerary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/iguazu-vip-itinerary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/iguazu-vip-itinerary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/blog/iguazu-vip-itinerary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/hotel-pickup-best-practices/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/hotel-pickup-best-practices/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/hotel-pickup-best-practices/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/blog/hotel-pickup-best-practices/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/ru/blog/rainy-season-driving/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/pt/blog/rainy-season-driving/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/en/blog/rainy-season-driving/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://morrison-transfer.com/es/blog/rainy-season-driving/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -3448,3 +3448,176 @@ body.cmdk-open { overflow: hidden; }
 }
 
 
+
+/* About — credentials grid */
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+.credential-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.3rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.credential-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.credential-badge {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft, rgba(201,163,107,0.12));
+  color: var(--accent);
+  border-radius: 11px;
+  margin-bottom: 0.2rem;
+}
+.credential-card h3 {
+  font-size: 1.02rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.credential-card p { margin: 0; line-height: 1.55; }
+
+/* About — process steps */
+.how-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+.how-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.1rem;
+  align-items: start;
+  padding: 1.1rem 1.2rem;
+  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+}
+.how-num {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-feature-settings: "tnum";
+  line-height: 1;
+}
+.how-item p { margin: 0; line-height: 1.55; }
+@media (max-width: 540px) {
+  .how-item { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+
+/* About — team stats */
+.team-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.4rem;
+  margin: 0;
+  padding: 1.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.team-stats > div {
+  text-align: center;
+  padding: 0;
+}
+.team-stats dt {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  font-feature-settings: "tnum";
+}
+.team-stats dd { margin: 0; }
+
+/* Portal stub */
+.portal-login-card {
+  max-width: 460px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.8rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+}
+.portal-login-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.02));
+}
+[data-theme="dark"] .portal-login-card::after { background: linear-gradient(180deg, transparent 60%, rgba(255,255,255,0.02)); }
+.portal-login-head { margin-bottom: 1.2rem; }
+.portal-login-head h2 { font-size: 1.2rem; margin: 0 0 0.3rem; letter-spacing: -0.01em; }
+.portal-login-form { display: grid; gap: 0.9rem; margin-bottom: 1rem; }
+.portal-login-form .field { display: grid; gap: 0.3rem; }
+.portal-login-form .field span { font-size: 0.85rem; color: var(--muted); }
+.portal-login-form input {
+  padding: 0.7rem 0.9rem;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--text);
+  font: inherit;
+  opacity: 0.65;
+}
+.portal-login-form input:disabled { cursor: not-allowed; }
+.portal-login-form .btn[disabled] { opacity: 0.55; cursor: not-allowed; }
+.portal-login-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed var(--line);
+}
+.status-dot--amber { background: #d4a44b; }
+.badge-soft {
+  display: inline-block;
+  padding: 0.18rem 0.6rem;
+  background: var(--accent-soft, rgba(201,163,107,0.12));
+  color: var(--accent);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+.portal-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+.portal-timeline li {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1.1rem;
+  border-radius: 11px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  opacity: 0.7;
+}
+.portal-timeline li.is-current { opacity: 1; border-color: var(--accent); box-shadow: 0 1px 0 var(--accent) inset, 0 0 0 1px var(--accent); }
+.portal-q { font-size: 1.1rem; font-weight: 600; color: var(--accent); font-feature-settings: "tnum"; }
+.portal-timeline p { margin: 0; line-height: 1.5; }

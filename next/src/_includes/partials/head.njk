@@ -45,6 +45,9 @@
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Morrison">
+{%- if site.sentry and site.sentry.dsn %}
+<meta name="sentry-dsn" content="{{ site.sentry.dsn }}">
+{%- endif %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

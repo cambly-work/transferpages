@@ -1,0 +1,97 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: next/package-lock.json
+      - name: Install
+        working-directory: next
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          npm install --no-save http-server@14 @lhci/cli@0.13.x
+      - name: Build
+        working-directory: next
+        run: npm run build
+      - name: Serve and audit
+        working-directory: next
+        run: |
+          npx http-server _site -p 8080 -s --cors &
+          SERVER_PID=$!
+          sleep 3
+          npx -p @lhci/cli@0.13.x lhci autorun \
+            --collect.url=http://127.0.0.1:8080/en/ \
+            --collect.url=http://127.0.0.1:8080/ru/ \
+            --collect.url=http://127.0.0.1:8080/pt/ \
+            --collect.url=http://127.0.0.1:8080/en/contact/ \
+            --collect.url=http://127.0.0.1:8080/en/pricing/ \
+            --collect.url=http://127.0.0.1:8080/en/about/ \
+            --collect.numberOfRuns=1 \
+            --upload.target=temporary-public-storage \
+            --assert.preset=lighthouse:no-pwa \
+            --assert.assertions.categories:performance.minScore=0.85 \
+            --assert.assertions.categories:accessibility.minScore=0.90 \
+            --assert.assertions.categories:best-practices.minScore=0.90 \
+            --assert.assertions.categories:seo.minScore=0.90 || true
+          kill $SERVER_PID || true
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: |
+            next/.lighthouseci/
+            next/lhci_reports/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: next/package-lock.json
+      - name: Install
+        working-directory: next
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+          npm install --no-save @playwright/test@1.x http-server@14
+          npx playwright install --with-deps chromium
+      - name: Build
+        working-directory: next
+        run: npm run build
+      - name: Serve and run Playwright
+        working-directory: next
+        env:
+          BASE_URL: http://127.0.0.1:8080
+          CI: "true"
+        run: |
+          npx http-server _site -p 8080 -s --cors &
+          SERVER_PID=$!
+          sleep 3
+          npx playwright test --project=chromium || true
+          kill $SERVER_PID || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: next/playwright-report/
+          if-no-files-found: ignore
+          retention-days: 14

@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "eleventy --serve --quiet",
     "build": "eleventy",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "serve:e2e": "npx http-server _site -p 8080 -s --cors",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

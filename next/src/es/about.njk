@@ -52,18 +52,20 @@ breadcrumbs:
       <div><dt>Company</dt><dd>{{ site.legal.entityName }}</dd></div>
       <div><dt>CNPJ</dt><dd>{{ t.footer.cnpjValue }}</dd></div>
       <div><dt>Base</dt><dd>{{ site.legal.city }} / {{ site.legal.state }}, Brazil</dd></div>
-      <div><dt>Coverage</dt><dd>Brazil, Uruguay, Paraguay, Argentina</dd></div>
-      <div><dt>Languages</dt><dd>Português · Русский · English</dd></div>
-      <div><dt>Channels</dt><dd>WhatsApp · Telegram · Email · Site</dd></div>
+      <div><dt>Cobertura</dt><dd>Brasil, Uruguay, Paraguay, Argentina</dd></div>
+      <div><dt>Idiomas</dt><dd>Português · Русский · English · Español</dd></div>
+      <div><dt>Canales</dt><dd>WhatsApp · Telegram · Email · Sitio</dd></div>
     </dl>
   </div>
 </section>
 
+{% include "partials/about-trust.njk" %}
+
 <section class="cta-strip">
   <div class="container container--narrow">
-    <h2>Ready to plan a trip?</h2>
+    <h2>¿Listo para planear el viaje?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="/es/contact/">Open the form</a>
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Abrir formulario</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>

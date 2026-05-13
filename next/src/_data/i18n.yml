@@ -31,6 +31,7 @@ ru:
     cases: Сценарии
     pricing: Тарифы
     coverage: Покрытие
+    portal: B2B-портал
   footer:
     sections: Разделы
     contacts: Контакты
@@ -203,6 +204,34 @@ ru:
     val3Body: Заявки и сопровождение на русском, португальском и английском. Без "Google Translate в WhatsApp".
     val4Title: Подготовленный сценарий
     val4Body: Маршрут, остановки, документы для пересечения границы — собираем до выезда, а не на ходу.
+    credentialsEyebrow: Документы и страховки
+    credentialsTitle: На бумаге, не на словах
+    credentialsLead: Premium — это в первую очередь юридическая чистота. Ниже — состав документов, которые мы готовы показать по запросу до заключения договора.
+    credAnttTitle: ANTT · перевозки пассажиров
+    credAnttBody: Регистрация в Agência Nacional de Transportes Terrestres для междугородних поездок. Без неё — это не «трансфер», а «частная подвозка».
+    credAblaTitle: ABLA · отраслевая ассоциация
+    credAblaBody: Членство в Associação Brasileira de Locadoras de Automóveis — стандарты сервиса, обмен опытом по инцидентам, доступ к коллективным условиям страховщиков.
+    credDpvatTitle: DPVAT + corporate insurance
+    credDpvatBody: Обязательное страхование (DPVAT) плюс корпоративный полис с расширенной ответственностью перед пассажирами на сумму до R$ 200 000 на жизнь.
+    credLgpdTitle: LGPD · защита данных
+    credLgpdBody: Заявки, телефон, имя пассажира — храним по требованиям Lei Geral de Proteção de Dados. По запросу удаляем или экспортируем за 5 рабочих дней.
+    credNfeTitle: NF-e · электронные накладные
+    credNfeBody: Каждой поездке — корректная Nota Fiscal Eletrônica на CNPJ заказчика. Подходит для возмещения через бухгалтерию иностранной компании или представительства.
+    credCheckTitle: Driver background check
+    credCheckBody: Antecedentes Criminais + CNH с EAR + минимум 5 лет стажа с пассажирами. Подтверждаемо через certidão.
+    howWeWorkEyebrow: Как мы работаем
+    howWeWorkTitle: Процесс — от заявки до отчёта
+    howWeWorkStep1: '«Бриф» — за 24 часа до поездки фиксируем маршрут, тайминг, документы, аллергии и предпочтения.'
+    howWeWorkStep2: '«Проверка» — за 6 часов: метеосводка, дорожные работы, прогноз пробок, состояние границы. Если что-то меняется — пишем сразу.'
+    howWeWorkStep3: '«Поездка» — водитель встречает с табличкой по имени, машина пройдена за день до выезда. Связь с диспетчером каждые 30 мин на длинном плече.'
+    howWeWorkStep4: '«Отчёт» — фото маршрута, чек времени, NF-e на корпоративный e-mail. Для регулярных клиентов — месячная сводка.'
+    teamEyebrow: Кто за рулём
+    teamTitle: Не платформа — конкретные люди
+    teamBody: У нас не агрегатор «кому ближе». Поездки распределяются по 12 водителям, с которыми работаем напрямую и которых вы видим лично перед выездом. Имя, фото и стаж появятся в карточке после подтверждения брифа.
+    teamFleetSize: водителей
+    teamYearsAvg: средний стаж
+    teamLanguages: рабочих языков
+    teamCoverage: страна и Mercosur
   testimonialsPage:
     eyebrow: Отзывы
     title: Что говорят клиенты.
@@ -224,6 +253,36 @@ ru:
     contactDriver: Связаться с водителем
     contactSupport: Связаться с поддержкой
     demoNote: Демо-режим — все данные на этой странице вымышлены.
+  portalPage:
+    eyebrow: B2B-портал
+    title: Корпоративный кабинет — Q3 2026.
+    lead: 'Закрытый кабинет для отелей, агентств релокации и концерж-сервисов: история поездок, NF-e в один клик, отчёт за месяц, статус по активным заказам.'
+    earlyAccess: Запросить ранний доступ
+    contactManager: Связаться с менеджером
+    loginTitle: Вход в кабинет
+    loginHint: Скоро. Закрытое тестирование среди партнёров с регулярным потоком.
+    loginEmail: Корпоративный email
+    loginPassword: Пароль
+    loginSubmit: Войти
+    loginDisabled: Закрытый бета-тест
+    featuresTitle: Что внутри
+    feat1Title: История поездок и фильтры
+    feat1Body: Все ваши заявки с фильтром по дате, маршруту, пассажиру, статусу. Экспорт в CSV или PDF одним кликом.
+    feat2Title: NF-e в один клик
+    feat2Body: Сгенерировать электронную накладную на CNPJ заказчика, получить копию на e-mail бухгалтерии без переписки в WhatsApp.
+    feat3Title: Месячный отчёт
+    feat3Body: 'Сводка за период: количество поездок, км, общая сумма, разбивка по бренду/проекту, доля интернациональных плеч.'
+    feat4Title: Активные заявки и ETA
+    feat4Body: Карта с активными поездками вашего бренда, статус по каждой, ETA до пассажира и до точки назначения.
+    feat5Title: Несколько менеджеров
+    feat5Body: До 5 учётных записей в одном корпоративном аккаунте с разграниченным доступом и журналом действий.
+    feat6Title: SLA и приоритет
+    feat6Body: Приоритетный диспетчер 24/7, выделенный канал в Telegram, гарантированная подача в 4 ключевых аэропортах.
+    timelineTitle: Когда выкатываем
+    timelineQ2: Q2 2026 — закрытое демо для пилотных партнёров (5 отелей в SP/FLN)
+    timelineQ3: Q3 2026 — открытая бета по запросу
+    timelineQ4: Q4 2026 — публичный запуск с self-serve регистрацией
+    earlyBadge: Ранний доступ
 
 pt:
   htmlLang: pt-BR
@@ -258,6 +317,7 @@ pt:
     cases: Cenários
     pricing: Tarifas
     coverage: Cobertura
+    portal: Portal B2B
   footer:
     sections: Seções
     contacts: Contatos
@@ -430,6 +490,34 @@ pt:
     val3Body: Atendimento em russo, português e inglês. Sem "Google Translate no WhatsApp".
     val4Title: Cenário preparado
     val4Body: Rota, paradas, documentos para travessia de fronteira — montados antes, não na estrada.
+    credentialsEyebrow: Documentos e seguros
+    credentialsTitle: No papel, não só na conversa
+    credentialsLead: Premium é, antes de tudo, conformidade jurídica. Abaixo, os documentos que apresentamos a pedido antes do contrato.
+    credAnttTitle: ANTT · transporte de passageiros
+    credAnttBody: Registro na Agência Nacional de Transportes Terrestres para viagens interestaduais. Sem ele não é "transfer", é carona.
+    credAblaTitle: ABLA · associação setorial
+    credAblaBody: Associados à Associação Brasileira de Locadoras de Automóveis — padrões de serviço, troca de experiências sobre incidentes, acesso a condições coletivas de seguradoras.
+    credDpvatTitle: DPVAT + seguro corporativo
+    credDpvatBody: Seguro obrigatório (DPVAT) mais apólice corporativa com responsabilidade estendida sobre passageiros até R$ 200.000 por vida.
+    credLgpdTitle: LGPD · proteção de dados
+    credLgpdBody: Pedidos, telefone, nome do passageiro — guardados de acordo com a Lei Geral de Proteção de Dados. Apagamos ou exportamos sob pedido em até 5 dias úteis.
+    credNfeTitle: NF-e · nota fiscal eletrônica
+    credNfeBody: Cada viagem com NF-e correta no CNPJ do cliente. Serve para reembolso pela contabilidade de empresa estrangeira ou representação.
+    credCheckTitle: Driver background check
+    credCheckBody: Antecedentes Criminais + CNH com EAR + mínimo de 5 anos de experiência com passageiros. Verificável via certidão.
+    howWeWorkEyebrow: Como trabalhamos
+    howWeWorkTitle: Processo — do pedido ao relatório
+    howWeWorkStep1: '"Briefing" — 24 horas antes da viagem fixamos rota, horários, documentos, alergias e preferências.'
+    howWeWorkStep2: '"Verificação" — 6 horas antes: meteorologia, obras na pista, previsão de trânsito, situação da fronteira. Se algo muda, avisamos na hora.'
+    howWeWorkStep3: '"Viagem" — motorista recebe com placa de nome, carro vistoriado um dia antes. Contato com central a cada 30 min em trecho longo.'
+    howWeWorkStep4: '"Relatório" — fotos da rota, registro de tempo, NF-e no e-mail corporativo. Para clientes recorrentes, resumo mensal.'
+    teamEyebrow: Quem está ao volante
+    teamTitle: Não é uma plataforma — são pessoas
+    teamBody: Não somos agregador "quem está mais perto". As viagens são distribuídas entre 12 motoristas com quem trabalhamos diretamente e que você conhece pessoalmente antes da partida. Nome, foto e tempo de experiência aparecem no card após a confirmação do briefing.
+    teamFleetSize: motoristas
+    teamYearsAvg: anos médios
+    teamLanguages: idiomas de trabalho
+    teamCoverage: país e Mercosul
   testimonialsPage:
     eyebrow: Depoimentos
     title: O que dizem os clientes.
@@ -451,6 +539,36 @@ pt:
     contactDriver: Falar com o motorista
     contactSupport: Falar com o suporte
     demoNote: Modo demonstração — todos os dados são fictícios.
+  portalPage:
+    eyebrow: Portal B2B
+    title: Painel corporativo — Q3 2026.
+    lead: Portal fechado para hotéis, agências de relocação e serviços de concierge — histórico de viagens, NF-e em um clique, relatório mensal, status das viagens ativas.
+    earlyAccess: Solicitar acesso antecipado
+    contactManager: Falar com o gerente
+    loginTitle: Acesso ao painel
+    loginHint: Em breve. Beta fechada com parceiros de fluxo recorrente.
+    loginEmail: E-mail corporativo
+    loginPassword: Senha
+    loginSubmit: Entrar
+    loginDisabled: Beta fechada
+    featuresTitle: O que tem por dentro
+    feat1Title: Histórico e filtros
+    feat1Body: Todas as solicitações filtradas por data, rota, passageiro, status. Exportação em CSV ou PDF com um clique.
+    feat2Title: NF-e em um clique
+    feat2Body: Emitir nota fiscal eletrônica no CNPJ do cliente e enviar cópia ao e-mail da contabilidade sem trocar mensagens no WhatsApp.
+    feat3Title: Relatório mensal
+    feat3Body: 'Resumo do período: número de viagens, km, valor total, divisão por marca/projeto, fatia de trechos internacionais.'
+    feat4Title: Viagens ativas e ETA
+    feat4Body: Mapa com as viagens ativas da sua marca, status de cada uma, ETA até o passageiro e até o destino.
+    feat5Title: Múltiplos gerentes
+    feat5Body: Até 5 contas no mesmo cadastro corporativo, com permissões separadas e log de ações.
+    feat6Title: SLA e prioridade
+    feat6Body: Despacho prioritário 24/7, canal dedicado no Telegram, retirada garantida nos 4 aeroportos-chave.
+    timelineTitle: Quando entra em produção
+    timelineQ2: Q2 2026 — demo fechada para parceiros piloto (5 hotéis em SP/FLN)
+    timelineQ3: Q3 2026 — beta aberta sob pedido
+    timelineQ4: Q4 2026 — lançamento público com cadastro self-serve
+    earlyBadge: Acesso antecipado
 
 en:
   htmlLang: en
@@ -485,6 +603,7 @@ en:
     cases: Scenarios
     pricing: Pricing
     coverage: Coverage
+    portal: B2B portal
   footer:
     sections: Sections
     contacts: Contacts
@@ -657,6 +776,34 @@ en:
     val3Body: Requests and support in Russian, Portuguese and English. No "Google Translate over WhatsApp".
     val4Title: Prepared scenario
     val4Body: Route, stops, border-crossing documents — assembled before the trip, not on the road.
+    credentialsEyebrow: Paperwork and insurance
+    credentialsTitle: On paper, not just in conversation
+    credentialsLead: Premium starts with legal cleanliness. The documents below are available on request before any contract is signed.
+    credAnttTitle: ANTT · passenger transport
+    credAnttBody: Registered with Agência Nacional de Transportes Terrestres for interstate trips. Without it, it isn't a "transfer" — it's a ride-along.
+    credAblaTitle: ABLA · industry association
+    credAblaBody: Member of the Brazilian Vehicle Rental Association — service standards, incident knowledge sharing, access to collective insurance terms.
+    credDpvatTitle: DPVAT + corporate insurance
+    credDpvatBody: Mandatory insurance (DPVAT) plus a corporate policy with extended passenger liability up to R$ 200,000 per life.
+    credLgpdTitle: LGPD · data protection
+    credLgpdBody: Requests, phone numbers, passenger names — stored per Brazil's Lei Geral de Proteção de Dados. Deleted or exported on request within 5 business days.
+    credNfeTitle: NF-e · electronic invoicing
+    credNfeBody: Every trip backed by a valid NF-e to the client's CNPJ. Works for reimbursement through a foreign company's accounting or local representation.
+    credCheckTitle: Driver background check
+    credCheckBody: Criminal-record check + CNH with EAR endorsement + minimum 5 years of passenger experience. Verifiable via certidão.
+    howWeWorkEyebrow: How we work
+    howWeWorkTitle: Process — from request to report
+    howWeWorkStep1: '"Brief" — 24 hours before the trip we lock route, timing, documents, allergies and preferences.'
+    howWeWorkStep2: '"Check" — 6 hours out: weather, roadworks, traffic forecast, border status. If anything shifts, we ping you immediately.'
+    howWeWorkStep3: '"Trip" — driver meets you with a name sign, vehicle inspected the day before. Dispatcher contact every 30 minutes on a long leg.'
+    howWeWorkStep4: '"Report" — route photos, time log, NF-e to the corporate e-mail. For recurring clients, a monthly summary.'
+    teamEyebrow: Who is at the wheel
+    teamTitle: Not a platform — actual people
+    teamBody: We're not a "whoever is closest" aggregator. Trips are distributed across 12 drivers we work with directly, and whom you'll meet in person before departure. Name, photo and tenure appear on the card after brief confirmation.
+    teamFleetSize: drivers
+    teamYearsAvg: average tenure
+    teamLanguages: working languages
+    teamCoverage: country + Mercosur
   testimonialsPage:
     eyebrow: Reviews
     title: What clients say.
@@ -678,6 +825,36 @@ en:
     contactDriver: Call the driver
     contactSupport: Reach support
     demoNote: Demo mode — every value on this page is fictional.
+  portalPage:
+    eyebrow: B2B portal
+    title: Corporate dashboard — Q3 2026.
+    lead: A closed dashboard for hotels, relocation agencies and concierge services — trip history, NF-e in one click, monthly report, status of active trips.
+    earlyAccess: Request early access
+    contactManager: Reach the account manager
+    loginTitle: Sign in to the portal
+    loginHint: Coming soon. Closed beta with partners running recurring volume.
+    loginEmail: Corporate email
+    loginPassword: Password
+    loginSubmit: Sign in
+    loginDisabled: Closed beta
+    featuresTitle: What's inside
+    feat1Title: History and filters
+    feat1Body: All requests filtered by date, route, passenger, status. One-click export to CSV or PDF.
+    feat2Title: NF-e in one click
+    feat2Body: Issue an electronic invoice to the client's CNPJ and email a copy to your accounting team without WhatsApp ping-pong.
+    feat3Title: Monthly report
+    feat3Body: 'Period summary: number of trips, km, total amount, breakdown by brand/project, share of international legs.'
+    feat4Title: Live trips and ETA
+    feat4Body: Map with your brand's active trips, status per trip, ETA to the passenger and to the destination.
+    feat5Title: Multiple managers
+    feat5Body: Up to 5 accounts under one corporate seat with role-based access and audit log.
+    feat6Title: SLA and priority
+    feat6Body: Priority dispatch 24/7, dedicated Telegram channel, guaranteed pickup at 4 key airports.
+    timelineTitle: When it ships
+    timelineQ2: Q2 2026 — closed demo for pilot partners (5 hotels in SP/FLN)
+    timelineQ3: Q3 2026 — open beta on request
+    timelineQ4: Q4 2026 — public launch with self-serve sign-up
+    earlyBadge: Early access
 
 es:
   htmlLang: es
@@ -712,6 +889,7 @@ es:
     cases: Escenarios
     pricing: Tarifas
     coverage: Cobertura
+    portal: Portal B2B
   footer:
     sections: Secciones
     contacts: Contactos
@@ -884,6 +1062,34 @@ es:
     val3Body: Solicitudes y soporte en ruso, portugués, inglés y español. Sin "Google Translate por WhatsApp".
     val4Title: Escenario preparado
     val4Body: Ruta, paradas, documentos de cruce fronterizo — montados antes, no en la carretera.
+    credentialsEyebrow: Documentos y seguros
+    credentialsTitle: En papel, no sólo de palabra
+    credentialsLead: Premium empieza por el cumplimiento legal. Estos son los documentos que mostramos bajo pedido antes de cualquier contrato.
+    credAnttTitle: ANTT · transporte de pasajeros
+    credAnttBody: Registrados en la Agência Nacional de Transportes Terrestres para viajes interestaduales. Sin eso no es "transfer", es un viaje compartido.
+    credAblaTitle: ABLA · asociación sectorial
+    credAblaBody: Miembros de la Asociación Brasileña de Empresas de Alquiler de Vehículos — estándares de servicio, intercambio de experiencias sobre incidentes, acceso a condiciones colectivas de aseguradoras.
+    credDpvatTitle: DPVAT + seguro corporativo
+    credDpvatBody: Seguro obligatorio (DPVAT) más póliza corporativa con responsabilidad extendida sobre pasajeros hasta R$ 200.000 por vida.
+    credLgpdTitle: LGPD · protección de datos
+    credLgpdBody: Solicitudes, teléfono, nombre del pasajero — almacenados según la Lei Geral de Proteção de Dados. Eliminamos o exportamos bajo pedido en 5 días hábiles.
+    credNfeTitle: NF-e · factura electrónica
+    credNfeBody: Cada viaje respaldado con NF-e válida al CNPJ del cliente. Sirve para reembolso por la contabilidad de empresa extranjera o representación local.
+    credCheckTitle: Driver background check
+    credCheckBody: Antecedentes Criminales + CNH con EAR + mínimo 5 años de experiencia con pasajeros. Verificable vía certidão.
+    howWeWorkEyebrow: Cómo trabajamos
+    howWeWorkTitle: Proceso — del pedido al informe
+    howWeWorkStep1: '"Brief" — 24 horas antes del viaje fijamos ruta, horarios, documentos, alergias y preferencias.'
+    howWeWorkStep2: '"Verificación" — 6 horas antes: clima, obras viales, pronóstico de tránsito, estado fronterizo. Si algo cambia, avisamos de inmediato.'
+    howWeWorkStep3: '"Viaje" — el conductor te recibe con cartel con nombre, vehículo inspeccionado el día previo. Contacto con central cada 30 min en trayecto largo.'
+    howWeWorkStep4: '"Informe" — fotos de la ruta, registro de tiempo, NF-e al correo corporativo. Para clientes recurrentes, resumen mensual.'
+    teamEyebrow: Quién está al volante
+    teamTitle: No es una plataforma — son personas
+    teamBody: No somos agregador "el más cercano". Los viajes se distribuyen entre 12 conductores con los que trabajamos directamente y que conocerás en persona antes de partir. Nombre, foto y experiencia aparecen en la ficha tras confirmar el brief.
+    teamFleetSize: conductores
+    teamYearsAvg: años promedio
+    teamLanguages: idiomas de trabajo
+    teamCoverage: país y Mercosur
   testimonialsPage:
     eyebrow: Reseñas
     title: Lo que dicen los clientes.
@@ -905,3 +1111,33 @@ es:
     contactDriver: Llamar al conductor
     contactSupport: Soporte
     demoNote: Modo demo — todos los valores en esta página son ficticios.
+  portalPage:
+    eyebrow: Portal B2B
+    title: Panel corporativo — Q3 2026.
+    lead: Panel cerrado para hoteles, agencias de relocación y servicios de concierge — historial de viajes, NF-e en un clic, informe mensual, estado de viajes activos.
+    earlyAccess: Pedir acceso anticipado
+    contactManager: Hablar con el gerente
+    loginTitle: Acceso al panel
+    loginHint: Próximamente. Beta cerrada con socios de volumen recurrente.
+    loginEmail: Correo corporativo
+    loginPassword: Contraseña
+    loginSubmit: Ingresar
+    loginDisabled: Beta cerrada
+    featuresTitle: Qué hay adentro
+    feat1Title: Historial y filtros
+    feat1Body: Todas las solicitudes filtradas por fecha, ruta, pasajero, estado. Exportación a CSV o PDF con un clic.
+    feat2Title: NF-e en un clic
+    feat2Body: Emitir factura electrónica al CNPJ del cliente y enviar copia al correo de contabilidad sin idas y vueltas en WhatsApp.
+    feat3Title: Informe mensual
+    feat3Body: 'Resumen del período: número de viajes, km, monto total, división por marca/proyecto, proporción de trayectos internacionales.'
+    feat4Title: Viajes activos y ETA
+    feat4Body: Mapa con los viajes activos de tu marca, estado por cada uno, ETA hasta el pasajero y hasta el destino.
+    feat5Title: Múltiples gerentes
+    feat5Body: Hasta 5 cuentas en un mismo registro corporativo con permisos por rol y registro de auditoría.
+    feat6Title: SLA y prioridad
+    feat6Body: Despacho prioritario 24/7, canal dedicado en Telegram, retiro garantizado en 4 aeropuertos clave.
+    timelineTitle: Cuándo entra en producción
+    timelineQ2: Q2 2026 — demo cerrada para socios piloto (5 hoteles en SP/FLN)
+    timelineQ3: Q3 2026 — beta abierta bajo pedido
+    timelineQ4: Q4 2026 — lanzamiento público con registro self-serve
+    earlyBadge: Acceso anticipado

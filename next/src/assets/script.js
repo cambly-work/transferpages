@@ -1361,6 +1361,48 @@
 
     triggers.forEach((t) => t.addEventListener('click', open));
     closeNodes.forEach((n) => n.addEventListener('click', close));
+
+    // ----- Voice search (Web Speech API, opt-in) -----
+    const mic = cmdk.querySelector('[data-cmdk-mic]');
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition && mic) {
+      mic.hidden = false;
+      const recog = new SpeechRecognition();
+      recog.continuous = false;
+      recog.interimResults = true;
+      const langMap = { ru: 'ru-RU', pt: 'pt-BR', en: 'en-US', es: 'es-ES' };
+      recog.lang = langMap[docLangShort] || 'en-US';
+      let listening = false;
+      const start = () => {
+        try { recog.start(); listening = true; mic.classList.add('is-listening'); }
+        catch (e) { /* already started */ }
+      };
+      const stop = () => {
+        try { recog.stop(); } catch (e) {}
+        listening = false; mic.classList.remove('is-listening');
+      };
+      mic.addEventListener('click', (e) => {
+        e.stopPropagation();
+        listening ? stop() : start();
+      });
+      recog.addEventListener('result', (event) => {
+        const last = event.results[event.results.length - 1];
+        if (input) {
+          input.value = last[0].transcript;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+        if (last.isFinal) {
+          stop();
+          // Auto-jump to first match
+          const vis = visibleItems();
+          if (vis[0]) {
+            trackEvent('cmdk_voice_match', { query: last[0].transcript, result: vis[0].href });
+          }
+        }
+      });
+      recog.addEventListener('end', () => { listening = false; mic.classList.remove('is-listening'); });
+      recog.addEventListener('error', () => { listening = false; mic.classList.remove('is-listening'); });
+    }
     input?.addEventListener('input', filter);
 
     document.addEventListener('keydown', (event) => {

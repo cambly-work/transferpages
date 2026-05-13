@@ -3394,4 +3394,57 @@ body.cmdk-open { overflow: hidden; }
   .status-row strong { min-width: 0; flex: 1 0 calc(100% - 22px); }
 }
 
+/* Sprint D: voice search mic button + AR QR placeholder */
+.cmdk-mic {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.cmdk-mic:hover { color: var(--text); border-color: var(--line-strong); }
+.cmdk-mic.is-listening {
+  color: #fff;
+  background: #d44;
+  border-color: #d44;
+  animation: micPulse 1.2s ease-in-out infinite;
+}
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(221, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(221, 68, 68, 0); }
+}
+
+.track-ar {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+  padding: 1rem 1.1rem;
+  background: var(--bg-soft);
+  border: 1px dashed var(--line-strong);
+  border-radius: 12px;
+}
+.track-ar-qr {
+  flex-shrink: 0;
+  color: var(--bg-navy);
+  background: #fff;
+  padding: 6px;
+  border-radius: 8px;
+  line-height: 0;
+}
+[data-theme="dark"] .track-ar-qr { color: var(--bg-navy); }
+.track-ar-copy { flex: 1; }
+.track-ar-copy .kicker { color: var(--accent); margin-bottom: 0.3rem; }
+.track-ar-copy p:not(.kicker) { font-size: 0.92rem; color: var(--muted); line-height: 1.5; margin: 0; }
+@media (max-width: 540px) {
+  .track-ar { flex-direction: column; text-align: center; }
+}
+
 

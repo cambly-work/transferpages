@@ -1129,32 +1129,67 @@ body.menu-open .mobile-sticky-cta { opacity: 0; pointer-events: none; }
   margin-top: 2rem;
 }
 .value-card {
-  background: #fff;
+  position: relative;
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-tile);
-  padding: 1.6rem;
+  padding: 1.6rem 1.5rem 1.5rem;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
+.value-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent 80%);
+  border-radius: var(--radius-tile) var(--radius-tile) 0 0;
+  opacity: 0.85;
+}
+.value-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
 .value-card h3 {
-  font-size: 1.12rem;
-  margin: 0 0 0.6rem;
+  font-size: 1.08rem;
+  margin: 0.3rem 0 0.7rem;
   letter-spacing: -0.018em;
+  line-height: 1.3;
 }
 .value-card p { color: var(--muted); line-height: 1.6; margin: 0; font-size: 0.95rem; }
 
 .facts-dl {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.4rem 1.4rem;
-  margin-top: 1.4rem;
+  gap: 0;
+  margin-top: 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
 }
 .facts-dl > div {
   display: flex;
   flex-direction: column;
-  padding: 0.9rem 0;
+  gap: 0.4rem;
+  padding: 1.1rem 1.2rem;
+  border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
-.facts-dl dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
-.facts-dl dd { margin: 0; font-size: 1rem; font-weight: 500; }
+.facts-dl dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+.facts-dl dd { margin: 0; font-size: 0.98rem; font-weight: 500; line-height: 1.4; }
+@media (min-width: 800px) {
+  .facts-dl { grid-template-columns: repeat(3, 1fr); }
+  .facts-dl > div:nth-child(3n) { border-right: none; }
+  .facts-dl > div:nth-last-child(-n+3) { border-bottom: none; }
+}
+@media (max-width: 799px) {
+  .facts-dl > div { border-right: none; }
+  .facts-dl > div:last-child { border-bottom: none; }
+}
 
 /* =========================================================
    Fleet

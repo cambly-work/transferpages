@@ -3800,7 +3800,7 @@ body.cmdk-open { overflow: hidden; }
 /* =========================================================
    VIP / business block (navy bg + grid)
    ========================================================= */
-.vip-section .lead { color: var(--text-on-dark); opacity: 0.86; max-width: 540px; }
+.vip-section .lead { color: var(--muted-on-dark); max-width: 540px; line-height: 1.55; }
 .vip-layout {
   display: grid;
   grid-template-columns: minmax(280px, 380px) 1fr;
@@ -3876,8 +3876,18 @@ body.cmdk-open { overflow: hidden; }
   border-radius: 999px;
   color: var(--text);
   white-space: nowrap;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+}
+.geo-chip:hover {
+  border-color: var(--accent);
+  background: rgba(201, 163, 107, 0.08);
+  color: var(--accent);
 }
 [data-theme="dark"] .geo-chip { background: rgba(255, 255, 255, 0.05); color: var(--text-on-dark); }
+[data-theme="dark"] .geo-chip:hover {
+  background: rgba(201, 163, 107, 0.15);
+  color: var(--accent);
+}
 @media (max-width: 960px) { .geo-network { grid-template-columns: 1fr; } }
 
 /* =========================================================
@@ -3891,6 +3901,14 @@ body.cmdk-open { overflow: hidden; }
   gap: 1rem;
 }
 .journey {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color 200ms ease, transform 200ms ease;
+  list-style: none;
+}
+.journey:hover { border-color: var(--accent); transform: translateY(-2px); }
+.journey-link {
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-areas:
@@ -3899,12 +3917,23 @@ body.cmdk-open { overflow: hidden; }
   gap: 0.4rem 1.4rem;
   align-items: start;
   padding: 1.2rem 1.4rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  transition: border-color 200ms ease;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
 }
-.journey:hover { border-color: var(--accent); }
+.journey-link::after {
+  content: "›";
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 1.4rem;
+  opacity: 0.6;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.journey:hover .journey-link::after { opacity: 1; transform: translate(4px, -50%); }
+.journey-link:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 14px; }
 .journey-format {
   grid-area: format;
   font-size: 0.72rem;
@@ -3929,7 +3958,7 @@ body.cmdk-open { overflow: hidden; }
   font-size: 0.95rem;
 }
 @media (max-width: 680px) {
-  .journey {
+  .journey-link {
     grid-template-columns: 1fr;
     grid-template-areas:
       "format"
@@ -3938,4 +3967,5 @@ body.cmdk-open { overflow: hidden; }
     gap: 0.3rem;
   }
   .journey-format { padding-top: 0; }
+  .journey-link::after { display: none; }
 }

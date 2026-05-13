@@ -46,49 +46,6 @@ faq:
 
 {% include "partials/stats.njk" %}
 
-<section class="section">
-  <div class="container">
-    <header style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;">
-      <div>
-        <p class="kicker">Direções</p>
-        <h2>O que fazemos.</h2>
-      </div>
-      <p class="muted" style="max-width: 320px; margin: 0;">Cada bloco é um cenário com confirmação antes da partida.</p>
-    </header>
-    <div class="bento reveal-stagger">
-      <a class="bento-cell bento-cell--span-3 bento-cell--row-2 bento-cell--photo bento-photo--brazil" href="/{{ lang }}/brazil-transfers/">
-        <div class="bento-bg"></div>
-        <div class="bento-cell-content">
-          <p class="eyebrow">Intermunicipal</p>
-          <h3>Trechos longos como serviço gerenciado.</h3>
-          <p>São Paulo, Rio, Curitiba, Florianópolis, Porto Alegre.</p>
-          <span class="bento-cta">Saber mais</span>
-        </div>
-      </a>
-      <a class="bento-cell bento-cell--span-3 bento-cell--photo bento-photo--airport" href="/{{ lang }}/airport-transfer/">
-        <div class="bento-bg"></div>
-        <div class="bento-cell-content">
-          <p class="eyebrow">Aeroporto</p>
-          <h3>Recepção sem placa de papel.</h3>
-          <p>FLN · POA · GRU · GIG — voo monitorado pelo número.</p>
-          <span class="bento-cta">Saber mais</span>
-        </div>
-      </a>
-      <a class="bento-cell bento-cell--span-2 bento-cell--dark" href="/{{ lang }}/international/">
-        <p class="eyebrow">Mercosul</p>
-        <h3>Uruguai · Paraguai · Argentina.</h3>
-        <p>Documentos e travessias preparados antes.</p>
-        <span class="bento-cta">Saber mais</span>
-      </a>
-      <a class="bento-cell bento-cell--stat" href="/{{ lang }}/fleet/">
-        <span class="stat-number num">4</span>
-        <span class="stat-label">classes de veículos: sedan, SUV, minivan, vans</span>
-        <span class="bento-cta">Frota</span>
-      </a>
-    </div>
-  </div>
-</section>
-
 {% include "partials/capabilities.njk" %}
 
 {% include "partials/vip-business.njk" %}
@@ -121,25 +78,6 @@ faq:
   </div>
 </section>
 
-<section class="section">
-  <div class="container container--narrow">
-    <h2 style="text-align: center;">Rotas regulares.</h2>
-    <p class="muted" style="text-align: center; margin-top: 0.6rem;">Distância · duração · preço de referência. Cálculo exato em um toque.</p>
-    <div class="routes" style="margin-top: 2rem;">
-      {%- for pair in routes.pairs %}
-      {%- if loop.index <= 5 %}
-      <a class="route-row" href="/{{ lang }}/routes/{{ pair.slug }}/">
-        <div class="route-name">{{ pair.from | cityName(lang, routes.cities) }} → {{ pair.to | cityName(lang, routes.cities) }}</div>
-        <div class="route-meta num">{{ pair.km }} km · a partir de R$ {{ pair.priceMin }}</div>
-        <div class="route-duration num">{{ pair.durationMin | formatDuration(lang) }}</div>
-      </a>
-      {%- endif %}
-      {%- endfor %}
-    </div>
-    <p style="text-align: center; margin-top: 1.4rem;"><a class="btn-arrow" href="/{{ lang }}/routes/">Todas as rotas</a></p>
-  </div>
-</section>
-
 <section class="section section--bg-soft">
   <div class="container container--narrow">
     <h2 style="text-align: center;">Perguntas frequentes.</h2>
@@ -158,9 +96,9 @@ faq:
 
 <section class="cta-strip">
   <div class="container container--narrow">
-    <h2>Vamos planejar?</h2>
+    <h2>Planejar uma rota privada?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Abrir formulário</a>
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Solicitar transfer executivo</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>

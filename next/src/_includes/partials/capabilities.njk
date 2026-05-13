@@ -1,65 +1,52 @@
 {%- set t = i18n[lang] -%}
-<section class="section capabilities-section">
+{%- macro capIcon(d) -%}
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ d | safe }}</svg>
+{%- endmacro -%}
+<section class="section capabilities-section" aria-labelledby="capabilities-heading">
   <div class="container">
     <header class="section-head section-head--centered">
       <p class="kicker">{{ t.capabilities.eyebrow }}</p>
-      <h2>{{ t.capabilities.title }}</h2>
+      <h2 id="capabilities-heading">{{ t.capabilities.title }}</h2>
       <p class="muted">{{ t.capabilities.lead }}</p>
     </header>
     <div class="capability-grid reveal-stagger">
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/>') }}</div>
         <h3>{{ t.capabilities.c1Title }}</h3>
         <p class="muted small">{{ t.capabilities.c1Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<rect x="3.5" y="5.5" width="17" height="14" rx="2"/><path d="M3.5 10h17M8 3.5v4M16 3.5v4M8 14h3M8 17h6"/>') }}</div>
         <h3>{{ t.capabilities.c2Title }}</h3>
         <p class="muted small">{{ t.capabilities.c2Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-1 4-9 4 9 5 1"/><path d="M3 17l4 4M21 17l-4 4"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<path d="M3 18l4-2 3-6 4 8 3-4 4 4"/><circle cx="3" cy="18" r="1.2"/><circle cx="21" cy="18" r="1.2"/>') }}</div>
         <h3>{{ t.capabilities.c3Title }}</h3>
         <p class="muted small">{{ t.capabilities.c3Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c4 0 4-6 8-6s4 6 8 6"/><circle cx="4" cy="12" r="2"/><circle cx="20" cy="12" r="2"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<path d="M3 17c3 0 4-3 7-3s3 6 6 6 3-3 5-3"/><circle cx="3" cy="17" r="1.2"/><circle cx="21" cy="17" r="1.2"/>') }}</div>
         <h3>{{ t.capabilities.c4Title }}</h3>
         <p class="muted small">{{ t.capabilities.c4Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/>') }}</div>
         <h3>{{ t.capabilities.c5Title }}</h3>
         <p class="muted small">{{ t.capabilities.c5Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<rect x="3.5" y="8" width="17" height="12" rx="2"/><path d="M8 8V5.5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2V8"/><path d="M3.5 13h17"/>') }}</div>
         <h3>{{ t.capabilities.c6Title }}</h3>
         <p class="muted small">{{ t.capabilities.c6Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V9l3-3h8l3 3v8"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<rect x="3" y="11" width="18" height="8" rx="1.8"/><path d="M5 11l2-4h10l2 4"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/><path d="M9 15h6"/>') }}</div>
         <h3>{{ t.capabilities.c7Title }}</h3>
         <p class="muted small">{{ t.capabilities.c7Body }}</p>
       </article>
       <article class="capability">
-        <div class="capability-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12L21 4l-3 8 3 8L3 12z"/></svg>
-        </div>
+        <div class="capability-icon">{{ capIcon('<path d="M3 12L21 4 13 21l-2-9-8-1z"/>') }}</div>
         <h3>{{ t.capabilities.c8Title }}</h3>
         <p class="muted small">{{ t.capabilities.c8Body }}</p>
       </article>

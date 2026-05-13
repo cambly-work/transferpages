@@ -18,6 +18,8 @@ breadcrumbs:
       <a class="btn btn-dark btn-arrow" href="/es/contact/">Hablar con nosotros</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
+    {% set heroPhoto = { src: "bc-night-skyline", alt: "Costa de Santa Catarina de noche — rascacielos desde la orilla rocosa", ratio: "21-9", modifier: "hero-photo--overlay" } %}
+    {% include "partials/hero-photo.njk" %}
   </div>
 </section>
 

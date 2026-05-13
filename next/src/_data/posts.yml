@@ -166,6 +166,12 @@ posts:
   - slug: rainy-season-driving
     date: "2026-07-02"
     readMinutes: 4
+    heroPhoto: road-fog-turbines
+    heroPhotoAlt:
+      ru: "Ветряки и туман на рассвете в сезон дождей"
+      pt: "Geradores eólicos e neblina ao amanhecer na temporada de chuvas"
+      en: "Wind turbines and fog at dawn during the rainy season"
+      es: "Aerogeneradores y niebla al amanecer en la temporada de lluvias"
     category:
       ru: Сезоны
       pt: Temporadas

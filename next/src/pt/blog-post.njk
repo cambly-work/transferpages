@@ -21,6 +21,10 @@ eleventyComputed:
       </p>
       <h1>{{ post.title.pt }}</h1>
       <p class="lead">{{ post.excerpt.pt }}</p>
+      {% if post.heroPhoto %}
+        {% set heroPhoto = { src: post.heroPhoto, alt: (post.heroPhotoAlt.pt or post.title.pt), ratio: "16-9" } %}
+        {% include "partials/hero-photo.njk" %}
+      {% endif %}
     </div>
   </section>
 

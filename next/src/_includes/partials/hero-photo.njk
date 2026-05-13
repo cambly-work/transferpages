@@ -1,0 +1,17 @@
+{# Hero photograph as <picture> with AVIF → WebP → JPG fallback.
+   Usage:
+     {% set heroPhoto = { src: "bc-marina-sunset", alt: "BC marina at sunset", ratio: "16-9" } %}
+     {% include "partials/hero-photo.njk" %}
+   ratio one of "16-9" (default), "21-9", "4-3", "1-1".
+#}
+{%- set photo = heroPhoto -%}
+{%- set base = "/assets/images/" + photo.src -%}
+{%- set ratio = photo.ratio or "16-9" -%}
+<figure class="hero-photo hero-photo--{{ ratio }}{{ ' ' + (photo.modifier or '') }}">
+  <picture>
+    <source type="image/avif" srcset="{{ base }}.avif">
+    <source type="image/webp" srcset="{{ base }}.webp">
+    <img src="{{ base }}.jpg" alt="{{ photo.alt }}" loading="{{ photo.loading or 'eager' }}" fetchpriority="{{ photo.priority or 'high' }}" decoding="async" width="2400" height="{{ photo.height or 1350 }}">
+  </picture>
+  {% if photo.caption %}<figcaption class="hero-photo-caption muted small">{{ photo.caption }}</figcaption>{% endif %}
+</figure>

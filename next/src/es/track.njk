@@ -1,11 +1,11 @@
 ---
 slug: "track"
 permalink: "/es/track/index.html"
-title: "Trip tracking · Demo | Morrison Premium Transfer"
-description: "Demo of the real-time transfer tracking page."
+title: "Seguimiento del viaje · Demo | Morrison Premium Transfer"
+description: "Demostración de la página de seguimiento del transfer en tiempo real."
 breadcrumbs:
   - { name: "Inicio", path: "/es/" }
-  - { name: "Tracking", path: "/es/track/" }
+  - { name: "Seguimiento", path: "/es/track/" }
 ---
 <section class="hero">
   <div class="container container--narrow">
@@ -36,21 +36,47 @@ breadcrumbs:
       <dl class="track-grid">
         <div>
           <dt>{{ t.trackPage.driverLabel }}</dt>
-          <dd>Carlos M.<br><small class="muted">CNH D · 8 years · EN B2</small></dd>
+          <dd>Carlos M.<br><small class="muted">CNH D · 8 años · EN B2</small></dd>
         </div>
         <div>
           <dt>{{ t.trackPage.vehicleLabel }}</dt>
-          <dd>Toyota Corolla Altis<br><small class="muted">Executive sedan · GRU-•••• <span class="muted">demo</span></small></dd>
+          <dd>Toyota Corolla Altis<br><small class="muted">Sedan ejecutivo · GRU-•••• <span class="muted">demo</span></small></dd>
         </div>
         <div>
           <dt>{{ t.trackPage.statusLabel }}</dt>
-          <dd class="num" data-track-distance>23 km to pickup</dd>
+          <dd class="num" data-track-distance>23 km al punto de retiro</dd>
         </div>
       </dl>
 
       <div class="track-actions">
         <a class="btn btn-dark btn-arrow" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.trackPage.contactDriver }}</a>
         <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">{{ t.trackPage.contactSupport }}</a>
+      </div>
+
+      <div class="track-ar">
+        <div class="track-ar-qr" aria-hidden="true">
+          <svg viewBox="0 0 80 80" width="80" height="80">
+            <rect width="80" height="80" fill="#fff"/>
+            <g fill="currentColor">
+              <rect x="4" y="4" width="20" height="20"/><rect x="8" y="8" width="12" height="12" fill="#fff"/><rect x="12" y="12" width="4" height="4"/>
+              <rect x="56" y="4" width="20" height="20"/><rect x="60" y="8" width="12" height="12" fill="#fff"/><rect x="64" y="12" width="4" height="4"/>
+              <rect x="4" y="56" width="20" height="20"/><rect x="8" y="60" width="12" height="12" fill="#fff"/><rect x="12" y="64" width="4" height="4"/>
+              <rect x="30" y="6" width="4" height="4"/><rect x="38" y="6" width="4" height="4"/><rect x="46" y="6" width="4" height="4"/>
+              <rect x="30" y="14" width="4" height="4"/><rect x="42" y="14" width="4" height="4"/>
+              <rect x="30" y="22" width="4" height="4"/><rect x="38" y="22" width="4" height="4"/><rect x="46" y="22" width="4" height="4"/>
+              <rect x="6" y="30" width="4" height="4"/><rect x="14" y="30" width="4" height="4"/><rect x="30" y="30" width="4" height="4"/><rect x="38" y="30" width="4" height="4"/><rect x="50" y="30" width="4" height="4"/><rect x="58" y="30" width="4" height="4"/><rect x="70" y="30" width="4" height="4"/>
+              <rect x="22" y="38" width="4" height="4"/><rect x="30" y="38" width="4" height="4"/><rect x="46" y="38" width="4" height="4"/><rect x="62" y="38" width="4" height="4"/>
+              <rect x="6" y="46" width="4" height="4"/><rect x="14" y="46" width="4" height="4"/><rect x="30" y="46" width="4" height="4"/><rect x="38" y="46" width="4" height="4"/><rect x="54" y="46" width="4" height="4"/>
+              <rect x="30" y="58" width="4" height="4"/><rect x="38" y="58" width="4" height="4"/><rect x="46" y="58" width="4" height="4"/>
+              <rect x="30" y="66" width="4" height="4"/><rect x="42" y="66" width="4" height="4"/>
+              <rect x="30" y="74" width="4" height="4"/><rect x="38" y="74" width="4" height="4"/><rect x="46" y="74" width="4" height="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="track-ar-copy">
+          <p class="kicker">AR · en desarrollo</p>
+          <p>En un viaje real, este QR abrirá el punto de retiro directamente en la cámara del teléfono — sin buscar edificio ni puerta.</p>
+        </div>
       </div>
 
       <p class="muted small" style="margin-top: 1.4rem; text-align: center;">{{ t.trackPage.demoNote }}</p>

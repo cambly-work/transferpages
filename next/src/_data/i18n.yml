@@ -8,6 +8,7 @@ ru:
     primaryNav: Главная навигация
     languages: Языки
     openMenu: Открыть меню
+    menu: Меню
   brand:
     tagline: Бразилия • Уругвай • Парагвай
   nav:
@@ -103,29 +104,29 @@ ru:
     c3Body: "Трекинг по номеру рейса. ETA пассажира пересчитывается автоматически, водитель ставится на новое время."
     c4Title: "Корректировка маршрута в дороге"
     c4Body: "Добавили остановку или сменили адрес — диспетчер пересчитывает плечо, не теряя плана дня."
-    c5Title: "Multilingual support"
+    c5Title: "Многоязычная поддержка"
     c5Body: "Português, Русский, English, Español — связь на родном языке пассажира и водителя."
     c6Title: "Обработка багажа"
     c6Body: "Чувствительный груз, инструмент, документы — отдельная процедура и страхование."
-    c7Title: "Long-distance overnight"
+    c7Title: "Дальние плечи с ночёвкой"
     c7Body: "Плечи 1000+ км с гостиницей категории, утверждённой заказчиком. Смена водителя — по протоколу."
-    c8Title: "Private pickup coordination"
-    c8Body: "VIP-зал, парковка, обхода терминала — согласовано с аэропортом, без задержек у выхода."
+    c8Title: "Координация частной встречи"
+    c8Body: "VIP-зал, парковка, обход терминала — согласовано с аэропортом, без задержек у выхода."
   vipBusiness:
     eyebrow: "Executive & corporate"
     title: "Для бизнес-клиентов и закрытых поездок"
     lead: "Когда поездка — часть рабочего процесса, а не просто перемещение. Морисон работает с C-level, инвесторами, делегациями и закрытыми мероприятиями."
-    b1Title: "Executive airport transfers"
-    b1Body: "Встреча в FBO/VIP-зале или у выхода из терминала с tracking, бесшумной кабиной и без логотипов на машине."
-    b2Title: "Investor & delegation mobility"
+    b1Title: "Executive-встречи в аэропорту"
+    b1Body: "Встреча в FBO/VIP-зале или у выхода из терминала с трекингом рейса, бесшумной кабиной и без логотипов на машине."
+    b2Title: "Логистика инвесторов и делегаций"
     b2Body: "Многодневные программы по нескольким городам с одним координатором. Конфиденциальность по NDA."
-    b3Title: "Recurring business routes"
+    b3Title: "Постоянные корпоративные маршруты"
     b3Body: "Ежемесячные плечи с фиксированной ставкой и месячным NF-e в адрес юр. лица."
-    b4Title: "Confidential travel"
+    b4Title: "Конфиденциальные поездки"
     b4Body: "Без логотипов, без имён в открытых каналах, передача данных по защищённому каналу. По запросу — NDA."
-    b5Title: "Hotel & residence coordination"
-    b5Body: "Согласование с консьержем, временем check-in/out, парковкой и подачей. Гость заходит — машина уже стоит."
-    b6Title: "Event transportation"
+    b5Title: "Координация с отелем и резиденцией"
+    b5Body: "Согласование с консьержем, временем check-in/out, парковкой и подачей. Гость выходит — машина уже стоит."
+    b6Title: "Транспорт для мероприятий"
     b6Body: "Свадьбы, конференции, премьеры — выделенный диспетчер на день, групповая логистика и буферное время."
     ctaPrimary: "Обсудить программу"
     ctaSecondary: "Запросить рамочное предложение"
@@ -137,7 +138,7 @@ ru:
     g1Cities: "Балнеариу-Камбориу · Флорианополис · Куритиба · Порту-Алегри · Жоинвили"
     g2Title: "Длинные плечи"
     g2Cities: "Сан-Паулу · Бразилиа · Рио-де-Жанейро · Фос-ду-Игуасу · Кампинас"
-    g3Title: "Cross-border logistics"
+    g3Title: "Международные плечи"
     g3Cities: "Уругвай · Парагвай · Аргентина · переход Чуй · переход Foz–Ciudad del Este"
   typicalJourneys:
     eyebrow: "Typical journeys"
@@ -282,14 +283,14 @@ ru:
     credAnttBody: Регистрация в Agência Nacional de Transportes Terrestres для междугородних поездок. Без неё — это не «трансфер», а «частная подвозка».
     credAblaTitle: ABLA · отраслевая ассоциация
     credAblaBody: Членство в Associação Brasileira de Locadoras de Automóveis — стандарты сервиса, обмен опытом по инцидентам, доступ к коллективным условиям страховщиков.
-    credDpvatTitle: DPVAT + corporate insurance
+    credDpvatTitle: DPVAT + корпоративная страховка
     credDpvatBody: Обязательное страхование (DPVAT) плюс корпоративный полис с расширенной ответственностью перед пассажирами на сумму до R$ 200 000 на жизнь.
     credLgpdTitle: LGPD · защита данных
     credLgpdBody: Заявки, телефон, имя пассажира — храним по требованиям Lei Geral de Proteção de Dados. По запросу удаляем или экспортируем за 5 рабочих дней.
     credNfeTitle: NF-e · электронные накладные
     credNfeBody: Каждой поездке — корректная Nota Fiscal Eletrônica на CNPJ заказчика. Подходит для возмещения через бухгалтерию иностранной компании или представительства.
-    credCheckTitle: Driver background check
-    credCheckBody: Antecedentes Criminais + CNH с EAR + минимум 5 лет стажа с пассажирами. Подтверждаемо через certidão.
+    credCheckTitle: Проверка водителя
+    credCheckBody: Справка об отсутствии судимости (Antecedentes Criminais) + CNH с EAR + минимум 5 лет стажа с пассажирами. Подтверждаемо через certidão.
     howWeWorkEyebrow: Как мы работаем
     howWeWorkTitle: Процесс — от заявки до отчёта
     howWeWorkStep1: '«Бриф» — за 24 часа до поездки фиксируем маршрут, тайминг, документы, аллергии и предпочтения.'
@@ -365,6 +366,7 @@ pt:
     primaryNav: Navegação principal
     languages: Idiomas
     openMenu: Abrir menu
+    menu: Menu
   brand:
     tagline: Brasil • Uruguai • Paraguai
   nav:
@@ -464,16 +466,16 @@ pt:
     c5Body: "Português, Русский, English, Español — comunicação no idioma do passageiro e do motorista."
     c6Title: "Manuseio de bagagem"
     c6Body: "Carga sensível, instrumentos, documentos — procedimento e seguro próprios."
-    c7Title: "Long-distance overnight"
+    c7Title: "Trechos longos com pernoite"
     c7Body: "Trechos de 1000+ km com pernoite em hotel aprovado pelo cliente. Troca de motorista por protocolo."
-    c8Title: "Private pickup coordination"
+    c8Title: "Coordenação de retirada privada"
     c8Body: "Sala VIP/FBO, estacionamento, contorno do terminal — alinhado com o aeroporto, sem espera na saída."
   vipBusiness:
     eyebrow: "Executive & corporate"
     title: "Para viagens corporativas e discretas"
     lead: "Quando a viagem faz parte do processo de trabalho, não é só deslocamento. Morrison atende C-level, investidores, delegações e eventos fechados."
-    b1Title: "Executive airport transfers"
-    b1Body: "Recepção em FBO/sala VIP ou na porta do terminal com tracking, cabine silenciosa e veículo sem logos."
+    b1Title: "Transfers executivos de aeroporto"
+    b1Body: "Recepção em FBO/sala VIP ou na porta do terminal com tracking de voo, cabine silenciosa e veículo sem logos."
     b2Title: "Mobilidade de investidores e delegações"
     b2Body: "Programas multi-dia em várias cidades com um único coordenador. Confidencialidade sob NDA."
     b3Title: "Rotas corporativas recorrentes"
@@ -494,7 +496,7 @@ pt:
     g1Cities: "Balneário Camboriú · Florianópolis · Curitiba · Porto Alegre · Joinville"
     g2Title: "Trechos longos"
     g2Cities: "São Paulo · Brasília · Rio de Janeiro · Foz do Iguaçu · Campinas"
-    g3Title: "Cross-border logistics"
+    g3Title: "Trechos internacionais"
     g3Cities: "Uruguai · Paraguai · Argentina · travessia do Chuí · travessia Foz–Ciudad del Este"
   typicalJourneys:
     eyebrow: "Typical journeys"
@@ -640,12 +642,12 @@ pt:
     credAblaTitle: ABLA · associação setorial
     credAblaBody: Associados à Associação Brasileira de Locadoras de Automóveis — padrões de serviço, troca de experiências sobre incidentes, acesso a condições coletivas de seguradoras.
     credDpvatTitle: DPVAT + seguro corporativo
-    credDpvatBody: Seguro obrigatório (DPVAT) mais apólice corporativa com responsabilidade estendida sobre passageiros até R$ 200.000 por vida.
+    credDpvatBody: Seguro obrigatório (DPVAT) e apólice corporativa com responsabilidade estendida sobre passageiros até R$ 200.000 por vida.
     credLgpdTitle: LGPD · proteção de dados
     credLgpdBody: Pedidos, telefone, nome do passageiro — guardados de acordo com a Lei Geral de Proteção de Dados. Apagamos ou exportamos sob pedido em até 5 dias úteis.
     credNfeTitle: NF-e · nota fiscal eletrônica
     credNfeBody: Cada viagem com NF-e correta no CNPJ do cliente. Serve para reembolso pela contabilidade de empresa estrangeira ou representação.
-    credCheckTitle: Driver background check
+    credCheckTitle: Checagem do motorista
     credCheckBody: Antecedentes Criminais + CNH com EAR + mínimo de 5 anos de experiência com passageiros. Verificável via certidão.
     howWeWorkEyebrow: Como trabalhamos
     howWeWorkTitle: Processo — do pedido ao relatório
@@ -722,6 +724,7 @@ en:
     primaryNav: Primary navigation
     languages: Languages
     openMenu: Open menu
+    menu: Menu
   brand:
     tagline: Brazil • Uruguay • Paraguay
   nav:
@@ -1079,6 +1082,7 @@ es:
     primaryNav: Navegación principal
     languages: Idiomas
     openMenu: Abrir menú
+    menu: Menú
   brand:
     tagline: Brasil • Uruguay • Paraguay
   nav:
@@ -1163,7 +1167,7 @@ es:
     c5Body: "Português, Русский, English, Español — comunicación en el idioma del pasajero y del conductor."
     c6Title: "Manejo de equipaje"
     c6Body: "Carga sensible, instrumentos, documentos — procedimiento y seguro propios."
-    c7Title: "Long-distance con pernocte"
+    c7Title: "Trayectos largos con pernocte"
     c7Body: "Tramos de 1000+ km con pernocte en hotel aprobado por el cliente. Rotación de conductor por protocolo."
     c8Title: "Coordinación de retiro privado"
     c8Body: "Sala VIP/FBO, estacionamiento, evitar terminal — alineado con el aeropuerto, sin espera en la salida."
@@ -1171,8 +1175,8 @@ es:
     eyebrow: "Executive & corporate"
     title: "Para viajes corporativos y discretos"
     lead: "Cuando el viaje es parte del proceso de trabajo, no solo desplazamiento. Morrison atiende a C-level, inversores, delegaciones y eventos cerrados."
-    b1Title: "Executive airport transfers"
-    b1Body: "Recepción en FBO/sala VIP o en la salida del terminal con tracking, cabina silenciosa y vehículo sin logos."
+    b1Title: "Transfers ejecutivos de aeropuerto"
+    b1Body: "Recepción en FBO/sala VIP o en la salida del terminal con tracking de vuelo, cabina silenciosa y vehículo sin logos."
     b2Title: "Movilidad de inversores y delegaciones"
     b2Body: "Programas multi-día y multi-ciudad con un solo coordinador. Confidencialidad bajo NDA."
     b3Title: "Rutas corporativas recurrentes"
@@ -1193,7 +1197,7 @@ es:
     g1Cities: "Balneário Camboriú · Florianópolis · Curitiba · Porto Alegre · Joinville"
     g2Title: "Tramos largos"
     g2Cities: "São Paulo · Brasília · Rio de Janeiro · Foz do Iguaçu · Campinas"
-    g3Title: "Cross-border logistics"
+    g3Title: "Tramos internacionales"
     g3Cities: "Uruguay · Paraguay · Argentina · cruce de Chuí · cruce Foz–Ciudad del Este"
   typicalJourneys:
     eyebrow: "Typical journeys"
@@ -1359,7 +1363,7 @@ es:
     credLgpdBody: Solicitudes, teléfono, nombre del pasajero — almacenados según la Lei Geral de Proteção de Dados. Eliminamos o exportamos bajo pedido en 5 días hábiles.
     credNfeTitle: NF-e · factura electrónica
     credNfeBody: Cada viaje respaldado con NF-e válida al CNPJ del cliente. Sirve para reembolso por la contabilidad de empresa extranjera o representación local.
-    credCheckTitle: Driver background check
+    credCheckTitle: Verificación del conductor
     credCheckBody: Antecedentes Criminales + CNH con EAR + mínimo 5 años de experiencia con pasajeros. Verificable vía certidão.
     howWeWorkEyebrow: Cómo trabajamos
     howWeWorkTitle: Proceso — del pedido al informe

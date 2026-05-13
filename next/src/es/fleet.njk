@@ -1,11 +1,11 @@
 ---
 slug: "fleet"
 permalink: "/es/fleet/index.html"
-title: "Fleet | Morrison Premium Transfer"
-description: "Morrison Premium Transfer vehicle classes: executive sedan, premium SUV, minivan, vans — for specific trip formats."
+title: "Flota | Morrison Premium Transfer"
+description: "Clases de vehículos de Morrison Premium Transfer: sedan ejecutivo, SUV premium, minivan, vans — para formatos de viaje específicos."
 breadcrumbs:
   - { name: "Inicio", path: "/es/" }
-  - { name: "Fleet", path: "/es/fleet/" }
+  - { name: "Flota", path: "/es/fleet/" }
 ---
 <section class="hero">
   <div class="container container--narrow">
@@ -25,16 +25,16 @@ breadcrumbs:
       {%- for veh in fleet.classes %}
       <a class="fleet-card" href="/es/fleet/{{ veh.id }}/">
         <div class="fleet-card-head">
-          <h3>{{ veh.nameEn }}</h3>
+          <h3>{{ veh.nameEs }}</h3>
           <div class="fleet-stats">
-            <span><strong>{{ veh.pax }}</strong> seats</span>
-            <span><strong>{{ veh.bags }}</strong> bags</span>
+            <span><strong>{{ veh.pax }}</strong> plazas</span>
+            <span><strong>{{ veh.bags }}</strong> maletas</span>
           </div>
         </div>
-        <p class="fleet-examples">{{ veh.examplesEn }}</p>
-        <p class="fleet-for"><strong>For:</strong> {{ veh.forEn }}</p>
-        <p class="fleet-features"><strong>Included:</strong> {{ veh.featuresEn }}</p>
-      </article>
+        <p class="fleet-examples">{{ veh.examplesEs }}</p>
+        <p class="fleet-for"><strong>Para:</strong> {{ veh.forEs }}</p>
+        <p class="fleet-features"><strong>Incluido:</strong> {{ veh.featuresEs }}</p>
+      </a>
       {%- endfor %}
     </div>
     <p class="muted" style="text-align: center; margin-top: 2rem;">{{ t.fleetPage.note }}</p>
@@ -43,9 +43,9 @@ breadcrumbs:
 
 <section class="cta-strip">
   <div class="container container--narrow">
-    <h2>Pick a vehicle for the route?</h2>
+    <h2>¿Elegir vehículo para la ruta?</h2>
     <div class="cta-strip-actions">
-      <a class="btn btn-dark btn-arrow" href="/es/contact/">Open the request</a>
+      <a class="btn btn-dark btn-arrow" href="/es/contact/">Abrir la solicitud</a>
       <a class="btn btn-secondary" href="{{ site.contacts.whatsappUrl }}" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>

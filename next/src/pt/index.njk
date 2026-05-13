@@ -28,8 +28,8 @@ faq:
       }
     </script>
     <div class="hero-actions reveal-up">
-      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Confirmar viagem</a>
-      <a class="btn btn-secondary" href="#calculator">Estimar preço</a>
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Solicitar transfer executivo</a>
+      <a class="btn btn-secondary" href="#calculator">Conversar sobre a viagem</a>
     </div>
     <dl class="metric-strip reveal-up">
       <div><dt>Cobertura</dt><dd><span class="num">4</span><span class="unit">países</span></dd></div>
@@ -88,6 +88,14 @@ faq:
     </div>
   </div>
 </section>
+
+{% include "partials/capabilities.njk" %}
+
+{% include "partials/vip-business.njk" %}
+
+{% include "partials/geo-network.njk" %}
+
+{% include "partials/typical-journeys.njk" %}
 
 {% include "partials/calculator.njk" %}
 

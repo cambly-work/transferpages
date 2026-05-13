@@ -394,9 +394,18 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px 8% 0px' }
     );
     revealNodes.forEach((node) => observer.observe(node));
+    // Safety net: any reveal-* still hidden 1.6s after this script runs gets
+    // promoted. Catches edge cases: long pages where IO hasn't fired below
+    // fold during page-stitch screenshots, accessibility tools, slow JS
+    // environments, motion-disabled users who ended up here with stale state.
+    setTimeout(() => {
+      revealNodes.forEach((node) => {
+        if (!node.classList.contains('is-visible')) node.classList.add('is-visible');
+      });
+    }, 1600);
   } else {
     revealNodes.forEach((node) => node.classList.add('is-visible'));
   }

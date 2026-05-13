@@ -1,11 +1,11 @@
 {%- set t = i18n[lang] -%}
 <section class="section how-it-works">
   <div class="container">
-    <header style="text-align: center; margin-bottom: 2.4rem;">
+    <header class="section-head section-head--centered">
       <p class="kicker">{{ t.howItWorks.subtitle }}</p>
       <h2>{{ t.howItWorks.title }}</h2>
     </header>
-    <ol class="steps reveal-stagger">
+    <ol class="steps steps--6 reveal-stagger">
       <li class="step">
         <span class="step-num num">01</span>
         <h3>{{ t.howItWorks.step1Title }}</h3>
@@ -25,6 +25,16 @@
         <span class="step-num num">04</span>
         <h3>{{ t.howItWorks.step4Title }}</h3>
         <p>{{ t.howItWorks.step4Body }}</p>
+      </li>
+      <li class="step">
+        <span class="step-num num">05</span>
+        <h3>{{ t.howItWorks.step5Title }}</h3>
+        <p>{{ t.howItWorks.step5Body }}</p>
+      </li>
+      <li class="step">
+        <span class="step-num num">06</span>
+        <h3>{{ t.howItWorks.step6Title }}</h3>
+        <p>{{ t.howItWorks.step6Body }}</p>
       </li>
     </ol>
   </div>

@@ -1,0 +1,39 @@
+{%- set t = i18n[lang] -%}
+<section class="section section--bg-soft geo-network-section">
+  <div class="container">
+    <header class="section-head section-head--centered">
+      <p class="kicker">{{ t.geoNetwork.eyebrow }}</p>
+      <h2>{{ t.geoNetwork.title }}</h2>
+      <p class="muted">{{ t.geoNetwork.lead }}</p>
+    </header>
+    <div class="geo-network reveal-stagger">
+      <article class="geo-cluster">
+        <h3>{{ t.geoNetwork.g1Title }}</h3>
+        <div class="geo-chips">
+          {%- for c in t.geoNetwork.g1Cities.split(" · ") %}
+          <span class="geo-chip">{{ c }}</span>
+          {%- endfor %}
+        </div>
+      </article>
+      <article class="geo-cluster">
+        <h3>{{ t.geoNetwork.g2Title }}</h3>
+        <div class="geo-chips">
+          {%- for c in t.geoNetwork.g2Cities.split(" · ") %}
+          <span class="geo-chip">{{ c }}</span>
+          {%- endfor %}
+        </div>
+      </article>
+      <article class="geo-cluster">
+        <h3>{{ t.geoNetwork.g3Title }}</h3>
+        <div class="geo-chips">
+          {%- for c in t.geoNetwork.g3Cities.split(" · ") %}
+          <span class="geo-chip">{{ c }}</span>
+          {%- endfor %}
+        </div>
+      </article>
+    </div>
+    <p class="geo-network-link" style="text-align: center; margin-top: 1.4rem;">
+      <a class="btn-arrow" href="/{{ lang }}/coverage/">{{ t.nav.coverage }}</a>
+    </p>
+  </div>
+</section>

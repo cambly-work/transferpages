@@ -28,8 +28,8 @@ faq:
       }
     </script>
     <div class="hero-actions reveal-up">
-      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Согласовать поездку</a>
-      <a class="btn btn-secondary" href="#calculator">Узнать цену</a>
+      <a class="btn btn-dark btn-arrow" href="/{{ lang }}/contact/">Организовать executive-трансфер</a>
+      <a class="btn btn-secondary" href="#calculator">Обсудить поездку</a>
     </div>
     <dl class="metric-strip reveal-up">
       <div><dt>География</dt><dd><span class="num">4</span><span class="unit">страны</span></dd></div>
@@ -88,6 +88,14 @@ faq:
     </div>
   </div>
 </section>
+
+{% include "partials/capabilities.njk" %}
+
+{% include "partials/vip-business.njk" %}
+
+{% include "partials/geo-network.njk" %}
+
+{% include "partials/typical-journeys.njk" %}
 
 {% include "partials/calculator.njk" %}
 

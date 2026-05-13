@@ -1,7 +1,7 @@
 // Morrison Premium Transfer — Service Worker (minimal: offline fallback only)
 const CACHE = 'morrison-shell-v3';
-const OFFLINE_URL = '/transferpages/offline.html';
-const PRECACHE = [OFFLINE_URL, '/transferpages/favicon.svg', '/transferpages/assets/style.css', '/transferpages/assets/script.js'];
+const OFFLINE_URL = '/offline.html';
+const PRECACHE = [OFFLINE_URL, '/favicon.svg', '/assets/style.css', '/assets/script.js'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

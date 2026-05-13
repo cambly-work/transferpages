@@ -2805,7 +2805,9 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
 [data-theme="dark"] .back-to-top:hover { background: var(--accent); }
 @media (max-width: 768px) {
   .back-to-top {
-    bottom: calc(var(--mobile-cta-height, 0px) + 1rem);
+    /* Stack above chat widget toggle (56px) with 16px visual breathing room
+       between buttons (1rem). Chat toggle is at mobile-cta + 0.9rem. */
+    bottom: calc(var(--mobile-cta-height, 0px) + 0.9rem + 56px + 1.6rem);
     right: 0.9rem;
     width: 40px;
     height: 40px;
@@ -4131,6 +4133,7 @@ body.cmdk-open { overflow: hidden; }
   100% { opacity: 0; transform: scale(1.25); }
 }
 
+.chat-widget-panel[hidden] { display: none !important; }
 .chat-widget-panel {
   position: absolute;
   right: 0;
@@ -4259,8 +4262,36 @@ body.cmdk-open { overflow: hidden; }
 }
 .chat-widget-foot p { margin: 0; }
 
+/* On tablets and phones lift the chat-widget toggle above the mobile
+   sticky CTA bar (which exists ≤ 768px). */
+@media (max-width: 768px) {
+  .chat-widget {
+    right: 0.9rem;
+    bottom: calc(var(--mobile-cta-height, 0px) + 0.9rem);
+  }
+}
+
+/* On phones (≤540) the panel becomes a bottom sheet — full width,
+   anchored to viewport bottom (not to the toggle), capped at 75vh so
+   it never fills the whole screen. Body scrolls internally. */
 @media (max-width: 540px) {
-  .chat-widget { right: 0.9rem; bottom: calc(var(--mobile-cta-height, 0px) + 0.9rem); }
+  .chat-widget-panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 75vh;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -16px 40px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+  }
+  .chat-widget-panel .chat-widget-body { overflow-y: auto; flex: 1; }
+  .chat-widget.is-open .chat-widget-toggle { transform: scale(0.92); opacity: 0.85; }
 }
 
 /* =========================================================

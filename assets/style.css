@@ -399,20 +399,20 @@ p { margin: 0 0 1rem; }
   background-position: center;
 }
 .tile-photo--brazil {
-  background-image: image-set(url('/assets/images/rio-dawn.webp') type('image/webp'), url('/assets/images/rio-dawn.jpg') type('image/jpeg'));
-  background-image: -webkit-image-set(url('/assets/images/rio-dawn.webp') type('image/webp'), url('/assets/images/rio-dawn.jpg') type('image/jpeg'));
+  background-image: image-set(url('/transferpages/assets/images/rio-dawn.webp') type('image/webp'), url('/transferpages/assets/images/rio-dawn.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/rio-dawn.webp') type('image/webp'), url('/transferpages/assets/images/rio-dawn.jpg') type('image/jpeg'));
 }
 .tile-photo--airport {
-  background-image: image-set(url('/assets/images/interior-1.webp') type('image/webp'), url('/assets/images/interior-1.jpg') type('image/jpeg'));
-  background-image: -webkit-image-set(url('/assets/images/interior-1.webp') type('image/webp'), url('/assets/images/interior-1.jpg') type('image/jpeg'));
+  background-image: image-set(url('/transferpages/assets/images/interior-1.webp') type('image/webp'), url('/transferpages/assets/images/interior-1.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/interior-1.webp') type('image/webp'), url('/transferpages/assets/images/interior-1.jpg') type('image/jpeg'));
 }
 .tile-photo--intl {
-  background-image: image-set(url('/assets/images/tropical-coast.webp') type('image/webp'), url('/assets/images/tropical-coast.jpg') type('image/jpeg'));
-  background-image: -webkit-image-set(url('/assets/images/tropical-coast.webp') type('image/webp'), url('/assets/images/tropical-coast.jpg') type('image/jpeg'));
+  background-image: image-set(url('/transferpages/assets/images/tropical-coast.webp') type('image/webp'), url('/transferpages/assets/images/tropical-coast.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/tropical-coast.webp') type('image/webp'), url('/transferpages/assets/images/tropical-coast.jpg') type('image/jpeg'));
 }
 .tile-photo--partners {
-  background-image: image-set(url('/assets/images/rio-corcovado.webp') type('image/webp'), url('/assets/images/rio-corcovado.jpg') type('image/jpeg'));
-  background-image: -webkit-image-set(url('/assets/images/rio-corcovado.webp') type('image/webp'), url('/assets/images/rio-corcovado.jpg') type('image/jpeg'));
+  background-image: image-set(url('/transferpages/assets/images/rio-corcovado.webp') type('image/webp'), url('/transferpages/assets/images/rio-corcovado.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/rio-corcovado.webp') type('image/webp'), url('/transferpages/assets/images/rio-corcovado.jpg') type('image/jpeg'));
 }
 .tile::after {
   content: "";
@@ -630,8 +630,8 @@ p { margin: 0 0 1rem; }
   background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.5) 100%);
   z-index: -1;
 }
-.banner--brazil::before { background-image: url("/assets/images/rio-corcovado.jpg"); }
-.banner--coast::before { background-image: url("/assets/images/tropical-coast.jpg"); }
+.banner--brazil::before { background-image: url("/transferpages/assets/images/rio-corcovado.jpg"); }
+.banner--coast::before { background-image: url("/transferpages/assets/images/tropical-coast.jpg"); }
 .banner-copy {
   padding: clamp(1.8rem, 4vw, 3rem);
   max-width: 640px;
@@ -1583,35 +1583,35 @@ a.bento-cell.bento-cell--dark:hover::after { opacity: 1; }
 .bento-cell--photo .bento-cta { color: #fff; }
 .bento-photo--brazil .bento-bg {
   background-image: image-set(
-    url('/assets/images/rio-dawn.avif') type('image/avif'),
-    url('/assets/images/rio-dawn.webp') type('image/webp'),
-    url('/assets/images/rio-dawn.jpg') type('image/jpeg')
+    url('/transferpages/assets/images/rio-dawn.avif') type('image/avif'),
+    url('/transferpages/assets/images/rio-dawn.webp') type('image/webp'),
+    url('/transferpages/assets/images/rio-dawn.jpg') type('image/jpeg')
   );
-  background-image: -webkit-image-set(url('/assets/images/rio-dawn.webp') type('image/webp'), url('/assets/images/rio-dawn.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/rio-dawn.webp') type('image/webp'), url('/transferpages/assets/images/rio-dawn.jpg') type('image/jpeg'));
 }
 .bento-photo--airport .bento-bg {
   background-image: image-set(
-    url('/assets/images/interior-1.avif') type('image/avif'),
-    url('/assets/images/interior-1.webp') type('image/webp'),
-    url('/assets/images/interior-1.jpg') type('image/jpeg')
+    url('/transferpages/assets/images/interior-1.avif') type('image/avif'),
+    url('/transferpages/assets/images/interior-1.webp') type('image/webp'),
+    url('/transferpages/assets/images/interior-1.jpg') type('image/jpeg')
   );
-  background-image: -webkit-image-set(url('/assets/images/interior-1.webp') type('image/webp'), url('/assets/images/interior-1.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/interior-1.webp') type('image/webp'), url('/transferpages/assets/images/interior-1.jpg') type('image/jpeg'));
 }
 .bento-photo--intl .bento-bg {
   background-image: image-set(
-    url('/assets/images/tropical-coast.avif') type('image/avif'),
-    url('/assets/images/tropical-coast.webp') type('image/webp'),
-    url('/assets/images/tropical-coast.jpg') type('image/jpeg')
+    url('/transferpages/assets/images/tropical-coast.avif') type('image/avif'),
+    url('/transferpages/assets/images/tropical-coast.webp') type('image/webp'),
+    url('/transferpages/assets/images/tropical-coast.jpg') type('image/jpeg')
   );
-  background-image: -webkit-image-set(url('/assets/images/tropical-coast.webp') type('image/webp'), url('/assets/images/tropical-coast.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/tropical-coast.webp') type('image/webp'), url('/transferpages/assets/images/tropical-coast.jpg') type('image/jpeg'));
 }
 .bento-photo--partners .bento-bg {
   background-image: image-set(
-    url('/assets/images/rio-corcovado.avif') type('image/avif'),
-    url('/assets/images/rio-corcovado.webp') type('image/webp'),
-    url('/assets/images/rio-corcovado.jpg') type('image/jpeg')
+    url('/transferpages/assets/images/rio-corcovado.avif') type('image/avif'),
+    url('/transferpages/assets/images/rio-corcovado.webp') type('image/webp'),
+    url('/transferpages/assets/images/rio-corcovado.jpg') type('image/jpeg')
   );
-  background-image: -webkit-image-set(url('/assets/images/rio-corcovado.webp') type('image/webp'), url('/assets/images/rio-corcovado.jpg') type('image/jpeg'));
+  background-image: -webkit-image-set(url('/transferpages/assets/images/rio-corcovado.webp') type('image/webp'), url('/transferpages/assets/images/rio-corcovado.jpg') type('image/jpeg'));
 }
 .bento-cell--stat {
   background: linear-gradient(135deg, var(--bg-soft) 0%, #ebebef 100%);
@@ -2965,7 +2965,7 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/assets/images/brand-pattern.svg');
+  background-image: url('/transferpages/assets/images/brand-pattern.svg');
   background-size: 400px 400px;
   background-repeat: repeat;
   color: var(--accent);
@@ -2982,7 +2982,7 @@ body.is-scrolled .logo-mark { width: 26px; height: 26px; transition: width 0.22s
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/assets/images/brand-pattern.svg');
+  background-image: url('/transferpages/assets/images/brand-pattern.svg');
   background-size: 400px 400px;
   background-repeat: repeat;
   color: var(--accent);

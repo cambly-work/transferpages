@@ -2,14 +2,14 @@
   "name": "Morrison Premium Transfer",
   "short_name": "Morrison",
   "description": "Private transfers across Brazil and Mercosur",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "/transferpages/",
+  "scope": "/transferpages/",
   "display": "standalone",
   "background_color": "#0a1628",
   "theme_color": "#0a1628",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/transferpages/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
